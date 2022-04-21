@@ -53,7 +53,7 @@ git
 <meta name="generator" content="Hexo 6.1.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="若然无亦的Blog" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -498,7 +498,7 @@ git
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    858
+                    857
                 </div>
                 
 
@@ -509,6 +509,9 @@ git
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -561,7 +564,21 @@ git
 <hr>
 <h2 id="5-CMakeLists-txt的配置"><a href="#5-CMakeLists-txt的配置" class="headerlink" title="5. CMakeLists.txt的配置"></a>5. CMakeLists.txt的配置</h2><p><img src="https://s2.loli.net/2021/12/20/wWJEsc5NTmY8dKC.png" alt="image-20211220193814066"></p>
 <hr>
-<h2 id="6-测试"><a href="#6-测试" class="headerlink" title="6. 测试"></a>6. 测试</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    Mat img = <span class="built_in">imread</span>(<span class="string">"E:\\Programming\\C++\\OpenCv\\A_Soul.jpg"</span>, (<span class="number">1920</span>, <span class="number">1080</span>));</span><br><span class="line"></span><br><span class="line">    <span class="built_in">imshow</span>(<span class="string">"A_Soul"</span>, img);</span><br><span class="line">    <span class="built_in">waitKey</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="6-测试"><a href="#6-测试" class="headerlink" title="6. 测试"></a>6. 测试</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+using namespace std;
+using namespace cv;
+
+int main()
+{
+    Mat img = imread("E:\\Programming\\C++\\OpenCv\\A_Soul.jpg", (1920, 1080));
+
+    imshow("A_Soul", img);
+    waitKey();
+
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>输出结果如下:</p>
 <p><img src="https://s2.loli.net/2021/12/20/F6l4NiEyCULQIxW.png" alt="image-20211220194020709"></p>
@@ -571,7 +588,7 @@ git
 <p>各种编译过程中总是出现各种模块的==vs_version.rc.obj==这个文件缺失的问题, 而且还非常规律(气死!)</p>
 <p>解决: 自行生成==vs_version.rc.obj==文件</p>
 <p><a href="%E6%8A%98%E7%A3%A8!!!.txt">折磨</a></p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F:\ProgramFlies\C++\tdm64-gcc\bin\windres.exe E:\Programming\opencv\mingw_build\modules\xxxx\vs_version.rc -O coff E:\Programming\opencv\mingw_build\modules\xxxx\CMakeFiles\opencv_xxxx.dir\vs_version.rc.obj</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">F:\ProgramFlies\C++\tdm64-gcc\bin\windres.exe E:\Programming\opencv\mingw_build\modules\xxxx\vs_version.rc -O coff E:\Programming\opencv\mingw_build\modules\xxxx\CMakeFiles\opencv_xxxx.dir\vs_version.rc.obj<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>第一个路径是编译器==windres.exe==的路径, 第二个路径是对应模块的路径</p>
 <p>只需要把出错的模块名字替换==xxxx==, 复制到cmd中执行, 就能生成对应的文件</p>

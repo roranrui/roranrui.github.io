@@ -8,17 +8,17 @@
     <meta name="description" content="CMake入门1. 简单配置CMakeLists.txt
  指定最低版本:
 
-1cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.20)
 
 
 指定项目名字:
 
-1project(opencv)
+project(opencv)
 
 
 构建可执行文件:
 
-1ad">
+add_e">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -48,7 +48,7 @@
 <meta name="generator" content="Hexo 6.1.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="若然无亦的Blog" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -501,6 +501,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -509,49 +512,50 @@
                 <h1 id="CMake入门"><a href="#CMake入门" class="headerlink" title="CMake入门"></a>CMake入门</h1><h2 id="1-简单配置CMakeLists-txt"><a href="#1-简单配置CMakeLists-txt" class="headerlink" title="1. 简单配置CMakeLists.txt"></a>1. 简单配置CMakeLists.txt</h2><blockquote>
 <p> 指定最低版本:</p>
 </blockquote>
-<figure class="highlight cmake"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.20</span>)</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">cmake_minimum_required(VERSION 3.20)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>指定项目名字:</p>
 </blockquote>
-<figure class="highlight cmake"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">project</span>(opencv)</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">project(opencv)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>构建可执行文件:</p>
 </blockquote>
-<figure class="highlight cmake"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(opencv main.cpp)</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">add_executable(opencv main.cpp)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>添加C++11标准支持:</p>
 </blockquote>
- <figure class="highlight cmake"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(CMAKE_CXX_STANDARD <span class="number">11</span>)</span><br></pre></td></tr></tbody></table></figure>
+ <pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">set(CMAKE_CXX_STANDARD 11)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <hr>
 <h2 id="2-复杂工程配置CMakeLists-txt"><a href="#2-复杂工程配置CMakeLists-txt" class="headerlink" title="2. 复杂工程配置CMakeLists.txt"></a>2. 复杂工程配置CMakeLists.txt</h2><blockquote>
 <p>设置库的路径(以opencv为例):</p>
 </blockquote>
-<figure class="highlight cmake"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(OpenCV_DIR <span class="string">"E:\\Programming\\opencv\\mingw_build\\install"</span>)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_MODULE_PATH <span class="variable">${CMAKE_MODULE_PATH}</span> <span class="string">"${CMAKE_SOURCE_DIR}/cmake/"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">set(OpenCV_DIR "E:\\Programming\\opencv\\mingw_build\\install")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>寻找第三方库:</p>
 </blockquote>
-<figure class="highlight cmake"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find_pacakage(OpenCv REQUIRED)</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">find_pacakage(OpenCv REQUIRED)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>添加头文件:</p>
 </blockquote>
-<figure class="highlight cmake"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include_directories</span>(<span class="variable">${OpenCV_INCLUDE_DIRS}</span>)</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">include_directories(${OpenCV_INCLUDE_DIRS})<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>在添加的可执行文件后链接OpenCv库:</p>
 </blockquote>
-<figure class="highlight cmake"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">target_link_libraries</span>(main <span class="variable">${OpenCV_LIBS}</span>)</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">target_link_libraries(main ${OpenCV_LIBS})<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <hr>
 <h2 id="3-其他操作"><a href="#3-其他操作" class="headerlink" title="3. 其他操作"></a>3. 其他操作</h2><blockquote>
 <p>添加子目录:</p>
 </blockquote>
-<figure class="highlight cmake"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_subdirectory</span>(OpenCV_Learning)</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">add_subdirectory(OpenCV_Learning)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
                 
