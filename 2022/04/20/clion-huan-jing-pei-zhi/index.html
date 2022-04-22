@@ -319,7 +319,7 @@ MinGW编译器(posix)
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -476,14 +476,14 @@ MinGW编译器(posix)
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-21
+                    2022-04-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    212
+                    363
                 </div>
                 
 
@@ -534,17 +534,17 @@ MinGW编译器(posix)
 <ul>
 <li>Cygwin下替代<code>system("pause")</code>的指令</li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">cout << "按回车键后继续...";
-cin.get();
+<pre class="line-numbers language-cpp"><code class="language-cpp">cout <span class="token operator">&lt;&lt;</span> <span class="token string">"按回车键后继续..."</span><span class="token punctuation">;</span>
+cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>MinGW 是用于进行 Windows 应用开发的 GNU 工具链(开发环境),它的编译产物一般是原生 Windows 应用,虽然它本身不一定非要运行在 Windows 系统下(是的 MinGW 工具链也存在于 Linux、BSD 甚至 Cygwin 下)。</p>
 <p>但使用这个环境, 就会出现一个问题: <strong>中文输出乱码</strong>。MinGw 是基于 windows 运行的，新版 cmd 默认是 gbk 编码格式。当你的编码格式和默认编码格式不一样，这个乱码就开始了</p>
 <ul>
 <li>解决:<br>以下任意一行</li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++"> system("chcp 65001");
- setlocale(LC_ALL,"zh-CN");
- SetConsoleOutputCP(65001);
+<pre class="line-numbers language-cpp"><code class="language-cpp"> <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"chcp 65001"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token function">setlocale</span><span class="token punctuation">(</span>LC_ALL<span class="token punctuation">,</span><span class="token string">"zh-CN"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token function">SetConsoleOutputCP</span><span class="token punctuation">(</span><span class="token number">65001</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
                 
@@ -671,7 +671,7 @@ cin.get();
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="CMake入门">
+                        <img src="/medias/featureimages/33.jpg" class="responsive-img" alt="CMake入门">
                         
                         <span class="card-title">CMake入门</span>
                     </div>
@@ -724,7 +724,7 @@ cin.get();
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="OpenCV在CLion下的环境配置">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="OpenCV在CLion下的环境配置">
                         
                         <span class="card-title">OpenCV在CLion下的环境配置</span>
                     </div>
@@ -1216,6 +1216,8 @@ $(function () {
     
         
     <script src="/js/snow.js"></script>
+
+    
 
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script></body>
