@@ -4,11 +4,36 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C++多线程实现, 若然无亦的Blog">
-    <meta name="description" content="多线程实现1. 线程运行的开始和结束主线程从main()开始运行, 自己创建的线程也需要一个初始函数来运行
-整个进程是否执行完毕的标志是: ==主线程是否执行完==
-如果此时子线程还没执行完, 那么也会被系统强行终止
-保持子线程的运行状态就">
+    <meta name="keywords" content="文件和目录相关命令, 若然无亦的Blog">
+    <meta name="description" content="文件和目录常用命令目标
+查看目录内容
+ls
+
+
+切换目录
+cd
+
+
+创建和删除操作
+touch
+rm
+mkdir
+
+
+拷贝和移动文件
+cp
+mv
+
+
+查看文件内容
+cat
+more
+grep
+
+
+其他
+echo
+重定向 &amp;gt; 和 &amp;gt">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +47,7 @@
 
     
 
-    <title>C++多线程实现 | 若然无亦的Blog</title>
+    <title>文件和目录相关命令 | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -388,12 +413,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/31.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++多线程实现</h1>
+                    <h1 class="description center-align post-title">文件和目录相关命令</h1>
                 </div>
             </div>
         </div>
@@ -509,12 +534,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C++</span>
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">操作系统</span>
                             </a>
                         
-                            <a href="/tags/Programming/">
-                                <span class="chip bg-color">Programming</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
                     </div>
@@ -525,8 +550,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                语言学习
+                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                操作系统学习
                             </a>
                         
                     </div>
@@ -552,7 +577,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    2k
                 </div>
                 
 
@@ -569,142 +594,493 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="多线程实现"><a href="#多线程实现" class="headerlink" title="多线程实现"></a>多线程实现</h1><h2 id="1-线程运行的开始和结束"><a href="#1-线程运行的开始和结束" class="headerlink" title="1. 线程运行的开始和结束"></a>1. 线程运行的开始和结束</h2><p>主线程从<code>main()</code>开始运行, 自己创建的线程也需要一个初始函数来运行</p>
-<p><strong>整个进程是否执行完毕的标志是</strong>: ==主线程是否执行完==</p>
-<p>如果此时子线程还没执行完, 那么也会被系统强行终止</p>
-<p>保持子线程的运行状态就需要<strong>让==主线程保持运行==</strong></p>
-<p>​	主线程从<code>main()</code>函数开始运行, 自己创建的线程也需要从<strong>一个函数</strong>开始运行</p>
+                <h1 id="文件和目录常用命令"><a href="#文件和目录常用命令" class="headerlink" title="文件和目录常用命令"></a>文件和目录常用命令</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>查看目录内容<ul>
+<li><code>ls</code></li>
+</ul>
+</li>
+<li>切换目录<ul>
+<li><code>cd</code></li>
+</ul>
+</li>
+<li>创建和删除操作<ul>
+<li><code>touch</code></li>
+<li><code>rm</code></li>
+<li><code>mkdir</code></li>
+</ul>
+</li>
+<li>拷贝和移动文件<ul>
+<li><code>cp</code></li>
+<li><code>mv</code></li>
+</ul>
+</li>
+<li>查看文件内容<ul>
+<li><code>cat</code></li>
+<li><code>more</code></li>
+<li><code>grep</code></li>
+</ul>
+</li>
+<li>其他<ul>
+<li><code>echo</code></li>
+<li>重定向 <code>&gt;</code> 和 <code>&gt;&gt;</code></li>
+<li>管道 <code>|</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="01-查看目录内容"><a href="#01-查看目录内容" class="headerlink" title="01. 查看目录内容"></a>01. 查看目录内容</h2><h3 id="1-1-终端实用技巧"><a href="#1-1-终端实用技巧" class="headerlink" title="1.1 终端实用技巧"></a>1.1 终端实用技巧</h3><h4 id="1-gt-自动补全"><a href="#1-gt-自动补全" class="headerlink" title="1> 自动补全"></a>1&gt; 自动补全</h4><ul>
+<li>在敲出 <code>文件</code>／<code>目录</code>／<code>命令</code> 的前几个字母之后，按下 <code>tab</code> 键<ul>
+<li>如果输入的没有歧义，系统会自动补全</li>
+<li>如果还存在其他 <code>文件</code>／<code>目录</code>／<code>命令</code>，再按一下 <code>tab</code> 键，系统会提示可能存在的命令</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-gt-曾经使用过的命令"><a href="#2-gt-曾经使用过的命令" class="headerlink" title="2> 曾经使用过的命令"></a>2&gt; 曾经使用过的命令</h4><ul>
+<li>按 <code>上</code>／<code>下</code> 光标键可以在曾经使用过的命令之间来回切换</li>
+<li>如果想要退出选择，并且不想执行当前选中的命令，可以按 <code>ctrl + c</code></li>
+</ul>
+<h3 id="1-2-ls-命令说明"><a href="#1-2-ls-命令说明" class="headerlink" title="1.2 ls 命令说明"></a>1.2 <code>ls</code> 命令说明</h3><ul>
+<li><code>ls</code> 是英文单词 <strong>list</strong> 的简写，其功能为列出目录的内容，是用户最常用的命令之一，类似于 <strong>DOS</strong> 下的 <code>dir</code> 命令</li>
+</ul>
+<h4 id="Linux-下文件和目录的特点"><a href="#Linux-下文件和目录的特点" class="headerlink" title="Linux 下文件和目录的特点"></a>Linux 下文件和目录的特点</h4><ul>
+<li>Linux <strong>文件</strong> 或者 <strong>目录</strong> 名称最长可以有 <code>256</code> 个字符</li>
+<li>以 <code>.</code> 开头的文件为隐藏文件，需要用 -a 参数才能显示</li>
+<li><strong>.</strong> 代表当前目录</li>
+<li><strong>..</strong> 代表上一级目录</li>
+</ul>
+<h3 id="1-3-ls-常用选项"><a href="#1-3-ls-常用选项" class="headerlink" title="1.3 ls 常用选项"></a>1.3 ls 常用选项</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>显示指定目录下所有子目录与文件，包括隐藏文件</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>以列表方式显示文件的详细信息</td>
+</tr>
+<tr>
+<td>-h</td>
+<td>配合 -l 以人性化的方式显示文件大小</td>
+</tr>
+</tbody></table>
+<h4 id="计算机中文件大小的表示方式（科普）"><a href="#计算机中文件大小的表示方式（科普）" class="headerlink" title="计算机中文件大小的表示方式（科普）"></a>计算机中文件大小的表示方式（科普）</h4><table>
+<thead>
+<tr>
+<th>单位</th>
+<th>英文</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字节</td>
+<td>B（Byte）</td>
+<td>在计算机中作为一个数字单元，一般为 8 位二进制数</td>
+</tr>
+<tr>
+<td>千</td>
+<td>K（Kibibyte）</td>
+<td>1 KB = 1024 B，千字节 （1024 = 2 ** 10）</td>
+</tr>
+<tr>
+<td>兆</td>
+<td>M（Mebibyte）</td>
+<td>1 MB = 1024 KB，百万字节</td>
+</tr>
+<tr>
+<td>千兆</td>
+<td>G（Gigabyte）</td>
+<td>1 GB = 1024 MB，十亿字节，千兆字节</td>
+</tr>
+<tr>
+<td>太</td>
+<td>T（Terabyte）</td>
+<td>1 TB = 1024 GB，万亿字节，太字节</td>
+</tr>
+<tr>
+<td>拍</td>
+<td>P（Petabyte）</td>
+<td>1 PB = 1024 TB，千万亿字节，拍字节</td>
+</tr>
+<tr>
+<td>艾</td>
+<td>E（Exabyte）</td>
+<td>1 EB = 1024 PB，百亿亿字节，艾字节</td>
+</tr>
+<tr>
+<td>泽</td>
+<td>Z（Zettabyte）</td>
+<td>1 ZB = 1024 EB，十万亿亿字节，泽字节</td>
+</tr>
+<tr>
+<td>尧</td>
+<td>Y（Yottabyte）</td>
+<td>1 YB = 1024 ZB，一亿亿亿字节，尧字节</td>
+</tr>
+</tbody></table>
+<h3 id="1-4-ls-通配符的使用"><a href="#1-4-ls-通配符的使用" class="headerlink" title="1.4 ls 通配符的使用"></a>1.4 ls 通配符的使用</h3><table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>代表任意个数个字符</td>
+</tr>
+<tr>
+<td>?</td>
+<td>代表任意一个字符，至少 1 个</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>表示可以匹配字符组中的任一一个</td>
+</tr>
+<tr>
+<td>[abc]</td>
+<td>匹配 a、b、c 中的任意一个</td>
+</tr>
+<tr>
+<td>[a-f]</td>
+<td>匹配从 a 到 f 范围内的的任意一个字符</td>
+</tr>
+</tbody></table>
 <ul>
-<li>包含头文件 <code>&lt;thread&gt;</code></li>
+<li>ls 颜色: 蓝色-文件夹, 黑色-文件, 绿色-拥有所有权限</li>
 </ul>
-<p>示例代码</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-
-<span class="token keyword">void</span> <span class="token function">myPrint</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程开始了!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    thread <span class="token function">ts1</span><span class="token punctuation">(</span>myPrint<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ts1<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//  让主线程等待子线程执行完毕</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>本程序有两个线程再跑, 有两条线<strong>同时</strong>再走, 不是顺序执行!!</p>
-<h2 id="2-Thread类"><a href="#2-Thread类" class="headerlink" title="2. Thread类"></a>2. Thread类</h2><h3 id="2-1-Thread类构造方法"><a href="#2-1-Thread类构造方法" class="headerlink" title="2.1 Thread类构造方法:"></a>2.1 Thread类构造方法:</h3><ul>
-<li>创建Thread对象，默认有一个线程名，以Thread-开头，按序增加的数字，从0开始</li>
-<li>如果在构造Thread的时候没有传递Runnable或者没有复写Thread的run方法，该Thread不会执行任何东西。</li>
-<li>如果构造Thread对象是没有传入ThreadGroup，则默认获取父线程的group作为当前线程的group。此时子线程和父线程在同一个group中</li>
-<li>stackSize可以指定线程的栈的大小，如果没有指定stackSize默认是0，0代表忽略该参数。该参数由JVM使用。注意：该参数有些平台无效，一般通过 -Xss 10M 设置栈的大小</li>
+<h2 id="02-切换目录"><a href="#02-切换目录" class="headerlink" title="02. 切换目录"></a>02. 切换目录</h2><h3 id="2-1-cd"><a href="#2-1-cd" class="headerlink" title="2.1 cd"></a>2.1 <code>cd</code></h3><ul>
+<li><code>cd</code> 是英文单词 <strong>change directory</strong> 的简写，其功能为更改当前的工作目录，也是用户最常用的命令之一</li>
 </ul>
-<p><strong>Thread类常用构造方法</strong>:</p>
+<blockquote>
+<p>注意：Linux 所有的 <strong>目录</strong> 和 <strong>文件名</strong> 都是大小写敏感的</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cd</td>
+<td>切换到当前用户的主目录(/home/用户目录)</td>
+</tr>
+<tr>
+<td>cd ~</td>
+<td>切换到当前用户的主目录(/home/用户目录)</td>
+</tr>
+<tr>
+<td>cd .</td>
+<td>保持在当前目录不变</td>
+</tr>
+<tr>
+<td>cd ..</td>
+<td>切换到上级目录</td>
+</tr>
+<tr>
+<td>cd -</td>
+<td>可以在最近两次工作目录之间来回切换</td>
+</tr>
+</tbody></table>
+<h3 id="2-2-相对路径和绝对路径"><a href="#2-2-相对路径和绝对路径" class="headerlink" title="2.2 相对路径和绝对路径"></a>2.2 相对路径和绝对路径</h3><ul>
+<li><strong>相对路径</strong> 在输入路径时，最前面不是 <strong>/</strong> 或者 **~**，表示相对 <strong>当前目录</strong> 所在的目录位置</li>
+<li><strong>绝对路径</strong> 在输入路径时，最前面是 <strong>/</strong> 或者 **~**，表示从 <strong>根目录/家目录</strong> 开始的具体目录位置</li>
+</ul>
+<h2 id="03-创建和删除操作"><a href="#03-创建和删除操作" class="headerlink" title="03. 创建和删除操作"></a>03. 创建和删除操作</h2><h3 id="3-1-touch"><a href="#3-1-touch" class="headerlink" title="3.1 touch"></a>3.1 <code>touch</code></h3><ul>
+<li>创建文件或修改文件时间<ul>
+<li>如果文件 <strong>不存在</strong>，可以创建一个空白文件</li>
+<li>如果文件 <strong>已经存在</strong>，可以修改文件的末次修改日期</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-mkdir"><a href="#3-2-mkdir" class="headerlink" title="3.2 mkdir"></a>3.2 <code>mkdir</code></h3><ul>
+<li>创建一个新的目录</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-p</td>
+<td>可以递归创建目录</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>新建目录的名称</strong> 不能与当前目录中 <strong>已有的目录或文件</strong> 同名</p>
+</blockquote>
+<h3 id="3-3-rm"><a href="#3-3-rm" class="headerlink" title="3.3 rm"></a>3.3 <code>rm</code></h3><ul>
+<li>删除文件或目录</li>
+</ul>
+<blockquote>
+<p>使用 <code>rm</code> 命令要小心，因为文件删除后不能恢复</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-f</td>
+<td>强制删除，忽略不存在的文件，无需提示</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>递归地删除目录下的内容，<strong>删除文件夹</strong> 时必须加此参数</td>
+</tr>
+</tbody></table>
+<h2 id="04-拷贝和移动文件"><a href="#04-拷贝和移动文件" class="headerlink" title="04. 拷贝和移动文件"></a>04. 拷贝和移动文件</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>对应英文</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>tree [目录名]</td>
+<td>tree</td>
+<td>以树状图列出文件目录结构</td>
+</tr>
+<tr>
+<td>02</td>
+<td>cp 源文件 目标文件</td>
+<td>copy</td>
+<td>复制文件或者目录</td>
+</tr>
+<tr>
+<td>03</td>
+<td>mv 源文件 目标文件</td>
+<td>move</td>
+<td>移动文件或者目录／文件或者目录重命名</td>
+</tr>
+</tbody></table>
+<h3 id="4-1-tree"><a href="#4-1-tree" class="headerlink" title="4.1 tree"></a>4.1 <code>tree</code></h3><ul>
+<li><code>tree</code> 命令可以以树状图列出文件目录结构</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-d</td>
+<td>只显示目录</td>
+</tr>
+</tbody></table>
+<h3 id="4-2-cp"><a href="#4-2-cp" class="headerlink" title="4.2 cp"></a>4.2 <code>cp</code></h3><ul>
+<li><code>cp</code> 命令的功能是将给出的 <strong>文件</strong> 或 <strong>目录</strong> 复制到另一个 <strong>文件</strong> 或 <strong>目录</strong> 中，相当于 <strong>DOS</strong> 下的 <code>copy</code> 命令</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-i</td>
+<td>覆盖文件前提示</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>若给出的源文件是目录文件，则 cp 将递归复制该目录下的所有子目录和文件，目标文件必须为一个目录名(<strong>复制目录用</strong>)</td>
+</tr>
+</tbody></table>
 <ul>
-<li><code>Thread(函数)</code></li>
-<li><code>Thread(类对象(仿函数))</code></li>
+<li><strong>tips: 复制过程中可以改名(非必须)</strong></li>
 </ul>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-
-<span class="token keyword">class</span> <span class="token class-name">TA</span>
-<span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> my_i<span class="token punctuation">;</span>
-    <span class="token function">TA</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">&amp;</span>i<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        my_i<span class="token operator">=</span> i<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">void</span> <span class="token keyword">operator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程operator开始了!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"my_i = "</span> <span class="token operator">&lt;&lt;</span> my_i <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"my_i = "</span> <span class="token operator">&lt;&lt;</span> my_i <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> myi <span class="token operator">=</span> <span class="token number">999</span>  <span class="token comment" spellcheck="true">// 主线程局部变量, 主线程执行完毕后, j</span>
-    TA <span class="token function">ta</span><span class="token punctuation">(</span>myi<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    thread <span class="token function">ts1</span><span class="token punctuation">(</span>ta<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ts1<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//  让主线程等待子线程执行完毕</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><code>NOTE</code>: 创建线程时, 类对象是被复制到线程函数中去的, 且执行完毕后, 子线程复制的类对象会先被释放, 验证可用类的<strong>拷贝构造函数, 析构函数</strong></p>
-<hr>
-<h3 id="2-2-join-方法"><a href="#2-2-join-方法" class="headerlink" title="2.2 join()方法"></a>2.2 join()方法</h3><p><code>join()</code> 方法的作用： <strong>阻塞主线程</strong>, 主线程等待当前子线程执行完成。还有两个重载方法：</p>
+<h3 id="4-3-mv"><a href="#4-3-mv" class="headerlink" title="4.3 mv"></a>4.3 <code>mv</code></h3><ul>
+<li><code>mv</code> 命令可以用来 <strong>移动</strong> <strong>文件</strong> 或 <strong>目录</strong>，也可以给 <strong>文件或目录重命名</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-i</td>
+<td>覆盖文件前提示</td>
+</tr>
+</tbody></table>
 <ul>
-<li><code>join(long millis)</code> 等待指定的时间，单位毫秒</li>
-<li><code>join(long millis, int nanos)</code> 和上面的方法类似，只是在毫秒的基础上在加了纳秒。更加精确</li>
+<li>移动目录不用加 -r</li>
 </ul>
-<hr>
-<h3 id="2-3-detach-方法"><a href="#2-3-detach-方法" class="headerlink" title="2.3 detach()方法"></a>2.3 detach()方法</h3><p>分离, 主线程不和子线程回合, 也就是主线程不必等待子线程执行完毕, 但<strong>不太推荐</strong>, <code>join()</code>方法即可</p>
-<p>一旦detach之后, 与这个主线程关联的thread对象就会失去与主线程的关联, 此时这个子线程会驻留在后台运行, 由C++后台接管(<strong>守护线程</strong>), 也不能再用 <code>join</code>了, <strong>不受控制</strong></p>
-<p>示例代码:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-
-<span class="token keyword">void</span> <span class="token function">myPrint2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程开始了!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    thread <span class="token function">ts1</span><span class="token punctuation">(</span>myPrint2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ts1<span class="token punctuation">.</span><span class="token function">detach</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"鸡汤来喽"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"鸡汤来喽"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"鸡汤来喽"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>一旦主线程执行完毕, 就看不到子线程打印的信息了</p>
-<h2 id="2-4-joinable"><a href="#2-4-joinable" class="headerlink" title="2.4 joinable()"></a>2.4 joinable()</h2><p>作用:</p>
-<p>​	判断是否可以成功使用join()或者detach(),</p>
-<p>返回: <code>true</code> 或 <code>false</code></p>
-<p>示例:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-
-<span class="token keyword">void</span> <span class="token function">myPrint</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程开始了!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    thread <span class="token function">ts1</span><span class="token punctuation">(</span>myPrint<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ts1<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 让主线程等待子线程执行完毕</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>ts1<span class="token punctuation">.</span><span class="token function">joinable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">else</span>
-    <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"鸡汤来喽"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="05-查看文件内容"><a href="#05-查看文件内容" class="headerlink" title="05. 查看文件内容"></a>05. 查看文件内容</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>对应英文</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>cat 文件名</td>
+<td>concatenate</td>
+<td>查看文件内容、创建文件、文件合并、追加文件内容等功能</td>
+</tr>
+<tr>
+<td>02</td>
+<td>more 文件名</td>
+<td>more</td>
+<td>分屏显示文件内容</td>
+</tr>
+<tr>
+<td>03</td>
+<td>grep 搜索文本 文件名</td>
+<td>grep</td>
+<td>搜索文本文件内容</td>
+</tr>
+</tbody></table>
+<h3 id="5-1-cat"><a href="#5-1-cat" class="headerlink" title="5.1 cat"></a>5.1 <code>cat</code></h3><ul>
+<li><code>cat</code> 命令可以用来 <strong>查看文件内容</strong>、<strong>创建文件</strong>、<strong>文件合并</strong>、<strong>追加文件内容</strong> 等功能</li>
+<li><code>cat</code> 会一次显示所有的内容，适合 <strong>查看内容较少</strong> 的文本文件</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-b</td>
+<td>对非空输出行编号</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>对输出的所有行编号</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>Linux 中还有一个 <code>nl</code> 的命令和 <code>cat -b</code> 的效果等价</p>
+</blockquote>
+<ul>
+<li>合并文件: #cat 路径1 路径2 路径3…  &gt;&gt; 合并后的新路径</li>
+</ul>
+<h3 id="5-2-more"><a href="#5-2-more" class="headerlink" title="5.2 more"></a>5.2 <code>more</code></h3><ul>
+<li><code>more</code> 命令可以用于分屏显示文件内容，每次只显示一页内容</li>
+<li>适合于 <strong>查看内容较多</strong>的文本文件</li>
+</ul>
+<p>使用 <code>more</code> 的操作键：</p>
+<table>
+<thead>
+<tr>
+<th>操作键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>空格键</td>
+<td>显示手册页的下一屏</td>
+</tr>
+<tr>
+<td>Enter 键</td>
+<td>一次滚动手册页的一行</td>
+</tr>
+<tr>
+<td>b</td>
+<td>回滚一屏</td>
+</tr>
+<tr>
+<td>f</td>
+<td>前滚一屏</td>
+</tr>
+<tr>
+<td>q</td>
+<td>退出</td>
+</tr>
+<tr>
+<td>/word</td>
+<td>搜索 <strong>word</strong> 字符串</td>
+</tr>
+</tbody></table>
+<h3 id="5-3-grep"><a href="#5-3-grep" class="headerlink" title="5.3 grep"></a>5.3 <code>grep</code></h3><ul>
+<li>Linux 系统中 <code>grep</code> 命令是一种强大的文本搜索工具</li>
+<li><code>grep</code>允许对文本文件进行 <strong>模式</strong>查找，所谓模式查找，又被称为正则表达式，在就业班会详细讲解</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-n</td>
+<td>显示匹配行及行号</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示不包含匹配文本的所有行（相当于求反）</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>忽略大小写</td>
+</tr>
+</tbody></table>
+<ul>
+<li>常用的两种模式查找</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>^a</td>
+<td>行首，搜寻以 <strong>a</strong> 开头的行</td>
+</tr>
+<tr>
+<td>ke$</td>
+<td>行尾，搜寻以 <strong>ke</strong> 结束的行</td>
+</tr>
+</tbody></table>
+<h2 id="06-其他"><a href="#06-其他" class="headerlink" title="06. 其他"></a>06. 其他</h2><h3 id="6-1-echo-文字内容"><a href="#6-1-echo-文字内容" class="headerlink" title="6.1 echo 文字内容"></a>6.1 <code>echo 文字内容</code></h3><ul>
+<li><code>echo</code> 会在终端中显示参数指定的文字，通常会和 <strong>重定向</strong> 联合使用</li>
+</ul>
+<h3 id="6-2-重定向-gt-和-gt-gt"><a href="#6-2-重定向-gt-和-gt-gt" class="headerlink" title="6.2 重定向 > 和 >>"></a>6.2 重定向 <code>&gt;</code> 和 <code>&gt;&gt;</code></h3><ul>
+<li>一个 <strong>文件</strong></li>
+<li>将本应显示在<strong>终端上的内容</strong> <strong>输出／追加</strong> 到<strong>指定文件中</strong></li>
+</ul>
+<p>其中</p>
+<ul>
+<li><code>&gt;</code> 表示输出，会覆盖文件原有的内容</li>
+<li><code>&gt;&gt;</code> 表示追加，会将内容追加到已有文件的末尾</li>
+</ul>
+<h3 id="6-3-管道"><a href="#6-3-管道" class="headerlink" title="6.3 管道 |"></a>6.3 管道 <code>|</code></h3><ul>
+<li>Linux 允许将 <strong>一个命令的输出</strong> 可以<strong>通过管道</strong> 做为 <strong>另一个命令的输入</strong></li>
+<li>可以理解现实生活中的管子，管子的一头塞东西进去，另一头取出来，这里 <code>|</code> 的左右分为两端，左端塞东西（写），右端取东西（读）</li>
+</ul>
+<p>常用的管道命令有：</p>
+<ul>
+<li><code>more</code>：分屏显示内容</li>
+<li><code>grep</code>：在命令执行结果的基础上查询指定的文本</li>
+</ul>
+<h3 id="6-4-find"><a href="#6-4-find" class="headerlink" title="6.4 find"></a>6.4 find</h3><p><code>find 路径范围 选项 选项值</code>:</p>
+<ul>
+<li>参数:</li>
+<li>-<code>name</code>:  名称搜索(模糊)</li>
+<li>-<code>type</code>: 类型</li>
+</ul>
 
                 
             </div>
@@ -731,7 +1107,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/2022/04/22/cpp-duo-xian-cheng-yu-bing-fa-xue-xi/">https://roranrui.cn/2022/04/22/cpp-duo-xian-cheng-yu-bing-fa-xue-xi/</a>
+                    <a href="https://roranrui.cn/2022/04/22/wen-jian-he-mu-lu-xiang-guan-ming-ling/">https://roranrui.cn/2022/04/22/wen-jian-he-mu-lu-xiang-guan-ming-ling/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -769,12 +1145,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C++</span>
+                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">操作系统</span>
                                 </a>
                             
-                                <a href="/tags/Programming/">
-                                    <span class="chip bg-color">Programming</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
                         </div>
@@ -1092,13 +1468,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/04/22/pai-xu-suan-fa-zong-jie/">
+                <a href="/2022/04/22/yong-hu-quan-xian-xiang-guan-ming-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/27.jpg" class="responsive-img" alt="排序算法总结">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="用户权限相关命令">
                         
-                        <span class="card-title">排序算法总结</span>
+                        <span class="card-title">用户权限相关命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1115,8 +1491,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    算法学习
+                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    操作系统学习
                                 </a>
                             
                             
@@ -1126,12 +1502,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
                     </a>
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -1145,13 +1521,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/22/cpp-duo-xian-cheng-yu-bing-fa/">
+                <a href="/2022/04/22/linux-wen-jian-he-mu-lu-li-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/16.jpg" class="responsive-img" alt="多线程与并发">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/26.jpg" class="responsive-img" alt="Linux文件和目录（理解）">
                         
-                        <span class="card-title">多线程与并发</span>
+                        <span class="card-title">Linux文件和目录（理解）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1168,8 +1544,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    语言学习
+                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    操作系统学习
                                 </a>
                             
                             
@@ -1179,12 +1555,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
                     </a>
                     
-                    <a href="/tags/Programming/">
-                        <span class="chip bg-color">Programming</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>

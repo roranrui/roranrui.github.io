@@ -4,11 +4,35 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C++多线程实现, 若然无亦的Blog">
-    <meta name="description" content="多线程实现1. 线程运行的开始和结束主线程从main()开始运行, 自己创建的线程也需要一个初始函数来运行
-整个进程是否执行完毕的标志是: ==主线程是否执行完==
-如果此时子线程还没执行完, 那么也会被系统强行终止
-保持子线程的运行状态就">
+    <meta name="keywords" content="远程管理常用命令, 若然无亦的Blog">
+    <meta name="description" content="远程管理常用命令目标
+关机/重启
+shutdown
+
+
+查看或配置网卡信息
+ifconfig
+ping
+
+
+远程登录和复制文件
+ssh
+scp
+
+
+
+01. 关机/重启
+
+
+序号
+命令
+对应英文
+作用
+
+
+
+01
+shutdown 选项 时">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +46,7 @@
 
     
 
-    <title>C++多线程实现 | 若然无亦的Blog</title>
+    <title>远程管理常用命令 | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -388,12 +412,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++多线程实现</h1>
+                    <h1 class="description center-align post-title">远程管理常用命令</h1>
                 </div>
             </div>
         </div>
@@ -509,12 +533,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C++</span>
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">操作系统</span>
                             </a>
                         
-                            <a href="/tags/Programming/">
-                                <span class="chip bg-color">Programming</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
                     </div>
@@ -525,8 +549,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                语言学习
+                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                操作系统学习
                             </a>
                         
                     </div>
@@ -552,7 +576,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    2.4k
                 </div>
                 
 
@@ -569,142 +593,362 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="多线程实现"><a href="#多线程实现" class="headerlink" title="多线程实现"></a>多线程实现</h1><h2 id="1-线程运行的开始和结束"><a href="#1-线程运行的开始和结束" class="headerlink" title="1. 线程运行的开始和结束"></a>1. 线程运行的开始和结束</h2><p>主线程从<code>main()</code>开始运行, 自己创建的线程也需要一个初始函数来运行</p>
-<p><strong>整个进程是否执行完毕的标志是</strong>: ==主线程是否执行完==</p>
-<p>如果此时子线程还没执行完, 那么也会被系统强行终止</p>
-<p>保持子线程的运行状态就需要<strong>让==主线程保持运行==</strong></p>
-<p>​	主线程从<code>main()</code>函数开始运行, 自己创建的线程也需要从<strong>一个函数</strong>开始运行</p>
+                <h1 id="远程管理常用命令"><a href="#远程管理常用命令" class="headerlink" title="远程管理常用命令"></a>远程管理常用命令</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>关机/重启<ul>
+<li><code>shutdown</code></li>
+</ul>
+</li>
+<li>查看或配置网卡信息<ul>
+<li><code>ifconfig</code></li>
+<li><code>ping</code></li>
+</ul>
+</li>
+<li>远程登录和复制文件<ul>
+<li><code>ssh</code></li>
+<li><code>scp</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="01-关机-x2F-重启"><a href="#01-关机-x2F-重启" class="headerlink" title="01. 关机/重启"></a>01. 关机/重启</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>对应英文</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>shutdown 选项 时间</td>
+<td>shutdown</td>
+<td>关机／重新启动</td>
+</tr>
+</tbody></table>
+<h3 id="1-1-shutdown-服务器慎用"><a href="#1-1-shutdown-服务器慎用" class="headerlink" title="1.1 shutdown(服务器慎用)"></a>1.1 <code>shutdown</code>(服务器慎用)</h3><ul>
+<li><code>shutdown</code> 命令可以 <strong>安全</strong> <strong>关闭</strong> 或者 <strong>重新启动系统</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-r</td>
+<td>重新启动</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>提示：</p>
 <ul>
-<li>包含头文件 <code>&lt;thread&gt;</code></li>
+<li><strong>不指定选项和参数</strong>，默认表示 <strong>1 分钟</strong>之后 <strong>关闭电脑</strong></li>
+<li>远程维护服务器时，最好不要关闭系统，而应该重新启动系统</li>
 </ul>
-<p>示例代码</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-
-<span class="token keyword">void</span> <span class="token function">myPrint</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程开始了!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    thread <span class="token function">ts1</span><span class="token punctuation">(</span>myPrint<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ts1<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//  让主线程等待子线程执行完毕</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>本程序有两个线程再跑, 有两条线<strong>同时</strong>再走, 不是顺序执行!!</p>
-<h2 id="2-Thread类"><a href="#2-Thread类" class="headerlink" title="2. Thread类"></a>2. Thread类</h2><h3 id="2-1-Thread类构造方法"><a href="#2-1-Thread类构造方法" class="headerlink" title="2.1 Thread类构造方法:"></a>2.1 Thread类构造方法:</h3><ul>
-<li>创建Thread对象，默认有一个线程名，以Thread-开头，按序增加的数字，从0开始</li>
-<li>如果在构造Thread的时候没有传递Runnable或者没有复写Thread的run方法，该Thread不会执行任何东西。</li>
-<li>如果构造Thread对象是没有传入ThreadGroup，则默认获取父线程的group作为当前线程的group。此时子线程和父线程在同一个group中</li>
-<li>stackSize可以指定线程的栈的大小，如果没有指定stackSize默认是0，0代表忽略该参数。该参数由JVM使用。注意：该参数有些平台无效，一般通过 -Xss 10M 设置栈的大小</li>
-</ul>
-<p><strong>Thread类常用构造方法</strong>:</p>
+</blockquote>
 <ul>
-<li><code>Thread(函数)</code></li>
-<li><code>Thread(类对象(仿函数))</code></li>
+<li>常用命令示例</li>
 </ul>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 重新启动操作系统，其中 now 表示现在</span>
+$ <span class="token function">shutdown</span> -r now
 
-<span class="token keyword">class</span> <span class="token class-name">TA</span>
-<span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> my_i<span class="token punctuation">;</span>
-    <span class="token function">TA</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">&amp;</span>i<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        my_i<span class="token operator">=</span> i<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">void</span> <span class="token keyword">operator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程operator开始了!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"my_i = "</span> <span class="token operator">&lt;&lt;</span> my_i <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"my_i = "</span> <span class="token operator">&lt;&lt;</span> my_i <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true"># 立刻关机，其中 now 表示现在</span>
+$ <span class="token function">shutdown</span> now
 
-<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true"># 系统在今天的 20:25 会关机</span>
+$ <span class="token function">shutdown</span> 20:25
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> myi <span class="token operator">=</span> <span class="token number">999</span>  <span class="token comment" spellcheck="true">// 主线程局部变量, 主线程执行完毕后, j</span>
-    TA <span class="token function">ta</span><span class="token punctuation">(</span>myi<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    thread <span class="token function">ts1</span><span class="token punctuation">(</span>ta<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ts1<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//  让主线程等待子线程执行完毕</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><code>NOTE</code>: 创建线程时, 类对象是被复制到线程函数中去的, 且执行完毕后, 子线程复制的类对象会先被释放, 验证可用类的<strong>拷贝构造函数, 析构函数</strong></p>
-<hr>
-<h3 id="2-2-join-方法"><a href="#2-2-join-方法" class="headerlink" title="2.2 join()方法"></a>2.2 join()方法</h3><p><code>join()</code> 方法的作用： <strong>阻塞主线程</strong>, 主线程等待当前子线程执行完成。还有两个重载方法：</p>
+<span class="token comment" spellcheck="true"># 系统再过十分钟后自动关机</span>
+$ <span class="token function">shutdown</span> +10
+
+<span class="token comment" spellcheck="true"># 取消之前指定的关机计划</span>
+$ <span class="token function">shutdown</span> -c
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>其他关机命令: </p>
+<p>init 0</p>
+<p>halt</p>
+<p>poweroff</p>
+</blockquote>
+<h3 id="1-2-reboot"><a href="#1-2-reboot" class="headerlink" title="1.2 reboot"></a>1.2 reboot</h3><p><code>reboot</code>: 重启</p>
+<p><code>reboot -w</code>: 模拟重启但不重启(之写关机与开机的日志信息)</p>
+<h2 id="02-查看或配置网卡信息"><a href="#02-查看或配置网卡信息" class="headerlink" title="02. 查看或配置网卡信息"></a>02. 查看或配置网卡信息</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>对应英文</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>ifconfig</td>
+<td>configure a network interface</td>
+<td>查看/配置计算机当前的网卡配置信息</td>
+</tr>
+<tr>
+<td>02</td>
+<td>ping ip地址</td>
+<td>ping</td>
+<td>检测到目标 ip地址 的连接是否正常</td>
+</tr>
+</tbody></table>
+<h3 id="2-1-网卡-和-IP-地址"><a href="#2-1-网卡-和-IP-地址" class="headerlink" title="2.1 网卡 和 IP 地址"></a>2.1 网卡 和 IP 地址</h3><h4 id="网卡"><a href="#网卡" class="headerlink" title="网卡"></a>网卡</h4><ul>
+<li>网卡是一个专门负责网络通讯的硬件设备</li>
+<li><strong>IP 地址</strong>是设置在网卡上的地址信息</li>
+</ul>
+<blockquote>
+<p>我们可以把 <strong>电脑</strong> 比作 <strong>电话</strong>，<strong>网卡</strong> 相当于 <strong>SIM 卡</strong>，<strong>IP 地址</strong> 相当于 <strong>电话号码</strong></p>
+</blockquote>
+<h4 id="IP-地址"><a href="#IP-地址" class="headerlink" title="IP 地址"></a>IP 地址</h4><ul>
+<li><strong>每台联网的电脑上</strong>都有 <strong>IP 地址</strong>，<strong>是保证电脑之间正常通讯的重要设置</strong></li>
+</ul>
+<blockquote>
+<p>注意：每台电脑的 IP 地址不能相同，否则会出现 IP 地址冲突，并且没有办法正常通讯</p>
+<p>提示：有关 <strong>IP 地址</strong>的详细内容，在就业班会详细讲解！</p>
+</blockquote>
+<h3 id="2-2-ifconfig"><a href="#2-2-ifconfig" class="headerlink" title="2.2 ifconfig"></a>2.2 <code>ifconfig</code></h3><ul>
+<li><code>ifconfig</code> 可以查看／配置计算机当前的网卡配置信息</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看网卡配置信息</span>
+$ <span class="token function">ifconfig</span>
+
+<span class="token comment" spellcheck="true"># 查看网卡对应的 IP 地址</span>
+$ <span class="token function">ifconfig</span> <span class="token operator">|</span> <span class="token function">grep</span> inet
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>提示：一台计算机中有可能会有一个 <strong>物理网卡</strong> 和 <strong>多个虚拟网卡</strong>，在 Linux 中物理网卡的名字通常以 <code>ensXX</code> 表示</p>
+</blockquote>
 <ul>
-<li><code>join(long millis)</code> 等待指定的时间，单位毫秒</li>
-<li><code>join(long millis, int nanos)</code> 和上面的方法类似，只是在毫秒的基础上在加了纳秒。更加精确</li>
+<li><code>127.0.0.1</code> 被称为 <strong>本地回环/环回地址</strong>，一般用来测试本机网卡是否正常</li>
 </ul>
-<hr>
-<h3 id="2-3-detach-方法"><a href="#2-3-detach-方法" class="headerlink" title="2.3 detach()方法"></a>2.3 detach()方法</h3><p>分离, 主线程不和子线程回合, 也就是主线程不必等待子线程执行完毕, 但<strong>不太推荐</strong>, <code>join()</code>方法即可</p>
-<p>一旦detach之后, 与这个主线程关联的thread对象就会失去与主线程的关联, 此时这个子线程会驻留在后台运行, 由C++后台接管(<strong>守护线程</strong>), 也不能再用 <code>join</code>了, <strong>不受控制</strong></p>
-<p>示例代码:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<h3 id="2-3-ping"><a href="#2-3-ping" class="headerlink" title="2.3 ping"></a>2.3 <code>ping</code></h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 检测到目标主机是否连接正常</span>
+$ <span class="token function">ping</span> IP地址
 
-<span class="token keyword">void</span> <span class="token function">myPrint2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程开始了!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true"># 检测本地网卡工作正常</span>
+$ <span class="token function">ping</span> 127.0.0.1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><code>ping</code> 一般用于检测当前计算机到目标计算机之间的网络 <strong>是否通畅</strong>，<strong>数值越大，速度越慢</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><code>ping</code> 的工作原理与潜水艇的声纳相似，<code>ping</code> 这个命令就是取自 <strong>声纳的声音</strong> </li>
+<li>网络管理员之间也常将 <code>ping</code> 用作动词 —— <strong>ping 一下计算机X，看他是否开着</strong></li>
+</ul>
+</blockquote>
+<p>原理：网络上的机器都有 <strong>唯一确定的 IP 地址</strong>，我们给<strong>目标 IP 地址</strong>发送一个数据包，对方就要返回一个数据包，根据返回的数据包以及时间，我们可以确定目标主机的存在</p>
+<blockquote>
+<p>提示：在 Linux 中，想要终止一个终端程序的执行，绝大多数都可以使用 <code>CTRL + C</code></p>
+</blockquote>
+<h2 id="03-远程登录和复制文件"><a href="#03-远程登录和复制文件" class="headerlink" title="03. 远程登录和复制文件"></a>03. 远程登录和复制文件</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>对应英文</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>ssh 用户名@ip</td>
+<td>secure shell</td>
+<td>关机／重新启动</td>
+</tr>
+<tr>
+<td>02</td>
+<td>scp 用户名@ip:文件名或路径 用户名@ip:文件名或路径</td>
+<td>secure copy</td>
+<td>远程复制文件</td>
+</tr>
+</tbody></table>
+<h3 id="3-1-ssh-基础（重点）"><a href="#3-1-ssh-基础（重点）" class="headerlink" title="3.1 ssh 基础（重点）"></a>3.1 <code>ssh</code> 基础（重点）</h3><p>在 Linux 中 SSH 是 <strong>非常常用</strong> 的工具，通过 <strong>SSH 客户端</strong> 我们可以连接到运行了 <strong>SSH 服务器</strong> 的远程机器上</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/001_SSH%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="001_SSH示意图"></p>
+<ul>
+<li><strong>SSH 客户端</strong>是一种使用 <code>Secure Shell（SSH）</code> 协议连接到远程计算机的软件程序</li>
+<li><code>SSH</code> 是目前较可靠，<strong>专为远程登录会话和其他网络服务</strong> 提供安全性的协议<ul>
+<li>利用 <code>SSH 协议</code> 可以有效<strong>防止远程管理过程中的信息泄露</strong></li>
+<li>通过 <code>SSH 协议</code> 可以对所有传输的数据进行加密，也能够防止 DNS 欺骗和 IP 欺骗</li>
+</ul>
+</li>
+<li><code>SSH</code> 的另一项优点是传输的数据可以是经过压缩的，所以可以加快传输的速度</li>
+</ul>
+<h4 id="1-域名-和-端口号"><a href="#1-域名-和-端口号" class="headerlink" title="1) 域名 和 端口号"></a>1) 域名 和 端口号</h4><h5 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h5><ul>
+<li>由一串 <strong>用点分隔</strong> 的名字组成，例如：<code>www.itcast.cn</code></li>
+<li>是 <strong>IP 地址</strong> 的别名，方便用户记忆</li>
+</ul>
+<h5 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h5><ul>
+<li><p><strong>IP 地址</strong>：通过 <strong>IP 地址</strong> 找到网络上的 <strong>计算机</strong></p>
+</li>
+<li><p><strong>端口号</strong>：通过 <strong>端口号</strong> 可以找到 <strong>计算机上运行的应用程序</strong></p>
+<ul>
+<li><strong>SSH 服务器</strong> 的默认端口号是 <code>22</code>，如果是默认端口号，在连接的时候，可以省略</li>
+</ul>
+</li>
+<li><p>常见服务端口号列表：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>服务</th>
+<th>端口号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>SSH 服务器</td>
+<td>22</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Web 服务器</td>
+<td>80</td>
+</tr>
+<tr>
+<td>03</td>
+<td>HTTPS</td>
+<td>443</td>
+</tr>
+<tr>
+<td>04</td>
+<td>FTP 服务器</td>
+<td>21</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>提示：有关 <strong>端口号</strong>的详细内容，在就业班会详细讲解！</p>
+</blockquote>
+<h4 id="2-SSH-客户端的简单使用"><a href="#2-SSH-客户端的简单使用" class="headerlink" title="2) SSH 客户端的简单使用"></a>2) SSH 客户端的简单使用</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token punctuation">[</span>-p port<span class="token punctuation">]</span> user@remote
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><code>user</code> 是在远程机器上的用户名，如果不指定的话默认为当前用户</li>
+<li><code>remote</code> 是远程机器的地址，可以是 <strong>IP</strong>／<strong>域名</strong>，或者是 <strong>后面会提到的别名</strong></li>
+<li><code>port</code> 是 <strong>SSH Server 监听的端口</strong>，如果不指定，就为默认值 <code>22</code></li>
+</ul>
+<blockquote>
+<p>提示：</p>
+<ul>
+<li>使用 <code>exit</code> 退出当前用户的登录</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li><code>ssh</code> 这个终端命令只能在 <code>Linux</code> 或者 <code>UNIX</code> 系统下使用</li>
+<li>如果在 <code>Windows</code> 系统中，可以安装 <code>PuTTY</code> 或者 <code>XShell</code> 客户端软件即可</li>
+</ul>
+<p>提示：</p>
+<ul>
+<li>在工作中，SSH 服务器的端口号很有可能<strong>不是 22</strong>，如果遇到这种情况就需要使用 <code>-p</code> 选项，指定正确的端口号，否则无法正常连接到服务器</li>
+</ul>
+</blockquote>
+<h4 id="3-Windows-下-SSH-客户端的安装"><a href="#3-Windows-下-SSH-客户端的安装" class="headerlink" title="3) Windows 下 SSH 客户端的安装"></a>3) Windows 下 SSH 客户端的安装</h4><ul>
+<li><code>Putty</code> <a target="_blank" rel="noopener" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</a></li>
+<li><code>XShell</code> <a target="_blank" rel="noopener" href="http://xshellcn.com/">http://xshellcn.com</a></li>
+</ul>
+<blockquote>
+<p>建议从官方网站下载正式的安装程序</p>
+</blockquote>
+<h3 id="3-2-scp（掌握）"><a href="#3-2-scp（掌握）" class="headerlink" title="3.2 scp（掌握）"></a>3.2 <code>scp</code>（掌握）</h3><ul>
+<li>scp 就是 <code>secure copy</code>，是一个在 Linux 下用来进行 <strong>远程拷贝文件</strong> 的命令</li>
+<li>它的<strong>地址格式与 ssh 基本相同</strong>，<strong>需要注意的是</strong>，在指定端口时用的是大写的 <code>-P</code> 而不是小写的</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/002_SCP%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="002_SCP示意图"></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 把本地当前目录下的 01.py 文件 复制到 远程 家目录下的 Desktop/01.py</span>
+<span class="token comment" spellcheck="true"># 注意：`:` 后面的路径如果不是绝对路径，则以用户的家目录作为参照路径</span>
+<span class="token function">scp</span> -P port 01.py user@remote:Desktop/01.py
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    thread <span class="token function">ts1</span><span class="token punctuation">(</span>myPrint2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ts1<span class="token punctuation">.</span><span class="token function">detach</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"鸡汤来喽"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"鸡汤来喽"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"鸡汤来喽"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>一旦主线程执行完毕, 就看不到子线程打印的信息了</p>
-<h2 id="2-4-joinable"><a href="#2-4-joinable" class="headerlink" title="2.4 joinable()"></a>2.4 joinable()</h2><p>作用:</p>
-<p>​	判断是否可以成功使用join()或者detach(),</p>
-<p>返回: <code>true</code> 或 <code>false</code></p>
-<p>示例:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true"># 把远程 家目录下的 Desktop/01.py 文件 复制到 本地当前目录下的 01.py</span>
+<span class="token function">scp</span> -P port user@remote:Desktop/01.py 01.py
 
-<span class="token keyword">void</span> <span class="token function">myPrint</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程开始了!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true"># 加上 -r 选项可以传送文件夹</span>
+<span class="token comment" spellcheck="true"># 把当前目录下的 demo 文件夹 复制到 远程 家目录下的 Desktop</span>
+<span class="token function">scp</span> -r demo user@remote:Desktop
 
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    thread <span class="token function">ts1</span><span class="token punctuation">(</span>myPrint<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ts1<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 让主线程等待子线程执行完毕</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>ts1<span class="token punctuation">.</span><span class="token function">joinable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">else</span>
-    <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"鸡汤来喽"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 把远程 家目录下的 Desktop 复制到 当前目录下的 demo 文件夹</span>
+<span class="token function">scp</span> -r user@remote:Desktop demo
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-r</td>
+<td>若给出的源文件是目录文件，则 scp 将递归复制该目录下的所有子目录和文件，目标文件必须为一个目录名</td>
+</tr>
+<tr>
+<td>-P</td>
+<td>若远程 SSH 服务器的端口不是 22，需要使用大写字母 -P 选项指定端口</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意：</p>
+<ul>
+<li><code>scp</code> 这个终端命令只能在 <code>Linux</code> 或者 <code>UNIX</code> 系统下使用</li>
+<li>如果在 <code>Windows</code> 系统中，可以安装 <code>PuTTY</code>，使用 <code>pscp</code> 命令行工具或者安装 <code>FileZilla</code> 使用 <code>FTP</code> 进行文件传输</li>
+</ul>
+</blockquote>
+<h4 id="FileZilla"><a href="#FileZilla" class="headerlink" title="FileZilla"></a><code>FileZilla</code></h4><ul>
+<li>官方网站：<a target="_blank" rel="noopener" href="https://www.filezilla.cn/download/client">https://www.filezilla.cn/download/client</a></li>
+<li><code>FileZilla</code> 在传输文件时，使用的是 <code>FTP 服务</code> 而不是 <code>SSH 服务</code>，因此端口号应该设置为 <code>21</code></li>
+</ul>
+<h3 id="3-3-SSH-高级（知道）"><a href="#3-3-SSH-高级（知道）" class="headerlink" title="3.3 SSH 高级（知道）"></a>3.3 SSH 高级（知道）</h3><ul>
+<li>免密码登录</li>
+<li>配置别名</li>
+</ul>
+<blockquote>
+<p>提示：有关 SSH 配置信息都保存在用户家目录下的 <code>.ssh</code> 目录下</p>
+</blockquote>
+<h4 id="1）免密码登录"><a href="#1）免密码登录" class="headerlink" title="1）免密码登录"></a>1）免密码登录</h4><h5 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h5><ul>
+<li>配置公钥<ul>
+<li>执行 <code>ssh-keygen</code> 即可生成 SSH 钥匙，一路回车即可</li>
+</ul>
+</li>
+<li>上传公钥到服务器<ul>
+<li>执行 <code>ssh-copy-id -p port user@remote</code>，可以让远程服务器记住我们的公钥</li>
+</ul>
+</li>
+</ul>
+<h5 id="示意图"><a href="#示意图" class="headerlink" title="示意图"></a>示意图</h5><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/003_SSH%20%E5%85%8D%E5%AF%86%E7%A0%81%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="003_SSH 免密码示意图"></p>
+<blockquote>
+<p>非对称加密算法</p>
+<ul>
+<li>使用 <strong>公钥</strong> 加密的数据，需要使用 <strong>私钥</strong> 解密</li>
+<li>使用 <strong>私钥</strong> 加密的数据，需要使用 <strong>公钥</strong> 解密</li>
+</ul>
+</blockquote>
+<h4 id="2-配置别名"><a href="#2-配置别名" class="headerlink" title="2) 配置别名"></a>2) 配置别名</h4><p>每次都输入 <code>ssh -p port user@remote</code>，时间久了会觉得很麻烦，特别是当 <code>user</code>, <code>remote</code> 和 <code>port</code> 都得输入，而且还不好记忆</p>
+<p>而 <strong>配置别名</strong> 可以让我们进一步偷懒，譬如用：<code>ssh mac</code> 来替代上面这么一长串，那么就在 <code>~/.ssh/config</code> 里面追加以下内容：</p>
+<pre><code>Host mac
+    HostName ip地址
+    User itheima
+    Port 22
+</code></pre>
+<p><strong>保存之后，即可用 <code>ssh mac</code> 实现远程登录了，<code>scp</code> 同样可以使用</strong></p>
+<h2 id="04-其他"><a href="#04-其他" class="headerlink" title="04. 其他"></a>04. 其他</h2><h3 id="hostname"><a href="#hostname" class="headerlink" title="hostname"></a>hostname</h3><p><code>hostname: </code>操作服务器的主机名, 默认输入完整的主机名</p>
+<p><code>hostname -f</code> : 表示输出当前主机名中的FQDN(全限定域名)</p>
+<h3 id="id"><a href="#id" class="headerlink" title="id"></a>id</h3><p><code>id</code>:  查看一个用户的基本信息(用户id 用户组id 附加组id) 默认当前用户</p>
+<p><code>id 用户名</code></p>
+<h3 id="whoami"><a href="#whoami" class="headerlink" title="whoami"></a>whoami</h3><p><code>whoami</code>: 当前登录用户名</p>
+<h3 id="uptime"><a href="#uptime" class="headerlink" title="uptime"></a>uptime</h3><p>统计计算机运行时间</p>
+<h3 id="uname"><a href="#uname" class="headerlink" title="uname"></a>uname</h3><p>获取计算机操作系统相关信息</p>
+<p><code>uname</code>: 操作系统类型</p>
+<p><code>uname -a</code>: 完整信息</p>
+<h3 id="netstat-tnlp"><a href="#netstat-tnlp" class="headerlink" title="netstat -tnlp"></a>netstat -tnlp</h3><p>查看网络链接状态</p>
+<blockquote>
+<p>-t : 只列出TCP协议的链接</p>
+<p>-n : 将地址从字母组合转化成ip地址 将协议转化成端口号来显示</p>
+<p>-l : 过滤出”state” 列中值为<strong>LISTEN</strong>(监听)的连接</p>
+<p>-p : 显示发起链接的进程<strong>PID</strong>和进程链接</p>
+</blockquote>
+<h3 id="man"><a href="#man" class="headerlink" title="man"></a>man</h3><p>manual, 手册, 包含Linux全部命令, EN;</p>
+<p><code>man 命令</code></p>
 
                 
             </div>
@@ -731,7 +975,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/2022/04/22/cpp-duo-xian-cheng-yu-bing-fa-xue-xi/">https://roranrui.cn/2022/04/22/cpp-duo-xian-cheng-yu-bing-fa-xue-xi/</a>
+                    <a href="https://roranrui.cn/2022/04/22/yuan-cheng-guan-li-chang-yong-ming-ling/">https://roranrui.cn/2022/04/22/yuan-cheng-guan-li-chang-yong-ming-ling/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -769,12 +1013,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C++</span>
+                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">操作系统</span>
                                 </a>
                             
-                                <a href="/tags/Programming/">
-                                    <span class="chip bg-color">Programming</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
                         </div>
@@ -1092,13 +1336,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/04/22/pai-xu-suan-fa-zong-jie/">
+                <a href="/2022/04/22/vi-vim-de-shi-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/27.jpg" class="responsive-img" alt="排序算法总结">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="vi/vim的使用">
                         
-                        <span class="card-title">排序算法总结</span>
+                        <span class="card-title">vi/vim的使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1115,8 +1359,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    算法学习
+                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    操作系统学习
                                 </a>
                             
                             
@@ -1126,12 +1370,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
                     </a>
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/Vim/">
+                        <span class="chip bg-color">Vim</span>
                     </a>
                     
                 </div>
@@ -1145,13 +1393,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/22/cpp-duo-xian-cheng-yu-bing-fa/">
+                <a href="/2022/04/22/yong-hu-quan-xian-xiang-guan-ming-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/16.jpg" class="responsive-img" alt="多线程与并发">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="用户权限相关命令">
                         
-                        <span class="card-title">多线程与并发</span>
+                        <span class="card-title">用户权限相关命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1168,8 +1416,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    语言学习
+                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    操作系统学习
                                 </a>
                             
                             
@@ -1179,12 +1427,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
                     </a>
                     
-                    <a href="/tags/Programming/">
-                        <span class="chip bg-color">Programming</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
