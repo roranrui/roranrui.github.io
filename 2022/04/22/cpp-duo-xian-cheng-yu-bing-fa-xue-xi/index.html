@@ -4,26 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="OpenCV在CLion下的环境配置, 若然无亦的Blog">
-    <meta name="description" content="OpenCv环境配置1. 配置前的准备
-OpenCv源码
-
-
-
-OpenCV拓展库
-
-MinGW编译器(posix)
-
-CMake
-
-
-
-
-git
-
-
-
-2. 执行CMake​	将OpenCv源码解压完后, 将拓展库==opencv_con">
+    <meta name="keywords" content="C++多线程实现, 若然无亦的Blog">
+    <meta name="description" content="多线程实现1. 线程运行的开始和结束主线程从main()开始运行, 自己创建的线程也需要一个初始函数来运行
+整个进程是否执行完毕的标志是: ==主线程是否执行完==
+如果此时子线程还没执行完, 那么也会被系统强行终止
+保持子线程的运行状态就">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -37,7 +22,7 @@ git
 
     
 
-    <title>OpenCV在CLion下的环境配置 | 若然无亦的Blog</title>
+    <title>C++多线程实现 | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -403,12 +388,12 @@ git
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">OpenCV在CLion下的环境配置</h1>
+                    <h1 class="description center-align post-title">C++多线程实现</h1>
                 </div>
             </div>
         </div>
@@ -524,12 +509,12 @@ git
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Programming/">
-                                <span class="chip bg-color">Programming</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
                             </a>
                         
-                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                <span class="chip bg-color">环境配置</span>
+                            <a href="/tags/Programming/">
+                                <span class="chip bg-color">Programming</span>
                             </a>
                         
                     </div>
@@ -540,8 +525,8 @@ git
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="post-category">
-                                环境配置
+                            <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                语言学习
                             </a>
                         
                     </div>
@@ -553,7 +538,7 @@ git
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-20
+                    2022-04-22
                 </div>
                 
 
@@ -567,7 +552,7 @@ git
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    855
+                    1.1k
                 </div>
                 
 
@@ -584,85 +569,142 @@ git
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="OpenCv环境配置"><a href="#OpenCv环境配置" class="headerlink" title="OpenCv环境配置"></a>OpenCv环境配置</h1><h2 id="1-配置前的准备"><a href="#1-配置前的准备" class="headerlink" title="1. 配置前的准备"></a>1. 配置前的准备</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://opencv.org/releases/">OpenCv源码</a></li>
-</ul>
-<p><img src="https://s2.loli.net/2021/12/20/VnxUYgGlpaTySNA.png" alt="image-20211220191844237"></p>
+                <h1 id="多线程实现"><a href="#多线程实现" class="headerlink" title="多线程实现"></a>多线程实现</h1><h2 id="1-线程运行的开始和结束"><a href="#1-线程运行的开始和结束" class="headerlink" title="1. 线程运行的开始和结束"></a>1. 线程运行的开始和结束</h2><p>主线程从<code>main()</code>开始运行, 自己创建的线程也需要一个初始函数来运行</p>
+<p><strong>整个进程是否执行完毕的标志是</strong>: ==主线程是否执行完==</p>
+<p>如果此时子线程还没执行完, 那么也会被系统强行终止</p>
+<p>保持子线程的运行状态就需要<strong>让==主线程保持运行==</strong></p>
+<p>​	主线程从<code>main()</code>函数开始运行, 自己创建的线程也需要从<strong>一个函数</strong>开始运行</p>
 <ul>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/opencv/opencv_contrib">OpenCV拓展库</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/">MinGW编译器(posix)</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://cmake.org/download/">CMake</a></p>
-</li>
+<li>包含头文件 <code>&lt;thread&gt;</code></li>
 </ul>
-<p><img src="https://s2.loli.net/2021/12/20/AnvfKMpHGIo5SuN.png" alt="image-20211220191750473"></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://git-scm.com/download/win">git</a></li>
-</ul>
-<p><img src="https://s2.loli.net/2021/12/20/JTsiWQ9FcINyXAh.png" alt="image-20211220192028646"></p>
-<hr>
-<h2 id="2-执行CMake"><a href="#2-执行CMake" class="headerlink" title="2. 执行CMake"></a>2. 执行CMake</h2><p>​	将OpenCv源码解压完后, 将拓展库==opencv_contrib==文件夹放到同目录下, 并创建一个==migw_build==的文件夹, 如下图所示</p>
-<p><img src="https://s2.loli.net/2021/12/20/OHo2qvb1ydRauV6.png" alt="image-20211220192228022"></p>
-<p>完成后, 打开CMake-gui软件, 准备cmake.<br>先配置好源文件路径和编译输出文件夹的路径，分别如下：</p>
-<p><img src="https://s2.loli.net/2021/12/20/JKYeqo9SCNnyIh4.png" alt="image-20211220192748002"></p>
-<p>然后，点击下面的config按钮，就会让你选择编译器，选择==Specify native compilers==, 填入编译器指定路径:</p>
-<p><img src="https://s2.loli.net/2021/12/20/qyD4EGkpR9oVNZJ.png" alt="image-20211220192905442"></p>
-<p>点击finish之后，就开始cmake的config了，config完后，结果如下：</p>
-<p><img src="https://s2.loli.net/2021/12/20/FmzToHKYbkxsSGv.png" alt="image-20211220192924762"></p>
-<p>出现Configuring done之后，需要再次点击一下config，让这片红色消失：<img src="https://s2.loli.net/2021/12/20/xUiFsvW7kwQIhHD.png" alt="image-20211220193023639"></p>
-<p>再次Configuring done之后，就点击generate，开始生成makefile文件:</p>
-<p><img src="https://s2.loli.net/2021/12/20/YrF2diyxIn4LhSX.png" alt="image-20211220193004838"></p>
-<p>在Configuring done的基础上看到了Generating done，说明generate完成了</p>
-<p>添加扩展包的路径的方法如下，再cmake_gui的窗口中找到OPENCV_EXTRA_MODULES_PATH这一项，可以看到是空白的，我们将OpenCV_contrib的modules文件夹路径添加进来，如下所示：</p>
-<p><img src="https://s2.loli.net/2021/12/20/dHBiEvahRU7erAJ.png" alt="image-20211220193229291"></p>
-<p>然后再次点击configure,跟之前一样，也会出现红色，然后再次点击configure,红色消失，说明config完成，<br>然后就点击generate,出现generating done 就说明Opencv3.2的扩展包也cmake完了，扩展包cmake的图片就不贴出来了，反正跟上面三幅图是一样的。</p>
-<p>当扩展包的cmake也出现Generating done之后，我们就可以开始执行cmake生产的makefile文件了，即开始编译链接的工作</p>
-<hr>
-<h2 id="3-编译makefile文件"><a href="#3-编译makefile文件" class="headerlink" title="3. 编译makefile文件"></a>3. 编译makefile文件</h2><p>在cmake的目标文件夹中，单击右键，选择Git Bash Here，前提是你要已经安装了git<br>然后就打开了git bash的命令行窗口, 输入指令mingw32-make -j8(以8个线程进行)，开始执行编译链接工作，如下所示：</p>
-<p><img src="https://s2.loli.net/2021/12/20/aLZnviNMxEc2DVf.png" alt="img"></p>
-<p>然后需要苦苦等待，看着编译进度从0%开始一点一点往上加，如果出现100%不报错，那么就成功了，如下所示：</p>
-<p><img src="https://s2.loli.net/2021/12/20/9B6HZbSIjpXxTqf.png" alt="image-20211220193425249"></p>
-<p>如果出现错误, 很正常想办法解决就彳亍, 结尾会总结我出现的错误以及解决方法</p>
-<hr>
-<h2 id="4-配置环境变量"><a href="#4-配置环境变量" class="headerlink" title="4. 配置环境变量"></a>4. 配置环境变量</h2><p>配置相关路径到<strong>用户环境变量</strong>:</p>
-<p><img src="https://s2.loli.net/2021/12/20/8BVG9cXesjQNf2R.png" alt="image-20211220193658690"></p>
-<hr>
-<h2 id="5-CMakeLists-txt的配置"><a href="#5-CMakeLists-txt的配置" class="headerlink" title="5. CMakeLists.txt的配置"></a>5. CMakeLists.txt的配置</h2><p><img src="https://s2.loli.net/2021/12/20/wWJEsc5NTmY8dKC.png" alt="image-20211220193814066"></p>
-<hr>
-<h2 id="6-测试"><a href="#6-测试" class="headerlink" title="6. 测试"></a>6. 测试</h2><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;opencv2/opencv.hpp></span></span>
+<p>示例代码</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> cv<span class="token punctuation">;</span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">void</span> <span class="token function">myPrint</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
-    Mat img <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">"E:\\Programming\\C++\\OpenCv\\A_Soul.jpg"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1920</span><span class="token punctuation">,</span> <span class="token number">1080</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程开始了!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-    <span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">"A_Soul"</span><span class="token punctuation">,</span> img<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">waitKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    thread <span class="token function">ts1</span><span class="token punctuation">(</span>myPrint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ts1<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//  让主线程等待子线程执行完毕</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>输出结果如下:</p>
-<p><img src="https://s2.loli.net/2021/12/20/F6l4NiEyCULQIxW.png" alt="image-20211220194020709"></p>
-<p>结束!</p>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>本程序有两个线程再跑, 有两条线<strong>同时</strong>再走, 不是顺序执行!!</p>
+<h2 id="2-Thread类"><a href="#2-Thread类" class="headerlink" title="2. Thread类"></a>2. Thread类</h2><h3 id="2-1-Thread类构造方法"><a href="#2-1-Thread类构造方法" class="headerlink" title="2.1 Thread类构造方法:"></a>2.1 Thread类构造方法:</h3><ul>
+<li>创建Thread对象，默认有一个线程名，以Thread-开头，按序增加的数字，从0开始</li>
+<li>如果在构造Thread的时候没有传递Runnable或者没有复写Thread的run方法，该Thread不会执行任何东西。</li>
+<li>如果构造Thread对象是没有传入ThreadGroup，则默认获取父线程的group作为当前线程的group。此时子线程和父线程在同一个group中</li>
+<li>stackSize可以指定线程的栈的大小，如果没有指定stackSize默认是0，0代表忽略该参数。该参数由JVM使用。注意：该参数有些平台无效，一般通过 -Xss 10M 设置栈的大小</li>
+</ul>
+<p><strong>Thread类常用构造方法</strong>:</p>
+<ul>
+<li><code>Thread(函数)</code></li>
+<li><code>Thread(类对象(仿函数))</code></li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TA</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> my_i<span class="token punctuation">;</span>
+    <span class="token function">TA</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">&amp;</span>i<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        my_i<span class="token operator">=</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token keyword">operator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程operator开始了!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"my_i = "</span> <span class="token operator">&lt;&lt;</span> my_i <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"my_i = "</span> <span class="token operator">&lt;&lt;</span> my_i <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> myi <span class="token operator">=</span> <span class="token number">999</span>  <span class="token comment" spellcheck="true">// 主线程局部变量, 主线程执行完毕后, j</span>
+    TA <span class="token function">ta</span><span class="token punctuation">(</span>myi<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    thread <span class="token function">ts1</span><span class="token punctuation">(</span>ta<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ts1<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//  让主线程等待子线程执行完毕</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>NOTE</code>: 创建线程时, 类对象是被复制到线程函数中去的, 且执行完毕后, 子线程复制的类对象会先被释放, 验证可用类的<strong>拷贝构造函数, 析构函数</strong></p>
 <hr>
-<h2 id="附录-遇到的问题-本人遇到的"><a href="#附录-遇到的问题-本人遇到的" class="headerlink" title="附录: 遇到的问题(本人遇到的)"></a>附录: 遇到的问题(本人遇到的)</h2><h3 id="1-MinGW编译OpenCV到vs-version-rc-obj处出错-我愿称之为究极折磨"><a href="#1-MinGW编译OpenCV到vs-version-rc-obj处出错-我愿称之为究极折磨" class="headerlink" title="1. MinGW编译OpenCV到vs_version.rc.obj处出错, 我愿称之为究极折磨"></a>1. <strong>MinGW编译OpenCV到vs_version.rc.obj处出错</strong>, <strong>我愿称之为究极折磨</strong></h3><p><img src="https://s2.loli.net/2021/12/20/lvyBfxcD8pPOzdH.png" alt="image-20211220194307607"></p>
-<p>各种编译过程中总是出现各种模块的==vs_version.rc.obj==这个文件缺失的问题, 而且还非常规律(气死!)</p>
-<p>解决: 自行生成==vs_version.rc.obj==文件</p>
-<p><a href="%E6%8A%98%E7%A3%A8!!!.txt">折磨</a></p>
-<pre><code>F:\ProgramFlies\C++\tdm64-gcc\bin\windres.exe E:\Programming\opencv\mingw_build\modules\xxxx\vs_version.rc -O coff E:\Programming\opencv\mingw_build\modules\xxxx\CMakeFiles\opencv_xxxx.dir\vs_version.rc.obj
-</code></pre>
-<p>第一个路径是编译器==windres.exe==的路径, 第二个路径是对应模块的路径</p>
-<p>只需要把出错的模块名字替换==xxxx==, 复制到cmd中执行, 就能生成对应的文件</p>
+<h3 id="2-2-join-方法"><a href="#2-2-join-方法" class="headerlink" title="2.2 join()方法"></a>2.2 join()方法</h3><p><code>join()</code> 方法的作用： <strong>阻塞主线程</strong>, 主线程等待当前子线程执行完成。还有两个重载方法：</p>
+<ul>
+<li><code>join(long millis)</code> 等待指定的时间，单位毫秒</li>
+<li><code>join(long millis, int nanos)</code> 和上面的方法类似，只是在毫秒的基础上在加了纳秒。更加精确</li>
+</ul>
 <hr>
-<h3 id="2-mingw编译OpenCV-error-‘mutex’-in-namespace-‘std’-does-not-name-a-type"><a href="#2-mingw编译OpenCV-error-‘mutex’-in-namespace-‘std’-does-not-name-a-type" class="headerlink" title="2. mingw编译OpenCV error: ‘mutex’ in namespace ‘std’ does not name a type"></a>2. mingw编译OpenCV error: ‘mutex’ in namespace ‘std’ does not name a type</h3><p>​	<strong>解决: 在mingw构建工具链的“线程模型:win32”中不支持互斥。必须选择任何具有“线程模型:posix”的工具链。</strong><br><strong>选择 -posix的免安装包。作为编译器</strong></p>
-<hr>
-<h3 id="3-opencv报错Process-finished-with-exit-code-1073741515-0xC0000135"><a href="#3-opencv报错Process-finished-with-exit-code-1073741515-0xC0000135" class="headerlink" title="3. opencv报错Process finished with exit code -1073741515 (0xC0000135)"></a>3. opencv报错Process finished with exit code -1073741515 (0xC0000135)</h3><p>解决: 在配置中添加环境变量</p>
-<p><img src="https://s2.loli.net/2021/12/20/Jjkfg9iN2dC6eWY.png" alt="image-20211220195434564"></p>
-<hr>
+<h3 id="2-3-detach-方法"><a href="#2-3-detach-方法" class="headerlink" title="2.3 detach()方法"></a>2.3 detach()方法</h3><p>分离, 主线程不和子线程回合, 也就是主线程不必等待子线程执行完毕, 但<strong>不太推荐</strong>, <code>join()</code>方法即可</p>
+<p>一旦detach之后, 与这个主线程关联的thread对象就会失去与主线程的关联, 此时这个子线程会驻留在后台运行, 由C++后台接管(<strong>守护线程</strong>), 也不能再用 <code>join</code>了, <strong>不受控制</strong></p>
+<p>示例代码:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">myPrint2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程开始了!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    thread <span class="token function">ts1</span><span class="token punctuation">(</span>myPrint2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ts1<span class="token punctuation">.</span><span class="token function">detach</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"鸡汤来喽"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"鸡汤来喽"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"鸡汤来喽"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>一旦主线程执行完毕, 就看不到子线程打印的信息了</p>
+<h2 id="2-4-joinable"><a href="#2-4-joinable" class="headerlink" title="2.4 joinable()"></a>2.4 joinable()</h2><p>作用:</p>
+<p>​	判断是否可以成功使用join()或者detach(),</p>
+<p>返回: <code>true</code> 或 <code>false</code></p>
+<p>示例:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">myPrint</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程开始了!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"我的线程执行完毕了!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    thread <span class="token function">ts1</span><span class="token punctuation">(</span>myPrint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ts1<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 让主线程等待子线程执行完毕</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>ts1<span class="token punctuation">.</span><span class="token function">joinable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"啊哈哈哈"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"鸡汤来喽"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -689,7 +731,7 @@ git
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/2022/04/20/opencv-clion-huan-jing-pei-zhi/">https://roranrui.cn/2022/04/20/opencv-clion-huan-jing-pei-zhi/</a>
+                    <a href="https://roranrui.cn/2022/04/22/cpp-duo-xian-cheng-yu-bing-fa-xue-xi/">https://roranrui.cn/2022/04/22/cpp-duo-xian-cheng-yu-bing-fa-xue-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -727,12 +769,12 @@ git
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Programming/">
-                                    <span class="chip bg-color">Programming</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
                                 </a>
                             
-                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                    <span class="chip bg-color">环境配置</span>
+                                <a href="/tags/Programming/">
+                                    <span class="chip bg-color">Programming</span>
                                 </a>
                             
                         </div>
@@ -1046,17 +1088,18 @@ git
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/04/20/clion-huan-jing-pei-zhi/">
+                <a href="/2022/04/22/cpp-duo-xian-cheng-yu-bing-fa-xue-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="CLion环境配置">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="C++多线程实现">
                         
-                        <span class="card-title">CLion环境配置</span>
+                        <span class="card-title">C++多线程实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1066,30 +1109,31 @@ git
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="post-category">
-                                    环境配置
+                            <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    语言学习
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Programming/">
-                        <span class="chip bg-color">Programming</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                        <span class="chip bg-color">环境配置</span>
+                    <a href="/tags/Programming/">
+                        <span class="chip bg-color">Programming</span>
                     </a>
                     
                 </div>
@@ -1103,13 +1147,13 @@ git
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/20/c-ji-chu-ru-men/">
+                <a href="/2022/04/22/cpp-duo-xian-cheng-yu-bing-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/33.jpg" class="responsive-img" alt="C++基础入门">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/16.jpg" class="responsive-img" alt="多线程与并发">
                         
-                        <span class="card-title">C++基础入门</span>
+                        <span class="card-title">多线程与并发</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1120,7 +1164,7 @@ git
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-22
                             </span>
                         <span class="publish-author">
                             
