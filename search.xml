@@ -114,6 +114,33 @@
     
     
     <entry>
+      <title>系统信息相关命令</title>
+      <link href="/2022/04/22/xi-tong-xin-xi-xiang-guan-ming-ling/"/>
+      <url>/2022/04/22/xi-tong-xin-xi-xiang-guan-ming-ling/</url>
+      
+        <content type="html"><![CDATA[<h1 id="系统信息相关命令"><a href="#系统信息相关命令" class="headerlink" title="系统信息相关命令"></a>系统信息相关命令</h1><ul><li>本节内容主要是为了方便通过远程终端维护服务器时，查看服务器上当前 <strong>系统日期和时间</strong> ／ <strong>磁盘空间占用情况</strong> ／ <strong>程序执行情况</strong></li><li>本小结学习的终端命令基本都是查询命令，通过这些命令对系统资源的使用情况有个了解</li></ul><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul><li><p>时间和日期</p><ul><li><h3 id="date"><a href="#date" class="headerlink" title="date"></a><code>date</code></h3></li><li><h3 id="cal"><a href="#cal" class="headerlink" title="cal"></a><code>cal</code></h3></li></ul></li><li><p>磁盘和目录空间</p><ul><li><code>df</code></li><li><code>du</code></li></ul></li><li><p>进程信息</p><ul><li><p><code>ps</code></p></li><li><p><code>top</code></p></li><li><p><code>kill</code></p></li><li><p><code>free</code></p></li><li><p><code> head</code></p></li><li><h3 id="tail"><a href="#tail" class="headerlink" title="tail"></a><code>tail</code></h3></li><li><p><code>less</code></p></li><li><p><code>wc</code></p></li></ul></li></ul><h2 id="01-时间和日期"><a href="#01-时间和日期" class="headerlink" title="01. 时间和日期"></a>01. 时间和日期</h2><table><thead><tr><th>序号</th><th>命令</th><th>作用</th></tr></thead><tbody><tr><td>01</td><td>date</td><td>查看系统时间(读取 )</td></tr><tr><td>02</td><td>cal</td><td><code>calendar</code> 查看日历，<code>-y</code> 选项可以查看一年的日历</td></tr></tbody></table><p><code>date</code>:  形式: 2022 年 4月7日 星期四 22:25:28</p><p><code>date +%F("+%Y-%m-%d") </code>:  形式: 2022-4-7</p><p><code>date "+%F %T(%H:%M:%S)"</code>: 2022-4-7 22:28:32 (+表示读取)</p><p>获取之前或者之后的某个时间</p><p><code>date -d "-1 day" "+%F %T"</code></p><table><thead><tr><th>可选值</th><th>符号</th></tr></thead><tbody><tr><td>单位可选</td><td>+/-</td></tr><tr><td>符号可选:</td><td>day month year</td></tr></tbody></table><table><thead><tr><th>参数</th><th>意义</th></tr></thead><tbody><tr><td>%F</td><td>完整年月日</td></tr><tr><td>%T</td><td>完整时分秒</td></tr><tr><td>%Y</td><td>完整四位年份</td></tr><tr><td>%m</td><td>两位月份</td></tr><tr><td>%d</td><td>日期(前导0)</td></tr><tr><td>%H</td><td>小时</td></tr><tr><td>%M</td><td>分钟</td></tr><tr><td>%S</td><td>秒数</td></tr></tbody></table><p><code>cal == cal -1</code>: 输出本月</p><p><code>cal -3</code>: 输出上月 本月 下月</p><h2 id="02-磁盘信息"><a href="#02-磁盘信息" class="headerlink" title="02. 磁盘信息"></a>02. 磁盘信息</h2><table><thead><tr><th>序号</th><th>命令</th><th>作用</th></tr></thead><tbody><tr><td>01</td><td>df -h</td><td><code>disk free</code> 显示磁盘剩余空间</td></tr><tr><td>02</td><td>du -h [目录名]</td><td><code>disk usage</code> 显示目录下的文件大小</td></tr></tbody></table><ul><li>选项说明</li></ul><table><thead><tr><th>参数</th><th>含义</th></tr></thead><tbody><tr><td>-h</td><td>以人性化的方式显示文件大小</td></tr></tbody></table><h2 id="03-进程信息"><a href="#03-进程信息" class="headerlink" title="03. 进程信息"></a>03. 进程信息</h2><ul><li>所谓 <strong>进程</strong>，通俗地说就是 <strong>当前正在执行的一个程序</strong></li></ul><table><thead><tr><th>序号</th><th>命令</th><th>作用</th></tr></thead><tbody><tr><td>01</td><td>ps - aux</td><td><code>process status</code> 查看进程的详细状况</td></tr><tr><td>02</td><td>top</td><td><strong>动态</strong>显示运行中的进程并且排序</td></tr><tr><td>03</td><td>kill [-9] 进程代号</td><td>终止指定代号的进程，<code>-9</code> 表示强行终止</td></tr></tbody></table><blockquote><p><code>ps</code> 默认只会显示当前用户通过终端启动的应用程序</p></blockquote><ul><li><code>ps</code> 选项说明</li></ul><table><thead><tr><th>选项</th><th>含义</th></tr></thead><tbody><tr><td>a(e)</td><td>显示终端上的所有进程，包括其他用户的进程</td></tr><tr><td>u</td><td>显示进程的详细状态</td></tr><tr><td>x</td><td>显示没有控制终端的进程</td></tr><tr><td>f</td><td>显示全部的列</td></tr></tbody></table><blockquote><p>列的含义: </p><p>UID: 该进程执行的用户id</p><p><strong>PID: 进程id</strong></p><p><strong>PPID: 该进程的父级进程id, 无父级进程的称为僵尸进程</strong></p><p>C: Cpu占用率, 形式是百分数</p><p>STIME: 进程的启动时间</p><p>TTY: 发起该进程的设备识别符号</p><p>CMD: 进程名称或对应路径</p></blockquote><p>查看指定进程: <code>ps -ef | grep 进程</code> </p><blockquote><p>top表头含义:</p><p>PR: 优先级</p><p>VIRT: 虚拟内存</p><p>RES: 常驻内存</p><p>SHR: 共享内存</p><p>一个进程实际使用的内存 = RES - SHR </p><p>S: sleeping R: running</p></blockquote><blockquote><p>提示：使用 <code>kill</code> 命令时，最好只终止由当前用户开启的进程，而不要终止 <code>root</code> 身份开启的进程，否则可能导致系统崩溃</p><p><code>killall 进程名称</code></p></blockquote><blockquote><ul><li>要退出 <code>top</code> 可以直接输入 <code>q</code></li><li><code>M</code>: 按内存从高到低进行降序排列</li><li><code>1</code>: 切换显示cpu的详细信息</li></ul></blockquote><h4 id="free"><a href="#free" class="headerlink" title="free"></a>free</h4><p><code>free</code>: 查看内存使用情况</p><p><code>-m</code>: 以mb为单位查看 </p><p><code>head -n</code> : 查看一个文件的前n行, 如果不指定n, 则默认显示前10行 </p><h4 id="tail-1"><a href="#tail-1" class="headerlink" title="tail"></a>tail</h4><p><code>tail -n</code>: 查看一个文件的后n行, 如果不指定n, 则默认显示后10行</p><p><code>tail -f</code>: 查看文件的动态变化(<strong>变化的内容不能是用户手动添加的, 可以借助输出重定向</strong>) 一般用于查看系统日志</p><h4 id="less"><a href="#less" class="headerlink" title="less"></a>less</h4><p><code>less</code>: 查看文件, 以较少内容进行输出, 按下辅助按键查看更多(数字 空格 上下键)</p><p><code>wc</code>: 统计文件内容信息(行数, 单词数, 字节数)</p><table><thead><tr><th>-l</th><th>lines 行数</th></tr></thead><tbody><tr><td>-w</td><td>words 单词数(空格判断)</td></tr><tr><td>-c</td><td>bytes 字节数</td></tr></tbody></table><h4 id="service"><a href="#service" class="headerlink" title="service"></a>service</h4><p>控制一些软件的服务启动/停止/重启</p><p><code>service 服务名 start/stop/restart</code></p><p><code>service httpd start</code>: 启动<em>Apache</em></p><h2 id="04-系统优先级"><a href="#04-系统优先级" class="headerlink" title="04. 系统优先级"></a>04. 系统优先级</h2><table><thead><tr><th>代号</th><th>作用</th></tr></thead><tbody><tr><td>0 –halt</td><td>关机模式</td></tr><tr><td>1 Single user mode</td><td>单用户模式</td></tr><tr><td>2 Multiuser without NFS</td><td>多用户模式</td></tr><tr><td>3 full Multiuser mode</td><td>全多用户模式</td></tr><tr><td>4 -unused</td><td>保留</td></tr><tr><td>5 -X11 <strong>default</strong></td><td>完整的图形化界面模式</td></tr><tr><td>6 -reboot</td><td>重启模式</td></tr></tbody></table><p>命令行输入<code>init 数字</code>执行相应的进程</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 操作系统学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 操作系统 </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>文件和目录相关命令</title>
       <link href="/2022/04/22/wen-jian-he-mu-lu-xiang-guan-ming-ling/"/>
       <url>/2022/04/22/wen-jian-he-mu-lu-xiang-guan-ming-ling/</url>
