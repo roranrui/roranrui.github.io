@@ -491,14 +491,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-23
+                    2022-04-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    2.5k
                 </div>
                 
 
@@ -543,6 +543,7 @@
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>本程序有两个线程再跑, 有两条线<strong>同时</strong>再走, 不是顺序执行!!</p>
+<hr>
 <h2 id="2-Thread类"><a href="#2-Thread类" class="headerlink" title="2. Thread类"></a>2. Thread类</h2><h3 id="2-1-Thread类构造方法"><a href="#2-1-Thread类构造方法" class="headerlink" title="2.1 Thread类构造方法:"></a>2.1 Thread类构造方法:</h3><ul>
 <li>创建Thread对象，默认有一个线程名，以Thread-开头，按序增加的数字，从0开始</li>
 <li>如果在构造Thread的时候没有传递Runnable或者没有复写Thread的run方法，该Thread不会执行任何东西。</li>
@@ -594,6 +595,7 @@
 <hr>
 <h3 id="2-3-detach-方法"><a href="#2-3-detach-方法" class="headerlink" title="2.3 detach()方法"></a>2.3 detach()方法</h3><p>分离, 主线程不和子线程回合, 也就是主线程不必等待子线程执行完毕, 但<strong>不太推荐</strong>, <code>join()</code>方法即可</p>
 <p>一旦detach之后, 与这个主线程关联的thread对象就会失去与主线程的关联, 此时这个子线程会驻留在后台运行, 由C++后台接管(<strong>守护线程</strong>), 也不能再用 <code>join</code>了, <strong>不受控制</strong></p>
+<hr>
 <p>示例代码:</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
@@ -622,6 +624,46 @@
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>一旦主线程执行完毕, 就看不到子线程打印的信息了</p>
+<hr>
+<h4 id="2-3-1-陷阱1"><a href="#2-3-1-陷阱1" class="headerlink" title="2.3.1 陷阱1"></a>2.3.1 陷阱1</h4><p><code>NOTE: </code> 使用detach()方法时, 函数传参不可用指针, 使用引用实际上也是值传递</p>
+<h4 id="2-3-2-陷阱2"><a href="#2-3-2-陷阱2" class="headerlink" title="2.3.2 陷阱2"></a>2.3.2 陷阱2</h4><p><code>NOTE: </code> 构造<code>thread</code>对象时, 参数传入临时的类对象, 那么在主线程执行完之前一定是先构造出该对象, <strong>安全</strong></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TA</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> my_i<span class="token punctuation">;</span>
+    <span class="token function">TA</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">&amp;</span>i<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token function">my_i</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 将传入的i转换为类对象</span>
+    <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"构造函数"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">TA</span><span class="token punctuation">(</span><span class="token keyword">const</span> TA <span class="token operator">&amp;</span> a<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"拷贝构造函数"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">~</span><span class="token function">TA</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"析构函数"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">thr_function2</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">const</span> TA <span class="token operator">&amp;</span>ta<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"thread 1 print "</span> <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> z <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    thread <span class="token function">ts1</span><span class="token punctuation">(</span>thr_function2<span class="token punctuation">,</span> z<span class="token punctuation">,</span> <span class="token function">TA</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ts1<span class="token punctuation">.</span><span class="token function">detach</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
 <h3 id="2-4-joinable"><a href="#2-4-joinable" class="headerlink" title="2.4 joinable()"></a>2.4 joinable()</h3><p>作用:</p>
 <p>​	判断是否可以成功使用join()或者detach(),</p>
 <p>返回: <code>true</code> 或 <code>false</code></p>
@@ -651,8 +693,10 @@
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
 <h3 id="2-5-线程id"><a href="#2-5-线程id" class="headerlink" title="2.5 线程id"></a>2.5 线程id</h3><p>每个线程(不管是主线程还是子线程)都对应着一个数字, 二七每个线程对应的id是<strong>唯一</strong>的</p>
 <p>获取线程id: <code>this_thread::get_id()</code></p>
+<hr>
 <h3 id="2-6-临时对象构造时机捕获"><a href="#2-6-临时对象构造时机捕获" class="headerlink" title="2.6 临时对象构造时机捕获"></a>2.6 临时对象构造时机捕获</h3><p>看代码:</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
@@ -702,6 +746,7 @@
 析构函数thread_id <span class="token operator">=</span> <span class="token number">2</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>用了临时对象后, 所有的A类对象都在<code>main()</code>函数中就已经构造完毕了</p>
+<hr>
 <h3 id="2-7-传递类对象-智能指针作为线程参数"><a href="#2-7-传递类对象-智能指针作为线程参数" class="headerlink" title="2.7 传递类对象, 智能指针作为线程参数"></a>2.7 传递类对象, 智能指针作为线程参数</h3><h4 id="1-使用-std-ref-函数-形参改变实参"><a href="#1-使用-std-ref-函数-形参改变实参" class="headerlink" title="1.使用: std::ref()函数 形参改变实参"></a>1.使用: <code>std::ref()</code>函数 形参改变实参</h4><p>示例:</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
@@ -746,6 +791,7 @@
 子线程的参数地址是<span class="token operator">:</span> <span class="token number">0x62fe04</span>	thread_id <span class="token operator">=</span> <span class="token number">2</span>
 析构函数thread_id <span class="token operator">=</span> <span class="token number">1</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
 <h4 id="2-智能指针-unique-ptr-lt-gt-配合-96-96-std-move-96-转移"><a href="#2-智能指针-unique-ptr-lt-gt-配合-96-96-std-move-96-转移" class="headerlink" title="2. 智能指针: unique_ptr<>配合``std::move()`转移"></a>2. 智能指针: <code>unique_ptr&lt;&gt;</code>配合``std::move()`转移</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -769,6 +815,83 @@
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="3-成员函数指针做线程函数"><a href="#3-成员函数指针做线程函数" class="headerlink" title="3. 成员函数指针做线程函数"></a>3. 成员函数指针做线程函数</h4><p>类似<code>operator()()</code>, 不在重复说明</p>
+<h2 id="3-创建多个线程"><a href="#3-创建多个线程" class="headerlink" title="3. 创建多个线程"></a>3. 创建多个线程</h2><h3 id="1-创建和等待多个线程"><a href="#1-创建和等待多个线程" class="headerlink" title="1.创建和等待多个线程"></a>1.创建和等待多个线程</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">myPrint</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"线程: "</span> <span class="token operator">&lt;&lt;</span> id <span class="token operator">&lt;&lt;</span> <span class="token string">"号开始执行"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"线程: "</span> <span class="token operator">&lt;&lt;</span> id <span class="token operator">&lt;&lt;</span> <span class="token string">"号结束"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 创建10个线程</span>
+    vector<span class="token operator">&lt;</span>thread<span class="token operator">></span> vec<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        vec<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token function">thread</span><span class="token punctuation">(</span>myPrint<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// 等待</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> iterator <span class="token operator">=</span> vec<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> iterator <span class="token operator">!=</span> vec<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> iterator<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        iterator<span class="token operator">-</span><span class="token operator">></span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"主线程最后一句话"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>结果:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">线程<span class="token operator">:</span> <span class="token number">1</span>号开始执行
+线程<span class="token operator">:</span> <span class="token number">1</span>号结束
+线程<span class="token operator">:</span> <span class="token number">2</span>号开始执行
+线程<span class="token operator">:</span> <span class="token number">2</span>号结束
+线程<span class="token operator">:</span> <span class="token number">5</span>号开始执行
+线程<span class="token operator">:</span> <span class="token number">5</span>号结束
+线程<span class="token operator">:</span> <span class="token number">4</span>号开始执行
+线程<span class="token operator">:</span> <span class="token number">4</span>号结束
+线程<span class="token operator">:</span> <span class="token number">3</span>号开始执行
+线程<span class="token operator">:</span> <span class="token number">3</span>号结束
+线程<span class="token operator">:</span> <span class="token number">0</span>号开始执行
+线程<span class="token operator">:</span> <span class="token number">0</span>号结束
+线程<span class="token operator">:</span> <span class="token number">6</span>号开始执行
+线程<span class="token operator">:</span> <span class="token number">6</span>号结束
+线程<span class="token operator">:</span> <span class="token number">7</span>号开始执行
+线程<span class="token operator">:</span> <span class="token number">7</span>号结束
+线程<span class="token operator">:</span> <span class="token number">8</span>号开始执行
+线程<span class="token operator">:</span> <span class="token number">8</span>号结束
+线程<span class="token operator">:</span> <span class="token number">9</span>号开始执行
+线程<span class="token operator">:</span> <span class="token number">9</span>号结束
+主线程最后一句话
+
+进程已结束，退出代码为 <span class="token number">0</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>  多个线程的执行顺序是乱的, 与操作系统内部对线程的调度机制有关</p>
+</blockquote>
+<hr>
+<h3 id="2-数据共享问题分析"><a href="#2-数据共享问题分析" class="headerlink" title="2. 数据共享问题分析"></a>2. 数据共享问题分析</h3><h4 id="2-1-只读数据"><a href="#2-1-只读数据" class="headerlink" title="2.1. 只读数据"></a>2.1. 只读数据</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">const</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> vec <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 共享数据, 只读(全局)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安全稳定, 不需要任何处理手段</p>
+<hr>
+<h4 id="2-2-有读有写"><a href="#2-2-有读有写" class="headerlink" title="2.2. 有读有写"></a>2.2. 有读有写</h4><blockquote>
+<p>  两个线程写数据, 八个线程读数据, 绝对崩溃</p>
+</blockquote>
+<p>处理: 读的时候不能写, 写的时候不能读, 两个线程不能同时写, 8个线程不能同时读</p>
+<hr>
+<h3 id="3-共享数据保护问题"><a href="#3-共享数据保护问题" class="headerlink" title="3. 共享数据保护问题"></a>3. 共享数据保护问题</h3><blockquote>
+<p>  使用链表(List), 保存数据, 随机插入和删除效率高</p>
+</blockquote>
+<hr>
+<h3 id="4-成员函数创建线程-面向对象思想"><a href="#4-成员函数创建线程-面向对象思想" class="headerlink" title="4. 成员函数创建线程(面向对象思想)"></a>4. 成员函数创建线程(面向对象思想)</h3><p>解决共享数据读写问题:</p>
+<blockquote>
+<p>  引入一个解决C++多线程的保护数据的第一个概念,  <strong>互斥量</strong></p>
+</blockquote>
 
                 
             </div>
@@ -1209,9 +1332,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/48.jpg" class="responsive-img" alt="多线程与并发">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="多线程与并发基本概念">
                         
-                        <span class="card-title">多线程与并发</span>
+                        <span class="card-title">多线程与并发基本概念</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
