@@ -498,7 +498,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    3k
                 </div>
                 
 
@@ -888,10 +888,117 @@
 <p>  使用链表(List), 保存数据, 随机插入和删除效率高</p>
 </blockquote>
 <hr>
-<h3 id="4-成员函数创建线程-面向对象思想"><a href="#4-成员函数创建线程-面向对象思想" class="headerlink" title="4. 成员函数创建线程(面向对象思想)"></a>4. 成员函数创建线程(面向对象思想)</h3><p>解决共享数据读写问题:</p>
+<h2 id="4-成员函数创建线程-面向对象思想"><a href="#4-成员函数创建线程-面向对象思想" class="headerlink" title="4. 成员函数创建线程(面向对象思想)"></a>4. 成员函数创建线程(面向对象思想)</h2><p><strong>解决共享数据读写问题:</strong></p>
 <blockquote>
 <p>  引入一个解决C++多线程的保护数据的第一个概念,  <strong>互斥量</strong></p>
 </blockquote>
+<h3 id="1、互斥量（mutex）的基本概念"><a href="#1、互斥量（mutex）的基本概念" class="headerlink" title="1、互斥量（mutex）的基本概念"></a>1、互斥量（mutex）的基本概念</h3><blockquote>
+<ul>
+<li>互斥量就是个类对象，可以理解为一把锁，多个线程尝试用lock()成员函数来加锁，只有一个线程能锁定成功，如果没有锁成功，那么流程将卡在lock()这里不断尝试去锁定。</li>
+<li>互斥量使用要小心，保护数据不多也不少，少了达不到效果，多了影响效率。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="2、互斥量的用法"><a href="#2、互斥量的用法" class="headerlink" title="2、互斥量的用法"></a>2、互斥量的用法</h3><p>包含<code>#include &lt;mutex&gt;</code>头文件</p>
+<p>函数<code>lock()，unlock()</code></p>
+<p>步骤：</p>
+<ol>
+<li><code>lock()</code></li>
+<li>操作共享数据，</li>
+<li><code>unlock()</code>。</li>
+</ol>
+<blockquote>
+<p>  <code>lock()</code>和<code>unlock()</code>要成对使用</p>
+</blockquote>
+<hr>
+<h3 id="3-死锁"><a href="#3-死锁" class="headerlink" title="3. 死锁"></a>3. 死锁</h3><blockquote>
+<p>  死锁推演<br>  死锁至少有两个互斥量mutex1，mutex2。</p>
+<p>  a.线程A执行时，这个线程先锁mutex1，并且锁成功了，然后去锁mutex2的时候，出现了上下文切换。<br>  b.线程B执行，这个线程先锁mutex2，因为mutex2没有被锁，即mutex2可以被锁成功，然后线程B要去锁mutex1.<br>  c.此时，死锁产生了，A锁着mutex1，需要锁mutex2，B锁着mutex2，需要锁mutex1，两个线程没办法继续运行下去。。。</p>
+</blockquote>
+<p>死锁的一般解决方案：<br>只要保证多个互斥量上锁的顺序一样就不会造成死锁。</p>
+<hr>
+<h3 id="4-lock-guard"><a href="#4-lock-guard" class="headerlink" title="4. lock_guard()"></a>4. lock_guard()</h3><blockquote>
+<ul>
+<li>构造函数里面执行了 mutex::lock()</li>
+<li>作用域结束时，析构函数执行 mutex::unlock()</li>
+<li>相当于全自动负责</li>
+</ul>
+</blockquote>
+<p><code>lock_guard&lt;mutex&gt; my_guard(my_mutex, adopt_lock);</code></p>
+<p>示例代码:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;list></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;queue></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;mutex></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">A</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">void</span> <span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Msg "</span> <span class="token operator">&lt;&lt;</span> i <span class="token operator">&lt;&lt;</span> <span class="token string">" got."</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+
+            lock_guard<span class="token operator">&lt;</span>mutex<span class="token operator">></span> <span class="token function">myGuard</span><span class="token punctuation">(</span>mtx1<span class="token punctuation">,</span> adopt_lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//            lock(mtx1, mtx2);</span>
+            msgRecvQueue<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//            mtx1.unlock();</span>
+<span class="token comment" spellcheck="true">//            mtx2.unlock();</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">void</span> <span class="token function">outMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">IsoutMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"outMsg执行, 但消息队列为空!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"END"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">bool</span> <span class="token function">IsoutMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        mtx1<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mtx2<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>msgRecvQueue<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            cout <span class="token operator">&lt;&lt;</span> <span class="token string">"删除元素 "</span> <span class="token operator">&lt;&lt;</span> msgRecvQueue<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+            msgRecvQueue<span class="token punctuation">.</span><span class="token function">pop_front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            mtx1<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            mtx2<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        mtx1<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mtx2<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token keyword">private</span><span class="token operator">:</span>
+    list<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> msgRecvQueue<span class="token punctuation">;</span>
+    mutex mtx1<span class="token punctuation">;</span>
+    mutex mtx2<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    A my_a<span class="token punctuation">,</span> my_b<span class="token punctuation">;</span>
+    thread <span class="token function">ts1</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>A<span class="token operator">::</span>getMsg<span class="token punctuation">,</span> <span class="token operator">&amp;</span>my_a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    thread <span class="token function">ts2</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>A<span class="token operator">::</span>outMsg<span class="token punctuation">,</span> <span class="token operator">&amp;</span>my_a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ts1<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ts2<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
 
                 
             </div>
