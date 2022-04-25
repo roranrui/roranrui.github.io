@@ -4,16 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第一天_栈与队列（简单）, 若然无亦的Blog">
-    <meta name="description" content="第一天_栈与队列（简单）
-  刷题日程指引: 行百里者半九十。坚持一个月刷完，一起加油！
+    <meta name="keywords" content="刷题笔记二, 若然无亦的Blog">
+    <meta name="description" content="第二天_链表(简单)一. 知识学习链表
+  链表以节点为单位，每个元素都是一个独立对象，在内存空间的存储是非连续的。链表的节点对象具有两个成员变量：「值 val」，「后继节点引用 next」 。
 
-一.知识学习栈
-  栈是一种具有 「先入后出」 特点的抽象数据结构，可使用数组或链表实现。
-
-stack&amp;lt;int&gt; stk;
-
-stk.pus">
+struct ListNode {
+   ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -36,7 +32,7 @@ stk.pus">
     </style>
 
 
-    <title>第一天_栈与队列（简单） | 若然无亦的Blog</title>
+    <title>刷题笔记二 | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -339,12 +335,12 @@ stk.pus">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/37.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第一天_栈与队列（简单）</h1>
+                    <h1 class="description center-align post-title">刷题笔记二</h1>
                 </div>
             </div>
         </div>
@@ -493,7 +489,7 @@ stk.pus">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-24
+                    2022-04-25
                 </div>
                 
 
@@ -507,7 +503,7 @@ stk.pus">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1k
                 </div>
                 
 
@@ -524,235 +520,254 @@ stk.pus">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="第一天-栈与队列（简单）"><a href="#第一天-栈与队列（简单）" class="headerlink" title="第一天_栈与队列（简单）"></a>第一天_栈与队列（简单）</h1><blockquote>
-<p>  刷题日程指引: <a target="_blank" rel="noopener" href="https://leetcode-cn.com/leetbook/read/illustration-of-algorithm/px2ds5/">行百里者半九十。坚持一个月刷完，一起加油！</a></p>
+                <h1 id="第二天-链表-简单"><a href="#第二天-链表-简单" class="headerlink" title="第二天_链表(简单)"></a>第二天_链表(简单)</h1><h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><blockquote>
+<p>  链表以节点为单位，每个元素都是一个独立对象，在内存空间的存储是非连续的。链表的节点对象具有两个成员变量：「值 <code>val</code>」，「后继节点引用 <code>next</code>」 。</p>
 </blockquote>
-<h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一.知识学习"></a>一.知识学习</h2><h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><blockquote>
-<p>  栈是一种具有 「先入后出」 特点的抽象数据结构，可使用数组或链表实现。</p>
-</blockquote>
-<pre class="line-numbers language-cpp"><code class="language-cpp">stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> stk<span class="token punctuation">;</span>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">struct</span> ListNode <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> val<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// 节点值</span>
+    ListNode <span class="token operator">*</span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 后继节点引用</span>
+    <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">val</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如下图所示，建立此链表需要实例化每个节点，并构建各节点的引用指向。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// 实例化节点</span>
+ListNode <span class="token operator">*</span>n1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 节点 head</span>
+ListNode <span class="token operator">*</span>n2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ListNode <span class="token operator">*</span>n3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-stk<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 元素 1 入栈</span>
-stk<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 元素 2 入栈</span>
-stk<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 出栈 -> 元素 2</span>
-stk<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 出栈 -> 元素 1</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>如下图所示，通过常用操作「入栈 <code>push()</code>」,「出栈 <code>pop()</code>」，展示了栈的先入后出特性。</p>
-<img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1599578767-ZifMEX-Picture4.png" alt="Picture4.png" style="zoom:150%;">
-
+<span class="token comment" spellcheck="true">// 构建引用指向</span>
+n1<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> n2<span class="token punctuation">;</span>
+n2<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> n3<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1599578767-zgLjYw-Picture3.png" alt="Picture3.png"></p>
 <hr>
-<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><blockquote>
-<p>  队列是一种具有 「先入先出」 特点的抽象数据结构，可使用链表实现。</p>
+<h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="1-从尾到头打印链表"><a href="#1-从尾到头打印链表" class="headerlink" title="1. 从尾到头打印链表"></a>1. 从尾到头打印链表</h3><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220425082308455.png" alt="image-20220425082308455" style="zoom:150%;">
+
+<p>**解题思路: **</p>
+<blockquote>
+<p>  题目要求逆序输出, 满足栈的先进后出特性, 可以用栈来模拟输出</p>
 </blockquote>
-<pre class="line-numbers language-cpp"><code class="language-cpp">queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> que<span class="token punctuation">;</span>
-
-que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 元素 1 入队</span>
-que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 元素 2 入队</span>
-que<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 出队 -> 元素 1</span>
-que<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 出队 -> 元素 2</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1599588416-Majmwh-Picture5.png" alt="Picture5.png" style="zoom:150%;">
-
-<hr>
-<h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="1-用两个栈实现队列"><a href="#1-用两个栈实现队列" class="headerlink" title="1. 用两个栈实现队列"></a>1. 用两个栈实现队列</h3><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220424211735242.png" alt="image-20220424211735242"></p>
-<p><strong>解决方案：</strong></p>
-<ul>
-<li>栈的特点是先进后出，队列的特点是先进先出，这里我们可以使用两个栈（栈A和栈B）模拟队列，具体如下：</li>
-<li>初始时，栈A和栈B都为空，当需要压入元素时，全部压入栈A；当想要元素出栈时，将栈A中的元素依次出栈并压入栈B；例如：我们将元素a，b，c依次压入栈A，要出栈时，将栈A元素出栈并压入栈B，则栈B中的元素为c,b,a；这时再进行出栈，元素为a，符合队列先进先出的特点；<img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/20200819084611888.png" alt="用两个栈实现队列" style="zoom:150%;"></li>
-</ul>
-<p>实现:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">CQueue</span> <span class="token punctuation">{</span>
+<p>实现</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> A<span class="token punctuation">;</span>
-    stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> B<span class="token punctuation">;</span>
-    <span class="token function">CQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        
-    <span class="token punctuation">}</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">reversePrint</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     
-    <span class="token keyword">void</span> <span class="token function">appendTail</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        A<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    
-    <span class="token keyword">int</span> <span class="token function">deleteHead</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>A<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+       stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> output<span class="token punctuation">;</span>
+       <span class="token keyword">while</span><span class="token punctuation">(</span>head <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            output<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>head<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            head <span class="token operator">=</span> head<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>A<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 将栈A中的值逆序保存到B</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> temp <span class="token operator">=</span> A<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            A<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            B<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">int</span> res <span class="token operator">=</span> B<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        B<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>B<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 又将B中的值逆序送回A(这样一来就满足先进先出)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> temp <span class="token operator">=</span> B<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            B<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            A<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> res<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>output<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>output<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            output<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
         <span class="token keyword">return</span> res<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">/**
- * Your CQueue object will be instantiated and called as such:
- * CQueue* obj = new CQueue();
- * obj->appendTail(value);
- * int param_2 = obj->deleteHead();
- */</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220424213830541.png" alt="image-20220424213830541"></p>
-<p>执行用时为 252 ms 的范例:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">CQueue</span> <span class="token punctuation">{</span>
-<span class="token keyword">private</span><span class="token operator">:</span>
-    stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> st1<span class="token punctuation">,</span> st2<span class="token punctuation">;</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token function">CQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-    
-    <span class="token keyword">void</span> <span class="token function">appendTail</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        st1<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    
-    <span class="token keyword">int</span> <span class="token function">deleteHead</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>st1<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> st2<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>st2<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">while</span> <span class="token punctuation">(</span>st1<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                st2<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>st1<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                st1<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">int</span> x <span class="token operator">=</span> st2<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        st2<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> x<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220425093925129.png" alt="image-20220425093925129"></p>
 <blockquote>
-<p>  只用了一次循环, 耗时少了近180毫秒</p>
+<p>  本题用栈模拟已是优解</p>
 </blockquote>
 <hr>
-<h3 id="2-包含-min-函数的栈"><a href="#2-包含-min-函数的栈" class="headerlink" title="2. 包含 min 函数的栈"></a>2. 包含 min 函数的栈</h3><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220424214313949.png" alt="image-20220424214313949" style="zoom:150%;">
+<h3 id="2-反转链表"><a href="#2-反转链表" class="headerlink" title="2. 反转链表"></a>2. 反转链表</h3><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220425085321953.png" alt="image-20220425085321953" style="zoom:150%;">
 
-<p><strong>解题思路</strong>:</p>
-<blockquote>
-<p>  使用两个stack，一个为数据栈，另一个为辅助栈。数据栈用于存储所有数据，辅助栈用于存储最小值。</p>
-<p>  普通栈的 push() 和 pop() 函数的复杂度为 O(1) ；而获取栈最小值 min() 函数需要遍历整个栈，复杂度为 O(N) 。</p>
-<p>  本题难点： 将 min() 函数复杂度降为 O(1)O(1) ，可通过建立辅助栈实现；</p>
-</blockquote>
-<ul>
-<li>数据栈 A ： 栈 A 用于存储所有元素，保证入栈 push() 函数、出栈 pop() 函数、获取栈顶 top() 函数的正常逻辑。</li>
-<li>辅助栈 B ： 栈 B中存储栈 A 中所有 非严格降序 的元素，则栈 A 中的最小元素始终对应栈 B 的栈顶元素，即 min() 函数只需返回栈 B 的栈顶元素即可。</li>
-<li>因此，只需设法维护好 栈 B 的元素，使其保持非严格降序，即可实现 min() 函数的 O(1)复杂度。</li>
-</ul>
-<ol>
-<li><p>push()–入栈的时候：首先将数值x压入数据栈A中，若辅助栈B为空或者辅助栈B的栈顶元素大于等于数值x时，则将数值x压入辅助栈中。</p>
-</li>
-<li><p>pop()—出栈的时候：当数据栈A和辅助栈的栈顶元素相同的时候，辅助栈的栈顶元素出栈。否则，数据栈的栈顶元素出栈。</p>
-</li>
-<li><p>top()函数–获得栈顶元素的时候：直接返回数据栈A的栈顶元素。</p>
-</li>
-<li><p>min()函数—栈最小元素：直接返回辅助栈B的栈顶元素。</p>
-</li>
-</ol>
+<p><strong>解题思路:</strong></p>
+<img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/20200510214622321.gif" alt="在这里插入图片描述" style="zoom:150%;">
+
+<p>用一个 <code>pre</code> 指针和一个 <code>cur</code> 指针，顾名思义，<code>curr</code> 从头开始，指向每个当前的结点，<code>pre</code> 就是 <code>cur</code> 的前一个结点。所谓反转，就是要让每个结点指向其前一个结点。每次移动，我们用 <code>cur</code> 记录当下的<code>node</code>，用 <code>pre</code> 记录前一个<code>node</code>，然后让 <code>cur.next = pre</code></p>
 <p>实现:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">MinStack</span> <span class="token punctuation">{</span>
-<span class="token keyword">private</span><span class="token operator">:</span>
-    stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> main<span class="token punctuation">,</span> help<span class="token punctuation">;</span>
-
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token comment" spellcheck="true">/** initialize your data structure here. */</span>
-    <span class="token function">MinStack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ListNode<span class="token operator">*</span> <span class="token function">reverseList</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ListNode<span class="token operator">*</span> curr <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        ListNode<span class="token operator">*</span> pre <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
 
-    <span class="token punctuation">}</span>
-    
-    <span class="token keyword">void</span> <span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>help<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> help<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">>=</span> x<span class="token punctuation">)</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>curr <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
-            help<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ListNode<span class="token operator">*</span> temp <span class="token operator">=</span>  curr<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 记录下一位</span>
+            <span class="token comment" spellcheck="true">// 反转</span>
+            curr<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 后移</span>
+            pre <span class="token operator">=</span> curr<span class="token punctuation">;</span>
+            curr <span class="token operator">=</span> temp<span class="token punctuation">;</span> 
         <span class="token punctuation">}</span>
-        main<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>           
-    <span class="token punctuation">}</span>
-    
-    <span class="token keyword">void</span> <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>main<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> help<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            help<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        main<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    
-    <span class="token keyword">int</span> <span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> main<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    
-    <span class="token keyword">int</span> <span class="token function">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> help<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> pre<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220425093805387.png" alt="image-20220425093805387"></p>
+<p>还有最普通的栈方式:</p>
+<img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/20200510214932541.gif" alt="栈实现" style="zoom:150%;">
 
-<span class="token comment" spellcheck="true">/**
- * Your MinStack object will be instantiated and called as such:
- * MinStack* obj = new MinStack();
- * obj->push(x);
- * obj->pop();
- * int param_3 = obj->top();
- * int param_4 = obj->min();
- */</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220424220317281.png" alt="image-20220424220317281"></p>
-<p>执行用时为 12 ms 的范例:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">MinStack</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token comment" spellcheck="true">/** initialize your data structure here. */</span>
-    <span class="token function">MinStack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        m_min<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>INT_MAX<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    
-    
-    <span class="token keyword">void</span> <span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-        m_data<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">&lt;</span> m_min<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            m_min<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-            m_min<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>m_min<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-cpp"><code class="language-cpp"> <span class="token keyword">public</span> ListNode <span class="token function">reverseList</span><span class="token punctuation">(</span>ListNode node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>node <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> null<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        
+       Stack<span class="token operator">&lt;</span>ListNode<span class="token operator">></span> stack <span class="token operator">=</span>  <span class="token keyword">new</span> Stack<span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>node <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            ListNode temp <span class="token operator">=</span> node<span class="token punctuation">;</span>
+            stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            node <span class="token operator">=</span> node<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        ListNode head <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>stack<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            ListNode temp1 <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ListNode temp2 <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span> null <span class="token operator">:</span> stack<span class="token punctuation">.</span><span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            temp1<span class="token punctuation">.</span>next <span class="token operator">=</span> temp2<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>temp2 <span class="token operator">==</span> null<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                temp2<span class="token punctuation">.</span>next <span class="token operator">=</span> null<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> head<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    
-    <span class="token keyword">void</span> <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       
-        m_min<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        m_data<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    
-    <span class="token keyword">int</span> <span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span>  m_data<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token punctuation">}</span>
-    
-    <span class="token keyword">int</span> <span class="token function">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> m_min<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token keyword">private</span><span class="token operator">:</span>
-    stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> m_data<span class="token punctuation">;</span>
-    stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> m_min<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">/**
- * Your MinStack object will be instantiated and called as such:
- * MinStack* obj = new MinStack();
- * obj->push(x);
- * obj->pop();
- * int param_3 = obj->top();
- * int param_4 = obj->min();
- */</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>  pop()时, 没有比较, 而是将两个栈的top()元素一起出栈了</p>
+<p>  思想其实就是利用栈先进后出的原理，把这些node逆序排起来，然后一个一个拿出来，连起来，</p>
+</blockquote>
+<hr>
+<h3 id="3-复杂链表的复制"><a href="#3-复杂链表的复制" class="headerlink" title="3. 复杂链表的复制"></a>3. 复杂链表的复制</h3><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220425091240411.png" alt="image-20220425091240411"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220425091252478.png" alt="image-20220425091252478"></p>
+<p><strong>解题思路:</strong></p>
+<blockquote>
+<p>  第一步：创建新链表时，将原链表的每一个节点复制，并连接在原节点的后面，相当于在原链表的每一个节点后面插入一个val值相等的新节点。</p>
+<p>  以例一为例：</p>
+  <img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/20210321153137291.png" alt="第一次复制过的链表" style="zoom:150%;">
+
+
+<p>  第二步：通过原链表的<code>random</code>找到新链表的<code>random</code>。新复制的节点的<code>random</code>由原节点的<code>random</code>决定，如果原节点的<code>random == NULL</code>，则新节点的<code>random == NULL</code>，否则，由于新节点还在原链表中，所以新节点的<code>random =</code> 原节点的<code>random-&gt;next</code>。</p>
+<p>  第三步：把新节点从原链表中分离出，返回新链表。</p>
+</blockquote>
+<p>实现:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    Node* next;
+    Node* random;
+    
+    Node(int _val) {
+        val = _val;
+        next = NULL;
+        random = NULL;
+    }
+};
+*/</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    Node<span class="token operator">*</span> <span class="token function">copyRandomList</span><span class="token punctuation">(</span>Node<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        Node<span class="token operator">*</span> cur <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>cur <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 拷贝原链表每一个节点并将新节点链到原节点后面</span>
+        <span class="token punctuation">{</span>
+            Node <span class="token operator">*</span> newNode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Node</span><span class="token punctuation">(</span>cur<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            newNode<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> cur<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            cur<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> newNode<span class="token punctuation">;</span>
+            cur <span class="token operator">=</span> newNode<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        cur <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>cur <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 通过原节点为新节点的random域赋值</span>
+        <span class="token punctuation">{</span>
+            Node <span class="token operator">*</span> newcur <span class="token operator">=</span> cur<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>cur<span class="token operator">-</span><span class="token operator">></span>random <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                newcur<span class="token operator">-</span><span class="token operator">></span>random <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                newcur<span class="token operator">-</span><span class="token operator">></span>random <span class="token operator">=</span> cur<span class="token operator">-</span><span class="token operator">></span>random<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            cur <span class="token operator">=</span> newcur<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        cur <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        Node<span class="token operator">*</span> newList <span class="token operator">=</span> cur<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>cur <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 将新链表从原链表中分离出来</span>
+        <span class="token punctuation">{</span>
+            Node <span class="token operator">*</span> newcur <span class="token operator">=</span> cur<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            cur<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> newcur<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            cur <span class="token operator">=</span> cur<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>cur <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                newcur<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> cur<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                newcur<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> newList<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220425093943577.png" alt="image-20220425093943577"></p>
+<p>执行用时为 8 ms 的范例:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    Node* next;
+    Node* random;
+    
+    Node(int _val) {
+        val = _val;
+        next = NULL;
+        random = NULL;
+    }
+};
+*/</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    Node<span class="token operator">*</span> <span class="token function">copyRandomList</span><span class="token punctuation">(</span>Node<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Node<span class="token operator">*</span> node <span class="token operator">=</span> head<span class="token punctuation">;</span> node <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span> node <span class="token operator">=</span> node<span class="token operator">-</span><span class="token operator">></span>next<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Node<span class="token operator">*</span> nodeNew <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Node</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            nodeNew<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> node<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            node<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> nodeNew<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Node<span class="token operator">*</span> node <span class="token operator">=</span> head<span class="token punctuation">;</span> node <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span> node <span class="token operator">=</span> node<span class="token operator">-</span><span class="token operator">></span>next<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Node<span class="token operator">*</span> nodeNew <span class="token operator">=</span> node<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            nodeNew<span class="token operator">-</span><span class="token operator">></span>random <span class="token operator">=</span> <span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>random <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token operator">?</span> node<span class="token operator">-</span><span class="token operator">></span>random<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">:</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        Node<span class="token operator">*</span> headNew <span class="token operator">=</span> head<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Node<span class="token operator">*</span> node <span class="token operator">=</span> head<span class="token punctuation">;</span> node <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span> node <span class="token operator">=</span> node<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Node<span class="token operator">*</span> nodeNew <span class="token operator">=</span> node<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            node<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> node<span class="token operator">-</span><span class="token operator">></span>next<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            nodeNew<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> <span class="token punctuation">(</span>nodeNew<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token operator">?</span> nodeNew<span class="token operator">-</span><span class="token operator">></span>next<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">:</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> headNew<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>  使用for循环 + 三目运算符, 思想基本一样</p>
 </blockquote>
 <hr>
 
@@ -781,7 +796,7 @@ que<span class="token punctuation">.</span><span class="token function">pop</spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/2022/04/24/shua-ti-bi-ji-yi/">https://roranrui.cn/2022/04/24/shua-ti-bi-ji-yi/</a>
+                    <a href="https://roranrui.cn/2022/04/25/shua-ti-bi-ji-er/">https://roranrui.cn/2022/04/25/shua-ti-bi-ji-er/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1142,9 +1157,10 @@ que<span class="token punctuation">.</span><span class="token function">pop</spa
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/04/25/shua-ti-bi-ji-er/">
                     <div class="card-image">
@@ -1162,9 +1178,9 @@ que<span class="token punctuation">.</span><span class="token function">pop</spa
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1177,6 +1193,7 @@ que<span class="token punctuation">.</span><span class="token function">pop</spa
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1203,13 +1220,13 @@ que<span class="token punctuation">.</span><span class="token function">pop</spa
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/23/51-dan-pian-ji-xue-xi-er/">
+                <a href="/2022/04/24/shua-ti-bi-ji-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/40.jpg" class="responsive-img" alt="51单片机学习（二）">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/37.jpg" class="responsive-img" alt="第一天_栈与队列（简单）">
                         
-                        <span class="card-title">51单片机学习（二）</span>
+                        <span class="card-title">第一天_栈与队列（简单）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1220,14 +1237,14 @@ que<span class="token punctuation">.</span><span class="token function">pop</spa
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" class="post-category">
-                                    嵌入式开发
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    刷题笔记
                                 </a>
                             
                             
@@ -1237,12 +1254,16 @@ que<span class="token punctuation">.</span><span class="token function">pop</spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/">
-                        <span class="chip bg-color">51单片机</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/Hardware/">
-                        <span class="chip bg-color">Hardware</span>
+                    <a href="/tags/Programming/">
+                        <span class="chip bg-color">Programming</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
