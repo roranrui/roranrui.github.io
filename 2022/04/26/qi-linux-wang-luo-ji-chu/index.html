@@ -4,16 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="用户权限相关命令, 若然无亦的Blog">
-    <meta name="description" content="用户权限相关命令目标
-用户 和 权限 的基本概念
-用户管理 终端命令
-组管理 终端命令
-修改权限 终端命令
-
-01. 用户 和 权限 的基本概念1.1 基本概念
-用户 是 Linux 系统工作中重要的一环，用户管理包括 用户 与 组 管理
-">
+    <meta name="keywords" content="七.Linux网络基础, 若然无亦的Blog">
+    <meta name="description" content="Linux的网络基础一、网络相关概述1、网络发展信息传递
+n 远古时期，人们就通过简单的语言、壁画等方式交换信息
+n 千百年来，人们一直在用语言、图符、钟鼓、烟火、竹简、纸书等传递信息
+n 古代人的烽火狼烟、飞鸽传信、驿马邮递
+n 现代社会">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -36,7 +32,7 @@
     </style>
 
 
-    <title>用户权限相关命令 | 若然无亦的Blog</title>
+    <title>七.Linux网络基础 | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -339,12 +335,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">用户权限相关命令</h1>
+                    <h1 class="description center-align post-title">七.Linux网络基础</h1>
                 </div>
             </div>
         </div>
@@ -489,21 +485,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-22
+                    2022-04-26
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-22
+                    2022-04-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2k
                 </div>
                 
 
@@ -520,363 +516,131 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="用户权限相关命令"><a href="#用户权限相关命令" class="headerlink" title="用户权限相关命令"></a>用户权限相关命令</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
-<li><strong>用户</strong> 和 <strong>权限</strong> 的基本概念</li>
-<li><strong>用户管理</strong> 终端命令</li>
-<li><strong>组管理</strong> 终端命令</li>
-<li><strong>修改权限</strong> 终端命令</li>
-</ul>
-<h2 id="01-用户-和-权限-的基本概念"><a href="#01-用户-和-权限-的基本概念" class="headerlink" title="01. 用户 和 权限 的基本概念"></a>01. <strong>用户</strong> 和 <strong>权限</strong> 的基本概念</h2><h3 id="1-1-基本概念"><a href="#1-1-基本概念" class="headerlink" title="1.1 基本概念"></a>1.1 基本概念</h3><ul>
-<li><strong>用户</strong> 是 Linux 系统工作中重要的一环，用户管理包括 <strong>用户</strong> 与 <strong>组</strong> 管理</li>
-<li>在 Linux 系统中，不论是由本机或是远程登录系统，每个系统都<strong>必须拥有一个账号</strong>，并且<strong>对于不同的系统资源拥有不同的使用权限</strong></li>
-<li>在 Linux 中，可以指定 <strong>每一个用户</strong> 针对 <strong>不同的文件或者目录</strong> 的 <strong>不同权限</strong></li>
-<li>对 <strong>文件／目录</strong> 的权限包括：</li>
-</ul>
+                <h1 id="Linux的网络基础"><a href="#Linux的网络基础" class="headerlink" title="Linux的网络基础"></a>Linux的网络基础</h1><h1 id="一、网络相关概述"><a href="#一、网络相关概述" class="headerlink" title="一、网络相关概述"></a>一、网络相关概述</h1><h2 id="1、网络发展"><a href="#1、网络发展" class="headerlink" title="1、网络发展"></a>1、网络发展</h2><p><strong>信息传递</strong></p>
+<p>n 远古时期，人们就通过简单的语言、壁画等方式交换信息</p>
+<p>n 千百年来，人们一直在用语言、图符、钟鼓、烟火、竹简、纸书等传递信息</p>
+<p>n 古代人的烽火狼烟、飞鸽传信、驿马邮递</p>
+<p>n 现代社会中，交通警的指挥手语、航海中的旗语等</p>
+<p>n 这些信息传递的基本方式都是依靠人的视觉与听觉</p>
+<p><strong>电的产生</strong></p>
+<p>n 1831年，法拉第制出了世界上最早的第一台发电机</p>
+<p>n 1866年，德国人西门子（Siemens）制成世界上第一台大功率发电机</p>
+<p>n 1837年，美国人塞缪乐·莫乐斯成功地研制出世界上第一台电磁式电报机</p>
+<p>n 1844年5月24日，莫乐斯在国会大厦联邦最高法院会议厅进行了“用莫尔斯电码”发出了人类历史上的第一份电报，从而实现了长途电报通信</p>
+<p><strong>网络诞生</strong></p>
+<p>n 1957年，前苏联发射了第一颗人造卫星，震惊了美国</p>
+<p>n 1958年美国成立了国防部<strong>高级研究计划署</strong>（ARPA，Advanced Research Projects Agency），应对冷战形势，ARPA是一个管理机构，没有实验室和科学家</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image2.png" alt="http://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Arpanet_1974.svg/800px-Arpanet_1974.svg.png"></p>
+<p>n 1969年，ARPANET（阿帕网）开始联机，<strong>因此1969年被称为Internet元年</strong></p>
+<p><strong>网络分类（记忆）</strong></p>
+<p>n <strong>局域网</strong>（Local Area Network，<strong>LAN</strong>）是指范围在几百米到十几公里内办公楼群或校园内的计算机相互连接所构成的计算机网络。</p>
+<p>n 城域网（Metropolitan Area Network，MAN）所采用的技术基本上与局域网相类似，只是规模上要大一些。城域网既可以覆盖相距不远的几栋办公楼，也可以覆盖一个城。</p>
+<p>n <strong>广域网</strong>（Wide Area Network，<strong>WAN</strong>）通常跨接很大的物理范围，如一个国家。</p>
+<p>除了上述的划分，<strong>网络还可以按照所有者分</strong>为公网、私网是两种Internet的接入方式。公网接入方式：上网的计算机得到的IP地址是Internet上的非保留地址，公网的计算机和Internet上的其他计算机可随意互相访问。私网则反之。</p>
+<h2 id="2、ip地址（重点记忆）"><a href="#2、ip地址（重点记忆）" class="headerlink" title="2、ip地址（重点记忆）"></a>2、ip地址（重点记忆）</h2><p>IP是英文Internet Protocol的缩写，意思是“网络之间互连的协议”，也就是为计算机网络相互连接进行通信而设计的<strong>协议</strong>。</p>
+<p><strong>IP地址类型分为：公有地址、私有地址。</strong></p>
+<p>公有地址</p>
+<p>公有地址（Public address）由Inter NIC（Internet Network Information Center因特网信息中心）负责。这些IP地址分配给注册并向Inter NIC提出申请的组织机构。通过它直接访问因特网。</p>
+<p><strong>私有地址（重点）</strong></p>
+<p>私有地址（Private address）属于<strong>非注册地址</strong>，专门为组织机构内部使用。以下列出留用的内部私有地址：</p>
+<p>A类 10.0.0.0–10.255.255.255</p>
+<p>B类 172.16.0.0–172.31.255.255</p>
+<p><strong>C类 192.168.0.0–192.168.255.255</strong></p>
+<p><strong>IP地址按类型可以分为三类：</strong></p>
 <table>
 <thead>
 <tr>
-<th align="center">序号</th>
-<th align="center">权限</th>
-<th align="center">英文</th>
-<th align="center">缩写</th>
-<th align="center">数字代号</th>
+<th>类别</th>
+<th>最大网络数</th>
+<th>IP地址范围</th>
+<th>最大主机数</th>
+<th>私有IP地址范围</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">01</td>
-<td align="center">读</td>
-<td align="center">read</td>
-<td align="center">r</td>
-<td align="center">4</td>
+<td>A</td>
+<td>126（2^7-2)</td>
+<td>1.0.0.0-127.255.255.255</td>
+<td>16777214</td>
+<td>10.0.0.0-10.255.255.255</td>
 </tr>
 <tr>
-<td align="center">02</td>
-<td align="center">写</td>
-<td align="center">write</td>
-<td align="center">w</td>
-<td align="center">2</td>
+<td>B</td>
+<td>16384(2^14)</td>
+<td>128.0.0.0-191.255.255.255</td>
+<td>65534</td>
+<td>172.16.0.0-172.31.255.255</td>
 </tr>
 <tr>
-<td align="center">03</td>
-<td align="center">执行</td>
-<td align="center">excute</td>
-<td align="center">x</td>
-<td align="center">1</td>
+<td>C</td>
+<td>2097152(2^21)</td>
+<td>192.0.0.0-223.255.255.255</td>
+<td>254</td>
+<td>192.168.0.0-192.168.255.255</td>
 </tr>
 </tbody></table>
-<h3 id="1-2-组"><a href="#1-2-组" class="headerlink" title="1.2 组"></a>1.2 组</h3><ul>
-<li>为了方便用户管理，提出了 <strong>组</strong> 的概念，如下图所示</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/001_%E7%BB%84%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="001_组示意图"></p>
-<ul>
-<li>在实际应用中，可以预先针对 <strong>组</strong> 设置好权限，然后 <strong>将不同的用户添加到对应的组中</strong>，从而<strong>不用依次为每一个用户设置权限</strong></li>
-</ul>
-<h3 id="1-3-ls-l-扩展"><a href="#1-3-ls-l-扩展" class="headerlink" title="1.3 ls -l 扩展"></a>1.3 ls -l 扩展</h3><ul>
-<li><p><code>ls -l</code> 可以查看文件夹下文件的详细信息，从左到右依次是：</p>
-<ul>
-<li><strong>权限</strong>，第 1 个字符如果是 <code>d</code> 表示目录</li>
-<li><strong>硬链接数</strong>，通俗地讲，就是有多少种方式，可以访问到当前目录／文件</li>
-<li><strong>拥有者</strong>，家目录下 文件／目录 的拥有者通常都是当前用户</li>
-<li><strong>组</strong>，在 Linux 中，很多时候，会出现组名和用户名相同的情况，后续会讲</li>
-<li><strong>大小</strong></li>
-<li><strong>时间</strong></li>
-<li><strong>名称</strong></li>
-</ul>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/321002.png" alt="002_权限示意图"></p>
-<h3 id="1-4-chmod-简单使用（重要）"><a href="#1-4-chmod-简单使用（重要）" class="headerlink" title="1.4 chmod 简单使用（重要）"></a>1.4 <code>chmod</code> 简单使用（重要）</h3><ul>
-<li><code>chmod</code> 可以修改 <strong>用户／组</strong> 对 <strong>文件／目录</strong> 的权限</li>
-<li>命令格式如下：</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">chmod</span> +/-rwx 文件名<span class="token operator">|</span>目录名
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<blockquote>
-<p>提示：以上方式会一次性修改 <code>拥有者</code> / <code>组</code> 权限，有关 <code>chmod</code> 的高级用法，后续会讲</p>
-</blockquote>
-<h3 id="1-5-超级用户"><a href="#1-5-超级用户" class="headerlink" title="1.5 超级用户"></a>1.5 超级用户</h3><ul>
-<li>Linux 系统中的 <code>root</code> 账号通常 <strong>用于系统的维护和管理</strong>，对操作系统的所有资源 <strong>具有所有访问权限</strong></li>
-<li>在大多数版本的 Linux 中，都不推荐 <strong>直接使用 root 账号登录系统</strong></li>
-<li>在 Linux 安装的过程中，系统会自动创建一个用户账号，而这个默认的用户就称为“标准用户”</li>
-</ul>
-<h4 id="sudo"><a href="#sudo" class="headerlink" title="sudo"></a>sudo</h4><ul>
-<li><code>su</code> 是 <code>substitute user</code> 的缩写，表示 <strong>使用另一个用户的身份</strong></li>
-<li><code>sudo</code> 命令用来以其他身份来执行命令，预设的身份为 <code>root</code></li>
-<li>用户使用 <code>sudo</code> 时，必须先输入密码，之后有 <strong>5 分钟的有效期限</strong>，超过期限则必须重新输入密码</li>
-</ul>
-<blockquote>
-<p>若其未经授权的用户企图使用 <code>sudo</code>，则会发出警告邮件给管理员</p>
-</blockquote>
-<h2 id="02-组管理-终端命令"><a href="#02-组管理-终端命令" class="headerlink" title="02. 组管理 终端命令"></a>02. <strong>组管理</strong> 终端命令</h2><blockquote>
-<p>提示：<strong>创建组</strong> / <strong>删除组</strong> 的终端命令都需要通过 <code>sudo</code> 执行</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>01</td>
-<td>groupadd 组名</td>
-<td>添加组</td>
-</tr>
-<tr>
-<td>02</td>
-<td>groupdel 组名</td>
-<td>删除组</td>
-</tr>
-<tr>
-<td>03</td>
-<td>cat /etc/group</td>
-<td>确认组信息</td>
-</tr>
-<tr>
-<td>04</td>
-<td>chgrp -R 组名 文件/目录名</td>
-<td>递归修改文件/目录的所属组</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>提示：</p>
-<ul>
-<li>组信息保存在 <code>/etc/group</code> 文件中</li>
-<li><code>/etc</code> 目录是专门用来保存 <strong>系统配置信息</strong> 的目录</li>
-</ul>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/001_%E7%BB%84%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="001_组示意图"></p>
-<ul>
-<li>在实际应用中，可以预先针对 <strong>组</strong> 设置好权限，然后 <strong>将不同的用户添加到对应的组中</strong>，从而<strong>不用依次为每一个用户设置权限</strong></li>
-</ul>
-<h4 id="演练目标"><a href="#演练目标" class="headerlink" title="演练目标"></a>演练目标</h4><ol>
-<li>在 <code>python</code> 用户的桌面文件夹下创建 <code>Python学习</code> 目录</li>
-<li>新建 <code>dev</code> 组</li>
-<li>将 <code>Python学习</code> 目录的组修改为 <code>dev</code></li>
-</ol>
-<h2 id="03-用户管理-终端命令"><a href="#03-用户管理-终端命令" class="headerlink" title="03. 用户管理 终端命令"></a>03. <strong>用户管理</strong> 终端命令</h2><blockquote>
-<p>提示：<strong>创建用户</strong> / <strong>删除用户</strong> / <strong>修改其他用户密码</strong> 的终端命令都需要通过 <code>sudo</code> 执行</p>
-</blockquote>
-<h3 id="3-1-创建用户／设置密码／删除用户"><a href="#3-1-创建用户／设置密码／删除用户" class="headerlink" title="3.1 创建用户／设置密码／删除用户"></a>3.1 创建用户／设置密码／删除用户</h3><table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>作用</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>01</td>
-<td>useradd -m -g 组 新建用户名</td>
-<td>添加新用户</td>
-<td><ul><li>-m 自动建立用户家目录</li><li>-g 指定用户所在的组，否则会建立一个和同名的组</li></ul></td>
-</tr>
-<tr>
-<td>02</td>
-<td>passwd 用户名</td>
-<td>设置用户密码</td>
-<td>如果是普通用户，直接用 passwd 可以修改自己的账户密码</td>
-</tr>
-<tr>
-<td>03</td>
-<td>userdel -r 用户名</td>
-<td>删除用户</td>
-<td>-r 选项会自动删除用户家目录</td>
-</tr>
-<tr>
-<td>04</td>
-<td>cat /etc/passwd | grep 用户名</td>
-<td>确认用户信息</td>
-<td>新建用户后，用户信息会保存在 /etc/passwd 文件中</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>提示：</p>
-<ul>
-<li>创建用户时，如果忘记添加 <code>-m</code> 选项指定新用户的家目录 —— 最简单的方法就是<strong>删除用户，重新创建</strong></li>
-<li>创建用户时，默认会创建一个和<strong>用户名</strong>同名的<strong>组名</strong></li>
-<li>用户信息保存在 <code>/etc/passwd</code> 文件中</li>
-<li>-g: 指定用户的用户主组</li>
-<li>-G: 指定用户的用户附加组</li>
-<li>-u: uid</li>
-<li>-c: comment 注释</li>
-</ul>
-<p>eg: <code>useradd -g 501 -G 500 -u 666 lisi</code></p>
-</blockquote>
-<h3 id="3-2-查看用户信息"><a href="#3-2-查看用户信息" class="headerlink" title="3.2 查看用户信息"></a>3.2 查看用户信息</h3><table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>01</td>
-<td>id [用户名]</td>
-<td>查看用户 UID 和 GID 信息</td>
-</tr>
-<tr>
-<td>02</td>
-<td>who</td>
-<td>查看当前所有登录的用户列表</td>
-</tr>
-<tr>
-<td>03</td>
-<td>whoami</td>
-<td>查看当前登录用户的账户名</td>
-</tr>
-</tbody></table>
-<h4 id="passwd-文件"><a href="#passwd-文件" class="headerlink" title="passwd 文件"></a>passwd 文件</h4><p><code>/etc/passwd</code> 文件存放的是用户的信息，由 6 个分号组成的 7 个信息，分别是</p>
-<ol>
-<li>用户名</li>
-<li>密码（x，表示加密的密码）</li>
-<li>UID（用户标识）</li>
-<li>GID（组标识）</li>
-<li>用户全名或本地帐号</li>
-<li>家目录</li>
-<li>登录使用的 Shell，就是登录之后，使用的终端命令，<code>ubuntu</code> 默认是 <code>dash</code></li>
-</ol>
-<h4 id="usermod"><a href="#usermod" class="headerlink" title="usermod"></a>usermod</h4><ul>
-<li><code>usermod</code> 可以用来设置 <strong>用户</strong> 的 <strong>主组</strong> ／ <strong>附加组</strong> 和 <strong>登录 Shell</strong>，命令格式如下：</li>
-<li><strong>主组</strong>：通常在新建用户时指定，在 <code>etc/passwd</code> 的第 4 列 <strong>GID 对应的组</strong></li>
-<li><strong>附加组</strong>：在 <code>etc/group</code> 中最后一列表示该组的用户列表，用于指定 <strong>用户的附加权限</strong></li>
-</ul>
-<blockquote>
-<p>提示：设置了用户的附加组之后，需要重新登录才能生效！</p>
-</blockquote>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 修改用户的主组（passwd 中的 GID）</span>
-<span class="token function">usermod</span> -g 组 用户名
-
-<span class="token comment" spellcheck="true"># 修改用户的附加组</span>
-<span class="token function">usermod</span> -G 组 用户名
-
-<span class="token comment" spellcheck="true"># 修改用户登录 Shell</span>
-<span class="token function">usermod</span> -s /bin/bash 用户名
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>注意：默认使用 <code>useradd</code> 添加的用户是没有权限使用 <code>sudo</code> 以 <code>root</code> 身份执行命令的，可以使用以下命令，将用户添加到 <code>sudo</code> 附加组中</p>
-</blockquote>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">usermod</span> -G <span class="token function">sudo</span> 用户名
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="which（重要）"><a href="#which（重要）" class="headerlink" title="which（重要）"></a>which（重要）</h4><blockquote>
-<p>提示</p>
-<ul>
-<li><code>/etc/passwd</code> 是用于保存用户信息的文件</li>
-<li><code>/usr/bin/passwd</code> 是用于修改用户密码的程序</li>
-</ul>
-</blockquote>
-<ul>
-<li><code>which</code> 命令可以查看执行命令所在位置，例如：</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">which</span> <span class="token function">ls</span>
-
-<span class="token comment" spellcheck="true"># 输出</span>
-<span class="token comment" spellcheck="true"># /bin/ls</span>
-
-<span class="token function">which</span> <span class="token function">useradd</span>
-
-<span class="token comment" spellcheck="true"># 输出</span>
-<span class="token comment" spellcheck="true"># /usr/sbin/useradd</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="bin-和-sbin"><a href="#bin-和-sbin" class="headerlink" title="bin 和 sbin"></a><code>bin</code> 和 <code>sbin</code></h5><ul>
-<li>在 <code>Linux</code> 中，绝大多数可执行文件都是保存在 <code>/bin</code>、<code>/sbin</code>、<code>/usr/bin</code>、<code>/usr/sbin</code></li>
-<li><code>/bin</code>（<code>binary</code>）是二进制执行文件目录，主要用于具体应用</li>
-<li><code>/sbin</code>（<code>system binary</code>）是系统管理员专用的二进制代码存放目录，主要用于系统管理</li>
-<li><code>/usr/bin</code>（<code>user commands for applications</code>）后期安装的一些软件</li>
-<li><code>/usr/sbin</code>（<code>super user commands for applications</code>）超级用户的一些管理程序</li>
-</ul>
-<blockquote>
-<p>提示：</p>
-<ul>
-<li><code>cd</code> 这个终端命令是内置在系统内核中的，没有独立的文件，因此用 <code>which</code> 无法找到 <code>cd</code> 命令的位置</li>
-</ul>
-</blockquote>
-<h3 id="3-3-切换用户"><a href="#3-3-切换用户" class="headerlink" title="3.3 切换用户"></a>3.3 切换用户</h3><table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>作用</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>01</td>
-<td>su - 用户名</td>
-<td>切换用户，并且切换目录</td>
-<td>- 可以切换到用户家目录，否则保持位置不变</td>
-</tr>
-<tr>
-<td>02</td>
-<td>exit</td>
-<td>退出当前登录账户</td>
-<td></td>
-</tr>
-</tbody></table>
-<ul>
-<li><code>su</code> 不接用户名，可以切换到 <code>root</code>，但是不推荐使用，因为不安全</li>
-<li><code>exit</code> 示意图如下：</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/003_su%E5%92%8Cexit%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="003_su和exit示意图"></p>
-<h2 id="04-修改文件权限"><a href="#04-修改文件权限" class="headerlink" title="04. 修改文件权限"></a>04. 修改文件权限</h2><table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>01</td>
-<td>chown</td>
-<td>修改拥有者</td>
-</tr>
-<tr>
-<td>02</td>
-<td>chgrp</td>
-<td>修改组</td>
-</tr>
-<tr>
-<td>03</td>
-<td>chmod</td>
-<td>修改权限</td>
-</tr>
-</tbody></table>
-<ul>
-<li>命令格式如下：</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 修改文件|目录的拥有者</span>
-<span class="token function">chown</span> 用户名 文件名<span class="token operator">|</span>目录名
-
-<span class="token comment" spellcheck="true"># 递归修改文件|目录的组</span>
-<span class="token function">chgrp</span> -R 组名 文件名<span class="token operator">|</span>目录名
-
-<span class="token comment" spellcheck="true"># 递归修改文件权限</span>
-<span class="token function">chmod</span> -R 755 文件名<span class="token operator">|</span>目录名
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li><code>chmod</code> 在设置权限时，可以简单地使用三个数字分别对应 <strong>拥有者</strong> ／ <strong>组</strong> 和 <strong>其他</strong> 用户的权限</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 直接修改文件|目录的 读|写|执行 权限，但是不能精确到 拥有者|组|其他</span>
-<span class="token function">chmod</span> +/-rwx 文件名<span class="token operator">|</span>目录名
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/004_%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="004_文件权限示意图"></p>
-<ul>
-<li>常见数字组合有（<code>u</code>表示用户／<code>g</code>表示组／<code>o</code>表示其他）：<ul>
-<li><code>777</code> ===&gt; <code>u=rwx,g=rwx,o=rwx</code> </li>
-<li><code>755</code> ===&gt; <code>u=rwx,g=rx,o=rx</code></li>
-<li><code>644</code> ===&gt; <code>u=rw,g=r,o=r</code></li>
-</ul>
-</li>
-</ul>
-<h4 id="chmod-演练目标"><a href="#chmod-演练目标" class="headerlink" title="chmod 演练目标"></a><code>chmod</code> 演练目标</h4><ol>
-<li>将 <code>01.py</code> 的权限修改为 <code>u=rwx,g=rx,o=r</code> </li>
-<li>将 <code>123.txt</code> 的权限修改为 <code>u=rw,g=r,o=-</code> </li>
-<li>将 <code>test</code> 目录以及目录下的 <strong>所有</strong> 文件权限修改为 <code>u=rwx,g=rwx,o=rx</code></li>
-</ol>
+<p>网络运维相关技能：ip分类、<strong>子网划分</strong>、划分vlan、ACL、综合布线、各种Serve的搭建。</p>
+<p>127.0.0.1         本机ip</p>
+<h2 id="3、网卡"><a href="#3、网卡" class="headerlink" title="3、网卡"></a>3、网卡</h2><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/clip_image004.jpg" alt="img"></p>
+<p>网卡是一个网络组件，属于硬件范畴，主要负责计算机之间数据的<strong>封装和解封</strong>。</p>
+<p>MAC地址：网卡的物理地址，网卡设备的编号，<strong>默认</strong>情况是全球唯一的（16进制）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image5.png" alt="img"></p>
+<p><strong>与IP地址的区别：</strong></p>
+<p>n 长度不同。IP地址为32位，MAC地址为48位。</p>
+<p>n 分配依据不同。</p>
+<p>n <strong>网络寻址方式不同</strong>。OSI参考模型，ip地址是基于第三层工作（网络层），mac地址是第二层（数据链路层）</p>
+<h2 id="4、网线"><a href="#4、网线" class="headerlink" title="4、网线"></a>4、网线</h2><p>网线是连接局域网必不可少的。在局域网中常见的网线主要有双绞线（RJ45接口）、铜轴电缆、光缆三种。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image7.jpg" alt="img"><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image9.jpg" alt="img"><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image11.jpg" alt="img"></p>
+<p>​         双绞线                       铜轴电缆                  光纤</p>
+<h2 id="5、交换机"><a href="#5、交换机" class="headerlink" title="5、交换机"></a>5、交换机</h2><p>交换机（Switch）意为“开关”，是一种用于电（光）信号转发的网络设备，交换机它可以为接入交换机的任意两个网络节点提供<strong>独享</strong>的电信号通路。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image13.jpg" alt="img"></p>
+<p>目前，交换机品牌比较有名的是：华为、华三（h3c）、思科、锐捷。</p>
+<h2 id="6、路由器"><a href="#6、路由器" class="headerlink" title="6、路由器"></a>6、路由器</h2><p>路由器（Router）又称网关设备（Gateway）是用于<strong>连接多个逻辑上分开、相对独立的网络</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image15.jpg" alt="img">       <img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image17.jpg" alt="img"></p>
+<h2 id="7、拓扑结构图（扩展）"><a href="#7、拓扑结构图（扩展）" class="headerlink" title="7、拓扑结构图（扩展）"></a>7、拓扑结构图（扩展）</h2><p>所谓“拓扑”就是把实体抽象成与其大小、形状无关的“点”，而把连接实体的线路抽象成“线”，进而以图的形式来表示这些点与线之间关系的方法，<strong>其目的在于研究这些点、线之间的相连关系</strong>。表示点和线之间关系的图被称为拓扑结构图。</p>
+<p>常见的几种拓扑结构图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/clip_image019.jpg" alt="img">  <img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image21.jpg" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image23.jpg" alt="img">          <img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image25.jpg" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image27.jpg" alt="img">         <img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image29.jpg" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image31.jpg" alt="img"></p>
+<h1 id="二、网络相关命令"><a href="#二、网络相关命令" class="headerlink" title="二、网络相关命令"></a>二、网络相关命令</h1><h2 id="1、ping"><a href="#1、ping" class="headerlink" title="1、ping"></a>1、ping</h2><p><strong>作用：检测当前主机与目标主机之间的连通性</strong>（不是100%准确，有的服务器是禁ping）</p>
+<p>语法：#ping 主机地址（ip地址、主机名、域名等）</p>
+<p>例如：测试和baidu.com之间的连通性。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image33.jpg" alt="img"></p>
+<p>该命令可以跨平台，windows下也可以使用，语法一致。（区别在于Linux下默认一直发送，windows下默认发送4个数据包）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image35.jpg" alt="img"></p>
+<h2 id="2、netstat"><a href="#2、netstat" class="headerlink" title="2、netstat"></a>2、netstat</h2><p><strong>作用：表示查看网络的连接信息</strong></p>
+<p>语法：#netstat -tnlp      （-t：tcp协议，-n：将字母转化成数字，-l：列出状态为监听，-p：显示进程相关信息）</p>
+<p>​     #netstat -an       （-a：表示全部，-n：将字母转化为数字）</p>
+<p>TCP/IP协议需要使用这个命令。</p>
+<h2 id="3、traceroute"><a href="#3、traceroute" class="headerlink" title="3、traceroute"></a>3、traceroute</h2><p><strong>作用：查找当前主机与目标主机之间所有的网关</strong>（路由器，会给沿途各个路由器发送icmp数据包，路由器可能会不给响应）。</p>
+<p>该命令不是内置命令，需要安装，但是目前的已经安装好了（之前选了开发工具）。</p>
+<p>语法：#traceroute 主机地址</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image37.jpg" alt="img"></p>
+<p>类似于查看快递的跟踪路由：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image39.jpg" alt="img"></p>
+<p>扩展：在windows下也有类似的命令：tracert 主机地址</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image41.jpg" alt="img"></p>
+<p>在线工具网址：<a target="_blank" rel="noopener" href="http://tool.chinaz.com/">http://tool.chinaz.com</a></p>
+<h2 id="4、arp"><a href="#4、arp" class="headerlink" title="4、arp"></a>4、arp</h2><p>地址解析协议，即ARP（Address Resolution Protocol），是<strong>根据IP地址获取（MAC）物理地址的协议</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/clip_image043.png" alt="img"></p>
+<p><strong>当一个主机发送数据时，首先查看本机MAC地址缓存中有没有目标主机的MAC地址，</strong> <strong>如果有就使用缓存中的结果；如果没有，ARP协议就会发出一个广播包，该广播包要求查询目标主机IP地址对应的MAC地址，拥有该IP地址的主机会发出回应，回应中包括了目标主机的MAC地址，这样发送方就得到了目标主机的MAC地址。如果目标主机不在本地子网中，则ARP解析到的MAC地址是默认网关的MAC地址</strong>。</p>
+<p>常用语法：#arp -a     查看本地缓存mac表</p>
+<p>​          #arp -d 主机地址            删除指定的缓存记录</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image45.jpg" alt="img"></p>
+<p>该命令在windows下同样适用。</p>
+<h2 id="5、tcpdump-了解"><a href="#5、tcpdump-了解" class="headerlink" title="5、tcpdump(了解)"></a>5、tcpdump(了解)</h2><p>作用：抓包，抓取数据表</p>
+<p>常用语法：</p>
+<p>​    #tcpdump 协议 port 端口</p>
+<p>​    #tcpdump 协议 port 端口 host 地址</p>
+<p>​    #tcpdump -i 网卡设备名</p>
+<p>查看22端口（ssh）的数据包：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/cclip_image47.jpg" alt="img"></p>
+<p>00:09:17.xxxx         监听数据的时分秒</p>
+<p>IP：使用的协议类型</p>
+<p>192.168.21.1          数据包的一个方向（来自）</p>
+<p>&gt;                    数据的流向</p>
+<p>192.168.21.136        数据包的另外一个方向（到达）</p>
 
                 
             </div>
@@ -903,7 +667,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/2022/04/22/yong-hu-quan-xian-xiang-guan-ming-ling/">https://roranrui.cn/2022/04/22/yong-hu-quan-xian-xiang-guan-ming-ling/</a>
+                    <a href="https://roranrui.cn/2022/04/26/qi-linux-wang-luo-ji-chu/">https://roranrui.cn/2022/04/26/qi-linux-wang-luo-ji-chu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1264,13 +1028,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/04/22/yuan-cheng-guan-li-chang-yong-ming-ling/">
+                <a href="/2022/04/26/shell-ru-men/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/48.jpg" class="responsive-img" alt="远程管理常用命令">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/42.jpg" class="responsive-img" alt="Shell入门">
                         
-                        <span class="card-title">远程管理常用命令</span>
+                        <span class="card-title">Shell入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1281,14 +1045,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    操作系统学习
+                            <a href="/categories/Shell%E8%84%9A%E6%9C%AC/" class="post-category">
+                                    Shell脚本
                                 </a>
                             
                             
@@ -1298,12 +1062,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
-                    </a>
-                    
                     <a href="/tags/Linux/">
                         <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/shell/">
+                        <span class="chip bg-color">shell</span>
                     </a>
                     
                 </div>
@@ -1317,13 +1081,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/22/xi-tong-xin-xi-xiang-guan-ming-ling/">
+                <a href="/2022/04/26/liu.linux-quan-xian-guan-li-cao-zuo/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/47.jpg" class="responsive-img" alt="系统信息相关命令">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="六.Linux权限管理操作">
                         
-                        <span class="card-title">系统信息相关命令</span>
+                        <span class="card-title">六.Linux权限管理操作</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1334,7 +1098,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
                             </span>
                         <span class="publish-author">
                             
