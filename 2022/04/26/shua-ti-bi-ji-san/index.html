@@ -4,14 +4,19 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="系统信息相关命令, 若然无亦的Blog">
-    <meta name="description" content="系统信息相关命令
-本节内容主要是为了方便通过远程终端维护服务器时，查看服务器上当前 系统日期和时间 ／ 磁盘空间占用情况 ／ 程序执行情况
-本小结学习的终端命令基本都是查询命令，通过这些命令对系统资源的使用情况有个了解
+    <meta name="keywords" content="第三天_字符串（简单), 若然无亦的Blog">
+    <meta name="description" content="第三天_字符串（简单)一. 知识学习
+  字符串就是由字符组成的数组
 
-目标
-时间和日期
-">
+
+  本质：
+
+string是C++风格的字符串，而string本质上是一个类
+
+  string和char * 区别：
+
+char * 是一个指针
+string是一个">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -34,7 +39,7 @@
     </style>
 
 
-    <title>系统信息相关命令 | 若然无亦的Blog</title>
+    <title>第三天_字符串（简单) | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -337,12 +342,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/47.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/45.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">系统信息相关命令</h1>
+                    <h1 class="description center-align post-title">第三天_字符串（简单)</h1>
                 </div>
             </div>
         </div>
@@ -458,12 +463,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                                <span class="chip bg-color">操作系统</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
                             </a>
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
+                            <a href="/tags/Programming/">
+                                <span class="chip bg-color">Programming</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -474,8 +483,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                操作系统学习
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
+                                刷题笔记
                             </a>
                         
                     </div>
@@ -487,21 +496,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-22
+                    2022-04-26
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-22
+                    2022-04-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    333
                 </div>
                 
 
@@ -518,310 +527,90 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="系统信息相关命令"><a href="#系统信息相关命令" class="headerlink" title="系统信息相关命令"></a>系统信息相关命令</h1><ul>
-<li>本节内容主要是为了方便通过远程终端维护服务器时，查看服务器上当前 <strong>系统日期和时间</strong> ／ <strong>磁盘空间占用情况</strong> ／ <strong>程序执行情况</strong></li>
-<li>本小结学习的终端命令基本都是查询命令，通过这些命令对系统资源的使用情况有个了解</li>
-</ul>
-<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
-<li><p>时间和日期</p>
-<ul>
-<li><h3 id="date"><a href="#date" class="headerlink" title="date"></a><code>date</code></h3></li>
-<li><h3 id="cal"><a href="#cal" class="headerlink" title="cal"></a><code>cal</code></h3></li>
-</ul>
-</li>
-<li><p>磁盘和目录空间</p>
-<ul>
-<li><code>df</code></li>
-<li><code>du</code></li>
-</ul>
-</li>
-<li><p>进程信息</p>
-<ul>
-<li><p><code>ps</code></p>
-</li>
-<li><p><code>top</code></p>
-</li>
-<li><p><code>kill</code></p>
-</li>
-<li><p><code>free</code></p>
-</li>
-<li><p><code> head</code></p>
-</li>
-<li><h3 id="tail"><a href="#tail" class="headerlink" title="tail"></a><code>tail</code></h3></li>
-<li><p><code>less</code></p>
-</li>
-<li><p><code>wc</code></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="01-时间和日期"><a href="#01-时间和日期" class="headerlink" title="01. 时间和日期"></a>01. 时间和日期</h2><table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>01</td>
-<td>date</td>
-<td>查看系统时间(读取 )</td>
-</tr>
-<tr>
-<td>02</td>
-<td>cal</td>
-<td><code>calendar</code> 查看日历，<code>-y</code> 选项可以查看一年的日历</td>
-</tr>
-</tbody></table>
-<p><code>date</code>:  形式: 2022 年 4月7日 星期四 22:25:28</p>
-<p><code>date +%F("+%Y-%m-%d") </code>:  形式: 2022-4-7</p>
-<p><code>date "+%F %T(%H:%M:%S)"</code>: 2022-4-7 22:28:32 (+表示读取)</p>
-<p>获取之前或者之后的某个时间</p>
-<p><code>date -d "-1 day" "+%F %T"</code></p>
-<table>
-<thead>
-<tr>
-<th>可选值</th>
-<th>符号</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>单位可选</td>
-<td>+/-</td>
-</tr>
-<tr>
-<td>符号可选:</td>
-<td>day month year</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>意义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>%F</td>
-<td>完整年月日</td>
-</tr>
-<tr>
-<td>%T</td>
-<td>完整时分秒</td>
-</tr>
-<tr>
-<td>%Y</td>
-<td>完整四位年份</td>
-</tr>
-<tr>
-<td>%m</td>
-<td>两位月份</td>
-</tr>
-<tr>
-<td>%d</td>
-<td>日期(前导0)</td>
-</tr>
-<tr>
-<td>%H</td>
-<td>小时</td>
-</tr>
-<tr>
-<td>%M</td>
-<td>分钟</td>
-</tr>
-<tr>
-<td>%S</td>
-<td>秒数</td>
-</tr>
-</tbody></table>
-<p><code>cal == cal -1</code>: 输出本月</p>
-<p><code>cal -3</code>: 输出上月 本月 下月</p>
-<h2 id="02-磁盘信息"><a href="#02-磁盘信息" class="headerlink" title="02. 磁盘信息"></a>02. 磁盘信息</h2><table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>01</td>
-<td>df -h</td>
-<td><code>disk free</code> 显示磁盘剩余空间</td>
-</tr>
-<tr>
-<td>02</td>
-<td>du -h [目录名]</td>
-<td><code>disk usage</code> 显示目录下的文件大小</td>
-</tr>
-</tbody></table>
-<ul>
-<li>选项说明</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-h</td>
-<td>以人性化的方式显示文件大小</td>
-</tr>
-</tbody></table>
-<h2 id="03-进程信息"><a href="#03-进程信息" class="headerlink" title="03. 进程信息"></a>03. 进程信息</h2><ul>
-<li>所谓 <strong>进程</strong>，通俗地说就是 <strong>当前正在执行的一个程序</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>01</td>
-<td>ps - aux</td>
-<td><code>process status</code> 查看进程的详细状况</td>
-</tr>
-<tr>
-<td>02</td>
-<td>top</td>
-<td><strong>动态</strong>显示运行中的进程并且排序</td>
-</tr>
-<tr>
-<td>03</td>
-<td>kill [-9] 进程代号</td>
-<td>终止指定代号的进程，<code>-9</code> 表示强行终止</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p><code>ps</code> 默认只会显示当前用户通过终端启动的应用程序</p>
-</blockquote>
-<ul>
-<li><code>ps</code> 选项说明</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>a(e)</td>
-<td>显示终端上的所有进程，包括其他用户的进程</td>
-</tr>
-<tr>
-<td>u</td>
-<td>显示进程的详细状态</td>
-</tr>
-<tr>
-<td>x</td>
-<td>显示没有控制终端的进程</td>
-</tr>
-<tr>
-<td>f</td>
-<td>显示全部的列</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>列的含义: </p>
-<p>UID: 该进程执行的用户id</p>
-<p><strong>PID: 进程id</strong></p>
-<p><strong>PPID: 该进程的父级进程id, 无父级进程的称为僵尸进程</strong></p>
-<p>C: Cpu占用率, 形式是百分数</p>
-<p>STIME: 进程的启动时间</p>
-<p>TTY: 发起该进程的设备识别符号</p>
-<p>CMD: 进程名称或对应路径</p>
-</blockquote>
-<p>查看指定进程: <code>ps -ef | grep 进程</code> </p>
-<blockquote>
-<p>top表头含义:</p>
-<p>PR: 优先级</p>
-<p>VIRT: 虚拟内存</p>
-<p>RES: 常驻内存</p>
-<p>SHR: 共享内存</p>
-<p>一个进程实际使用的内存 = RES - SHR </p>
-<p>S: sleeping R: running</p>
+                <h1 id="第三天-字符串（简单"><a href="#第三天-字符串（简单" class="headerlink" title="第三天_字符串（简单)"></a>第三天_字符串（简单)</h1><h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><blockquote>
+<p>  字符串就是由字符组成的数组</p>
 </blockquote>
 <blockquote>
-<p>提示：使用 <code>kill</code> 命令时，最好只终止由当前用户开启的进程，而不要终止 <code>root</code> 身份开启的进程，否则可能导致系统崩溃</p>
-<p><code>killall 进程名称</code></p>
-</blockquote>
-<blockquote>
+<p>  <strong>本质：</strong></p>
 <ul>
-<li>要退出 <code>top</code> 可以直接输入 <code>q</code></li>
-<li><code>M</code>: 按内存从高到低进行降序排列</li>
-<li><code>1</code>: 切换显示cpu的详细信息</li>
+<li>string是C++风格的字符串，而string本质上是一个类</li>
+</ul>
+<p>  <strong>string和char * 区别：</strong></p>
+<ul>
+<li>char * 是一个指针</li>
+<li>string是一个类，类内部封装了char<em>，管理这个字符串，是一个char</em>型的容器。</li>
 </ul>
 </blockquote>
-<h4 id="free"><a href="#free" class="headerlink" title="free"></a>free</h4><p><code>free</code>: 查看内存使用情况</p>
-<p><code>-m</code>: 以mb为单位查看 </p>
-<p><code>head -n</code> : 查看一个文件的前n行, 如果不指定n, 则默认显示前10行 </p>
-<h4 id="tail-1"><a href="#tail-1" class="headerlink" title="tail"></a>tail</h4><p><code>tail -n</code>: 查看一个文件的后n行, 如果不指定n, 则默认显示后10行</p>
-<p><code>tail -f</code>: 查看文件的动态变化(<strong>变化的内容不能是用户手动添加的, 可以借助输出重定向</strong>) 一般用于查看系统日志</p>
-<h4 id="less"><a href="#less" class="headerlink" title="less"></a>less</h4><p><code>less</code>: 查看文件, 以较少内容进行输出, 按下辅助按键查看更多(数字 空格 上下键)</p>
-<p><code>wc</code>: 统计文件内容信息(行数, 单词数, 字节数)</p>
-<table>
-<thead>
-<tr>
-<th>-l</th>
-<th>lines 行数</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-w</td>
-<td>words 单词数(空格判断)</td>
-</tr>
-<tr>
-<td>-c</td>
-<td>bytes 字节数</td>
-</tr>
-</tbody></table>
-<h4 id="service"><a href="#service" class="headerlink" title="service"></a>service</h4><p>控制一些软件的服务启动/停止/重启</p>
-<p><code>service 服务名 start/stop/restart</code></p>
-<p><code>service httpd start</code>: 启动<em>Apache</em></p>
-<h2 id="04-系统优先级"><a href="#04-系统优先级" class="headerlink" title="04. 系统优先级"></a>04. 系统优先级</h2><table>
-<thead>
-<tr>
-<th>代号</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0 –halt</td>
-<td>关机模式</td>
-</tr>
-<tr>
-<td>1 Single user mode</td>
-<td>单用户模式</td>
-</tr>
-<tr>
-<td>2 Multiuser without NFS</td>
-<td>多用户模式</td>
-</tr>
-<tr>
-<td>3 full Multiuser mode</td>
-<td>全多用户模式</td>
-</tr>
-<tr>
-<td>4 -unused</td>
-<td>保留</td>
-</tr>
-<tr>
-<td>5 -X11 <strong>default</strong></td>
-<td>完整的图形化界面模式</td>
-</tr>
-<tr>
-<td>6 -reboot</td>
-<td>重启模式</td>
-</tr>
-</tbody></table>
-<p>命令行输入<code>init 数字</code>执行相应的进程</p>
+<hr>
+<h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="1-替换空格"><a href="#1-替换空格" class="headerlink" title="1. 替换空格"></a>1. 替换空格</h3><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220426123725224.png" alt="image-20220426123725224"></p>
+<p>实现:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    string <span class="token function">replaceSpace</span><span class="token punctuation">(</span>string s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        string res<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> s<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">' '</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                res <span class="token operator">+</span><span class="token operator">=</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                res <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">"%20"</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220426123828786.png" alt="image-20220426123828786"></p>
+<hr>
+<h3 id="2-左旋转字符串"><a href="#2-左旋转字符串" class="headerlink" title="2. 左旋转字符串"></a>2. 左旋转字符串</h3><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220426123856996.png" alt="image-20220426123856996"></p>
+<p><strong>解题思路:</strong></p>
+<p>读取字符串到指定位数, 然后存储, 删除从0到指定位数的字符, 再将存储的字符串加到原字符串末尾.</p>
+<p>实现:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    string <span class="token function">reverseLeftWords</span><span class="token punctuation">(</span>string s<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> 
+    <span class="token punctuation">{</span>
+        string temp<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            temp <span class="token operator">+</span><span class="token operator">=</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        s<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        s <span class="token operator">+</span><span class="token operator">=</span> temp<span class="token punctuation">;</span>
+
+        <span class="token keyword">return</span> s<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220426124351559.png" alt="image-20220426124351559"></p>
+<p><strong>执行用时为 0 ms 的范例:</strong></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    string <span class="token function">reverseLeftWords</span><span class="token punctuation">(</span>string s<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">reverse</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">reverse</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> n<span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">reverse</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> s<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>  reverse(first, end)函数，包含在#include&lt;**algorithm**&gt;里，<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4&amp;spm=1001.2101.3001.7020">命名空间</a>std, 可以反转顺序</p>
+</blockquote>
+<p>使用三次<code>reverse()函数</code>, </p>
+<ul>
+<li><p>第一次反转从开始到指定位数的字符, 如: in: <code>abcde, 2</code></p>
+<p>out :<strong>bacde</strong>;</p>
+</li>
+<li><p>第二次反转指定位数后面的字符, out: <strong>baedc</strong></p>
+</li>
+<li><p>第三次再反转整个字符串, 从而达到目的</p>
+</li>
+</ul>
 
                 
             </div>
@@ -848,7 +637,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/2022/04/22/xi-tong-xin-xi-xiang-guan-ming-ling/">https://roranrui.cn/2022/04/22/xi-tong-xin-xi-xiang-guan-ming-ling/</a>
+                    <a href="https://roranrui.cn/2022/04/26/shua-ti-bi-ji-san/">https://roranrui.cn/2022/04/26/shua-ti-bi-ji-san/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -886,12 +675,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                                    <span class="chip bg-color">操作系统</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
                                 </a>
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
+                                <a href="/tags/Programming/">
+                                    <span class="chip bg-color">Programming</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -1205,17 +998,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/04/22/yong-hu-quan-xian-xiang-guan-ming-ling/">
+                <a href="/2022/04/26/shua-ti-bi-ji-san/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="用户权限相关命令">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/45.jpg" class="responsive-img" alt="第三天_字符串（简单)">
                         
-                        <span class="card-title">用户权限相关命令</span>
+                        <span class="card-title">第三天_字符串（简单)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1225,30 +1019,35 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    操作系统学习
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    刷题笔记
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/Programming/">
+                        <span class="chip bg-color">Programming</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -1262,13 +1061,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/22/wen-jian-he-mu-lu-xiang-guan-ming-ling/">
+                <a href="/2022/04/26/windows-mei-hua-jiao-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="文件和目录相关命令">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="WINDOWS美化教程">
                         
-                        <span class="card-title">文件和目录相关命令</span>
+                        <span class="card-title">WINDOWS美化教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1279,14 +1078,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    操作系统学习
+                            <a href="/categories/%E7%BE%8E%E5%8C%96%E6%95%99%E7%A8%8B/" class="post-category">
+                                    美化教程
                                 </a>
                             
                             
@@ -1296,12 +1095,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
+                    <a href="/tags/%E6%A1%8C%E9%9D%A2%E7%BE%8E%E5%8C%96/">
+                        <span class="chip bg-color">桌面美化</span>
                     </a>
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">
+                        <span class="chip bg-color">经验分享</span>
                     </a>
                     
                 </div>
