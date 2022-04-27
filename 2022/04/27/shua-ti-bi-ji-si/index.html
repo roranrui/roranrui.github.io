@@ -699,7 +699,7 @@ dic<span class="token punctuation">.</span><span class="token function">find</sp
 <p>排序数组 nums 中的所有数字 target 形成一个窗口，记窗口的 左 / 右边界 索引分别为 left和 right ，分别对应窗口左边 / 右边的首个元素。</p>
 <p>本题要求统计数字 target 的出现次数，可转化为：使用二分法分别找到 左边界 leftleft 和 右边界 rightright ，易得数字 target 的数量为 right - left - 1。</p>
 <blockquote>
-<p>  <strong>算法解析：</strong><br>  初始化： 左边界 i = 0 ，右边界 j = len(nums) - 1 。<br>  循环二分： 当闭区间 [i, j] 无元素时跳出；<br>  计算中点 m = (i + j) / 2（向下取整）；<br>  若 nums[m] &lt; target ，则 target 在闭区间 [m + 1, j]中，因此执行 i = m + 1；<br>  若 nums[m] &gt; target ，则 targett 在闭区间 [i, m - 1]中，因此执行 j = m - 1；<br>  若 nums[m] = target ，则右边界 right在闭区间 [m+1, j]中；左边界 left在闭区间 [i, m-1] 中。因此分为以下两种情况：<br>  若查找 右边界 right ，则执行 i = m + 1 ；（跳出时 i 指向右边界）<br>  若查找 左边界 left ，则执行 j = m - 1 ；（跳出时 j指向左边界）<br>  返回值： 应用两次二分，分别查找 rightright 和 leftleft ，最终返回 right - left - 1right−left−1 即可。</p>
+<p>  <strong>算法解析：</strong><br>  初始化： 左边界 i = 0 ，右边界 j = len(nums) - 1 。<br>  循环二分： 当闭区间 [i, j] 无元素时跳出；<br>  计算中点 m = (i + j) / 2（向下取整）；<br>  若 nums[m] &lt; target ，则 target 在闭区间 [m + 1, j]中，因此执行 i = m + 1；<br>  若 nums[m] &gt; target ，则 target 在闭区间 [i, m - 1]中，因此执行 j = m - 1；<br>  若 nums[m] = target ，则右边界 right在闭区间 [m+1, j]中；左边界 left在闭区间 [i, m-1] 中。因此分为以下两种情况：<br>  若查找 右边界 right ，则执行 i = m + 1 ；（跳出时 i 指向右边界）<br>  若查找 左边界 left ，则执行 j = m - 1 ；（跳出时 j指向左边界）<br>  返回值： 应用两次二分，分别查找 right 和 left ，最终返回 right - left - 1right−left−1 即可。</p>
 </blockquote>
 <blockquote>
 <p>  效率优化：<br>  以下优化基于：查找完右边界 right = i 后，则 nums[j]指向最右边的 target （若存在）。</p>
