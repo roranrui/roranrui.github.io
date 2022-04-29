@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第四天_查找算法（简单）, 若然无亦的Blog">
-    <meta name="description" content="第四天_查找算法（简单）一. 知识学习散列表(HashSet)散列表是一种非线性数据结构，通过利用 Hash 函数将指定的「键 key」映射至对应的「值 value」，以实现高效的元素查找。
-
-  设想一个简单场景：小力、小特、小扣的学号分">
+    <meta name="keywords" content="第六天_搜索与回溯算法（简单）, 若然无亦的Blog">
+    <meta name="description" content="第六天_搜索与回溯算法（简单）一. 知识学习广度优先算法
+  广度优先搜索算法（Breadth-First Search，BFS）是一种盲目搜寻法，目的是系统地展开并检查图中的所有节点，以找寻结果。换句话说，它并不考虑结果的可能位置，彻底地">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,7 +29,7 @@
     </style>
 
 
-    <title>第四天_查找算法（简单） | 若然无亦的Blog</title>
+    <title>第六天_搜索与回溯算法（简单） | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -333,12 +332,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第四天_查找算法（简单）</h1>
+                    <h1 class="description center-align post-title">第六天_搜索与回溯算法（简单）</h1>
                 </div>
             </div>
         </div>
@@ -487,21 +486,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-27
+                    2022-04-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-27
+                    2022-04-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.9k
+                    2.1k
                 </div>
                 
 
@@ -518,287 +517,191 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="第四天-查找算法（简单）"><a href="#第四天-查找算法（简单）" class="headerlink" title="第四天_查找算法（简单）"></a>第四天_查找算法（简单）</h1><h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><h3 id="散列表-HashSet"><a href="#散列表-HashSet" class="headerlink" title="散列表(HashSet)"></a>散列表(HashSet)</h3><p>散列表是一种非线性数据结构，通过利用 Hash 函数将指定的「键 <code>key</code>」映射至对应的「值 <code>value</code>」，以实现高效的元素查找。</p>
-<blockquote>
-<p>  设想一个简单场景：小力、小特、小扣的学号分别为 10001, 10002, 10003 。<br>  现需求从「姓名」查找「学号」。</p>
+                <h1 id="第六天-搜索与回溯算法（简单）"><a href="#第六天-搜索与回溯算法（简单）" class="headerlink" title="第六天_搜索与回溯算法（简单）"></a>第六天_搜索与回溯算法（简单）</h1><h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><h3 id="广度优先算法"><a href="#广度优先算法" class="headerlink" title="广度优先算法"></a>广度优先算法</h3><blockquote>
+<p>  广度优先搜索算法（Breadth-First Search，BFS）是一种盲目搜寻法，目的是系统地展开并检查图中的所有节点，以找寻结果。换句话说，它并不考虑结果的可能位置，彻底地搜索整张图，直到找到结果为止。BFS并不使用经验法则算法。</p>
 </blockquote>
-<p>则可通过建立姓名为 key ，学号为 value 的散列表实现此需求，代码如下：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// 初始化散列表</span>
-unordered_map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span> dic<span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">// 添加 key -> value 键值对</span>
-dic<span class="token punctuation">[</span><span class="token string">"小力"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10001</span><span class="token punctuation">;</span>
-dic<span class="token punctuation">[</span><span class="token string">"小特"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10002</span><span class="token punctuation">;</span>
-dic<span class="token punctuation">[</span><span class="token string">"小扣"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10003</span><span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">// 从姓名查找学号</span>
-dic<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"小力"</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span>second<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// -> 10001</span>
-dic<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"小特"</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span>second<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// -> 10002</span>
-dic<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"小扣"</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span>second<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// -> 10003</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1599811794-ruXMOV-Picture8.png" alt="Picture8.png"></p>
-<h4 id="Hash-函数设计-Demo"><a href="#Hash-函数设计-Demo" class="headerlink" title="Hash 函数设计 Demo"></a>Hash 函数设计 Demo</h4><p>将三人的姓名存储至以下数组中，则各姓名在数组中的索引分别为 0, 1, 2 。</p>
-<p>string names[] = { “小力”, “小特”, “小扣” };</p>
-<p>此时，我们构造一个简单的 Hash 函数（ %% 为取余符号 ），公式和封装函数如下所示：</p>
-<p><code>hash(key) = (key - 1) \% 10000</code><br><code>hash(key)=(key−1)%10000</code></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">hash</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token punctuation">(</span>id <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">10000</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> index<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>则我们构建了以学号为 key 、姓名对应的数组索引为 value 的散列表。利用此 Hash 函数，则可在 O(1)O(1) 时间复杂度下通过学号查找到对应姓名，即：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1599811794-NfbpfW-Picture8-1.png" alt="Picture8-1.png"></p>
-<blockquote>
-<p>  以上设计只适用于此示例，实际的 Hash 函数需保证低碰撞率、 高鲁棒性等，以适用于各类数据和场景。</p>
-</blockquote>
-<hr>
-<h3 id="七大查找算法"><a href="#七大查找算法" class="headerlink" title="七大查找算法"></a>七大查找算法</h3><ul>
-<li><strong>1. 顺序查找</strong></li>
-<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/maybe2030/p/4715035.html#_label1"><strong>2. 二分查找</strong></a></li>
-<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/maybe2030/p/4715035.html#_label2"><strong>3. 插值查找</strong></a></li>
-<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/maybe2030/p/4715035.html#_label3"><strong>4. 斐波那契查找</strong></a></li>
-<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/maybe2030/p/4715035.html#_label4"><strong>5. 树表查找</strong></a></li>
-<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/maybe2030/p/4715035.html#_label5"><strong>6. 分块查找</strong></a></li>
-<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/maybe2030/p/4715035.html#_label6"><strong>7. 哈希查找</strong></a></li>
-</ul>
-<blockquote>
-<p>  查找是在大量的信息中寻找一个特定的信息元素，在计算机应用中，查找是常用的基本运算，例如编译程序中符号表的查找。本文简单概括性的介绍了常见的七种查找算法，说是七种，其实二分查找、插值查找以及斐波那契查找都可以归为一类——插值查找。插值查找和斐波那契查找是在二分查找的基础上的优化查找算法。树表查找和哈希查找会在后续的博文中进行详细介绍。</p>
-</blockquote>
-<p>  <strong>查找定义</strong>：根据给定的某个值，在查找表中确定一个其关键字等于给定值的数据元素（或记录）。</p>
-<h3 id="查找算法分类"><a href="#查找算法分类" class="headerlink" title="查找算法分类"></a><strong>查找算法分类</strong></h3><ol>
-<li><p>静态查找和动态查找；</p>
-<p>注：静态或者动态都是针对查找表而言的。<strong>动态表指查找表中有删除和插入操作的表。</strong></p>
-</li>
-<li><p>无序查找和有序查找。</p>
-<p><strong>无序查找</strong>：被查找数列有序无序均可；</p>
-<p>有序查找：被查找数列必须为有序数列。</p>
-</li>
-</ol>
-<blockquote>
-<p>  <strong>平均查找长度（Average Search Length，ASL）</strong>：需和指定key进行比较的关键字的个数的期望值，称为查找算法在查找成功时的平均查找长度。</p>
-<p>  　　对于含有n个数据元素的查找表，查找成功的平均查找长度为：<code>ASL = Pi*Ci</code>的和。<br>  　　<strong>Pi</strong>：查找表中第i个数据元素的概率。<br>  　　<strong>Ci</strong>：找到第i个数据元素时已经比较过的次数。</p>
-</blockquote>
-<h4 id="1-顺序查找"><a href="#1-顺序查找" class="headerlink" title="1. 顺序查找"></a>1. 顺序查找</h4><blockquote>
-<p>  说明：顺序查找适合于存储结构为顺序存储或链接存储的线性表。</p>
-</blockquote>
-<p><strong>基本思想</strong>：顺序查找也称为线形查找，属于无序查找算法。从数据结构线形表的一端开始，顺序扫描，依次将扫描到的结点关键字与给定值k相比较，若相等则表示查找成功；若扫描结束仍没有找到关键字等于k的结点，表示查找失败。</p>
-<p><strong>复杂度分析</strong>：　</p>
-<p>　　查找成功时的平均查找长度为：（假设每个数据元素的概率相等） <code>ASL = 1/n(1+2+3+…+n) = (n+1)/2 ;</code><br>　　当查找不成功时，需要n+1次比较，时间复杂度为O(n);</p>
-<p>　　所以，顺序查找的时间复杂度为O(n)。</p>
-<h4 id="2-二分查找"><a href="#2-二分查找" class="headerlink" title="2. 二分查找"></a>2. 二分查找</h4><p>　　<strong>说明：元素必须是有序的，如果是无序的则要先进行排序操作。</strong></p>
-<p>　　<strong>基本思想：</strong>也称为是折半查找，属于有序查找算法。用给定值k先与中间结点的关键字比较，中间结点把线形表分成两个子表，若相等则查找成功；若不相等，再根据k与该中间结点关键字的比较结果确定下一步查找哪个子表，这样递归进行，直到查找到或查找结束发现表中没有这样的结点。</p>
-<p>　　<strong>复杂度分析：</strong>最坏情况下，关键词比较次数为log2(n+1)，且**期望时间复杂度为O(log2n)**；</p>
-<p>　　注：<strong>折半查找的前提条件是需要有序表顺序存储，对于静态查找表，一次排序后不再变化，折半查找能得到不错的效率。但对于需要频繁执行插入或删除操作的数据集来说，维护有序的排序会带来不小的工作量，那就不建议使用。——《大话数据结构》</strong></p>
-<p><strong>其他查找算法后面补充</strong></p>
-<hr>
-<h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="1-数组中重复的数字"><a href="#1-数组中重复的数字" class="headerlink" title="1. 数组中重复的数字"></a>1. 数组中重复的数字</h3><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220427081435148.png" alt="image-20220427081435148"></p>
-<p><strong>解题思路:</strong></p>
-<p>1.<strong>原地交换</strong><br>题目说明尚未被充分使用，即 在一个长度为 n 的数组 nums 里的所有数字都在 0 ~ n-1 的范围内 。 此说明含义：数组元素的 索引 和 值 是 一对多 的关系。<br>因此，可遍历数组并通过交换操作，使元素的 索引 与 值 一一对应（即 `nums[i] = i ）。因而，就能通过索引映射对应的值，起到与字典等价的作用。</p>
-<p>遍历中，第一次遇到数字 x 时，将其交换至索引 x 处；而当第二次遇到数字 x 时，一定有 <code>nums[x] = x</code> ，此时即可得到一组重复数字。</p>
-<blockquote>
-<p>  <strong>算法流程：</strong><br>  遍历数组 <code>numsnums</code> ，设索引初始值为 i = 0 :</p>
-<p>  若 <code>nums[i] = i</code>： 说明此数字已在对应索引位置，无需交换，因此跳过；<br>  若 <code>nums[nums[i]] = nums[i]</code>： 代表索引 <code>nums[i]</code> 处和索引 <code>i</code> 处的元素值都为 <code>nums[i]</code> ，即找到一组重复值，返回此值 <code>nums[i]</code> ；<br>  否则： 交换索引为 <code>i</code> 和 <code>nums[i]</code> 的元素值，将此数字交换至对应索引位置。<br>  若遍历完毕尚未返回，则返回 −1 。</p>
-</blockquote>
-<p><strong>复杂度分析：</strong><br>时间复杂度 O(N) ： 遍历数组使用 O(N) ，每轮遍历的判断和交换操作使用 O(1) 。<br>空间复杂度 O(1)： 使用常数复杂度的额外空间。</p>
-<p><strong>2.利用HashSet</strong></p>
-<p>利用数据结构特点，容易想到使用哈希表（Set）记录数组的各个数字，当查找到重复数字则直接返回。</p>
-<blockquote>
-<p>  <strong>算法流程：</strong><br>  初始化： 新建 HashSet ，记为 dic ；<br>  遍历数组 nums 中的每个数字 num ：<br>  当 num 在 dic中，说明重复，直接返回 num ；<br>  将 num 添加至 dic 中；<br>  返回 -1 。本题中一定有重复数字，因此这里返回多少都可以。</p>
-</blockquote>
-<p><strong>复杂度分析：</strong><br>时间复杂度 O(N)： 遍历数组使用 O(N) ，HashSet 添加与查找元素皆为 O(1) 。<br>空间复杂度 O(N)： HashSet 占用O(N) 大小的额外空间。</p>
-<p><strong>实现:</strong></p>
+<p>广度优先搜索让你能够找出两样东西之间的最短距离，不过最短距离的含义有很多！使用广度优先搜索可以：</p>
 <ol>
-<li>原地交换</li>
+<li>编写国际跳棋AI，计算最少走多少步就可获胜；</li>
+<li>编写拼写检查器，计算最少编辑多少个地方就可将错拼的单词改成正确的单词，如将READED改为READER需要编辑一个地方；</li>
+<li>根据你的人际关系网络找到关系最近的医生。</li>
 </ol>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">findRepeatNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> i<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 数据与下标相同</span>
-            <span class="token punctuation">{</span>
-                i<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token keyword">continue</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            
-            <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            <span class="token function">swap</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220427084044831.png" alt="image-20220427084044831"></p>
-<ol start="2">
-<li>HashSet</li>
-</ol>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">findRepeatNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        unordered_map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">bool</span><span class="token operator">></span> dic<span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> num <span class="token operator">:</span> nums<span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>dic<span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> num<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            dic<span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220427084019040.png" alt="image-20220427084019040"></p>
-<p>其他范例参考:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">findRepeatNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">sort</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nums<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> 
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-                <span class="token keyword">return</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>   
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>  先让数组有序, 然后比较前后</p>
-</blockquote>
-<hr>
-<h3 id="2-在排序数组中查找数字-I"><a href="#2-在排序数组中查找数字-I" class="headerlink" title="2.  在排序数组中查找数字 I"></a>2.  在排序数组中查找数字 I</h3><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220427084923052.png" alt="image-20220427084923052"></p>
-<p><strong>解题思路:</strong></p>
-<p>1.遍历求解</p>
-<p>遍历<code>nums</code>并用<code>count</code>记录下<code>target</code>的次数</p>
-<p><strong>复杂度分析：</strong><br>时间复杂度 O(N)： 遍历数组使用 O(N) ，count计数为O(1)<br>空间复杂度 O(1);</p>
-<p>实现:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">search</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> iterator <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> iterator <span class="token operator">!=</span> nums<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> iterator<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">*</span>iterator <span class="token operator">==</span> target<span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                count<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token keyword">continue</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> count<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220427085427712.png" alt="image-20220427085427712"></p>
-<p>2.二分查找</p>
-<p>排序数组 nums 中的所有数字 target 形成一个窗口，记窗口的 左 / 右边界 索引分别为 left和 right ，分别对应窗口左边 / 右边的首个元素。</p>
-<p>本题要求统计数字 target 的出现次数，可转化为：使用二分法分别找到 左边界 leftleft 和 右边界 rightright ，易得数字 target 的数量为 right - left - 1。</p>
-<blockquote>
-<p>  <strong>算法解析：</strong><br>  初始化： 左边界 i = 0 ，右边界 j = len(nums) - 1 。<br>  循环二分： 当闭区间 [i, j] 无元素时跳出；<br>  计算中点 m = (i + j) / 2（向下取整）；<br>  若 nums[m] &lt; target ，则 target 在闭区间 [m + 1, j]中，因此执行 i = m + 1；<br>  若 nums[m] &gt; target ，则 target 在闭区间 [i, m - 1]中，因此执行 j = m - 1；<br>  若 nums[m] = target ，则右边界 right在闭区间 [m+1, j]中；左边界 left在闭区间 [i, m-1] 中。因此分为以下两种情况：<br>  若查找 右边界 right ，则执行 i = m + 1 ；（跳出时 i 指向右边界）<br>  若查找 左边界 left ，则执行 j = m - 1 ；（跳出时 j指向左边界）<br>  返回值： 应用两次二分，分别查找 right 和 left ，最终返回 right - left - 1right−left−1 即可。</p>
-</blockquote>
-<blockquote>
-<p>  效率优化：<br>  以下优化基于：查找完右边界 right = i 后，则 nums[j]指向最右边的 target （若存在）。</p>
-</blockquote>
+<p>你经常要找出最短路径，这可能是前往朋友家的最短路径，也可能是国际象棋中把对方将死的最少步数。解决最短路径问题的算法被称为<strong>广度优先搜索</strong>。要确定如何从双子峰前往金门大桥，需要两个步骤。</p>
 <ol>
-<li>查找完右边界后，可用 nums[j] = target判断数组中是否包含 target，若不包含则直接提前返回 0 ，无需后续查找左边界。</li>
-<li>查找完右边界后，左边界 left一定在闭区间 [0, j] 中，因此直接从此区间开始二分查找即可。</li>
+<li>使用图来建立问题模型。</li>
+<li>使用广度优先搜索解决问题。</li>
 </ol>
-<p><strong>复杂度分析：</strong><br>时间复杂度 O(logN) ： 二分法为对数级别复杂度。<br>空间复杂度 O(1)： 几个变量使用常数大小的额外空间。<br>代码：<br>可将 nums[m] = target情况合并至其他两种情况中。</p>
-<p>实现:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">search</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">/* 搜索右边界 right */</span>
-        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> j <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> m <span class="token operator">=</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> j<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>m<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> target<span class="token punctuation">)</span> i <span class="token operator">=</span> m <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-            <span class="token keyword">else</span> j <span class="token operator">=</span> m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">int</span> right <span class="token operator">=</span> i<span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">/* 若数组中无 target ，则提前返回 */</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>j <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">!=</span> target<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">/* 搜索左边界 right */</span>
-        i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> m <span class="token operator">=</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> j<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>m<span class="token punctuation">]</span> <span class="token operator">&lt;</span> target<span class="token punctuation">)</span> i <span class="token operator">=</span> m <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-            <span class="token keyword">else</span> j <span class="token operator">=</span> m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">int</span> left <span class="token operator">=</span> j<span class="token punctuation">;</span>
-        <span class="token keyword">return</span> right <span class="token operator">-</span> left <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>  例子:<br>  假设你经营着一个芒果农场，需要寻找芒果销售商，以便将芒果卖给他。在Facebook，你与芒果销售商有联系吗？为此，你可在朋友中查找。</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/20190425130541285.png" alt="img"></p>
+<p>  这种查找很简单。首先，创建一个朋友名单。</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/20190425130557936.png"></p>
+<p>   然后，依次检查名单中的每个人，看看他是否是芒果销售商。</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/20190425130627134.png" alt="img"></p>
+<p>   假设你没有朋友是芒果销售商，那么你就必须在朋友的朋友中查找。</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/20190425130708732.png" alt="img"></p>
+<p>   检查名单中的每个人时，你都将其朋友加入名单。</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/20190425130746766.png" alt="img"></p>
+<p>   这样一来，你不仅在朋友中查找，还在朋友的朋友中查找。别忘了，你的目标是在你的人际关系网中找到一位芒果销售商。因此，如果Alice不是芒果销售商，就将其朋友也加入到名单中。这意味着你将在她的朋友、朋友的朋友等中查找。使用这种算法将搜遍你的整个人际关系网，直到找到芒果销售商。这就是广度优先搜索算法。</p>
+</blockquote>
 <hr>
-<h3 id="3-0～n-1-中缺失的数字"><a href="#3-0～n-1-中缺失的数字" class="headerlink" title="3. 0～n-1 中缺失的数字"></a>3. 0～n-1 中缺失的数字</h3><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220427204205526.png" alt="image-20220427204205526"></p>
-<p><strong>解题思路</strong><br>1.二分查找到某个值(最优解)，满足：</p>
-<p>左子数组： <code>nums[i] = i</code><br>右子数组： <code>nums[i] != i</code></p>
-<p>时间复杂度O(logN)</p>
+<h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="1-从上到下打印二叉树"><a href="#1-从上到下打印二叉树" class="headerlink" title="1. 从上到下打印二叉树"></a>1. 从上到下打印二叉树</h3><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220429203424978.png" alt="image-20220429203424978"></p>
+<p><strong>解题思路</strong>：</p>
+<p>题目要求的二叉树的 <strong>从上至下</strong> 打印（即按层打印），又称为二叉树的 <strong>广度优先搜索</strong>（BFS）。<br>BFS 通常借助 <strong>队列</strong> 的先入先出特性来实现。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/a872b50fa42011748437ec9123d8f77a104b3d528880efca8b212f91d115f835-Picture1.png" alt="Picture1.png"></p>
+<blockquote>
+<p>  <strong>算法流程：</strong><br>  特例处理： 当树的根节点为空，则直接返回空列表 [] ；<br>  初始化： 打印结果列表 res = [] ，包含根节点的队列 queue = [root] ；<br>  BFS 循环： 当队列 queue 为空时跳出；<br>  出队： 队首元素出队，记为 node；<br>  打印： 将 node.val 添加至列表 tmp 尾部；<br>  添加子节点： 若 node 的左（右）子节点不为空，则将左（右）子节点加入队列 queue ；<br>  返回值： 返回打印结果列表 res 即可。</p>
+</blockquote>
+<p><strong>复杂度分析：</strong><br>时间复杂度 O(N)： N 为二叉树的节点数量，即 BFS 需循环 N次。<br>空间复杂度 O(N) ： 最差情况下，即当树为平衡二叉树时，最多有 N/2 个树节点同时在 queue 中，使用 O(N)大小的额外空间。</p>
 <p>实现:</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">missingNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> right <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">//使用(left + right)/2 也可以 但是要注意 left + right 可能会超过 int 表示范围</span>
-            <span class="token comment" spellcheck="true">//left + (right - left )/2 可以有效的 防止溢出;</span>
-            <span class="token keyword">int</span> mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>mid <span class="token operator">==</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-             	left <span class="token operator">=</span> middle <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                right <span class="token operator">=</span> mid<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">levelOrder</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> res<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>root<span class="token punctuation">)</span> <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+        queue<span class="token operator">&lt;</span>TreeNode<span class="token operator">*</span><span class="token operator">></span> que<span class="token punctuation">;</span>
+        que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>que<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            TreeNode<span class="token operator">*</span> node <span class="token operator">=</span> que<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            que<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span> que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span> que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        
-        <span class="token keyword">return</span> left<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220427205126432.png" alt="image-20220427205126432"></p>
-<p>2.顺序查找</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">missingNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">!=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">return</span> i<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token keyword">return</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220427205223931.png" alt="image-20220427205223931"></p>
-<p>其他方法参考:</p>
-<p><strong>位运算处理</strong></p>
-<ul>
-<li>我们知道异或具有交换律</li>
-<li>令0~n的数与<strong>nums</strong>中的数异或，运算中除了缺失值只出现一次外，其他数都出现两次等同于与自身异或。</li>
-</ul>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">missingNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> 
-    <span class="token punctuation">{</span>  
-        <span class="token keyword">int</span> res <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            res <span class="token operator">^</span><span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>  
-            res <span class="token operator">^</span><span class="token operator">=</span> i<span class="token punctuation">;</span>       <span class="token comment" spellcheck="true">//其是就是 比较 数组下标 和 对应的元素 是否相等，不相等即为miss的数</span>
-        <span class="token punctuation">}</span>
-
         <span class="token keyword">return</span> res<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220427210015051.png" alt="image-20220427210015051"></p>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220429205407937.png" alt="image-20220429205407937"></p>
+<hr>
+<h3 id="2-从上到下打印二叉树-II"><a href="#2-从上到下打印二叉树-II" class="headerlink" title="2. 从上到下打印二叉树 II"></a>2. 从上到下打印二叉树 II</h3><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220429205019586.png" alt="image-20220429205019586"></p>
+<p><strong>解题思路:</strong></p>
+<p>本题与上一题仅有微小区别: 即本题需将 <strong>每一层打印到一行</strong> 。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/a58477c74c96779c265ce3028def7625d16042895d2c21f7fb0293df7b213276-Picture1.png" alt="Picture1.png"></p>
+<p><strong>每层打印到一行：</strong> 将本层全部节点打印到一行，并将下一层全部节点加入队列，以此类推，即可分为多行打印。</p>
+<blockquote>
+<p>  算法流程：<br>  特例处理： 当根节点为空，则返回空列表 [] ；<br>  初始化： 打印结果列表 res = [] ，包含根节点的队列 queue = [root] ；<br>  BFS 循环： 当队列 queue 为空时跳出；<br>  新建一个临时列表 tmp ，用于存储当前层打印结果；<br>  当前层打印循环： 循环次数为当前层节点数（即队列 queue 长度）；<br>  出队： 队首元素出队，记为 node；<br>  打印： 将 node.val 添加至 tmp 尾部；<br>  添加子节点： 若 node 的左（右）子节点不为空，则将左（右）子节点加入队列 queue ；<br>  将当前层结果 tmp 添加入 res 。</p>
+<p>  <strong>返回值：</strong> 返回打印结果列表 <code>res</code> 即可。</p>
+</blockquote>
+<p>复杂度分析：<br>时间复杂度 O(N) ： N 为二叉树的节点数量，即 BFS 需循环 N 次。<br>空间复杂度 O(N) ： 最差情况下，即当树为平衡二叉树时，最多有 N/2个树节点同时在 queue 中，使用 O(N)大小的额外空间。</p>
+<p>实现:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">levelOrder</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> res<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>root<span class="token punctuation">)</span> <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+        queue<span class="token operator">&lt;</span>TreeNode<span class="token operator">*</span><span class="token operator">></span> que<span class="token punctuation">;</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> temp<span class="token punctuation">;</span>
+        que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>que<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> que<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                TreeNode<span class="token operator">*</span> node <span class="token operator">=</span> que<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                que<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                temp<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>left <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>right <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            temp<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>temp<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> temp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>  如果写成for(int i = 0;i&lt;queue.size();i++),则每次进行for循环时，条件判断都会算一下queue.size()，但是每次for循环后queue长度可能会发生变化（添加左右节点），queue.size()一直在变化；</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220429210627203.png" alt="image-20220429210627203"></p>
+<hr>
+<h3 id="3-从上到下打印二叉树-III"><a href="#3-从上到下打印二叉树-III" class="headerlink" title="3. 从上到下打印二叉树 III"></a>3. 从上到下打印二叉树 III</h3><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220429210759722.png" alt="image-20220429210759722"></p>
+<p><strong>解题思路:</strong></p>
+<p>本题额外要求 <strong>打印顺序交替变化</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/9513dcb034f5dcdea947a2f667b3d380df4f8732da6397778e00718b77584010-Picture1.png" alt="Picture1.png"></p>
+<p>层序遍历 + 双端队列</p>
+<ul>
+<li>利用双端队列的两端皆可添加元素的特性，设打印列表（双端队列）temp，并规定：<ul>
+<li>奇数层 则添加至 <code>tmp</code> <strong>尾部</strong> ，</li>
+<li>偶数层 则添加至 <code>tmp</code> <strong>头部</strong> 。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>  算法流程：<br>  特例处理： 当树的根节点为空，则直接返回空列表 [] ；<br>  初始化： 打印结果空列表 res ，包含根节点的双端队列 deque ；<br>  BFS 循环： 当 deque 为空时跳出；<br>  新建列表 tmp ，用于临时存储当前层打印结果；<br>  当前层打印循环： 循环次数为当前层节点数（即 deque 长度）；<br>  出队： 队首元素出队，记为 node；<br>  打印： 若为奇数层，将 node.val 添加至 tmp 尾部；否则，添加至 tmp 头部；<br>  添加子节点： 若 node 的左（右）子节点不为空，则加入 deque ；<br>  将当前层结果 tmp 转化为 list 并添加入 res ；<br>  返回值： 返回打印结果列表 res 即可；</p>
+</blockquote>
+<p><strong>复杂度分析：</strong><br>时间复杂度 O(N) ： N 为二叉树的节点数量，即 BFS 需循环 N 次，占用 O(N) ；双端队列的队首和队尾的添加和删除操作的时间复杂度均为 O(1) 。<br>空间复杂度 O(N) ： 最差情况下，即当树为满二叉树时，最多有 N/2 个树节点 同时 在 deque 中，使用 O(N) 大小的额外空间。</p>
+<blockquote>
+<p>  需要判断每个节点的所在层奇偶性，即冗余了 N 次判断。</p>
+<p>  优化: 通过将奇偶层逻辑拆分，可以消除冗余的判断。</p>
+</blockquote>
+<blockquote>
+<p>  <strong>算法流程(优化)：</strong><br>  与方法一对比，仅 BFS 循环不同。</p>
+<p>  BFS 循环： 循环打印奇 / 偶数层，当 deque 为空时跳出；<br>  打印奇数层： 从左向右 打印，先左后右 加入下层节点；<br>  若 deque 为空，说明向下无偶数层，则跳出；<br>  打印偶数层： 从右向左 打印，先右后左 加入下层节点；</p>
+</blockquote>
+<p>实现:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">levelOrder</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> res<span class="token punctuation">;</span>
+        deque <span class="token operator">&lt;</span>TreeNode<span class="token operator">*</span><span class="token operator">></span> dque<span class="token punctuation">;</span>
+        vector <span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> temp<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            dque<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>dque<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 打印奇数层</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> dque<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// 左到y</span>
+                TreeNode <span class="token operator">*</span> node <span class="token operator">=</span> dque<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                dque<span class="token punctuation">.</span><span class="token function">pop_front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                temp<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span> dque<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span> dque<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>dque<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+            temp<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// 打印偶数层</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> dque<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// 右到左</span>
+                TreeNode <span class="token operator">*</span> node <span class="token operator">=</span> dque<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                dque<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                temp<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span> dque<span class="token punctuation">.</span><span class="token function">push_front</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span> dque<span class="token punctuation">.</span><span class="token function">push_front</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token punctuation">}</span>
+            res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            temp<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -825,7 +728,7 @@ dic<span class="token punctuation">.</span><span class="token function">find</sp
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/2022/04/27/shua-ti-bi-ji-si/">https://roranrui.cn/2022/04/27/shua-ti-bi-ji-si/</a>
+                    <a href="https://roranrui.cn/2022/04/29/shua-ti-bi-ji-liu/">https://roranrui.cn/2022/04/29/shua-ti-bi-ji-liu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1186,17 +1089,18 @@ dic<span class="token punctuation">.</span><span class="token function">find</sp
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/04/29/shua-ti-bi-ji-wu/">
+                <a href="/2022/04/29/shua-ti-bi-ji-liu/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="第五天_查找算法(中等)">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="第六天_搜索与回溯算法（简单）">
                         
-                        <span class="card-title">第五天_查找算法(中等)</span>
+                        <span class="card-title">第六天_搜索与回溯算法（简单）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1206,9 +1110,9 @@ dic<span class="token punctuation">.</span><span class="token function">find</sp
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1221,6 +1125,7 @@ dic<span class="token punctuation">.</span><span class="token function">find</sp
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1247,13 +1152,13 @@ dic<span class="token punctuation">.</span><span class="token function">find</sp
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/26/html-xue-xi-bi-ji/">
+                <a href="/2022/04/29/shua-ti-bi-ji-wu/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/33.jpg" class="responsive-img" alt="HTML学习笔记">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="第五天_查找算法(中等)">
                         
-                        <span class="card-title">HTML学习笔记</span>
+                        <span class="card-title">第五天_查找算法(中等)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1264,14 +1169,14 @@ dic<span class="token punctuation">.</span><span class="token function">find</sp
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    前端学习
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    刷题笔记
                                 </a>
                             
                             
@@ -1281,12 +1186,16 @@ dic<span class="token punctuation">.</span><span class="token function">find</sp
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/html/">
-                        <span class="chip bg-color">html</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/Programming/">
+                        <span class="chip bg-color">Programming</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
