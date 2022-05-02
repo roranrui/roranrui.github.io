@@ -4,14 +4,17 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C++多线程进阶, 若然无亦的Blog">
-    <meta name="description" content="多线程进阶一. 条件变量
-  重复加锁, 影响效率, 可通过双重锁定的方式, 减少加锁, 提升效率
+    <meta name="keywords" content="第九天_动态规划(中等), 若然无亦的Blog">
+    <meta name="description" content="第九天_动态规划(中等)
+  刷题日程指引: 行百里者半九十。坚持一个月刷完，一起加油！
 
-bool IsoutMsg()
-{
-        // 双重锁定, 提升效率
-        if (!msgRecvQueue.emp">
+一. 知识学习二. 题目练习1. 连续子数组的最大和
+解题思路:
+动态规划是本题的最优解法，以下按照标准流程解题。
+
+
+实现
+class Solut">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -34,7 +37,7 @@ bool IsoutMsg()
     </style>
 
 
-    <title>C++多线程进阶 | 若然无亦的Blog</title>
+    <title>第九天_动态规划(中等) | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -315,12 +318,12 @@ bool IsoutMsg()
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/44.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1232057.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++多线程进阶</h1>
+                    <h1 class="description center-align post-title">第九天_动态规划(中等)</h1>
                 </div>
             </div>
         </div>
@@ -444,6 +447,10 @@ bool IsoutMsg()
                                 <span class="chip bg-color">Programming</span>
                             </a>
                         
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -452,8 +459,8 @@ bool IsoutMsg()
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                语言学习
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
+                                刷题笔记
                             </a>
                         
                     </div>
@@ -465,21 +472,21 @@ bool IsoutMsg()
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-01
+                    2022-05-02
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-01
+                    2022-05-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    915
+                    412
                 </div>
                 
 
@@ -501,151 +508,97 @@ bool IsoutMsg()
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="多线程进阶"><a href="#多线程进阶" class="headerlink" title="多线程进阶"></a>多线程进阶</h1><h2 id="一-条件变量"><a href="#一-条件变量" class="headerlink" title="一. 条件变量"></a>一. 条件变量</h2><blockquote>
-<p>  重复加锁, 影响效率, 可通过双重锁定的方式, 减少加锁, 提升效率</p>
+                <h1 id="第九天-动态规划-中等"><a href="#第九天-动态规划-中等" class="headerlink" title="第九天_动态规划(中等)"></a>第九天_动态规划(中等)</h1><blockquote>
+<p>  刷题日程指引: <a target="_blank" rel="noopener" href="https://leetcode-cn.com/leetbook/read/illustration-of-algorithm/px2ds5/">行百里者半九十。坚持一个月刷完，一起加油！</a></p>
 </blockquote>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token function">IsoutMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 双重锁定, 提升效率</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>msgRecvQueue<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="1-连续子数组的最大和"><a href="#1-连续子数组的最大和" class="headerlink" title="1. 连续子数组的最大和"></a>1. 连续子数组的最大和</h3><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220502150950334.png" alt="image-20220502150950334"></p>
+<p><strong>解题思路:</strong></p>
+<p>动态规划是本题的最优解法，以下按照标准流程解题。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220502151330317.png" alt="解题流程"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/77d1aa6a444743d3c8606ac951cd7fc38faf68a62064fd2639df517cd666a4d0-Picture1.png" alt="Picture1.png"></p>
+<p>实现</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">maxSubArray</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> dp<span class="token punctuation">;</span>
+        dp<span class="token punctuation">.</span><span class="token function">reserve</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> res <span class="token operator">=</span> dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
-            unique_lock<span class="token operator">&lt;</span>mutex<span class="token operator">></span> <span class="token function">ulock1</span><span class="token punctuation">(</span>mtx1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            unique_lock<span class="token operator">&lt;</span>mutex<span class="token operator">></span> <span class="token function">ulock2</span><span class="token punctuation">(</span>mtx2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>msgRecvQueue<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> temp <span class="token operator">=</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>res <span class="token operator">&lt;</span> temp<span class="token punctuation">)</span>
             <span class="token punctuation">{</span>
-                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"删除元素 "</span> <span class="token operator">&lt;&lt;</span> msgRecvQueue<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-                msgRecvQueue<span class="token punctuation">.</span><span class="token function">pop_front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                mtx1<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                mtx2<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                res <span class="token operator">=</span> temp<span class="token punctuation">;</span>
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>本方法仍不够完美, 以下给出更优的解决办法</p>
-<h3 id="1-condition-variable"><a href="#1-condition-variable" class="headerlink" title="1. condition_variable"></a>1. condition_variable</h3><blockquote>
-<p>  std::condition_variable实际上是一个类，是一个和条件相关的类，说白了就是等待一个条件达成。</p>
-</blockquote>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">outMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-        <span class="token keyword">int</span> command <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> time <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            unique_lock<span class="token operator">&lt;</span>mutex<span class="token operator">></span> <span class="token function">ulock1</span><span class="token punctuation">(</span>mtx1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// 如果第二个参数lambda表达式返回值是false, 那么wait()将解锁互斥量, 并堵塞本行</span>
-            <span class="token comment" spellcheck="true">// 直到其他线程调用notify_one()为止</span>
-            my_cond<span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span>ulock1<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">]</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>msgRecvQueue<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-                <span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            command <span class="token operator">=</span> msgRecvQueue<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            msgRecvQueue<span class="token punctuation">.</span><span class="token function">pop_front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            ulock1<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            cout <span class="token operator">&lt;&lt;</span> <span class="token string">"删除元素 "</span> <span class="token operator">&lt;&lt;</span> command <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"END"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>wait()用来等一个东西</p>
-<p>如果第二个参数的lambda表达式返回值是false，那么wait()将解锁互斥量，并阻塞到本行<br>如果第二个参数的lambda表达式返回值是true，那么wait()直接返回并继续执行。</p>
-<p>阻塞到什么时候为止呢？阻塞到其他某个线程调用notify_one()成员函数为止；</p>
-<p>如果没有第二个参数，那么效果跟第二个参数lambda表达式返回false效果一样</p>
-<p>wait()将解锁互斥量，并阻塞到本行，阻塞到其他某个线程调用notify_one()成员函数为止。</p>
-<p>当其他线程用<code>notify_one()</code>将本线程wait()唤醒后，这个wait恢复后</p>
-<ol>
-<li><p>wait()不断尝试获取互斥量锁，如果获取不到那么流程就卡在wait()这里等待获取，如果获取到了，那么wait()就继续执行，获取到了锁</p>
-</li>
-<li><p>如果wait有第二个参数就判断这个lambda表达式。</p>
-<p>a)如果表达式为false，那wait又对互斥量解锁，然后又休眠，等待再次被notify_one()唤醒<br>b)如果lambda表达式为true，则wait返回，流程可以继续执行（此时互斥量已被锁住）。</p>
-</li>
-<li><p>如果wait没有第二个参数，则wait返回，流程走下去。</p>
-</li>
-</ol>
-<blockquote>
-<p>  <strong>流程只要走到了wait()下面则互斥量一定被锁住了。</strong></p>
-</blockquote>
-<p>完整代码:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;list></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;queue></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;mutex></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;condition_variable></span></span>
-
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-
-<span class="token keyword">class</span> <span class="token class-name">A</span>
-<span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">void</span> <span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Msg "</span> <span class="token operator">&lt;&lt;</span> i <span class="token operator">&lt;&lt;</span> <span class="token string">" got."</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-
-            unique_lock<span class="token operator">&lt;</span>mutex<span class="token operator">></span> <span class="token function">myGuard</span><span class="token punctuation">(</span>mtx1<span class="token punctuation">,</span> adopt_lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//            lock(mtx1, mtx2);</span>
-            msgRecvQueue<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            my_cond<span class="token punctuation">.</span><span class="token function">notify_one</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//            mtx1.unlock();</span>
-<span class="token comment" spellcheck="true">//            mtx2.unlock();</span>
-        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-
-    <span class="token keyword">void</span> <span class="token function">outMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> command <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> time <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            unique_lock<span class="token operator">&lt;</span>mutex<span class="token operator">></span> <span class="token function">ulock1</span><span class="token punctuation">(</span>mtx1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// 如果第二个参数lambda表达式返回值是false, 那么wait()将解锁互斥量, 并堵塞本行</span>
-            <span class="token comment" spellcheck="true">// 直到其他线程调用notify_one()为止</span>
-            my_cond<span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span>ulock1<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">]</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>msgRecvQueue<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-                <span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            command <span class="token operator">=</span> msgRecvQueue<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            msgRecvQueue<span class="token punctuation">.</span><span class="token function">pop_front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            ulock1<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            cout <span class="token operator">&lt;&lt;</span> <span class="token string">"删除元素 "</span> <span class="token operator">&lt;&lt;</span> command <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"END"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-
-<span class="token keyword">private</span><span class="token operator">:</span>
-    list<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> msgRecvQueue<span class="token punctuation">;</span>
-    mutex mtx1<span class="token punctuation">;</span>
-    mutex mtx2<span class="token punctuation">;</span>
-    condition_variable my_cond<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 生成一个条件变量对象</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220502153026571.png" alt="image-20220502153026571"></p>
+<p><strong>空间内存优化版本:</strong></p>
+<p>空间复杂度 O(1) ： 几个标志变量使用常数大小的额外空间。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">maxSubArray</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> res <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> nums<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> res<span class="token punctuation">)</span> res <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220502153702191.png" alt="image-20220502153702191"></p>
+<hr>
+<h3 id="2-礼物的最大价值"><a href="#2-礼物的最大价值" class="headerlink" title="2. 礼物的最大价值"></a>2. 礼物的最大价值</h3><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1662cdf7aafd8c9ed6e1eadc41bfc9adf58ea808e11f1a3dd2e8ba4632b9d1ac-Picture1.png" alt="Picture1.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220502154533328.png" alt="image-20220502154533328"></p>
+<p>实现: </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">maxValue</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> grid<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> m <span class="token operator">=</span> grid<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> n <span class="token operator">=</span> grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    A my_a<span class="token punctuation">;</span>
-    thread <span class="token function">ts1</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>A<span class="token operator">::</span>outMsg<span class="token punctuation">,</span> <span class="token operator">&amp;</span>my_a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    thread <span class="token function">ts2</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>A<span class="token operator">::</span>getMsg<span class="token punctuation">,</span> <span class="token operator">&amp;</span>my_a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ts1<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ts2<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>二、深入思考</p>
-<p>上面的代码可能导致出现一种情况：<br>因为outMsg()与getMsg()并不是一对一执行的，所以当程序循环执行很多次以后，可能在msgRecvQueue 中已经有了很多消息，但是，outMsg()还是被唤醒一次只处理一条数据。这时可以考虑把outMsg()多执行几次，或者对getMsg()进行限流。</p>
-<h4 id="notify-all"><a href="#notify-all" class="headerlink" title="notify_all()"></a>notify_all()</h4><blockquote>
-<p>  notify_one()：通知一个线程的wait()</p>
-<p>  notify_all()：通知所有线程的wait()</p>
-</blockquote>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">==</span> i <span class="token operator">&amp;&amp;</span> <span class="token number">0</span> <span class="token operator">==</span> j<span class="token punctuation">)</span>
+                    <span class="token keyword">continue</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+                    grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>j <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+                    grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> grid<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token keyword">else</span>    
+                    grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>grid<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> grid<span class="token punctuation">[</span>m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220502164846692.png" alt="image-20220502164846692"></p>
+<p>使dp数组比grid数组多一行一列，初始化为0，这样既可避免判断是不是在边界的问题:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">maxValue</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> grid<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> m <span class="token operator">=</span> grid<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> n <span class="token operator">=</span> grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">></span> <span class="token function">dp</span><span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> m<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token punctuation">,</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> grid<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>             
+            <span class="token punctuation">}</span>  
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220502165012493.png" alt="image-20220502165012493"></p>
 
                 
             </div>
@@ -672,7 +625,7 @@ bool IsoutMsg()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/2022/05/01/cpp-duo-xian-cheng-jin-jie/">https://roranrui.cn/2022/05/01/cpp-duo-xian-cheng-jin-jie/</a>
+                    <a href="https://roranrui.cn/2022/05/02/shua-ti-bi-ji-jiu/">https://roranrui.cn/2022/05/02/shua-ti-bi-ji-jiu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -716,6 +669,10 @@ bool IsoutMsg()
                             
                                 <a href="/tags/Programming/">
                                     <span class="chip bg-color">Programming</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -889,17 +846,17 @@ bool IsoutMsg()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/05/01/guan-yu-jetbrainside-de-gao-xiao-she-zhi/">
+                <a href="/2022/05/02/shua-ti-bi-ji-jiu/">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1232057.jpg" class="responsive-img" alt="第九天_动态规划(中等)">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/30.jpg" class="responsive-img" alt="关于jetbrainsIDE的设置">
-                        
-                        <span class="card-title">关于jetbrainsIDE的设置</span>
+                        <span class="card-title">第九天_动态规划(中等)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -909,30 +866,35 @@ bool IsoutMsg()
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BE%8E%E5%8C%96%E6%95%99%E7%A8%8B/" class="post-category">
-                                    美化教程
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    刷题笔记
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">
-                        <span class="chip bg-color">经验分享</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/IDE%E7%BE%8E%E5%8C%96/">
-                        <span class="chip bg-color">IDE美化</span>
+                    <a href="/tags/Programming/">
+                        <span class="chip bg-color">Programming</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -946,12 +908,13 @@ bool IsoutMsg()
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/05/01/shua-ti-bi-ji-ba/">
+                <a href="/2022/05/01/ubuntu-mei-hua-jiao-cheng/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1232514.png" class="responsive-img" alt="第八天_动态规划（简单）">
                         
-                        <span class="card-title">第八天_动态规划（简单）</span>
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/37.jpg" class="responsive-img" alt="ubuntu美化教程">
+                        
+                        <span class="card-title">ubuntu美化教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -968,8 +931,8 @@ bool IsoutMsg()
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    刷题笔记
+                            <a href="/categories/%E7%BE%8E%E5%8C%96%E6%95%99%E7%A8%8B/" class="post-category">
+                                    美化教程
                                 </a>
                             
                             
@@ -979,16 +942,16 @@ bool IsoutMsg()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
-                    <a href="/tags/Programming/">
-                        <span class="chip bg-color">Programming</span>
+                    <a href="/tags/%E6%A1%8C%E9%9D%A2%E7%BE%8E%E5%8C%96/">
+                        <span class="chip bg-color">桌面美化</span>
                     </a>
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">
+                        <span class="chip bg-color">经验分享</span>
                     </a>
                     
                 </div>

@@ -4,14 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C++多线程进阶, 若然无亦的Blog">
-    <meta name="description" content="多线程进阶一. 条件变量
-  重复加锁, 影响效率, 可通过双重锁定的方式, 减少加锁, 提升效率
+    <meta name="keywords" content="ubuntu美化教程, 若然无亦的Blog">
+    <meta name="description" content="Ubuntu美化教程
+  基于Ubuntu20.04.4LTS
 
-bool IsoutMsg()
-{
-        // 双重锁定, 提升效率
-        if (!msgRecvQueue.emp">
+一. 壁纸美化壁纸设置:右键桌面-&amp;gt;设置壁纸即可
+效果: 
+
+登录背景修改到这个网址下载一个包: https://github.com/thiggy01/gdm-bac">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -34,7 +34,7 @@ bool IsoutMsg()
     </style>
 
 
-    <title>C++多线程进阶 | 若然无亦的Blog</title>
+    <title>ubuntu美化教程 | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -315,12 +315,12 @@ bool IsoutMsg()
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/44.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/37.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++多线程进阶</h1>
+                    <h1 class="description center-align post-title">ubuntu美化教程</h1>
                 </div>
             </div>
         </div>
@@ -436,12 +436,16 @@ bool IsoutMsg()
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C++</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
-                            <a href="/tags/Programming/">
-                                <span class="chip bg-color">Programming</span>
+                            <a href="/tags/%E6%A1%8C%E9%9D%A2%E7%BE%8E%E5%8C%96/">
+                                <span class="chip bg-color">桌面美化</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">
+                                <span class="chip bg-color">经验分享</span>
                             </a>
                         
                     </div>
@@ -452,8 +456,8 @@ bool IsoutMsg()
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                语言学习
+                            <a href="/categories/%E7%BE%8E%E5%8C%96%E6%95%99%E7%A8%8B/" class="post-category">
+                                美化教程
                             </a>
                         
                     </div>
@@ -472,14 +476,14 @@ bool IsoutMsg()
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-01
+                    2022-05-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    915
+                    737
                 </div>
                 
 
@@ -501,151 +505,102 @@ bool IsoutMsg()
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="多线程进阶"><a href="#多线程进阶" class="headerlink" title="多线程进阶"></a>多线程进阶</h1><h2 id="一-条件变量"><a href="#一-条件变量" class="headerlink" title="一. 条件变量"></a>一. 条件变量</h2><blockquote>
-<p>  重复加锁, 影响效率, 可通过双重锁定的方式, 减少加锁, 提升效率</p>
+                <h1 id="Ubuntu美化教程"><a href="#Ubuntu美化教程" class="headerlink" title="Ubuntu美化教程"></a>Ubuntu美化教程</h1><blockquote>
+<p>  基于Ubuntu20.04.4LTS</p>
 </blockquote>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token function">IsoutMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 双重锁定, 提升效率</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>msgRecvQueue<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            unique_lock<span class="token operator">&lt;</span>mutex<span class="token operator">></span> <span class="token function">ulock1</span><span class="token punctuation">(</span>mtx1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            unique_lock<span class="token operator">&lt;</span>mutex<span class="token operator">></span> <span class="token function">ulock2</span><span class="token punctuation">(</span>mtx2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>msgRecvQueue<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"删除元素 "</span> <span class="token operator">&lt;&lt;</span> msgRecvQueue<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-                msgRecvQueue<span class="token punctuation">.</span><span class="token function">pop_front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                mtx1<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                mtx2<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>本方法仍不够完美, 以下给出更优的解决办法</p>
-<h3 id="1-condition-variable"><a href="#1-condition-variable" class="headerlink" title="1. condition_variable"></a>1. condition_variable</h3><blockquote>
-<p>  std::condition_variable实际上是一个类，是一个和条件相关的类，说白了就是等待一个条件达成。</p>
+<h2 id="一-壁纸美化"><a href="#一-壁纸美化" class="headerlink" title="一. 壁纸美化"></a>一. 壁纸美化</h2><h3 id="壁纸设置"><a href="#壁纸设置" class="headerlink" title="壁纸设置:"></a>壁纸设置:</h3><p>右键桌面-&gt;设置壁纸即可</p>
+<p>效果: </p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/dsad.png" alt="dsad"></p>
+<h3 id="登录背景修改"><a href="#登录背景修改" class="headerlink" title="登录背景修改"></a>登录背景修改</h3><p><strong>到这个网址下载一个包</strong>: <strong><a target="_blank" rel="noopener" href="https://github.com/thiggy01/gdm-background">https://github.com/thiggy01/gdm-background</a></strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/20210116230551731.png" alt="在这里插入图片描述"></p>
+<p>解压</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/2021011623071684.png" alt="在这里插入图片描述"></p>
+<p><strong>点击打开这个文件夹有以下文件 , 会看到有以下文件 :</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/20210116230909852.png" alt="在这里插入图片描述"></p>
+<p>终端中打开这个文件夹</p>
+<p>安装编译包:</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> <span class="token function">make</span> gcc libgtk-3-dev libpolkit-gobject-1-dev
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/20210116231935597.png" alt="在这里插入图片描述"></p>
+<p>输入:</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">make</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>检查版本</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/20210116232037877.png" alt="在这里插入图片描述"></p>
+<p>编译之前下载好的包:</p>
+<pre class="line-numbers language-bash"><code class="language-bash"> <span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>之后就能找到<strong>GDM Background 这个软件</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220501224321364.png" alt="image-20220501224321364"></p>
+<p><strong>然后将你喜欢的背景图片拖入到这个窗口里:</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/20210116232737497.png" alt="在这里插入图片描述"></p>
+<p>之后就替换成功;</p>
+<p>效果:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/2022-05-02_18-37.png" alt="2022-05-02_18-37"></p>
+<hr>
+<h2 id="二-终端美化"><a href="#二-终端美化" class="headerlink" title="二. 终端美化"></a>二. 终端美化</h2><h3 id="配置安装oh-my-zsh"><a href="#配置安装oh-my-zsh" class="headerlink" title="配置安装oh-my-zsh"></a>配置安装oh-my-zsh</h3><blockquote>
+<p>  人生苦短，我用zsh…<br>  zsh完全兼容bash，并且<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=oh-my-zsh&amp;spm=1001.2101.3001.7020">oh-my-zsh</a>的功能比bash强大很多，赶紧来试试！</p>
 </blockquote>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">outMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-        <span class="token keyword">int</span> command <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> time <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            unique_lock<span class="token operator">&lt;</span>mutex<span class="token operator">></span> <span class="token function">ulock1</span><span class="token punctuation">(</span>mtx1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// 如果第二个参数lambda表达式返回值是false, 那么wait()将解锁互斥量, 并堵塞本行</span>
-            <span class="token comment" spellcheck="true">// 直到其他线程调用notify_one()为止</span>
-            my_cond<span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span>ulock1<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">]</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>msgRecvQueue<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-                <span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            command <span class="token operator">=</span> msgRecvQueue<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            msgRecvQueue<span class="token punctuation">.</span><span class="token function">pop_front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            ulock1<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            cout <span class="token operator">&lt;&lt;</span> <span class="token string">"删除元素 "</span> <span class="token operator">&lt;&lt;</span> command <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"END"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>wait()用来等一个东西</p>
-<p>如果第二个参数的lambda表达式返回值是false，那么wait()将解锁互斥量，并阻塞到本行<br>如果第二个参数的lambda表达式返回值是true，那么wait()直接返回并继续执行。</p>
-<p>阻塞到什么时候为止呢？阻塞到其他某个线程调用notify_one()成员函数为止；</p>
-<p>如果没有第二个参数，那么效果跟第二个参数lambda表达式返回false效果一样</p>
-<p>wait()将解锁互斥量，并阻塞到本行，阻塞到其他某个线程调用notify_one()成员函数为止。</p>
-<p>当其他线程用<code>notify_one()</code>将本线程wait()唤醒后，这个wait恢复后</p>
-<ol>
-<li><p>wait()不断尝试获取互斥量锁，如果获取不到那么流程就卡在wait()这里等待获取，如果获取到了，那么wait()就继续执行，获取到了锁</p>
-</li>
-<li><p>如果wait有第二个参数就判断这个lambda表达式。</p>
-<p>a)如果表达式为false，那wait又对互斥量解锁，然后又休眠，等待再次被notify_one()唤醒<br>b)如果lambda表达式为true，则wait返回，流程可以继续执行（此时互斥量已被锁住）。</p>
-</li>
-<li><p>如果wait没有第二个参数，则wait返回，流程走下去。</p>
-</li>
-</ol>
+<p><strong>下载安装oh-my-zsh</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash">sh -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">wget</span> -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="token variable">)</span></span>"</span>
+1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>若提示无法建立SSL连接，末尾再加上<code>--no-check-certificate</code>。原因是wget在使用HTTPS协议时，默认会去验证网站的证书，而这个证书验证经常会失败。加上该选项，就表示不检查。</p>
+<p><strong>bash切换为zsh</strong><br>把默认bash更换为默认zsh，输入<code>chsh -s /bin/zsh</code>，不会立即生效，需要重启系统</p>
+<p><strong>oh-my-zsh插件配置</strong><br>下载的插件都放在.oh-my-zsh/plugins/目录下，下面是几个常用的非常不错的插件。</p>
+<p>autojump: <code>apt-get install autojump</code></p>
+<p>autosuggestions: <code>git clone git://github.com/zsh-users/zsh-autosuggestions</code></p>
+<p>自动语法高亮：<a target="_blank" rel="noopener" href="https://github.com/zsh-users/zsh-syntax-highlighting">https://github.com/zsh-users/zsh-syntax-highlighting</a><br>自动输入建议：<a target="_blank" rel="noopener" href="https://github.com/zsh-users/zsh-autosuggestions">https://github.com/zsh-users/zsh-autosuggestions</a><br>打开远程仓库：<a target="_blank" rel="noopener" href="https://github.com/paulirish/git-open">https://github.com/paulirish/git-open</a></p>
+<p>下载到指定目录后，编辑.zshrc文件如下，找到plugins字段：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">plugins<span class="token operator">=</span><span class="token punctuation">(</span>其他的插件 zsh-syntax-highlighting zsh-autosuggestions git-open autojump zsh-syntax-highlighting zsh-autosuggestions<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>再<code>source ~/.zshrc</code>使配置生效</p>
+<h3 id="安装xfce4"><a href="#安装xfce4" class="headerlink" title="安装xfce4"></a>安装xfce4</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update 
+<span class="token comment" spellcheck="true">#更新软件源</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> xfce4-terminal
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>配置</p>
+<ul>
+<li>在右下角的dash菜单栏中找到Xfce4终端；打开</li>
+<li>在“编辑”—&gt;“首选项”—-&gt;“外观”—-&gt;”背景图片”选择你想设置的图片；</li>
+<li>更多终端设置，自行探索；</li>
+</ul>
 <blockquote>
-<p>  <strong>流程只要走到了wait()下面则互斥量一定被锁住了。</strong></p>
+<p>  设置快捷键<br>  正常使用是我们按ctr(常用^表示)+Alt+T打开我们使用的终端；现在我们设置新终端的快捷方式；</p>
 </blockquote>
-<p>完整代码:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;list></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;queue></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;mutex></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;condition_variable></span></span>
+<ul>
+<li>在右上角–&gt;有线连接—-&gt;有线设置—-&gt;设备—&gt;键盘 将其选中</li>
+<li>在键盘的最下面有个”+”加号；点击</li>
+<li>然后输入：<br>名称：你想对快捷键设置的名字<br>命令：xfce4-terminal</li>
+</ul>
+<p>效果:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220502181409943.png" alt="image-20220502181409943"></p>
+<hr>
+<h2 id="三-软件生态"><a href="#三-软件生态" class="headerlink" title="三. 软件生态"></a>三. 软件生态</h2><h3 id="星火商店"><a href="#星火商店" class="headerlink" title="星火商店"></a>星火商店</h3><p>首先我们到官网下载星火商店以及依赖(20.04)：<a target="_blank" rel="noopener" href="https://spark-app.store/">https://spark-app.store/</a></p>
+<p>先安装依赖</p>
+<p>然后再安装包</p>
+<h3 id="deepin-wine"><a href="#deepin-wine" class="headerlink" title="deepin-wine"></a>deepin-wine</h3><p>可在星火商店下载</p>
+<hr>
+<h2 id="四-Dock栏优化"><a href="#四-Dock栏优化" class="headerlink" title="四. Dock栏优化"></a>四. Dock栏优化</h2><p>安装</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> dconf
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>依次打开:</p>
+<pre><code>/org/gnome/shell/extensions/dash-to-dock/
+</code></pre>
+<p>个人配置:</p>
+<pre class="line-numbers language-bash"><code class="language-bash">background-opacity 0  // 透明
+custom-background-color <span class="token boolean">true</span>
+customize-alphas <span class="token boolean">true</span>
+dock-fixed <span class="token boolean">true</span>
 
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+dock-position <span class="token string">'BOTTOM'</span>
 
-<span class="token keyword">class</span> <span class="token class-name">A</span>
-<span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">void</span> <span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Msg "</span> <span class="token operator">&lt;&lt;</span> i <span class="token operator">&lt;&lt;</span> <span class="token string">" got."</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+extend-height <span class="token boolean">false</span>
 
-            unique_lock<span class="token operator">&lt;</span>mutex<span class="token operator">></span> <span class="token function">myGuard</span><span class="token punctuation">(</span>mtx1<span class="token punctuation">,</span> adopt_lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//            lock(mtx1, mtx2);</span>
-            msgRecvQueue<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            my_cond<span class="token punctuation">.</span><span class="token function">notify_one</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//            mtx1.unlock();</span>
-<span class="token comment" spellcheck="true">//            mtx2.unlock();</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">void</span> <span class="token function">outMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> command <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> time <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            unique_lock<span class="token operator">&lt;</span>mutex<span class="token operator">></span> <span class="token function">ulock1</span><span class="token punctuation">(</span>mtx1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// 如果第二个参数lambda表达式返回值是false, 那么wait()将解锁互斥量, 并堵塞本行</span>
-            <span class="token comment" spellcheck="true">// 直到其他线程调用notify_one()为止</span>
-            my_cond<span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span>ulock1<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">]</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>msgRecvQueue<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-                <span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            command <span class="token operator">=</span> msgRecvQueue<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            msgRecvQueue<span class="token punctuation">.</span><span class="token function">pop_front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            ulock1<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            cout <span class="token operator">&lt;&lt;</span> <span class="token string">"删除元素 "</span> <span class="token operator">&lt;&lt;</span> command <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"END"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-
-<span class="token keyword">private</span><span class="token operator">:</span>
-    list<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> msgRecvQueue<span class="token punctuation">;</span>
-    mutex mtx1<span class="token punctuation">;</span>
-    mutex mtx2<span class="token punctuation">;</span>
-    condition_variable my_cond<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 生成一个条件变量对象</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    A my_a<span class="token punctuation">;</span>
-    thread <span class="token function">ts1</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>A<span class="token operator">::</span>outMsg<span class="token punctuation">,</span> <span class="token operator">&amp;</span>my_a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    thread <span class="token function">ts2</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>A<span class="token operator">::</span>getMsg<span class="token punctuation">,</span> <span class="token operator">&amp;</span>my_a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ts1<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ts2<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>二、深入思考</p>
-<p>上面的代码可能导致出现一种情况：<br>因为outMsg()与getMsg()并不是一对一执行的，所以当程序循环执行很多次以后，可能在msgRecvQueue 中已经有了很多消息，但是，outMsg()还是被唤醒一次只处理一条数据。这时可以考虑把outMsg()多执行几次，或者对getMsg()进行限流。</p>
-<h4 id="notify-all"><a href="#notify-all" class="headerlink" title="notify_all()"></a>notify_all()</h4><blockquote>
-<p>  notify_one()：通知一个线程的wait()</p>
-<p>  notify_all()：通知所有线程的wait()</p>
-</blockquote>
+show-apps-at-top <span class="token boolean">true</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>效果:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220502182034386.png" alt="image-20220502182034386"></p>
 
                 
             </div>
@@ -672,7 +627,7 @@ bool IsoutMsg()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/2022/05/01/cpp-duo-xian-cheng-jin-jie/">https://roranrui.cn/2022/05/01/cpp-duo-xian-cheng-jin-jie/</a>
+                    <a href="https://roranrui.cn/2022/05/01/ubuntu-mei-hua-jiao-cheng/">https://roranrui.cn/2022/05/01/ubuntu-mei-hua-jiao-cheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -710,12 +665,16 @@ bool IsoutMsg()
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C++</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
-                                <a href="/tags/Programming/">
-                                    <span class="chip bg-color">Programming</span>
+                                <a href="/tags/%E6%A1%8C%E9%9D%A2%E7%BE%8E%E5%8C%96/">
+                                    <span class="chip bg-color">桌面美化</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">
+                                    <span class="chip bg-color">经验分享</span>
                                 </a>
                             
                         </div>
@@ -893,13 +852,12 @@ bool IsoutMsg()
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/05/01/guan-yu-jetbrainside-de-gao-xiao-she-zhi/">
+                <a href="/2022/05/02/shua-ti-bi-ji-jiu/">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1232057.jpg" class="responsive-img" alt="第九天_动态规划(中等)">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/30.jpg" class="responsive-img" alt="关于jetbrainsIDE的设置">
-                        
-                        <span class="card-title">关于jetbrainsIDE的设置</span>
+                        <span class="card-title">第九天_动态规划(中等)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -910,60 +868,8 @@ bool IsoutMsg()
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-01
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-02
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%BE%8E%E5%8C%96%E6%95%99%E7%A8%8B/" class="post-category">
-                                    美化教程
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">
-                        <span class="chip bg-color">经验分享</span>
-                    </a>
-                    
-                    <a href="/tags/IDE%E7%BE%8E%E5%8C%96/">
-                        <span class="chip bg-color">IDE美化</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/05/01/shua-ti-bi-ji-ba/">
-                    <div class="card-image">
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1232514.png" class="responsive-img" alt="第八天_动态规划（简单）">
-                        
-                        <span class="card-title">第八天_动态规划（简单）</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-01
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -989,6 +895,59 @@ bool IsoutMsg()
                     
                     <a href="/tags/%E7%AE%97%E6%B3%95/">
                         <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/05/01/guan-yu-jetbrainside-de-gao-xiao-she-zhi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/30.jpg" class="responsive-img" alt="关于jetbrainsIDE的设置">
+                        
+                        <span class="card-title">关于jetbrainsIDE的设置</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BE%8E%E5%8C%96%E6%95%99%E7%A8%8B/" class="post-category">
+                                    美化教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">
+                        <span class="chip bg-color">经验分享</span>
+                    </a>
+                    
+                    <a href="/tags/IDE%E7%BE%8E%E5%8C%96/">
+                        <span class="chip bg-color">IDE美化</span>
                     </a>
                     
                 </div>
