@@ -4,13 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="OpenCV学习笔记一, 若然无亦的Blog">
-    <meta name="description" content="OpenCV学习笔记
-  基于OpenCV 4.5.4
-  参考自: 《OpenCV3编程入门——毛星云》
+    <meta name="keywords" content="第十一天_双指针(简单), 若然无亦的Blog">
+    <meta name="description" content="第十一天_双指针(简单)一. 知识学习双指针算法严格的来说，双指针只能说是是算法中的一种技巧。
 
-一. OpenCV基础1. 基础图像容器Mat
-  Mat 是一个类，有两个数据部分组成，矩阵头（包含矩阵尺寸、存储方法、存储地址">
+  双指针指的是在遍历对象的过程中，不是普通的使用单个指针进行访问，而是使用两个相同方向（快慢指针）或者相反方向（对撞指针）的指针进行扫描，从">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -33,7 +30,7 @@
     </style>
 
 
-    <title>OpenCV学习笔记一 | 若然无亦的Blog</title>
+    <title>第十一天_双指针(简单) | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -314,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1204690.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">OpenCV学习笔记一</h1>
+                    <h1 class="description center-align post-title">第十一天_双指针(简单)</h1>
                 </div>
             </div>
         </div>
@@ -443,8 +440,8 @@
                                 <span class="chip bg-color">Programming</span>
                             </a>
                         
-                            <a href="/tags/OpenCv/">
-                                <span class="chip bg-color">OpenCv</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -455,8 +452,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/OpenCV%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
-                                OpenCV学习笔记
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
+                                刷题笔记
                             </a>
                         
                     </div>
@@ -468,21 +465,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-03
+                    2022-05-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-03
+                    2022-05-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    854
+                    1k
                 </div>
                 
 
@@ -504,79 +501,127 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="OpenCV学习笔记"><a href="#OpenCV学习笔记" class="headerlink" title="OpenCV学习笔记"></a>OpenCV学习笔记</h1><blockquote>
-<p>  基于OpenCV 4.5.4</p>
-<p>  参考自: 《OpenCV3编程入门——毛星云》</p>
-</blockquote>
-<h2 id="一-OpenCV基础"><a href="#一-OpenCV基础" class="headerlink" title="一. OpenCV基础"></a>一. OpenCV基础</h2><h3 id="1-基础图像容器Mat"><a href="#1-基础图像容器Mat" class="headerlink" title="1. 基础图像容器Mat"></a>1. 基础图像容器Mat</h3><blockquote>
-<p>  Mat 是一个类，有两个数据部分组成，矩阵头（包含矩阵尺寸、存储方法、存储地址等信息）和一个指向所有存储像素值的矩阵。</p>
-</blockquote>
-<p>拷贝构造函数和赋值运算符只复制信息头，与原对象共用一个矩阵，若改一个，则都受影响。<br>使用函数<code>clone()</code>或<code>copyTo()</code>可以复制矩阵。</p>
-<p><strong>使用Mat创建图像</strong><br><code>Mat M = (2, 2, CV_8UC3, Scalar(0, 0, 255));</code></p>
-<p>参数解释:</p>
-<ul>
-<li>2，2为二维矩阵的大小</li>
-<li>CV_[位数][带符号与否][类型前缀]C[通道数]</li>
-<li>Scalar(a,b,c,d)四个参数，是一个类。表示颜色</li>
-<li>在RGB中，前三个依次为B,G,R，最后一个可不写。</li>
-</ul>
-<h3 id="2-常用数据结构"><a href="#2-常用数据结构" class="headerlink" title="2. 常用数据结构"></a>2. 常用数据结构</h3><h4 id="Point类"><a href="#Point类" class="headerlink" title="Point类"></a>Point类</h4><blockquote>
-<p>  用于表示一个点</p>
-</blockquote>
-<pre class="line-numbers language-cpp"><code class="language-cpp">Point point<span class="token punctuation">;</span>
-point<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-point<span class="token punctuation">.</span>y <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
-Point <span class="token function">point</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span>；
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="Scalar类"><a href="#Scalar类" class="headerlink" title="Scalar类"></a>Scalar类</h4><blockquote>
-<p>  颜色表示</p>
-</blockquote>
-<p><code>Scalar（0，0，255）</code> 依次是B, G, R的值(OpenCV存储RGB的顺序是BGR)</p>
-<h4 id="Size类"><a href="#Size类" class="headerlink" title="Size类"></a>Size类</h4><blockquote>
-<p>  用于表示图像的宽和高</p>
-</blockquote>
-<p><code>Size（5，5）</code>表示宽高都为5</p>
-<h4 id="Rect类"><a href="#Rect类" class="headerlink" title="Rect类"></a>Rect类</h4><p>Rect类的成员变量有下:</p>
-<ul>
-<li><strong>x, y, width, height, 分别为左上角点的坐标和矩形的宽和高。</strong></li>
-</ul>
-<p>常用的成员函数有：</p>
-<ul>
-<li>Size()返回值为Size();</li>
-<li>area()返回矩形的面积。</li>
-<li>Constrins(Point)判断点是否在矩形内；</li>
-<li>inside（Rect）函数判断矩形是否在矩形内；</li>
-<li>tl()返回左上角点的坐标；</li>
-<li>br()返回右下角点的坐标。还可对矩形进行交集、并集、平移和缩放操作。</li>
-</ul>
-<h4 id="RotateRect类"><a href="#RotateRect类" class="headerlink" title="RotateRect类*"></a>RotateRect类*</h4><blockquote>
-<p>  RotatedRect是一个存储旋转矩形的类，通常用来存储最小外包矩形函数minAreaRect( )和椭圆拟合函数fitEllipse( )返回的结果。存储的值，完全取决在于函数的返回</p>
-</blockquote>
-<p><strong>类的声明:</strong>              </p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">RotatedRect</span> 
-<span class="token punctuation">{</span>    
-    <span class="token keyword">public</span><span class="token operator">:</span>            
-        <span class="token function">RotatedRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">//构造函数</span>
-        <span class="token function">RotatedRect</span><span class="token punctuation">(</span><span class="token keyword">const</span> Point2f<span class="token operator">&amp;</span> center<span class="token punctuation">,</span> <span class="token keyword">const</span> Size2f<span class="token operator">&amp;</span> size<span class="token punctuation">,</span> <span class="token keyword">float</span> angle<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">RotatedRect</span><span class="token punctuation">(</span><span class="token keyword">const</span> CvBox2D<span class="token operator">&amp;</span> box<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                  
-        <span class="token keyword">void</span> <span class="token function">points</span><span class="token punctuation">(</span>Point2f pts<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">//返回矩形的4个顶点      </span>
-        Rect <span class="token function">boundingRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>             <span class="token comment" spellcheck="true">//返回包含旋转矩形的最小矩形     </span>
-        <span class="token keyword">operator</span> <span class="token function">CvBox2D</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>              <span class="token comment" spellcheck="true">//转换到旧式的cvbox2d结构</span>
-    
-        <span class="token keyword">float</span> angle<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//旋转角度，当角度为0、90、180、270等时，矩形就成了一个直立的矩形  </span>
-        Point2f center<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//矩形的质心      </span>
-        Size2f size<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//矩形的边长      </span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>OpenCV中，坐标的原点在左上角，与x轴平行的方向为角度为0，逆时针旋转角度为负，顺时针旋转角度为正 </p>
-<h5 id="minAreaRect"><a href="#minAreaRect" class="headerlink" title="minAreaRect( )"></a>minAreaRect( )</h5><p>函数返回的参数，请看下图：</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/20170712170137455" alt="img"></p>
-<p>角度参数angle 是矩形最下面的点（y坐标最大）P[0]发出的平行于x轴的射线，逆时针旋转，与碰到的第一个边的夹角（这个边的边长就作为width），取值范围[-90~0]。</p>
-<h5 id="points-Point2f-pts"><a href="#points-Point2f-pts" class="headerlink" title="points(Point2f pts[])"></a>points(Point2f pts[])</h5><p>可以计算出矩形的四个角点。 计算出来的角点是 固定的顺序 ，如图所示。</p>
+                <h1 id="第十一天-双指针-简单"><a href="#第十一天-双指针-简单" class="headerlink" title="第十一天_双指针(简单)"></a>第十一天_双指针(简单)</h1><h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><h3 id="双指针算法"><a href="#双指针算法" class="headerlink" title="双指针算法"></a>双指针算法</h3><p>严格的来说，双指针只能说是是算法中的一种技巧。</p>
 <blockquote>
-<p>  在利用minAreaRect函数去求一个外接矩形时，函数对于矩形长和宽的选择取决于这个外接矩形的边与水平轴的角度距离，即将水平轴逆时针旋转，最先与其平行的边的长度作为宽度width，另外一条边则为height，而角度则直接取该边与水平轴的夹角。应该意识到，在minAreaRect函数中，RotatedRect的width和height的选取跟矩形的尺寸无关，并非长的就是height，短的就是width。</p>
+<p>  双指针指的是在<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E9%81%8D%E5%8E%86&amp;spm=1001.2101.3001.7020">遍历</a>对象的过程中，不是普通的使用单个指针进行访问，而是使用两个相同方向（<strong>快慢指针</strong>）或者相反方向（<strong>对撞指针</strong>）的指针进行扫描，从而达到相应的目的。</p>
 </blockquote>
+<h3 id="对撞指针"><a href="#对撞指针" class="headerlink" title="对撞指针"></a>对撞指针</h3><p><strong>对撞指针</strong>是指在数组中，将指向最左侧的索引定义为<code>左指针（left）</code>，最右侧的定义为<code>右指针（right）</code>，然后从两头向中间进行数组遍历。快速排序就是典型的双指针问题。</p>
+<p>我们假设数组名字为 nums，数组长度为 n，数组首元素对应的位置为 0。</p>
+<p><strong>细节:</strong></p>
+<ul>
+<li>指针初始位置<ul>
+<li>左指针（left)一般指向数组的第一个元素。即 left = 0。</li>
+<li>右指针（right)一般指向数组的第一个元素。即 right = n-1。</li>
+</ul>
+</li>
+</ul>
+<p>​	</p>
+<ul>
+<li><p><strong>指针移动方法</strong></p>
+<ul>
+<li>左指针(left）向右边👉移动，一般每次移动一个位置，即 left++。</li>
+<li>右指针(right）向左边👈移动，一般每次移动一个位置，即 right–。</li>
+</ul>
+</li>
+<li><p><strong>结束条件</strong></p>
+<ul>
+<li>左指针（left）位置和右指针（right）位置逆序。</li>
+</ul>
+</li>
+</ul>
+<p>从上面的描述可知，开始的时候，right &gt;= left。因此结束的条件就是 right &lt; left。</p>
+<h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><p>快慢指针是两个指针从同一侧开始遍历数组，将这两个指针分别定义为快指针（fast）和慢指针（slow），两个指针以不同的策略移动，直到两个指针的值相等（或其他特殊条件）为止，如快指针（fast）每次增长两个，慢指针（slow）每次增长一个。</p>
+<p>一般来说，快慢指针常用于判断链表等数据结构中是否有环。</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/aHR0cHM6Ly9hc3NldHMubGVldGNvZGUtY24uY29tL2FsaXl1bi1sYy11cGxvYWQvdXBsb2Fkcy8yMDE4LzEyLzA3L2NpcmN1bGFybGlua2VkbGlzdC5wbmc" alt="img"></p>
+<p><strong>细节</strong>:</p>
+<ul>
+<li><p>指针初始位置</p>
+<ul>
+<li>慢指针（slow）一般指向数组的第一个元素。即 slow = 0。</li>
+<li>快指针（fast）一般指向数组的第一个元素。即 fast = 1。</li>
+</ul>
+</li>
+<li><p>指针移动方法</p>
+<ul>
+<li><p>慢指针（slow）向右边👉移动，一般每次移动一个位置，即 slow++。</p>
+</li>
+<li><p>快指针（fast）向右边👉移动，一般每次移动两个个位置，即 fast += 2。</p>
+</li>
+</ul>
+</li>
+<li><p>结束条件</p>
+<ul>
+<li>慢指针（slow）位置和快指针（fast）位置重合；快指针（fast）达到数组的最后一个元素。</li>
+</ul>
+</li>
+</ul>
+<h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="1-删除链表的节点"><a href="#1-删除链表的节点" class="headerlink" title="1. 删除链表的节点"></a>1. 删除链表的节点</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220504180845519.png" alt="image-20220504180845519"></p>
+<p><strong>解题思路:</strong></p>
+<p>本题删除值为 val 的节点分需为两步：定位节点、修改引用。</p>
+<p>定位节点： 遍历链表，直到 head.val == val 时跳出，即可定位目标节点。<br>修改引用： 设节点 cur 的前驱节点为 pre ，后继节点为 cur.next ；则执行 pre.next = cur.next ，即可实现删除 cur 节点。</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1613757478-NBOvjn-Picture1.png" alt="Picture1.png"></p>
+<blockquote>
+<p>  算法流程：<br>  特例处理： 当应删除头节点 head 时，直接返回 head.next 即可。<br>  初始化： pre = head , cur = head.next 。<br>  定位节点： 当 cur 为空 或 cur 节点值等于 val 时跳出。<br>  保存当前节点索引，即 pre = cur 。<br>  遍历下一节点，即 cur = cur.next 。<br>  删除节点： 若 cur 指向某节点，则执行 pre.next = cur.next ；若 cur 指向 null ，代表链表中不包含值为 val 的节点。<br>  返回值： 返回链表头部节点 head 即可。</p>
+</blockquote>
+<p>实现:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    ListNode<span class="token operator">*</span> <span class="token function">deleteNode</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">,</span> <span class="token keyword">int</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ListNode <span class="token operator">*</span>pre <span class="token operator">=</span> head<span class="token punctuation">,</span> <span class="token operator">*</span>cur <span class="token operator">=</span> head<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>head<span class="token operator">-</span><span class="token operator">></span>val <span class="token operator">==</span> val<span class="token punctuation">)</span> <span class="token keyword">return</span> head<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>cur <span class="token operator">!=</span> <span class="token keyword">nullptr</span> <span class="token operator">&amp;&amp;</span> cur<span class="token operator">-</span><span class="token operator">></span>val <span class="token operator">!=</span> val<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            pre <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+            cur <span class="token operator">=</span> cur<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>cur <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> pre<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> cur<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220504181829187.png" alt="image-20220504181829187"></p>
+<hr>
+<h3 id="2-链表中倒数第-k-个节点"><a href="#2-链表中倒数第-k-个节点" class="headerlink" title="2. 链表中倒数第 k 个节点"></a>2. 链表中倒数第 k 个节点</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220504181656331.png" alt="image-20220504181656331"></p>
+<p><strong>解题思路：</strong></p>
+<p>先遍历统计链表长度，记为 n ；<br>设置一个指针走 (n-k)步，即可找到链表倒数第 k 个节点；<br>使用双指针则可以不用统计链表长度。</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1600794523-AAMvoP-Picture1.png" alt="Picture1.png"></p>
+<p><strong>算法流程简单, 略</strong></p>
+<p>实现:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    ListNode<span class="token operator">*</span> <span class="token function">getKthFromEnd</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ListNode <span class="token operator">*</span>former<span class="token punctuation">,</span> <span class="token operator">*</span>latter<span class="token punctuation">;</span>
+        former <span class="token operator">=</span> latter <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> k<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            former <span class="token operator">=</span> former<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>former <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            former <span class="token operator">=</span> former<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            latter <span class="token operator">=</span> latter<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> latter<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220504181816417.png" alt="image-20220504181816417"></p>
 
                 
             </div>
@@ -603,7 +648,7 @@ Point <span class="token function">point</span><span class="token punctuation">(
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/2022/05/03/opencv-xue-xi-bi-ji-yi/">https://roranrui.cn/2022/05/03/opencv-xue-xi-bi-ji-yi/</a>
+                    <a href="https://roranrui.cn/2022/05/04/shua-ti-bi-ji-shi-yi/">https://roranrui.cn/2022/05/04/shua-ti-bi-ji-shi-yi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -649,8 +694,8 @@ Point <span class="token function">point</span><span class="token punctuation">(
                                     <span class="chip bg-color">Programming</span>
                                 </a>
                             
-                                <a href="/tags/OpenCv/">
-                                    <span class="chip bg-color">OpenCv</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -824,9 +869,10 @@ Point <span class="token function">point</span><span class="token punctuation">(
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/05/04/shua-ti-bi-ji-shi-yi/">
                     <div class="card-image">
@@ -843,9 +889,9 @@ Point <span class="token function">point</span><span class="token punctuation">(
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -858,6 +904,7 @@ Point <span class="token function">point</span><span class="token punctuation">(
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -884,13 +931,13 @@ Point <span class="token function">point</span><span class="token punctuation">(
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/05/03/css-xue-xi-bi-ji/">
+                <a href="/2022/05/03/opencv-xue-xi-bi-ji-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/50.jpg" class="responsive-img" alt="CSS学习笔记一">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="OpenCV学习笔记一">
                         
-                        <span class="card-title">CSS学习笔记一</span>
+                        <span class="card-title">OpenCV学习笔记一</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -907,8 +954,8 @@ Point <span class="token function">point</span><span class="token punctuation">(
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    前端学习
+                            <a href="/categories/OpenCV%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    OpenCV学习笔记
                                 </a>
                             
                             
@@ -918,12 +965,16 @@ Point <span class="token function">point</span><span class="token punctuation">(
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/css/">
-                        <span class="chip bg-color">css</span>
+                    <a href="/tags/Programming/">
+                        <span class="chip bg-color">Programming</span>
+                    </a>
+                    
+                    <a href="/tags/OpenCv/">
+                        <span class="chip bg-color">OpenCv</span>
                     </a>
                     
                 </div>
