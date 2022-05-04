@@ -4,14 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C++多线程进阶, 若然无亦的Blog">
-    <meta name="description" content="多线程进阶一. 条件变量
+    <meta name="keywords" content="C++多线程进阶一, 若然无亦的Blog">
+    <meta name="description" content="多线程进阶(一)一. 条件变量
   重复加锁, 影响效率, 可通过双重锁定的方式, 减少加锁, 提升效率
 
 bool IsoutMsg()
 {
         // 双重锁定, 提升效率
-        if (!msgRecvQueue.emp">
+        if (!msgRecvQueue.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -34,7 +34,7 @@ bool IsoutMsg()
     </style>
 
 
-    <title>C++多线程进阶 | 若然无亦的Blog</title>
+    <title>C++多线程进阶一 | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -315,12 +315,12 @@ bool IsoutMsg()
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/44.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++多线程进阶</h1>
+                    <h1 class="description center-align post-title">C++多线程进阶一</h1>
                 </div>
             </div>
         </div>
@@ -472,14 +472,14 @@ bool IsoutMsg()
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-03
+                    2022-05-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.7k
                 </div>
                 
 
@@ -501,7 +501,7 @@ bool IsoutMsg()
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="多线程进阶"><a href="#多线程进阶" class="headerlink" title="多线程进阶"></a>多线程进阶</h1><h2 id="一-条件变量"><a href="#一-条件变量" class="headerlink" title="一. 条件变量"></a>一. 条件变量</h2><blockquote>
+                <h1 id="多线程进阶-一"><a href="#多线程进阶-一" class="headerlink" title="多线程进阶(一)"></a>多线程进阶(一)</h1><h2 id="一-条件变量"><a href="#一-条件变量" class="headerlink" title="一. 条件变量"></a>一. 条件变量</h2><blockquote>
 <p>  重复加锁, 影响效率, 可通过双重锁定的方式, 减少加锁, 提升效率</p>
 </blockquote>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token function">IsoutMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -646,7 +646,7 @@ bool IsoutMsg()
 <p>  notify_one()：通知一个线程的wait()</p>
 <p>  notify_all()：通知所有线程的wait()</p>
 </blockquote>
-<h2 id="二-创建后台任务并返回值"><a href="#二-创建后台任务并返回值" class="headerlink" title="二. 创建后台任务并返回值"></a>二. 创建后台任务并返回值</h2><h3 id="std-asyncstd-future"><a href="#std-asyncstd-future" class="headerlink" title="std::async	std::future"></a>std::async	std::future</h3><p><strong>std::async</strong>是一个函数模板，用来启动一个异步任务，启动起来一个异步任务之后，它返回一个<strong>std::future</strong>对象，这个对象是个类模板。</p>
+<h2 id="二-创建后台任务并返回值–future类"><a href="#二-创建后台任务并返回值–future类" class="headerlink" title="二. 创建后台任务并返回值–future类"></a>二. 创建后台任务并返回值–future类</h2><h3 id="std-asyncstd-future"><a href="#std-asyncstd-future" class="headerlink" title="std::async	std::future"></a>std::async	std::future</h3><p><strong>std::async</strong>是一个函数模板，用来启动一个异步任务，启动起来一个异步任务之后，它返回一个<strong>std::future</strong>对象，这个对象是个类模板。</p>
 <p>异步任务的定义:</p>
 <blockquote>
 <p>  启动一个异步任务就是自动创建一个线程，并开始 执行对应的线程入口函数，它返回一个std::future对象，这个std::future对象中就含有线程入口函数所返回的结果，我们可以通过调用future对象的成员函数get()来获取结果。</p>
@@ -689,6 +689,7 @@ bool IsoutMsg()
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>  get()只能调用一次!!!!</p>
+<p>  因为get()函数的设计是一个移动语义，相当于将result中的值移动到了a中，再次get就报告了异常。</p>
 </blockquote>
 <hr>
 <h3 id="std-launch类型（枚举类型）"><a href="#std-launch类型（枚举类型）" class="headerlink" title="std::launch类型（枚举类型）"></a>std::launch类型（枚举类型）</h3><p>我们通过向std::async()传递一个参数，该参数是std::launch类型（枚举类型），来达到一些特殊的目的：</p>
@@ -804,6 +805,132 @@ vector<span class="token operator">&lt;</span>std<span class="token operator">::
     cout <span class="token operator">&lt;&lt;</span> <span class="token string">"result = "</span> <span class="token operator">&lt;&lt;</span> result <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="三-std-future-深入理解"><a href="#三-std-future-深入理解" class="headerlink" title="三. std::future 深入理解"></a>三. std::future 深入理解</h2><h3 id="future其他成员函数"><a href="#future其他成员函数" class="headerlink" title="future其他成员函数"></a>future其他成员函数</h3><ol>
+<li><code>std::future_status status = result.wait_for(std::chrono::seconds(几秒))</code>;</li>
+</ol>
+<blockquote>
+<p>  卡住当前流程，等待<code>std::async()</code>的异步任务运行一段时间，然后返回其状态<code>std::future_status</code>。</p>
+</blockquote>
+<ul>
+<li>如果<code>std::async()</code>的参数是<code>std::launch::deferred</code>（延迟执行），则不会卡住主流程。</li>
+<li><code>std::future_status</code>是枚举类型，表示异步任务的执行状态。类型的取值有:<ul>
+<li><code>std::future_status::timeout</code></li>
+<li><code>std::future_status::ready</code></li>
+<li><code>std::future_status::deferred</code></li>
+</ul>
+</li>
+</ul>
+<p>代码示例:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;mutex></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;future></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+  * @brief 线程入口函数
+  * @param int类型 num 数字
+  * @retval 5
+  */</span>
+<span class="token keyword">int</span> <span class="token function">mythread</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"num: "</span> <span class="token operator">&lt;&lt;</span> num <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"mythread started"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\tthread id: "</span> <span class="token operator">&lt;&lt;</span> this_thread<span class="token operator">::</span><span class="token function">get_id</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    chrono<span class="token operator">::</span>milliseconds <span class="token function">dura</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 5s</span>
+    this_thread<span class="token operator">::</span><span class="token function">sleep_for</span><span class="token punctuation">(</span>dura<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"mythread finished"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\tthread id: "</span> <span class="token operator">&lt;&lt;</span> this_thread<span class="token operator">::</span><span class="token function">get_id</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> tmp <span class="token operator">=</span> <span class="token number">230</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"main thread started"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\tthread id: "</span> <span class="token operator">&lt;&lt;</span> this_thread<span class="token operator">::</span><span class="token function">get_id</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    future<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> res <span class="token operator">=</span> <span class="token function">async</span><span class="token punctuation">(</span><span class="token comment" spellcheck="true">/*launch::deferred,*/</span> mythread<span class="token punctuation">,</span> tmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"continue..."</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/// 枚举类型</span>
+    future_status status <span class="token operator">=</span> res<span class="token punctuation">.</span><span class="token function">wait_for</span><span class="token punctuation">(</span>chrono<span class="token operator">::</span><span class="token function">seconds</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>status <span class="token operator">==</span> future_status<span class="token operator">::</span>timeout<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">/// 超时了</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"timeout!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>status <span class="token operator">==</span> future_status<span class="token operator">::</span>ready<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">/// 成功返回</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"线程成功执行!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>status <span class="token operator">==</span> future_status<span class="token operator">::</span>deferred<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">/// 延迟执行</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"线程延迟执行!!!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"end"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h3 id="std-shared-future"><a href="#std-shared-future" class="headerlink" title="std::shared_future"></a>std::shared_future</h3><blockquote>
+<ul>
+<li><p>std::future的 get() 成员函数是转移数据</p>
+</li>
+<li><p>std::shared_future 的 get()成员函数是复制数据</p>
+</li>
+</ul>
+</blockquote>
+<p>即<code>shared_future</code>的<code>get()</code>可以重复调用</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;mutex></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;future></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+  * @brief 线程入口函数
+  * @param int类型 num 数字
+  * @retval 5
+  */</span>
+<span class="token keyword">int</span> <span class="token function">mythread</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"mythread started"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\tthread id: "</span> <span class="token operator">&lt;&lt;</span> this_thread<span class="token operator">::</span><span class="token function">get_id</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    chrono<span class="token operator">::</span>milliseconds <span class="token function">dura</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 5s</span>
+    this_thread<span class="token operator">::</span><span class="token function">sleep_for</span><span class="token punctuation">(</span>dura<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"mythread finished"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\tthread id: "</span> <span class="token operator">&lt;&lt;</span> this_thread<span class="token operator">::</span><span class="token function">get_id</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"main thread started"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\tthread id: "</span> <span class="token operator">&lt;&lt;</span> this_thread<span class="token operator">::</span><span class="token function">get_id</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    packaged_task<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">></span> <span class="token function">mypt</span><span class="token punctuation">(</span>mythread<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    thread <span class="token function">t1</span><span class="token punctuation">(</span><span class="token function">ref</span><span class="token punctuation">(</span>mypt<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    future<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> res_1 <span class="token operator">=</span> mypt<span class="token punctuation">.</span><span class="token function">get_future</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/// 判断future中的值是不是一个有效值</span>
+    <span class="token keyword">bool</span> flag_get <span class="token operator">=</span> res_1<span class="token punctuation">.</span><span class="token function">valid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">///执行完毕后result_s里有值，而result里空了</span>
+
+    <span class="token comment" spellcheck="true">///std::shared_future&lt;int> result_s(std::move(result));</span>
+    <span class="token comment" spellcheck="true">///通过get_future返回值直接构造一个shared_future对象</span>
+    <span class="token comment" spellcheck="true">///std::shared_future&lt;int> result_s(mypt.get_future());</span>
+
+    shared_future<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">result_s</span><span class="token punctuation">(</span>res_1<span class="token punctuation">.</span><span class="token function">share</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    t1<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">auto</span> myres1 <span class="token operator">=</span> result_s<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">auto</span> myres2 <span class="token operator">=</span> result_s<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"myres1 = "</span> <span class="token operator">&lt;&lt;</span> myres1 <span class="token operator">&lt;&lt;</span> <span class="token string">" myres2 = "</span> <span class="token operator">&lt;&lt;</span> myres2 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"end"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
