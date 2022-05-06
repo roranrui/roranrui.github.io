@@ -1206,15 +1206,14 @@ thead {
     }
 }
 
-.chip-container {
-    margin-top: -60px;
+.chip-container .chip:hover {
+    color: #2ea451;
+    opacity: .8;
 }
 
-.chip-container .tag-title {
-    margin-bottom: 10px;
-    color: #3C4858;
-    font-size: 1.75rem;
-    font-weight: 400;
+.chip-container .chip-active {
+    color: #2ea451 !important;
+    box-shadow: 2px 5px 10px #aaa !important;
 }
 
 .chip-container .tag-chips {
@@ -1262,13 +1261,14 @@ thead {
 }
 
 .chip-default .tag-length {
-    color: #e91e63;
+    color: rgba(66, 92, 118, .8);
     margin-top: 1px;
 }
 
 .chip-active .tag-length {
-    color: #fff;
+    color: #64c45b;
 }
+
 
 /* archive page. */
 #cd-timeline .year {
