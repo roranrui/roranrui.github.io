@@ -115,6 +115,17 @@ MIT、Bell实验室、美国通用电气有限公司走到了一起，致力于�
   
   <li class="hide-on-med-and-down nav-item">
     
+    <a href="/book" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Book</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
     <a href="/about" class="waves-effect waves-light">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
@@ -153,15 +164,6 @@ MIT、Bell实验室、美国通用电气有限公司走到了一起，致力于�
           <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
           
           <span>安静听歌</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/bangumis">
-          
-          <i class="fas fa-solid fa-bolt" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>我的追番</span>
         </a>
       </li>
       
@@ -239,6 +241,17 @@ MIT、Bell实验室、美国通用电气有限公司走到了一起，致力于�
         
         <li class="m-nav-item">
 	  
+		<a href="/book" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Book
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
 		<a href="/about" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
@@ -272,21 +285,11 @@ MIT、Bell实验室、美国通用电气有限公司走到了一起，致力于�
               
                 <li>
 
-                  <a href="/musics " style="margin-left:75px">
+                  <a href="/musics " style="margin-left:50px">
 				  
-				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+				   <i class="fa fas fa-music" style="position: absolute;left:28px" ></i>
 			      
 		          <span>安静听歌</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/bangumis " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-solid fa-bolt" style="position: absolute;left:50px" ></i>
-			      
-		          <span>我的追番</span>
                   </a>
                 </li>
               
@@ -530,7 +533,7 @@ MIT、Bell实验室、美国通用电气有限公司走到了一起，致力于�
 <p><strong>Windows属于：单用户、多任务。</strong></p>
 <p><strong>Linux属于：多用户、多任务。</strong></p>
 <h2 id="5、Linux分支"><a href="#5、Linux分支" class="headerlink" title="5、Linux分支"></a>5、Linux分支</h2><p>分支：Linux分支有很多，现在比较有名的<strong>ubuntu</strong>、debian、<strong>centos</strong>（Community Enterprise Operating System）、redhat、suse等等。</p>
-
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
             <hr/>
@@ -867,10 +870,6 @@ MIT、Bell实验室、美国通用电气有限公司走到了一起，致力于�
                         <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/Programming/">
-                        <span class="chip bg-color">Programming</span>
-                    </a>
-                    
                     <a href="/tags/%E7%AE%97%E6%B3%95/">
                         <span class="chip bg-color">算法</span>
                     </a>
@@ -1060,11 +1059,11 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     
 
     <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+         style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2022</span>
+                <span id="year">2022</span>
             
             <a href="/about" target="_blank">若然无亦</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1090,6 +1089,60 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
 
             <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "4";
+                        var startDate = "19";
+                        var startHour = "15";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
             
             <br>
             

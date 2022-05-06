@@ -601,13 +601,14 @@ header .go-back i {
     line-height: 1.2em;
     margin-bottom: 20px;
     position: relative;
+    color: #576690
 }
 
 .bg-cover .description {
     font-weight: 300;
     font-size: 1.25rem;
     line-height: 1.4em;
-    color: #eee;
+    color: #576690;
 }
 
 .bg-cover .post-title {
@@ -696,6 +697,7 @@ header .go-back i {
     font-size: 1.8rem;
     font-weight: 700;
     line-height: 1.8rem;
+    color: #B8A6D9
 }
 
 .recommend .post-card:before {

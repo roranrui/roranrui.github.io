@@ -117,6 +117,17 @@
   
   <li class="hide-on-med-and-down nav-item">
     
+    <a href="/book" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Book</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
     <a href="/about" class="waves-effect waves-light">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
@@ -155,15 +166,6 @@
           <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
           
           <span>安静听歌</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/bangumis">
-          
-          <i class="fas fa-solid fa-bolt" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>我的追番</span>
         </a>
       </li>
       
@@ -241,6 +243,17 @@
         
         <li class="m-nav-item">
 	  
+		<a href="/book" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Book
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
 		<a href="/about" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
@@ -274,21 +287,11 @@
               
                 <li>
 
-                  <a href="/musics " style="margin-left:75px">
+                  <a href="/musics " style="margin-left:50px">
 				  
-				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+				   <i class="fa fas fa-music" style="position: absolute;left:28px" ></i>
 			      
 		          <span>安静听歌</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/bangumis " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-solid fa-bolt" style="position: absolute;left:50px" ></i>
-			      
-		          <span>我的追番</span>
                   </a>
                 </li>
               
@@ -437,10 +440,6 @@
                                 <span class="chip bg-color">C++</span>
                             </a>
                         
-                            <a href="/tags/Programming/">
-                                <span class="chip bg-color">Programming</span>
-                            </a>
-                        
                             <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/">
                                 <span class="chip bg-color">多线程编程</span>
                             </a>
@@ -453,8 +452,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                语言学习
+                            <a href="/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="post-category">
+                                多线程
                             </a>
                         
                     </div>
@@ -473,14 +472,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-04
+                    2022-05-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.7k
+                    3.8k
                 </div>
                 
 
@@ -881,8 +880,11 @@
 </blockquote>
 <h3 id="1、互斥量（mutex）的基本概念"><a href="#1、互斥量（mutex）的基本概念" class="headerlink" title="1、互斥量（mutex）的基本概念"></a>1、互斥量（mutex）的基本概念</h3><blockquote>
 <ul>
-<li>互斥量就是个类对象，可以理解为一把锁，多个线程尝试用lock()成员函数来加锁，只有一个线程能锁定成功，如果没有锁成功，那么流程将卡在lock()这里不断尝试去锁定。</li>
-<li>互斥量使用要小心，保护数据不多也不少，少了达不到效果，多了影响效率。</li>
+<li><p>操作共享数据，</p>
+<p>互斥量就是个类对象，可以理解为一把锁，多个线程尝试用lock()成员函数来加锁，只有一个线程能锁定成功，如果没有锁成功，那么流程将卡在lock()这里不断尝试去锁定。</p>
+</li>
+<li><p>互斥量使用要小心，保护数据不多也不少，少了达不到效果，多了影响效率。</p>
+</li>
 </ul>
 </blockquote>
 <hr>
@@ -890,9 +892,11 @@
 <p>函数<code>lock()，unlock()</code></p>
 <p>步骤：</p>
 <ol>
-<li><code>lock()</code></li>
-<li>操作共享数据，</li>
-<li><code>unlock()</code>。</li>
+<li><p><code>lock()</code></p>
+</li>
+<li><p>操作共享数据，</p>
+<p>互斥量就是个类对象，可以理解为一把锁，多个线程尝试用lock()成员函数来加锁，只有一个线程能锁定成功，如果没有锁成功，那么流程将卡在lock()这里不断尝试去锁定。</p>
+</li>
 </ol>
 <blockquote>
 <p>  <code>lock()</code>和<code>unlock()</code>要成对使用</p>
@@ -1069,8 +1073,7 @@ std<span class="token operator">::</span>unique_lock<span class="token operator"
 </ol>
 </li>
 </ol>
-<hr>
-
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
             <hr/>
@@ -1136,10 +1139,6 @@ std<span class="token operator">::</span>unique_lock<span class="token operator"
                             
                                 <a href="/tags/C/">
                                     <span class="chip bg-color">C++</span>
-                                </a>
-                            
-                                <a href="/tags/Programming/">
-                                    <span class="chip bg-color">Programming</span>
                                 </a>
                             
                                 <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/">
@@ -1392,8 +1391,8 @@ std<span class="token operator">::</span>unique_lock<span class="token operator"
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    语言学习
+                            <a href="/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="post-category">
+                                    多线程
                                 </a>
                             
                             
@@ -1405,10 +1404,6 @@ std<span class="token operator">::</span>unique_lock<span class="token operator"
                     
                     <a href="/tags/C/">
                         <span class="chip bg-color">C++</span>
-                    </a>
-                    
-                    <a href="/tags/Programming/">
-                        <span class="chip bg-color">Programming</span>
                     </a>
                     
                     <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/">
@@ -1600,11 +1595,11 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     
 
     <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+         style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2022</span>
+                <span id="year">2022</span>
             
             <a href="/about" target="_blank">若然无亦</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1630,6 +1625,60 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
 
             <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "4";
+                        var startDate = "19";
+                        var startHour = "15";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
             
             <br>
             
