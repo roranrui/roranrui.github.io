@@ -33,6 +33,12 @@
     }
 }
 
+/*  */
+@font-face{
+    font-family: 'myFont';
+    src: url('../font/myFont.ttf');
+}
+
 body {
     background-color: #eaeaea;
     margin: 0;
@@ -320,6 +326,7 @@ header .brand-logo .logo-img {
 
 header .brand-logo .logo-span {
     font-size: 1.6rem;
+    font-family: 'myFont';
 }
 
 /*修改顶部 logo 的文字垂直对齐为 top，避免默认 middle 看起来偏下*/
@@ -601,7 +608,8 @@ header .go-back i {
     line-height: 1.2em;
     margin-bottom: 20px;
     position: relative;
-    color: #576690
+    color: #576690;
+    font-family: 'myFont';
 }
 
 .bg-cover .description {
@@ -1728,6 +1736,7 @@ thead {
 
 .other-skills .sub-title {
     font-size: 1.5rem;
+    font-family: 'myFont';
 }
 
 .other-skills .tag-chips {
