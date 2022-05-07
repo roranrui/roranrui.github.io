@@ -454,7 +454,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.3k
                 </div>
                 
 
@@ -486,6 +486,8 @@
 <ul>
 <li><blockquote>
 <p>如果官网下载失败, 可以尝试从这里下载:</p>
+<p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1OOPVQVbZEPuBqU0NHCDQaA">https://pan.baidu.com/s/1OOPVQVbZEPuBqU0NHCDQaA</a></p>
+<p>提取码: rrwy</p>
 </blockquote>
 </li>
 </ul>
@@ -535,7 +537,9 @@
 <h3 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题:"></a>出现问题:</h3><p><strong>卡住</strong>(大概率发生)</p>
 <p>如果没有连接外网，执行过程会卡住，是因为文件下载不下来，等他卡完（一会儿就会跳过结束）这时候，去build文件夹，打开CMakeDownloadLog.txt文件，这里面记录了下载失败的文件，搜索关键词cmake_download，我这里有13个</p>
 <p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220507220344961.png" alt="一般是这几个"></p>
-<p>可以在这里下载这些缺失的文件:</p>
+<blockquote>
+<p>  可以在这里下载这些缺失的文件: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1MTw7nEjrTZBlHoQ4x1KAlg">https://pan.baidu.com/s/1MTw7nEjrTZBlHoQ4x1KAlg</a>	提取码: rrwy</p>
+</blockquote>
 <p>使用方法：ippicv_2020_lnx_intel64_20191018_general.tgz这个文件放在<code>/home/roranrui/mylibs/opencv/opencv/3rdparty/ippicv/</code>文件夹下，并打开该文件夹下的<strong>ippicv.cmake</strong>文件，修改如下:</p>
 <p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220507220659915.png" alt="image-20220507220659915"></p>
 <p>face_landmark_model.dat这个文件放在<code>/home/roranrui/mylibs/opencv/opencv_contrib/modules/face/</code>文件夹，并修改该文件夹下的<strong>CMakeLists.txt</strong>文件如下：</p>
@@ -631,8 +635,8 @@ include /usr/local/include/opencv4/opencv2
 <h3 id="CLion"><a href="#CLion" class="headerlink" title="CLion"></a>CLion</h3><p>CMakeLists.txt 文件添加:</p>
 <pre class="line-numbers language-cmake"><code class="language-cmake">find_package(OpenCV REQUIRED)
 message(STATUS "OpenCV library status:")
-message(STATUS "    version: ${OpenCV_VERSION}")
-message(STATUS "    libraries: ${OpenCV_LIBS}")
+message(STATUS "version: ${OpenCV_VERSION}")
+message(STATUS "libraries: ${OpenCV_LIBS}")
 message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
 
 add_executable(My_Learning main.cpp)
@@ -653,8 +657,7 @@ target_link_libraries(My_Learning ${OpenCV_LIBS})
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="../../../../Data/.config/Typora/typora-user-images/image-20220507224846893.png" alt="image-20220507224846893" style="zoom: 33%;">
-
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220507222454837.png" alt="image-20220507222454837"></p>
 <p>成功</p>
 <hr>
 <h2 id="五-其他问题"><a href="#五-其他问题" class="headerlink" title="五. 其他问题"></a>五. 其他问题</h2><p>提示出现: <strong>Failed to load module canberra-gtk-module</strong></p>
