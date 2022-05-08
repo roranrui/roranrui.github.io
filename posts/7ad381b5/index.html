@@ -4,12 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Ubuntu下配置OpenCV, 若然无亦的Blog">
-    <meta name="description" content="Ubuntu下配置OpenCV的环境
-  个人先看看这篇文章: OpenCV在CLion下的环境配置 | 若然无亦的Blog (roranrui.cn)
+    <meta name="keywords" content="第十五天_搜索与回溯算法(中等), 若然无亦的Blog">
+    <meta name="description" content="第十五天_搜索与回溯算法(中等)
+  刷题日程指引: 行百里者半九十。坚持一个月刷完，一起加油！
 
-一. 前置准备
-下载OpenCV源码: https://opencv.org/rel">
+一. 知识学习二叉搜索树二叉搜索树（BST，Binary Search Tree），也称二叉排序树或二叉查找树。
+
+  二叉搜索树：一棵二叉">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,7 +33,7 @@
     </style>
 
 
-    <title>Ubuntu下配置OpenCV | 若然无亦的Blog</title>
+    <title>第十五天_搜索与回溯算法(中等) | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -294,12 +295,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/881808.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Ubuntu下配置OpenCV</h1>
+                    <h1 class="description center-align post-title">第十五天_搜索与回溯算法(中等)</h1>
                 </div>
             </div>
         </div>
@@ -415,8 +416,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                <span class="chip bg-color">环境配置</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -427,8 +432,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="post-category">
-                                环境配置
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
+                                刷题笔记
                             </a>
                         
                     </div>
@@ -440,21 +445,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-07
+                    2022-05-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-07
+                    2022-05-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.1k
                 </div>
                 
 
@@ -476,194 +481,187 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Ubuntu下配置OpenCV的环境"><a href="#Ubuntu下配置OpenCV的环境" class="headerlink" title="Ubuntu下配置OpenCV的环境"></a>Ubuntu下配置OpenCV的环境</h1><blockquote>
-<p>  个人先看看这篇文章: <a href="https://roranrui.cn/posts/f18a3b77/">OpenCV在CLion下的环境配置 | 若然无亦的Blog (roranrui.cn)</a></p>
+                <h1 id="第十五天-搜索与回溯算法-中等"><a href="#第十五天-搜索与回溯算法-中等" class="headerlink" title="第十五天_搜索与回溯算法(中等)"></a>第十五天_搜索与回溯算法(中等)</h1><blockquote>
+<p>  刷题日程指引: <a target="_blank" rel="noopener" href="https://leetcode-cn.com/leetbook/read/illustration-of-algorithm/px2ds5/">行百里者半九十。坚持一个月刷完，一起加油！</a></p>
 </blockquote>
-<h2 id="一-前置准备"><a href="#一-前置准备" class="headerlink" title="一. 前置准备"></a>一. 前置准备</h2><ul>
-<li><p>下载OpenCV源码: <a target="_blank" rel="noopener" href="https://opencv.org/releases/">https://opencv.org/releases/</a></p>
-</li>
-<li><p>下载OpenCV_Contrib拓展库: <a target="_blank" rel="noopener" href="https://github.com/opencv/opencv_contrib">https://github.com/opencv/opencv_contrib</a></p>
-<ul>
-<li><blockquote>
-<p>如果官网下载失败, 可以尝试从这里下载:</p>
-<p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1OOPVQVbZEPuBqU0NHCDQaA">https://pan.baidu.com/s/1OOPVQVbZEPuBqU0NHCDQaA</a></p>
-<p>提取码: rrwy</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>下载QT:  <a target="_blank" rel="noopener" href="https://www.qt.io/download">https://www.qt.io/download</a></p>
-</li>
-<li><p>安装cmake, gcc, g++:</p>
-</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> cmake
-<span class="token function">sudo</span> apt <span class="token function">install</span> gcc
-<span class="token function">sudo</span> apt <span class="token function">install</span> g++
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>安装依赖环境:</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span>  build-essential
- 
-<span class="token function">sudo</span> apt <span class="token function">install</span> cmake <span class="token function">git</span> libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev  
- 
-<span class="token function">sudo</span> apt <span class="token function">install</span> python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>​	第三行中，可能会出现 【无法定位软件包libjasper-dev 的错误提示】</p>
-<p>​	依次输入以下命令:</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> add-apt-repository <span class="token string">"deb http://security.ubuntu.com/ubuntu xenial-security main"</span>
-<span class="token function">sudo</span> apt update
-<span class="token function">sudo</span> apt upgrade
-<span class="token function">sudo</span> apt <span class="token function">install</span> libjasper1 libjasper-dev
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>将下载到的OpenCV文件解压, 同级目录下新建一个<code>build</code>文件夹</p>
+<h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><h3 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h3><p>二叉搜索树（BST，Binary Search Tree），也称<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91&amp;spm=1001.2101.3001.7020">二叉排序树</a>或二叉查找树。</p>
 <blockquote>
-<p>这里我将带版本号的文件夹的版本号去掉了 即opencv-4.5.4 -&gt; opencv</p>
+<p>  二叉搜索树：一棵二叉树，可以为空；如果不为空，满足以下性质： </p>
+<ol>
+<li>非空<strong>左子树</strong>的所有键值<strong>小于</strong>其根结点的键值。</li>
+<li>非空<strong>右子树</strong>的所有键值<strong>大于</strong>其根结点的键值。</li>
+<li>左、右子树都是二叉搜索树。</li>
+</ol>
 </blockquote>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220507215022064.png" alt="image-20220507215022064"></p>
-<hr>
-<h2 id="二-编译"><a href="#二-编译" class="headerlink" title="二. 编译"></a>二. 编译</h2><p><strong>在bulid路径下执行:</strong></p>
-<p><strong>cmake编译参数:</strong></p>
-<pre class="line-numbers language-bash"><code class="language-bash">cmake <span class="token punctuation">..</span>/opencv -DCMAKE_BUILD_TYPE<span class="token operator">=</span>Release \
--DOPENCV_GENERATE_PKGCONFIG<span class="token operator">=</span>ON \
--DOPENCV_EXTRA_MODULES_PATH<span class="token operator">=</span>/home/roranrui/mylibs/opencv/opencv_contrib/modules -DBUILD_DOCS<span class="token operator">=</span>ON -DBUILD_EXAMPLES<span class="token operator">=</span>ON \
--DOPENCV_GENERATE_PKGCONFIG<span class="token operator">=</span>ON \
--DWITH_GTK_2_X<span class="token operator">=</span>ON \
--DWITH_OPENGL<span class="token operator">=</span>ON
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/20200904165827405.png"></p>
+<p>上图值为10的结点的右子树为7，比10小，不满足条件2，所以这棵树不是二叉搜索树。</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/20200904165842348.png"></p>
+<p>上图各个结点都满足条件，所以这棵树是二叉搜索树。</p>
+<h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="1-二叉树中和为某一值的路径"><a href="#1-二叉树中和为某一值的路径" class="headerlink" title="1. 二叉树中和为某一值的路径"></a>1. 二叉树中和为某一值的路径</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508120213318.png"></p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508120222440.png"></p>
+<p><strong>解题思路:</strong></p>
+<p>本题是典型的二叉树方案搜索问题，使用回溯法解决，其包含 <strong>先序遍历 + 路径记录</strong> 两部分。</p>
+<p><strong>先序遍历</strong>： 按照 “根、左、右” 的顺序，遍历树的所有节点。<br><strong>路径记录</strong>： 在先序遍历中，记录从根节点到当前节点的路径。当路径满足 ① 根节点到叶节点形成的路径 且 ② 各节点值的和等于目标值 sum 时，将此路径加入结果列表。</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508120806381.png" alt="image-20220508120806381"></p>
+<p>实现:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">pathSum</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">recur</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token keyword">private</span><span class="token operator">:</span>
+    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> res<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> path<span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">recur</span><span class="token punctuation">(</span>TreeNode <span class="token operator">*</span> root<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+        path<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/// 减法匹配</span>
+        target <span class="token operator">-</span><span class="token operator">=</span> root<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/// 遍历到底, 添加路径</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>target <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> root<span class="token operator">-</span><span class="token operator">></span>left <span class="token operator">==</span> <span class="token keyword">nullptr</span> <span class="token operator">&amp;&amp;</span> root<span class="token operator">-</span><span class="token operator">></span>right <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">recur</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">recur</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        path<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508121836942.png"></p>
+<h3 id="2-二叉搜索树与双向链表"><a href="#2-二叉搜索树与双向链表" class="headerlink" title="2. 二叉搜索树与双向链表"></a>2. 二叉搜索树与双向链表</h3><p><img src="C:/Users/13993/AppData/Roaming/Typora/typora-user-images/image-20220508122807095.png"></p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508122856579.png"></p>
+<p>解题思路：<br>本文解法基于性质：二叉搜索树的<a href="https://roranrui.cn/posts/1c3cffbc/"><strong>中序遍历</strong></a>为 递增序列 。<br>将 二叉搜索树 转换成一个 “排序的循环双向链表” ，其中包含三个要素：</p>
+<ol>
+<li><strong>排序链表</strong>： 节点应从小到大排序，因此应使用 中序遍历 “从小到大”访问树的节点。</li>
+<li><strong>双向链表</strong>： 在构建相邻节点的引用关系时，设前驱节点 pre 和当前节点 cur ，不仅应构建 pre.right = cur ，也应构建 cur.left = pre 。</li>
+<li><strong>循环链表</strong>： 设链表头节点 head 和尾节点 tail ，则应构建 head.left = tail 和 tail.right = head 。</li>
+</ol>
+<p><strong>中序遍历</strong> 为对二叉树作 “左、根、右” 顺序遍历，递归实现如下：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// 打印中序遍历</span>
+<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span>Node<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 左</span>
+    cout <span class="token operator">&lt;&lt;</span> root<span class="token operator">-</span><span class="token operator">></span>val <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 根</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 右</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1599401091-PKIjds-Picture1.png"></p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508123649382.png"></p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508124012133.png"></p>
+<p>实现:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    Node* left;
+    Node* right;
+
+    Node() {}
+
+    Node(int _val) {
+        val = _val;
+        left = NULL;
+        right = NULL;
+    }
+
+    Node(int _val, Node* _left, Node* _right) {
+        val = _val;
+        left = _left;
+        right = _right;
+    }
+};
+*/</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    Node<span class="token operator">*</span> <span class="token function">treeToDoublyList</span><span class="token punctuation">(</span>Node<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/// 形成双向链表</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/// 形成循环链表</span>
+        head<span class="token operator">-</span><span class="token operator">></span>left <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+        pre<span class="token operator">-</span><span class="token operator">></span>right <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> head<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>
+
+<span class="token keyword">private</span><span class="token operator">:</span>
+    Node <span class="token operator">*</span>pre<span class="token punctuation">,</span> <span class="token operator">*</span>head<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/// 递归中序遍历 </span>
+    <span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>cur<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>cur <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>cur<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>pre <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> pre<span class="token operator">-</span><span class="token operator">></span>right <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+        <span class="token keyword">else</span> head <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+        cur<span class="token operator">-</span><span class="token operator">></span>left <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+        pre <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>cur<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508130427936.png"></p>
+<h3 id="3-二叉搜索树的第-k-大节点"><a href="#3-二叉搜索树的第-k-大节点" class="headerlink" title="3. 二叉搜索树的第 k 大节点"></a>3. 二叉搜索树的第 k 大节点</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508130515215.png"></p>
+<p><strong>解题思路：</strong><br>本文解法基于性质：二叉搜索树的中序遍历为递增序列。根据此性质，易得二叉搜索树的 <strong>中序遍历倒序</strong> 为 递减序列 。<br>因此，求 “二叉搜索树第 k 大的节点” 可转化为求 “此树的<strong>中序遍历倒序</strong>的第 k 个节点”。</p>
+<p><strong>中序遍历倒序</strong>:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> root<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">;</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>-DOPENCV_EXTRA_MODULES_PATH=</p>
-<p>这里换成自己的路径</p>
-<h3 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题:"></a>出现问题:</h3><p><strong>卡住</strong>(大概率发生)</p>
-<p>如果没有连接外网，执行过程会卡住，是因为文件下载不下来，等他卡完（一会儿就会跳过结束）这时候，去build文件夹，打开CMakeDownloadLog.txt文件，这里面记录了下载失败的文件，搜索关键词cmake_download，我这里有13个</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220507220344961.png" alt="一般是这几个"></p>
-<blockquote>
-<p>  可以在这里下载这些缺失的文件: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1MTw7nEjrTZBlHoQ4x1KAlg">https://pan.baidu.com/s/1MTw7nEjrTZBlHoQ4x1KAlg</a>	提取码: rrwy</p>
-</blockquote>
-<p>使用方法：ippicv_2020_lnx_intel64_20191018_general.tgz这个文件放在<code>/home/roranrui/mylibs/opencv/opencv/3rdparty/ippicv/</code>文件夹下，并打开该文件夹下的<strong>ippicv.cmake</strong>文件，修改如下:</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220507220659915.png" alt="image-20220507220659915"></p>
-<p>face_landmark_model.dat这个文件放在<code>/home/roranrui/mylibs/opencv/opencv_contrib/modules/face/</code>文件夹，并修改该文件夹下的<strong>CMakeLists.txt</strong>文件如下：</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220507220833500.png" alt="image-20220507220833500"></p>
-<p>其余的文件均放在opencv_contrib/modules/xfeatures2d/src/文件夹下</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220507220344961.png" alt="这几个"></p>
-<p>build文件夹下继续执行构建命令 -j 后面是线程数</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">make</span> -j4
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>编译完成后:</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/20201027182832744.png"></p>
-<p>再执行:</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">make</span> <span class="token function">install</span> 
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>就ok</p>
-<hr>
-<h2 id="三-配置路径"><a href="#三-配置路径" class="headerlink" title="三. 配置路径"></a>三. 配置路径</h2><h3 id="如何确定自己的共享链接库位置以及版本？"><a href="#如何确定自己的共享链接库位置以及版本？" class="headerlink" title="如何确定自己的共享链接库位置以及版本？"></a><strong>如何确定自己的共享链接库位置以及版本？</strong></h3><p><strong>ubutnu终端中输入：</strong></p>
-<pre class="line-numbers language-bash"><code class="language-bash">ldconfig -p <span class="token operator">|</span><span class="token function">grep</span> opencv
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220507221600067.png" alt="image-20220507221600067"></p>
-<p>默认情况下编译opencv4等其他版本如果没有修改CMAKE_PREFIX_PATH中的路径。则都会存在/usr/local/lib目录下。</p>
-<p>于是lib库目录就为：<code>LIBS += /usr/local/lib/libopencv*</code></p>
-<p><code>usr即（Unix system resources</code>）下。<br>终端执行：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> /etc/ld.so.conf.d/
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">vi</span> opencv.conf 
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p> 将/usr/local/lib ，/usr/lib编辑写入。ESC 后wq保存退出即可。</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220507221751575.png" alt="image-20220507221751575"></p>
-<h3 id="如何确定ubuntu下想用的OpenCV版本Inlcude路径？"><a href="#如何确定ubuntu下想用的OpenCV版本Inlcude路径？" class="headerlink" title="如何确定ubuntu下想用的OpenCV版本Inlcude路径？"></a><strong>如何确定ubuntu下想用的OpenCV版本Inlcude路径？</strong></h3><blockquote>
-<p>在比较新的opencv版本中一般只包括一个头文件#include&lt;opencv2/opencv.hpp&gt;就能实现大多数功能。这是因为在新的版本中一些core等模块的头文件都给统一进去了。</p>
-</blockquote>
-<p>终端打开: </p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">vi</span> /etc/ld.so.conf
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>添加:</p>
-<pre class="line-numbers language-bash"><code class="language-bash">include /usr/local/include
-
-include /usr/local/include/opencv4
-
-include /usr/local/include/opencv4/opencv2
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>编辑后保存。</p>
-<p>将自己编译的opencv4头文件路径添加进去。</p>
-<p>更新并保存配置：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> ldconfig
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>注意：如果找不到/usr/local路径，就要去看一下路径在不在环境变量内：没有的话添加如下图内容即可。</strong></p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">vi</span> /etc/bash.bashrc
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/20191206105729813.png" alt="img"></p>
-<p>验证, 终端输入</p>
-<pre class="line-numbers language-bash"><code class="language-bash">pkg-config --modversion opencv4
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>出现版本号即成功:</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220507222159389.png" alt="image-20220507222159389"></p>
-<hr>
-<h2 id="四-配置IDE"><a href="#四-配置IDE" class="headerlink" title="四. 配置IDE"></a>四. 配置IDE</h2><h3 id="QT"><a href="#QT" class="headerlink" title="QT"></a>QT</h3><p>1.打开QT Creator，新建一个项目名为test，选择Qt Consle Applacation后面一直确定默认就行了，注意一下项目路径。</p>
-<p>2 .pro文件：添加下面内容：</p>
-<pre class="line-numbers language-properties"><code class="language-properties"><span class="token attr-name">INCLUDEPATH+</span><span class="token punctuation">=</span><span class="token attr-value">/usr/local/include \
-            /usr/local/include/opencv4 \
-            /usr/local/include/opencv4/opencv2</span>
-
-<span class="token attr-name">LIBS</span> <span class="token attr-value">+= /usr/local/lib/libopencv*</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>稍微说明一下上面的路径：</p>
-<p>INCLUDEPATH 为自己为Ubuntu电脑所编译的opencv的头文件目录（也可称为include目录）</p>
-<p>LIBS 为Ubuntu电脑内opencv的共享链接库（.so.4.1即版本号），在windows中被称为动态链接库（即.dll文件也是带有版本号的）。</p>
-<p>Ubuntu中opencv的共享链接库为（我编译的是4.1版本因此为）：</p>
-<p>libopencv_xphoto.so.4.1</p>
-<p>libopencv_xfeatures2d.so.4.1等等（许多图像处理可用到的库我就不一一列举）</p>
-<p>因此可以在QT中LIBS += /usr/local/lib/libopencv* 设置*通配符即可，而不用一一都给写上（PS：如果不嫌麻烦也可都写上，效果一样）</p>
-</blockquote>
-<p>main.cpp 中测试</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;QCoreApplication></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;opencv2/opencv.hpp></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> cv<span class="token punctuation">;</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    Mat src<span class="token punctuation">;</span>
-    src<span class="token operator">=</span><span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">"/home/roranrui/图片/roranrui.jpg"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">namedWindow</span><span class="token punctuation">(</span><span class="token string">"src"</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">"src"</span><span class="token punctuation">,</span>src<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">waitKey</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>结果:</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220507222454837.png" alt="image-20220507222454837"></p>
-<hr>
-<h3 id="CLion"><a href="#CLion" class="headerlink" title="CLion"></a>CLion</h3><p>CMakeLists.txt 文件添加:</p>
-<pre class="line-numbers language-cmake"><code class="language-cmake">find_package(OpenCV REQUIRED)
-message(STATUS "OpenCV library status:")
-message(STATUS "version: ${OpenCV_VERSION}")
-message(STATUS "libraries: ${OpenCV_LIBS}")
-message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
-
-add_executable(My_Learning main.cpp)
-target_link_libraries(My_Learning ${OpenCV_LIBS})
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>其中, target_link_libraries()处需要与你的可执行程序同名</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220507224548996.png" alt="编译成功提示"></p>
-<p><strong>测试程序</strong></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;opencv2/opencv.hpp></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> cv<span class="token punctuation">;</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    Mat img <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span><span class="token string">"/home/roranrui/图片/roranrui.jpg"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">,</span> img<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">waitKey</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello, World!"</span> <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220507222454837.png" alt="image-20220507222454837"></p>
-<p>成功</p>
-<hr>
-<h2 id="五-其他问题"><a href="#五-其他问题" class="headerlink" title="五. 其他问题"></a>五. 其他问题</h2><p>提示出现: <strong>Failed to load module canberra-gtk-module</strong></p>
-<p>解决: </p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> libcanberra-gtk-module
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>为求第 k 个节点，需要实现以下三项工作：</p>
+<ul>
+<li>递归遍历时计数，统计当前节点的序号；</li>
+<li>递归到第 k 个节点时，应记录结果 res；</li>
+<li>记录结果后，后续的遍历即失去意义，应提前终止（即返回）；</li>
+</ul>
+<p>实现:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">kthLargest</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">></span>k <span class="token operator">=</span> k<span class="token punctuation">;</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> res<span class="token punctuation">,</span> k<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/// 中序遍历得到倒序序列</span>
+    <span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">--</span>k <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> res <span class="token operator">=</span> root<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">;</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508131717851.png"></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
@@ -690,7 +688,7 @@ target_link_libraries(My_Learning ${OpenCV_LIBS})
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/posts/9223e133/">https://roranrui.cn/posts/9223e133/</a>
+                    <a href="https://roranrui.cn/posts/7ad381b5/">https://roranrui.cn/posts/7ad381b5/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -728,8 +726,12 @@ target_link_libraries(My_Learning ${OpenCV_LIBS})
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                    <span class="chip bg-color">环境配置</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -903,9 +905,10 @@ target_link_libraries(My_Learning ${OpenCV_LIBS})
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/7ad381b5/">
                     <div class="card-image">
@@ -922,9 +925,9 @@ target_link_libraries(My_Learning ${OpenCV_LIBS})
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -937,6 +940,7 @@ target_link_libraries(My_Learning ${OpenCV_LIBS})
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -959,19 +963,19 @@ target_link_libraries(My_Learning ${OpenCV_LIBS})
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/607cae0/">
+                <a href="/posts/9223e133/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/52.jpg" class="responsive-img" alt="Scrcpy-实现手机电脑多屏幕协同">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/24.jpg" class="responsive-img" alt="Ubuntu下配置OpenCV">
                         
-                        <span class="card-title">Scrcpy-实现手机电脑多屏幕协同</span>
+                        <span class="card-title">Ubuntu下配置OpenCV</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在电脑上实现多屏协同，达到类似但弱于鸿蒙的效果
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -982,8 +986,8 @@ target_link_libraries(My_Learning ${OpenCV_LIBS})
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%8F%92%E4%BB%B6%E5%88%86%E4%BA%AB/" class="post-category">
-                                    软件插件分享
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="post-category">
+                                    环境配置
                                 </a>
                             
                             
@@ -993,8 +997,8 @@ target_link_libraries(My_Learning ${OpenCV_LIBS})
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">
-                        <span class="chip bg-color">经验分享</span>
+                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                        <span class="chip bg-color">环境配置</span>
                     </a>
                     
                 </div>
