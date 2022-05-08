@@ -450,14 +450,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-06
+                    2022-05-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    4k
                 </div>
                 
 
@@ -711,7 +711,8 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>用了临时对象后, 所有的A类对象都在<code>main()</code>函数中就已经构造完毕了</p>
 <hr>
-<h3 id="2-7-传递类对象-智能指针作为线程参数"><a href="#2-7-传递类对象-智能指针作为线程参数" class="headerlink" title="2.7 传递类对象, 智能指针作为线程参数"></a>2.7 传递类对象, 智能指针作为线程参数</h3><h4 id="1-使用-std-ref-函数-形参改变实参"><a href="#1-使用-std-ref-函数-形参改变实参" class="headerlink" title="1.使用: std::ref()函数 形参改变实参"></a>1.使用: <code>std::ref()</code>函数 形参改变实参</h4><p>示例:</p>
+<h3 id="2-7-传递类对象-智能指针作为线程参数"><a href="#2-7-传递类对象-智能指针作为线程参数" class="headerlink" title="2.7 传递类对象, 智能指针作为线程参数"></a>2.7 传递类对象, 智能指针作为线程参数</h3><h4 id="1-使用-std-ref-函数-形参改变实参"><a href="#1-使用-std-ref-函数-形参改变实参" class="headerlink" title="1.使用: std::ref()函数 形参改变实参"></a>1.使用: <code>std::ref()</code>函数 形参改变实参</h4><p> <strong>C++11 的std::ref函数就是为了解决在线程的创建中等过程的值拷贝问题</strong></p>
+<p>示例:</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -756,7 +757,13 @@
 析构函数thread_id <span class="token operator">=</span> <span class="token number">1</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
-<h4 id="2-智能指针-unique-ptr-lt-gt-配合std-move-转移"><a href="#2-智能指针-unique-ptr-lt-gt-配合std-move-转移" class="headerlink" title="2. 智能指针: unique_ptr<>配合std::move()转移"></a>2. 智能指针: <code>unique_ptr&lt;&gt;</code>配合<code>std::move()</code>转移</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<h4 id="2-智能指针-unique-ptr-lt-gt-配合std-move-转移"><a href="#2-智能指针-unique-ptr-lt-gt-配合std-move-转移" class="headerlink" title="2. 智能指针: unique_ptr<>配合std::move()转移"></a>2. 智能指针: <code>unique_ptr&lt;&gt;</code>配合<code>std::move()</code>转移</h4><blockquote>
+<p>  **unique_ptr &lt;&gt;*<em>是c ++ 11提供的智能指针实现之一，用于防止内存泄漏。unique_ptr对象包含一个原始指针，并负责其生命周期。当这个对象被销毁的时候，它的析构函数会删除关联的原始指针。<br>  unique_ptr有重载的- &gt;和</em>运算符，所以它可以被用于类似于普通的指针。</p>
+</blockquote>
+<blockquote>
+<p>  s’t’d</p>
+</blockquote>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
@@ -779,7 +786,23 @@
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="3-成员函数指针做线程函数"><a href="#3-成员函数指针做线程函数" class="headerlink" title="3. 成员函数指针做线程函数"></a>3. 成员函数指针做线程函数</h4><p>类似<code>operator()()</code>, 不在重复说明</p>
-<h2 id="3-创建多个线程"><a href="#3-创建多个线程" class="headerlink" title="3. 创建多个线程"></a>3. 创建多个线程</h2><h3 id="1-创建和等待多个线程"><a href="#1-创建和等待多个线程" class="headerlink" title="1.创建和等待多个线程"></a>1.创建和等待多个线程</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<h2 id="3-创建多个线程"><a href="#3-创建多个线程" class="headerlink" title="3. 创建多个线程"></a>3. 创建多个线程</h2><h3 id="std-chrono类"><a href="#std-chrono类" class="headerlink" title="std::chrono类"></a>std::chrono类</h3><p>chrono命名空间定义好的时间单位</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">typedef</span> duration <span class="token operator">&lt;</span>Rep<span class="token punctuation">,</span> ratio<span class="token operator">&lt;</span><span class="token number">3600</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token operator">>></span> hours<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> duration <span class="token operator">&lt;</span>Rep<span class="token punctuation">,</span> ratio<span class="token operator">&lt;</span><span class="token number">60</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token operator">>></span> minutes<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> duration <span class="token operator">&lt;</span>Rep<span class="token punctuation">,</span> ratio<span class="token operator">&lt;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token operator">>></span> seconds<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> duration <span class="token operator">&lt;</span>Rep<span class="token punctuation">,</span> ratio<span class="token operator">&lt;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token operator">>></span> milliseconds<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> duration <span class="token operator">&lt;</span>Rep<span class="token punctuation">,</span> ratio<span class="token operator">&lt;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1000000</span><span class="token operator">>></span> microseconds<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> duration <span class="token operator">&lt;</span>Rep<span class="token punctuation">,</span> ratio<span class="token operator">&lt;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1000000000</span><span class="token operator">>></span> nanoseconds<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用举例:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">chrono<span class="token operator">::</span>minutes mintu<span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//2分钟</span>
+chrono<span class="token operator">::</span>seconds sec<span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//3秒钟</span>
+chrono<span class="token operator">::</span>milliseconds mills<span class="token punctuation">{</span><span class="token number">500</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//500毫秒</span>
+<span class="token keyword">auto</span> dul <span class="token operator">=</span> sec <span class="token operator">-</span> mills<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//两者差值，单位默认转到更小的 2500ms</span>
+dul<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//值为2500</span>
+std<span class="token operator">::</span>this_thread<span class="token operator">::</span><span class="token function">sleep_for</span><span class="token punctuation">(</span>std<span class="token operator">::</span>chrono<span class="token operator">::</span><span class="token function">milliseconds</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//当前线程休眠100毫秒</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-创建和等待多个线程"><a href="#1-创建和等待多个线程" class="headerlink" title="1.创建和等待多个线程"></a>1.创建和等待多个线程</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
