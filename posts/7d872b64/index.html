@@ -4,13 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第十五天_搜索与回溯算法(中等), 若然无亦的Blog">
-    <meta name="description" content="第十五天_搜索与回溯算法(中等)
-  刷题日程指引: 行百里者半九十。坚持一个月刷完，一起加油！
-
-一. 知识学习二叉搜索树二叉搜索树（BST，Binary Search Tree），也称二叉排序树或二叉查找树。
-
-  二叉搜索树：一棵二叉">
+    <meta name="keywords" content="C++-Lambda表达式, 若然无亦的Blog">
+    <meta name="description" content="C++ Lambda表达式
+   Lambda表达式是现代C++在C ++ 11和更高版本中的一个新的语法糖 ，在C++11、C++14、C++17和C++20中Lambda表达的内容还在不断更新。 lambda表达式（也称为lambda函">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -33,7 +29,7 @@
     </style>
 
 
-    <title>第十五天_搜索与回溯算法(中等) | 若然无亦的Blog</title>
+    <title>C++-Lambda表达式 | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -295,12 +291,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/881808.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/37.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第十五天_搜索与回溯算法(中等)</h1>
+                    <h1 class="description center-align post-title">C++-Lambda表达式</h1>
                 </div>
             </div>
         </div>
@@ -420,10 +416,6 @@
                                 <span class="chip bg-color">C++</span>
                             </a>
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -432,8 +424,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
-                                刷题笔记
+                            <a href="/categories/C-%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                C++学习
                             </a>
                         
                     </div>
@@ -459,7 +451,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.4k
                 </div>
                 
 
@@ -481,187 +473,217 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="第十五天-搜索与回溯算法-中等"><a href="#第十五天-搜索与回溯算法-中等" class="headerlink" title="第十五天_搜索与回溯算法(中等)"></a>第十五天_搜索与回溯算法(中等)</h1><blockquote>
-<p>  刷题日程指引: <a target="_blank" rel="noopener" href="https://leetcode-cn.com/leetbook/read/illustration-of-algorithm/px2ds5/">行百里者半九十。坚持一个月刷完，一起加油！</a></p>
+                <h1 id="C-Lambda表达式"><a href="#C-Lambda表达式" class="headerlink" title="C++ Lambda表达式"></a>C++ Lambda表达式</h1><blockquote>
+<p>   Lambda表达式是现代C++在C ++ 11和更高版本中的一个新的语法糖 ，在C++11、C++14、C++17和C++20中Lambda表达的内容还在不断更新。 lambda表达式（也称为lambda函数）是在调用或作为函数参数传递的位置处定义匿名函数对象的便捷方法。通常，lambda用于封装传递给算法或异步方法的几行代码 。本文主要介绍Lambda的工作原理以及使用方法。</p>
 </blockquote>
-<h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><h3 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h3><p>二叉搜索树（BST，Binary Search Tree），也称<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91&amp;spm=1001.2101.3001.7020">二叉排序树</a>或二叉查找树。</p>
-<blockquote>
-<p>  二叉搜索树：一棵二叉树，可以为空；如果不为空，满足以下性质： </p>
-<ol>
-<li>非空<strong>左子树</strong>的所有键值<strong>小于</strong>其根结点的键值。</li>
-<li>非空<strong>右子树</strong>的所有键值<strong>大于</strong>其根结点的键值。</li>
-<li>左、右子树都是二叉搜索树。</li>
-</ol>
-</blockquote>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/20200904165827405.png"></p>
-<p>上图值为10的结点的右子树为7，比10小，不满足条件2，所以这棵树不是二叉搜索树。</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/20200904165842348.png"></p>
-<p>上图各个结点都满足条件，所以这棵树是二叉搜索树。</p>
-<h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="1-二叉树中和为某一值的路径"><a href="#1-二叉树中和为某一值的路径" class="headerlink" title="1. 二叉树中和为某一值的路径"></a>1. 二叉树中和为某一值的路径</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508120213318.png"></p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508120222440.png"></p>
-<p><strong>解题思路:</strong></p>
-<p>本题是典型的二叉树方案搜索问题，使用回溯法解决，其包含 <strong>先序遍历 + 路径记录</strong> 两部分。</p>
-<p><strong>先序遍历</strong>： 按照 “根、左、右” 的顺序，遍历树的所有节点。<br><strong>路径记录</strong>： 在先序遍历中，记录从根节点到当前节点的路径。当路径满足 ① 根节点到叶节点形成的路径 且 ② 各节点值的和等于目标值 sum 时，将此路径加入结果列表。</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508120806381.png" alt="image-20220508120806381"></p>
-<p>实现:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
- */</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">pathSum</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">recur</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<h2 id="一-Lambda表达式定义"><a href="#一-Lambda表达式定义" class="headerlink" title="一. Lambda表达式定义"></a>一. Lambda表达式定义</h2><p> ISO C ++标准官网展示了一个简单的lambda 表示式实例:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cmath></span></span>
 
-<span class="token keyword">private</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> res<span class="token punctuation">;</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> path<span class="token punctuation">;</span>
-    <span class="token keyword">void</span> <span class="token function">recur</span><span class="token punctuation">(</span>TreeNode <span class="token operator">*</span> root<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
-        path<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">/// 减法匹配</span>
-        target <span class="token operator">-</span><span class="token operator">=</span> root<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">/// 遍历到底, 添加路径</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>target <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> root<span class="token operator">-</span><span class="token operator">></span>left <span class="token operator">==</span> <span class="token keyword">nullptr</span> <span class="token operator">&amp;&amp;</span> root<span class="token operator">-</span><span class="token operator">></span>right <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token function">recur</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">recur</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        path<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508121836942.png"></p>
-<h3 id="2-二叉搜索树与双向链表"><a href="#2-二叉搜索树与双向链表" class="headerlink" title="2. 二叉搜索树与双向链表"></a>2. 二叉搜索树与双向链表</h3><p><img src="C:/Users/13993/AppData/Roaming/Typora/typora-user-images/image-20220508122807095.png"></p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508122856579.png"></p>
-<p>解题思路：<br>本文解法基于性质：二叉搜索树的<a href="https://roranrui.cn/posts/1c3cffbc/"><strong>中序遍历</strong></a>为 递增序列 。<br>将 二叉搜索树 转换成一个 “排序的循环双向链表” ，其中包含三个要素：</p>
-<ol>
-<li><strong>排序链表</strong>： 节点应从小到大排序，因此应使用 中序遍历 “从小到大”访问树的节点。</li>
-<li><strong>双向链表</strong>： 在构建相邻节点的引用关系时，设前驱节点 pre 和当前节点 cur ，不仅应构建 pre.right = cur ，也应构建 cur.left = pre 。</li>
-<li><strong>循环链表</strong>： 设链表头节点 head 和尾节点 tail ，则应构建 head.left = tail 和 tail.right = head 。</li>
-</ol>
-<p><strong>中序遍历</strong> 为对二叉树作 “左、根、右” 顺序遍历，递归实现如下：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// 打印中序遍历</span>
-<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span>Node<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
-    <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 左</span>
-    cout <span class="token operator">&lt;&lt;</span> root<span class="token operator">-</span><span class="token operator">></span>val <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 根</span>
-    <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 右</span>
+<span class="token keyword">void</span> <span class="token function">abssort</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token operator">*</span> x<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    std<span class="token operator">::</span><span class="token function">sort</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> x <span class="token operator">+</span> n<span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">// Lambda expression begins</span>
+        <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token keyword">float</span> a<span class="token punctuation">,</span> <span class="token keyword">float</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token punctuation">(</span>std<span class="token operator">::</span><span class="token function">abs</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">&lt;</span> std<span class="token operator">::</span><span class="token function">abs</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// end of lambda expression</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1599401091-PKIjds-Picture1.png"></p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508123649382.png"></p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508124012133.png"></p>
-<p>实现:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
-// Definition for a Node.
-class Node {
-public:
-    int val;
-    Node* left;
-    Node* right;
-
-    Node() {}
-
-    Node(int _val) {
-        val = _val;
-        left = NULL;
-        right = NULL;
-    }
-
-    Node(int _val, Node* _left, Node* _right) {
-        val = _val;
-        left = _left;
-        right = _right;
-    }
-};
-*/</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    Node<span class="token operator">*</span> <span class="token function">treeToDoublyList</span><span class="token punctuation">(</span>Node<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">/// 形成双向链表</span>
-        <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">/// 形成循环链表</span>
-        head<span class="token operator">-</span><span class="token operator">></span>left <span class="token operator">=</span> pre<span class="token punctuation">;</span>
-        pre<span class="token operator">-</span><span class="token operator">></span>right <span class="token operator">=</span> head<span class="token punctuation">;</span>
-        <span class="token keyword">return</span> head<span class="token punctuation">;</span> 
-    <span class="token punctuation">}</span>
-
-<span class="token keyword">private</span><span class="token operator">:</span>
-    Node <span class="token operator">*</span>pre<span class="token punctuation">,</span> <span class="token operator">*</span>head<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">/// 递归中序遍历 </span>
-    <span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>cur<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>cur <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
-        <span class="token function">dfs</span><span class="token punctuation">(</span>cur<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>pre <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> pre<span class="token operator">-</span><span class="token operator">></span>right <span class="token operator">=</span> cur<span class="token punctuation">;</span>
-        <span class="token keyword">else</span> head <span class="token operator">=</span> cur<span class="token punctuation">;</span>
-        cur<span class="token operator">-</span><span class="token operator">></span>left <span class="token operator">=</span> pre<span class="token punctuation">;</span>
-        pre <span class="token operator">=</span> cur<span class="token punctuation">;</span>
-        <span class="token function">dfs</span><span class="token punctuation">(</span>cur<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508130427936.png"></p>
-<h3 id="3-二叉搜索树的第-k-大节点"><a href="#3-二叉搜索树的第-k-大节点" class="headerlink" title="3. 二叉搜索树的第 k 大节点"></a>3. 二叉搜索树的第 k 大节点</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508130515215.png"></p>
-<p><strong>解题思路：</strong><br>本文解法基于性质：二叉搜索树的中序遍历为递增序列。根据此性质，易得二叉搜索树的 <strong>中序遍历倒序</strong> 为 递减序列 。<br>因此，求 “二叉搜索树第 k 大的节点” 可转化为求 “此树的<strong>中序遍历倒序</strong>的第 k 个节点”。</p>
-<p><strong>中序遍历倒序</strong>:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
-    <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> root<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">;</span>
-    <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>为求第 k 个节点，需要实现以下三项工作：</p>
-<ul>
-<li>递归遍历时计数，统计当前节点的序号；</li>
-<li>递归到第 k 个节点时，应记录结果 res；</li>
-<li>记录结果后，后续的遍历即失去意义，应提前终止（即返回）；</li>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第三个参数传递的是排序规则, 直接将排序函数的实现写在应该传递函数的位置，省去了定义排序函数的过程，对于这种不需要复用，且短小的函数，直接传递函数体可以增加代码的可读性。</p>
+<h3 id="语法定义"><a href="#语法定义" class="headerlink" title="语法定义"></a>语法定义</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/f86a9e30f7474aff10be27e4b51c6f64.png"></p>
+<ol>
+<li><strong>捕获列表</strong>。在C ++规范中也称为Lambda导入器， 捕获列表总是出现在Lambda函数的开始处。实际上，[]是Lambda引出符。编译器根据该引出符判断接下来的代码是否是Lambda函数，捕获列表能够捕捉上下文中的变量以供Lambda函数使用。</li>
+<li>参数列表。与普通函数的参数列表一致。如果不需要参数传递，则可以连同括号“()”一起省略。</li>
+<li><strong>可变规格</strong><em>。mutable修饰符， 默认情况下Lambda函数总是一个const函数，mutable可以取消其常量性。在使用该修饰符时，参数列表不可省略（即使参数为空）。</em></li>
+<li><strong>异常说明</strong>。用于Lamdba表达式内部函数抛出异常。</li>
+<li><strong>返回类型</strong>。 追踪返回类型形式声明函数的返回类型。我们可以在不需要返回值的时候也可以连同符号”-&gt;”一起省略。此外，在返回类型明确的情况下，也可以省略该部分，让编译器对返回类型进行推导。</li>
+<li><strong>lambda函数体</strong>。内容与普通函数一样，不过除了可以使用参数之外，还可以使用所有捕获的变量。</li>
+</ol>
+<h4 id="捕获列表"><a href="#捕获列表" class="headerlink" title="捕获列表"></a>捕获列表</h4><ul>
+<li>[]表示不捕获任何变量</li>
 </ul>
-<p>实现:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">kthLargest</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">></span>k <span class="token operator">=</span> k<span class="token punctuation">;</span>
-        <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">auto</span> function <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>
+        std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello World!"</span> <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token keyword">private</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> res<span class="token punctuation">,</span> k<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">/// 中序遍历得到倒序序列</span>
-    <span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
-        <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">--</span>k <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> res <span class="token operator">=</span> root<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">;</span>
-        <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>[var]表示值传递方式捕获变量var</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token keyword">auto</span> function <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token punctuation">{</span>
+        std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> num <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>[=]表示值传递方式捕获所有父作用域的变量（包括this）</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token keyword">auto</span> function <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">=</span><span class="token punctuation">]</span><span class="token punctuation">{</span>
+            std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"index: "</span><span class="token operator">&lt;&lt;</span> index <span class="token operator">&lt;&lt;</span> <span class="token string">", "</span> 
+                <span class="token operator">&lt;&lt;</span> <span class="token string">"num: "</span><span class="token operator">&lt;&lt;</span> num <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>[&amp;var]表示引用传递捕捉变量var</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token keyword">auto</span> function <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">&amp;</span>num<span class="token punctuation">]</span><span class="token punctuation">{</span>
+        num <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+        std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"num: "</span> <span class="token operator">&lt;&lt;</span> num <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>[&amp;]表示引用传递方式捕捉所有父作用域的变量（包括this）</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token keyword">auto</span> function <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">&amp;</span><span class="token punctuation">]</span><span class="token punctuation">{</span>
+        num <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+        index <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"index: "</span><span class="token operator">&lt;&lt;</span> index <span class="token operator">&lt;&lt;</span> <span class="token string">", "</span> 
+            <span class="token operator">&lt;&lt;</span> <span class="token string">"num: "</span><span class="token operator">&lt;&lt;</span> num <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>[this]表示值传递方式捕捉当前的this指针</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+ 
+<span class="token keyword">class</span> <span class="token class-name">Lambda</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">void</span> <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello"</span> <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">void</span> <span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">auto</span> function <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">]</span><span class="token punctuation">{</span> 
+            <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+        <span class="token function">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220508131717851.png"></p>
+ 
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Lambda demo<span class="token punctuation">;</span>
+    demo<span class="token punctuation">.</span><span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>除了单独使用外, 也可一起组合使用, 如:</p>
+<ul>
+<li><p>[=,&amp;a,&amp;b]表示以引用传递的方式捕捉变量a和b，以值传递方式捕捉其它所有变量。</p>
+</li>
+<li><p>[&amp;,a,this]表示以值传递的方式捕捉变量a和this，引用传递方式捕捉其它所有变量。</p>
+</li>
+</ul>
+<blockquote>
+<p>  不过值得注意的是，捕捉列表不允许变量重复传递。下面一些例子就是典型的重复，会导致编译时期的错误。例如：</p>
+<ul>
+<li>[=,a]这里已经以值传递方式捕捉了所有变量，但是重复捕捉a了，会报错的;</li>
+<li>[&amp;,&amp;this]这里&amp;已经以引用传递方式捕捉了所有变量，再捕捉this也是一种重复。</li>
+</ul>
+</blockquote>
+<h4 id="参数列表"><a href="#参数列表" class="headerlink" title="参数列表"></a>参数列表</h4><blockquote>
+<p>  除了捕获列表之外，lambda还可以接受输入参数。参数列表是可选的，并且在大多数方面类似于函数的参数列表。</p>
+</blockquote>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">auto</span> function <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">(</span><span class="token keyword">int</span> first<span class="token punctuation">,</span> <span class="token keyword">int</span> second<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> first <span class="token operator">+</span> second<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+    
+<span class="token function">function</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="异常说明"><a href="#异常说明" class="headerlink" title="异常说明"></a>异常说明</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// C4297 expected </span>
+<span class="token punctuation">{</span> 
+     <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">throw</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="返回类型"><a href="#返回类型" class="headerlink" title="返回类型"></a>返回类型</h4><p>同函数, 若无return语句, 则编译器返回推导类型为void</p>
+<h4 id="函数体"><a href="#函数体" class="headerlink" title="函数体"></a>函数体</h4><p>Lambda表达式的lambda主体（标准语法中的<em>复合语句</em>）可以包含普通方法或函数的主体可以包含的任何内容。</p>
+<h2 id="二-Lambda工作原理"><a href="#二-Lambda工作原理" class="headerlink" title="二. Lambda工作原理"></a>二. Lambda工作原理</h2><blockquote>
+<p>  编译器会把一个lambda表达式生成一个匿名类的匿名对象，并在类中重载函数调用运算符,实现了一个operator()方法。</p>
+<p>  <strong>仿函数与Lamdba表达式的作用是一致的</strong></p>
+</blockquote>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">auto</span> print <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello World!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>等价于</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">print_class</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">void</span> <span class="token keyword">operator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token keyword">const</span>
+    <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello World！"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//用构造的类创建对象，print此时就是一个函数对象</span>
+<span class="token keyword">auto</span> print <span class="token operator">=</span> <span class="token function">print_class</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="三-一个简单案例"><a href="#三-一个简单案例" class="headerlink" title="三. 一个简单案例"></a>三. 一个简单案例</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">myPrint</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> x <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">myPrint2</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">void</span> <span class="token keyword">operator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> x <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> v<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/// 顺序插入数据</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        v<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/// 逆序输出数据</span>
+    <span class="token comment" spellcheck="true">/// 第一种</span>
+<span class="token comment" spellcheck="true">//    for (auto it = v.size() - 1; it > 0; it++)</span>
+<span class="token comment" spellcheck="true">//    {</span>
+<span class="token comment" spellcheck="true">//        cout &lt;&lt; it &lt;&lt; endl;</span>
+<span class="token comment" spellcheck="true">//    }</span>
+
+    <span class="token comment" spellcheck="true">/// 第二种</span>
+<span class="token comment" spellcheck="true">//    for_each(v.begin(), v.end(), myPrint);</span>
+
+    <span class="token comment" spellcheck="true">/// 第三种</span>
+<span class="token comment" spellcheck="true">//    for_each(v.begin(), v.end(), myPrint2());</span>
+
+    <span class="token comment" spellcheck="true">///第四种</span>
+<span class="token comment" spellcheck="true">//    for_each(v.begin(), v.end(), [](int x){cout &lt;&lt; x &lt;&lt; endl;});</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
@@ -688,7 +710,7 @@ public:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/posts/7ad381b5/">https://roranrui.cn/posts/7ad381b5/</a>
+                    <a href="https://roranrui.cn/posts/7d872b64/">https://roranrui.cn/posts/7d872b64/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -728,10 +750,6 @@ public:
                             
                                 <a href="/tags/C/">
                                     <span class="chip bg-color">C++</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -905,9 +923,10 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/7d872b64/">
                     <div class="card-image">
@@ -925,9 +944,9 @@ public:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -940,6 +959,7 @@ public:
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -958,13 +978,12 @@ public:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/9223e133/">
+                <a href="/posts/7ad381b5/">
                     <div class="card-image">
                         
+                        <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/881808.jpg" class="responsive-img" alt="第十五天_搜索与回溯算法(中等)">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/24.jpg" class="responsive-img" alt="Ubuntu下配置OpenCV">
-                        
-                        <span class="card-title">Ubuntu下配置OpenCV</span>
+                        <span class="card-title">第十五天_搜索与回溯算法(中等)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -975,14 +994,14 @@ public:
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="post-category">
-                                    环境配置
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    刷题笔记
                                 </a>
                             
                             
@@ -992,8 +1011,12 @@ public:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                        <span class="chip bg-color">环境配置</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
