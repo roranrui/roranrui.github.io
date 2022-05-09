@@ -454,7 +454,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-06
+                    2022-05-08
                 </div>
                 
 
@@ -496,7 +496,7 @@
 <p>该函数的作用是判断是否有线程访问临界区资源：</p>
 <p>如果没有，就改变CRITICAL_SECTION结构的成员变量的值，赋予当前线程访问权，函数立即返回；<br>如果有线程正在访问资源，则进入等待状态，直到没有线程访问。</p>
 <p><strong>释放资源</strong><br>函数原型：<code>void WINAPI LeaveCriticalSection( _Inout_LPCRITICAL_SECTION lpCriticalSection);</code></p>
-<p><strong>释放CRITICAL_SECTION结构指针</strong><br>函数原型：<code>void WINAPI DeleteCriticalSection(_Inout_ LPCRITICAL_SECTION lpCriticalSection)</code></p>
+<p><strong>释放CRITICAL_SECTION结构指针</strong><br>函数原型：<code>void WINAPI DeleteCriticalSection(_Inout_ LPCRITICAL_SECTION lpCriticalSection)t</code></p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;list></span></span>

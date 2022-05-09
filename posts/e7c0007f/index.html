@@ -4,8 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C++-std::move总结, 若然无亦的Blog">
-    <meta name="description" content="C++-std::move总结一. 移动语义移动语义可以使得编译器使用不那么昂贵的移动操作，来替换昂过的复制操作。同拷贝构造函数、拷贝赋值运算符赋予人们复制意义的能力一样，移动构造函数、移动赋值运算符也赋予人们移动语义的能力。更通俗的说：移">
+    <meta name="keywords" content="第十六天_排序(简单), 若然无亦的Blog">
+    <meta name="description" content="第十六天_排序(简单)
+  刷题日程指引: 行百里者半九十。坚持一个月刷完，一起加油！
+
+一. 知识学习排序算法排序算法用作实现列表的排序，列表元素可以是整数，也可以是浮点数、字符串等其他数据类型。生活中有许多需要排序算法的场景，例如：
+
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -28,7 +33,7 @@
     </style>
 
 
-    <title>C++-std::move总结 | 若然无亦的Blog</title>
+    <title>第十六天_排序(简单) | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -290,12 +295,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/39.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++-std::move总结</h1>
+                    <h1 class="description center-align post-title">第十六天_排序(简单)</h1>
                 </div>
             </div>
         </div>
@@ -415,6 +420,10 @@
                                 <span class="chip bg-color">C++</span>
                             </a>
                         
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -423,8 +432,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/C-%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                C++学习
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
+                                刷题笔记
                             </a>
                         
                     </div>
@@ -436,21 +445,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-08
+                    2022-05-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-08
+                    2022-05-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    744
+                    690
                 </div>
                 
 
@@ -472,46 +481,98 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="C-std-move总结"><a href="#C-std-move总结" class="headerlink" title="C++-std::move总结"></a>C++-std::move总结</h1><h2 id="一-移动语义"><a href="#一-移动语义" class="headerlink" title="一. 移动语义"></a>一. 移动语义</h2><p>移动语义可以使得编译器使用不那么昂贵的移动操作，来替换昂过的复制操作。同拷贝构造函数、拷贝赋值运算符赋予人们复制意义的能力一样，移动构造函数、移动赋值运算符也赋予人们移动语义的能力。更通俗的说：移动语义是通过移动构造函数或者移动赋值运算符实现的</p>
-<p>举个例子，对于C++标准库提供的<code>std::shared_ptr&lt;&gt;</code>智能指针，当对其进行复制操作时，需要增加其引用计数，而引用计数是个原子类型，因此增加引用计数是个耗时操作；而当对其进行移动操作的时候，则引用计数会保持不变，也即无需进行引用计数的操作。</p>
-<h2 id="二-左值引用和右值引用"><a href="#二-左值引用和右值引用" class="headerlink" title="二. 左值引用和右值引用"></a>二. 左值引用和右值引用</h2><p>已知左值引用的形式为 <code>T&amp; t</code></p>
-<p>右值引用是在左值引用的基础上多加一个<code>&amp;</code>，形式变为 <code>T&amp;&amp; t</code></p>
-<p>这种通过 <code>&amp;</code> 的个数区分左值引用和右值引用的方法，在大多数的普通函数中没有问题，但是放到模板参数或者 <code>auto</code> 关键字之后的位置就不太灵了，因为这些地方会推导实际的类型，正是有了参数推导，才使得模板中出现了“万能引用”的说法，也就是下面这样：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-
-<span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token operator">></span>
-<span class="token keyword">void</span> <span class="token function">func</span><span class="token punctuation">(</span>T<span class="token operator">&amp;&amp;</span> val<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    cout <span class="token operator">&lt;&lt;</span> val <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> year <span class="token operator">=</span> <span class="token number">2020</span><span class="token punctuation">;</span>
-    <span class="token function">func</span><span class="token punctuation">(</span>year<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">func</span><span class="token punctuation">(</span><span class="token number">2020</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>  函数 <code>func</code> 即能接受变量 <code>year</code> 这样的左值作为参数，也能接受 <code>2020</code> 这样的常数作为右值，简直太完美。那么这里是怎样推导的呢？这就要请出一个引用的“折叠”规则了，描述如下：</p>
-<p>  A&amp; &amp; 折叠成 A&amp;<br>  A&amp; &amp;&amp; 折叠成 A&amp;<br>  A&amp;&amp; &amp; 折叠成 A&amp;<br>  A&amp;&amp; &amp;&amp; 折叠成 A&amp;&amp;</p>
+                <h1 id="第十六天-排序-简单"><a href="#第十六天-排序-简单" class="headerlink" title="第十六天_排序(简单)"></a>第十六天_排序(简单)</h1><blockquote>
+<p>  刷题日程指引: <a target="_blank" rel="noopener" href="https://leetcode-cn.com/leetbook/read/illustration-of-algorithm/px2ds5/">行百里者半九十。坚持一个月刷完，一起加油！</a></p>
 </blockquote>
-<h2 id="三-std-move使用与作用"><a href="#三-std-move使用与作用" class="headerlink" title="三. std::move使用与作用"></a>三. std::move使用与作用</h2><p>把左值转化成右值的转化函数， <code>std::move</code> 函数的实现</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp">  <span class="token comment" spellcheck="true">/**
-   *  @brief  Convert a value to an rvalue.
-   *  @param  __t  A thing of arbitrary type.
-   *  @return The parameter cast to an rvalue-reference to allow moving it.
-  */</span>
-  <span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">typename</span> _Tp<span class="token operator">></span>
-    <span class="token keyword">constexpr</span> <span class="token keyword">typename</span> std<span class="token operator">::</span>remove_reference<span class="token operator">&lt;</span>_Tp<span class="token operator">></span><span class="token operator">::</span>type<span class="token operator">&amp;&amp;</span>
-    <span class="token function">move</span><span class="token punctuation">(</span>_Tp<span class="token operator">&amp;&amp;</span> __t<span class="token punctuation">)</span> <span class="token keyword">noexcept</span>
-    <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">typename</span> std<span class="token operator">::</span>remove_reference<span class="token operator">&lt;</span>_Tp<span class="token operator">></span><span class="token operator">::</span>type<span class="token operator">&amp;&amp;</span><span class="token operator">></span><span class="token punctuation">(</span>__t<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>std::move 的内部只做了一个强制类型转换，除此之外啥也没干，其实就是对传入的参数重新解释了一下，并没有实质性的动作。</p>
-<p><strong>作用</strong>:</p>
-<p>那么为什么要使用 std::move 这个名字呢？这个名字更多的是起到提醒的作用，告诉使用者这里可能进行了到右值的转化，相关的对象后续可能发生移动，“被掏空”了，如果你继续使用这个对象，行为是未定义的，后果自负。</p>
+<h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><p><strong>排序算法</strong><br>排序算法用作实现列表的排序，列表元素可以是整数，也可以是浮点数、字符串等其他数据类型。生活中有许多需要排序算法的场景，例如：</p>
+<ul>
+<li>整数排序： 对于一个整数数组，我们希望将所有数字从小到大排序；</li>
+<li>字符串排序： 对于一个姓名列表，我们希望将所有单词按照字符先后排序；</li>
+<li>自定义排序： 对于任意一个 已定义比较规则 的集合，我们希望将其按规则排序；</li>
+</ul>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1629483616-HHvvqY-Picture1.png"></p>
+<p>同时，某些算法需要在排序算法的基础上使用（即在排序数组上运行），例如：</p>
+<ul>
+<li>二分查找： 根据数组已排序的特性，才能每轮确定排除两部分中的哪一部分；</li>
+<li>双指针： 例如合并两个排序链表，根据已排序特性，才能通过双指针移动在线性时间内将其合并为一个排序链表。</li>
+</ul>
+<h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="1-把数组排成最小的数"><a href="#1-把数组排成最小的数" class="headerlink" title="1. 把数组排成最小的数"></a>1. 把数组排成最小的数</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220509130020373.png"></p>
+<p><strong>解题思路：</strong><br>此题求拼接起来的最小数字，本质上是一个排序问题。设数组 nums 中任意两数字的字符串为 xx 和 y ，则规定 排序判断规则 为：</p>
+<ul>
+<li>若拼接字符串 x + y &gt; y + x ，则 xx “大于” y ；</li>
+<li>反之，若 x + y &lt; y + x ，则 xx “小于” y ；</li>
+</ul>
+<blockquote>
+<p>  x “小于” y 代表：排序完成后，数组中 x 应在 y 左边；“大于” 则反之。</p>
+</blockquote>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/95e81dbccc44f26292d88c509afd68204a86b37d342f83d109fa7aa0cd4a6049-Picture1.png"></p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220509130834666.png"></p>
+<p><strong>实现:</strong></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    string <span class="token function">minNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> 
+    <span class="token punctuation">{</span>
+        vector<span class="token operator">&lt;</span>string<span class="token operator">></span> str<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            str<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token function">to_string</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">sort</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> str<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">(</span>string <span class="token operator">&amp;</span>s1<span class="token punctuation">,</span> string <span class="token operator">&amp;</span>s2<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span> s1 <span class="token operator">+</span> s2 <span class="token operator">&lt;</span> s2 <span class="token operator">+</span> s1<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        string res<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> str<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            res <span class="token operator">+</span><span class="token operator">=</span> str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220509131444790.png"></p>
+<hr>
+<h3 id="2-扑克牌中的顺子"><a href="#2-扑克牌中的顺子" class="headerlink" title="2. 扑克牌中的顺子"></a>2. 扑克牌中的顺子</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220509130326115.png"></p>
+<p><strong>解题思路：</strong><br>根据题意，此 5 张牌是顺子的 充分条件 如下：</p>
+<p>除大小王外，所有牌 无重复 ；<br>设此 55 张牌中最大的牌为 max ，最小的牌为 min （大小王除外），则需满足：	<br>                                <code>			max - min &lt; 5</code>	</p>
+<p>​								<code>max − min &lt; 5</code></p>
+<p>因此可将问题转化为：此 5 张牌是否满足以上两个条件？</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1599885716-MGMODX-Picture1.png"></p>
+<p>1.排序遍历</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220509130859184.png"></p>
+<p>实现:</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">isStraight</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> joker <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token function">sort</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nums<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> joker<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> nums<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">-</span> nums<span class="token punctuation">[</span>joker<span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220509131420819.png"></p>
+<p>2.set遍历</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220509132334415.png"></p>
+<p><strong>实现:</strong></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">isStraight</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        unordered_set<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> repeat<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">14</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> num <span class="token operator">:</span> nums<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            a <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>repeat<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token operator">!=</span> repeat<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            repeat<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> a <span class="token operator">-</span> b <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220509132354690.png"></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
@@ -538,7 +599,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/posts/62884e14/">https://roranrui.cn/posts/62884e14/</a>
+                    <a href="https://roranrui.cn/posts/e7c0007f/">https://roranrui.cn/posts/e7c0007f/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -578,6 +639,10 @@
                             
                                 <a href="/tags/C/">
                                     <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -751,9 +816,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/e7c0007f/">
                     <div class="card-image">
@@ -771,9 +837,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -786,6 +852,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -808,13 +875,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/7d872b64/">
+                <a href="/posts/62884e14/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/37.jpg" class="responsive-img" alt="C++-Lambda表达式">
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/39.jpg" class="responsive-img" alt="C++-std::move总结">
                         
-                        <span class="card-title">C++-Lambda表达式</span>
+                        <span class="card-title">C++-std::move总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
