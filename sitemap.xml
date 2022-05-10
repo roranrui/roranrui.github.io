@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://roranrui.cn/posts/2f8ddd78/</loc>
+    
+    <lastmod>2022-05-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://roranrui.cn/posts/e7c0007f/</loc>
     
     <lastmod>2022-05-09</lastmod>
@@ -571,7 +580,7 @@
 
   <url>
     <loc>https://roranrui.cn/</loc>
-    <lastmod>2022-05-09</lastmod>
+    <lastmod>2022-05-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
