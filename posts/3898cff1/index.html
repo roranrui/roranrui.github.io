@@ -490,6 +490,8 @@
 <h3 id="STC89C52中断资源"><a href="#STC89C52中断资源" class="headerlink" title="STC89C52中断资源"></a>STC89C52中断资源</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220511215150791.png"></p>
 <h3 id="中断配置"><a href="#中断配置" class="headerlink" title="中断配置"></a>中断配置</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220511220049661.png"></p>
 <h3 id="定时器相关寄存器"><a href="#定时器相关寄存器" class="headerlink" title="定时器相关寄存器"></a>定时器相关寄存器</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220511215429445.png" alt="TMOD"></p>
+<h3 id="定时器配置"><a href="#定时器配置" class="headerlink" title="定时器配置"></a>定时器配置</h3><p>使用<code>stc-isp</code>中的定时器计算器进行配置</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220511221245336.png"></p>
 <h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><p><strong>定时器时钟</strong></p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;REGX52.H></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"lcd1602.h"</span></span>
@@ -702,8 +704,8 @@
     TH0 <span class="token operator">=</span> <span class="token number">0xFC</span><span class="token punctuation">;</span>		<span class="token comment" spellcheck="true">//设置定时初值</span>
     TF0 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>		<span class="token comment" spellcheck="true">//清除TF0标志</span>
     TR0 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>		<span class="token comment" spellcheck="true">//定时器0开始计时</span>
-    ET0 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    EA <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    ET0 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>		<span class="token comment" spellcheck="true">// 中断初值</span>
+    EA <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>			<span class="token comment" spellcheck="true">// 中断初值</span>
     PT0 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
