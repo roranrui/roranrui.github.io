@@ -4,15 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="若然无亦的Blog">
-    <meta name="description" content="第十七天_排序(中等)
-  刷题日程指引: 行百里者半九十。坚持一个月刷完，一起加油！
-
-一. 知识学习
-优先队列
-  优先队列具有队列的所有特性，包括基本操作，只是在这基础上添加了内部的一个排序，它本质是一个堆实现的
-
-和队列基本操作相同">
+    <meta name="keywords" content="51单片机学习（三）, 若然无亦的Blog">
+    <meta name="description" content="51单片机学习笔记(三)一. 定时器二. 串口通信串口介绍
+  串口是一种应用十分广泛的通讯接口，串口成本低、容易使用、通信线路简单，可实现两个设备的互相通信。  单片机的串口可以使单片机与单片机、单片机与电脑、单片机与各式各样的模块互相通">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -35,7 +29,7 @@
     </style>
 
 
-    <title>若然无亦的Blog</title>
+    <title>51单片机学习（三） | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -297,12 +291,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1235534.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/46.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">51单片机学习（三）</h1>
                 </div>
             </div>
         </div>
@@ -418,12 +412,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C++</span>
+                            <a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/">
+                                <span class="chip bg-color">51单片机</span>
                             </a>
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/Hardware/">
+                                <span class="chip bg-color">Hardware</span>
                             </a>
                         
                     </div>
@@ -434,8 +428,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
-                                刷题笔记
+                            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" class="post-category">
+                                嵌入式开发
                             </a>
                         
                     </div>
@@ -454,14 +448,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-11
+                    2022-05-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    673
+                    254
                 </div>
                 
 
@@ -483,84 +477,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="第十七天-排序-中等"><a href="#第十七天-排序-中等" class="headerlink" title="第十七天_排序(中等)"></a>第十七天_排序(中等)</h1><blockquote>
-<p>  刷题日程指引: <a target="_blank" rel="noopener" href="https://leetcode-cn.com/leetbook/read/illustration-of-algorithm/px2ds5/">行百里者半九十。坚持一个月刷完，一起加油！</a></p>
+                <h1 id="51单片机学习笔记-三"><a href="#51单片机学习笔记-三" class="headerlink" title="51单片机学习笔记(三)"></a>51单片机学习笔记(三)</h1><h2 id="一-定时器"><a href="#一-定时器" class="headerlink" title="一. 定时器"></a>一. 定时器</h2><h2 id="二-串口通信"><a href="#二-串口通信" class="headerlink" title="二. 串口通信"></a>二. 串口通信</h2><h3 id="串口介绍"><a href="#串口介绍" class="headerlink" title="串口介绍"></a>串口介绍</h3><blockquote>
+<p>  串口是一种应用十分广泛的通讯接口，串口成本低、容易使用、通信线路简单，可实现两个设备的互相通信。<br>  单片机的串口可以使单片机与单片机、单片机与电脑、单片机与各式各样的模块互相通信，极大的扩展了单片机的应用范围，增强了单片机系统的硬件实力。51单片机内部自带UART（Universal Asynchronous Receiver Transmitter，通用异步收发器），可实现单片机的串口通信。</p>
 </blockquote>
-<h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1133891.jpg" alt="また晴れだね"></p>
-<h3 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h3><blockquote>
-<p>  <strong>优先队列</strong>具有队列的所有特性，包括基本操作，只是在这基础上添加了内部的一个排序，它本质是一个堆实现的</p>
-</blockquote>
-<p>和队列基本操作相同:</p>
-<ul>
-<li>top 访问队头元素</li>
-<li>empty 队列是否为空</li>
-<li>size 返回队列内元素个数</li>
-<li>push 插入元素到队尾 (并排序)</li>
-<li>emplace 原地构造一个元素并插入队列</li>
-<li>pop 弹出队头元素</li>
-<li>swap 交换内容</li>
+<h3 id="硬件电路"><a href="#硬件电路" class="headerlink" title="硬件电路"></a>硬件电路</h3><ul>
+<li>简单双向串口通信有两根通信线（发送端TXD和接收端RXD）</li>
+<li>TXD与RXD要交叉连接 （一个发送端、一个接收端）</li>
+<li>当只需单向的数据传输时，可以直接一根通信线</li>
+<li>当电平标准不一致时，需要加电平转换芯片</li>
 </ul>
-<p>定义：<code>priority_queue&lt;Type, Container, Functional&gt;</code><br>Type 就是数据类型，Container 就是容器类型（Container必须是用数组实现的容器，比如vector,deque等等，但不能用 list。STL里面默认用的是vector），Functional 就是比较的方式，当需要用自定义的数据类型时才需要传入这三个参数，使用基本数据类型时，只需要传入数据类型，默认是<strong>大顶堆</strong></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//升序队列大顶堆</span>
-priority_queue <span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">,</span>greater<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> q<span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//降序队列小顶堆</span>
-priority_queue <span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">,</span>less<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span>q<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="1-最小的-k-个数"><a href="#1-最小的-k-个数" class="headerlink" title="1. 最小的 k 个数"></a>1. 最小的 k 个数</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220510130344094.png"></p>
-<p><strong>解题思路:</strong></p>
-<p>先排序在找对应个数的解即可</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">getLeastNumbers</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> arr<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> res<span class="token punctuation">;</span>
-        <span class="token function">sort</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> arr<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        res<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> arr<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-数据流中的中位数"><a href="#2-数据流中的中位数" class="headerlink" title="2. 数据流中的中位数"></a>2. 数据流中的中位数</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220510132437080.png"></p>
-<p><strong>解题思路：</strong><br>给定一长度为 N 的无序数组，其中位数的计算方法：首先对数组执行排序（使用O(NlogN) 时间），然后返回中间元素即可（使用 O(1)时间）。</p>
-<p>针对本题，根据以上思路，可以将数据流保存在一个列表中，并在添加元素时 保持数组有序 。此方 法的时间复杂度为 O(N)，其中包括： 查找元素插入位置 O(log N)（二分查找）、向数组某位置插入元素 O(N)（插入位置之后的元素都需要向后移动一位）。</p>
-<p>借助 堆 可进一步优化时间复杂度。</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220510132536061.png"></p>
-<p>随后，中位数可仅根据 A, B的堆顶元素计算得到。</p>
-<p>实现：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">MedianFinder</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token comment" spellcheck="true">/** initialize your data structure here. */</span>
-    <span class="token function">MedianFinder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-    <span class="token punctuation">}</span>
-    priority_queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">,</span> greater<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> A<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 小顶堆 保存较大的一半</span>
-    priority_queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">,</span> less<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> B<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 大顶堆 保存较小的一半</span>
-    <span class="token keyword">void</span> <span class="token function">addNum</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>A<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> B<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            A<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            B<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>A<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            A<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">else</span>
-        <span class="token punctuation">{</span>
-            B<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            A<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>B<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            B<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    
-    <span class="token keyword">double</span> <span class="token function">findMedian</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> A<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> B<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span> A<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token punctuation">(</span>A<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> B<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2.0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">/**
- * Your MedianFinder object will be instantiated and called as such:
- * MedianFinder* obj = new MedianFinder();
- * obj->addNum(num);
- * double param_2 = obj->findMedian();
- */</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>![](<a target="_blank" rel="noopener" href="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220510222923452.p">https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220510222923452.p</a> 11ytfggth</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220510223011003.png" alt="Z在XCVBMN,,"></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
@@ -587,7 +514,7 @@ priority_queue <span class="token operator">&lt;</span><span class="token keywor
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/posts/2f8ddd78/">https://roranrui.cn/posts/2f8ddd78/</a>
+                    <a href="https://roranrui.cn/posts/3898cff1/">https://roranrui.cn/posts/3898cff1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -625,12 +552,12 @@ priority_queue <span class="token operator">&lt;</span><span class="token keywor
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C++</span>
+                                <a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/">
+                                    <span class="chip bg-color">51单片机</span>
                                 </a>
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/Hardware/">
+                                    <span class="chip bg-color">Hardware</span>
                                 </a>
                             
                         </div>
@@ -808,13 +735,12 @@ priority_queue <span class="token operator">&lt;</span><span class="token keywor
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/7dec669e/">
+                <a href="/posts/6d291dcd/">
                     <div class="card-image">
                         
+                        <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1235446.jpg" class="responsive-img" alt="第十八天_搜索与回溯算法（中等）">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="C++11_新特性">
-                        
-                        <span class="card-title">C++11_新特性</span>
+                        <span class="card-title">第十八天_搜索与回溯算法（中等）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -825,44 +751,8 @@ priority_queue <span class="token operator">&lt;</span><span class="token keywor
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-11
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            若然无亦
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/e7c0007f/">
-                    <div class="card-image">
-                        
-                        <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1235535.jpg" class="responsive-img" alt="第十六天_排序(简单)">
-                        
-                        <span class="card-title">第十六天_排序(简单)</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-09
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -886,6 +776,43 @@ priority_queue <span class="token operator">&lt;</span><span class="token keywor
                         <span class="chip bg-color">算法</span>
                     </a>
                     
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/7dec669e/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="C++11_新特性">
+                        
+                        <span class="card-title">C++11_新特性</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            若然无亦
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
