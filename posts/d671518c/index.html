@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta name="keywords" content="第二十天_分治算法(中等), 若然无亦的Blog">
     <meta name="description" content="第二十天_分治算法(中等)
-刷题日程指引: [行百里者半九十。坚持一个月刷完，一起加油！](
+刷题日程指引: 行百里者半九十。坚持一个月刷完，一起加油！
 
 一. 知识学习分治算法归并排序体现了 “分而治之” 的算法思想，具体为：
-「分」： 不断将数组从 中点位置 划分开，将原数组的排序问题转化为子数">
+「分」： 不断将数组从 中点位置 划分开，将原数组的排序问题转化为子数组的排">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -458,7 +458,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    892
+                    887
                 </div>
                 
 
@@ -481,12 +481,12 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="第二十天-分治算法-中等"><a href="#第二十天-分治算法-中等" class="headerlink" title="第二十天_分治算法(中等)"></a>第二十天_分治算法(中等)</h1><blockquote>
-<p>刷题日程指引: [行百里者半九十。坚持一个月刷完，一起加油！](</p>
+<p>刷题日程指引: <a target="_blank" rel="noopener" href="https://leetcode-cn.com/leetbook/read/illustration-of-algorithm/px2ds5/">行百里者半九十。坚持一个月刷完，一起加油！</a></p>
 </blockquote>
 <h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><h3 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h3><p>归并排序体现了 “分而治之” 的算法思想，具体为：</p>
 <p><strong>「分」：</strong> 不断将数组从 中点位置 划分开，将原数组的排序问题转化为子数组的排序问题；<br><strong>「治」：</strong> 划分到子数组长度为 1 时，开始向上合并，不断将 左右两个较短排序数组 合并为 一个较长排序数组，直至合并至原数组时完成排序；<br>如下图所示，为数组 [7,3,2,6,0,1,5,4] 的归并排序过程。</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1632675739-CNHaOu-Picture1.png"></p>
-<h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="1-重建二叉树"><a href="#1-重建二叉树" class="headerlink" title="1. *重建二叉树"></a>1. *重建二叉树</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220513120324436.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1632675739-CNHaOu-Picture1.png"></p>
+<h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="1-重建二叉树"><a href="#1-重建二叉树" class="headerlink" title="1. *重建二叉树"></a>1. *重建二叉树</h3><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220513120324436.png"></p>
 <p><strong>解题思路：</strong></p>
 <p>前序遍历性质： 节点按照 <code>[ 根节点 | 左子树 | 右子树 ]</code> 排序。<br>中序遍历性质： 节点按照 <code>[ 左子树 | 根节点 | 右子树 ]</code> 排序。</p>
 <p>根据以上性质，可得出以下推论：</p>
@@ -495,8 +495,8 @@
 <li>在中序遍历中搜索根节点 node 的索引 ，可将 中序遍历 划分为 <code>[ 左子树 | 根节点 | 右子树 ]</code> 。</li>
 <li>根据中序遍历中的左（右）子树的节点数量，可将 前序遍历 划分为 <code>[ 根节点 | 左子树 | 右子树 ]</code> 。</li>
 </ul>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1629825510-roByLr-Picture1.png"></p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220513122020000.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1629825510-roByLr-Picture1.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220513122020000.png"></p>
 <p><strong>实现</strong>:</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
  * Definition for a binary tree node.
@@ -532,19 +532,19 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220513123110737.png"></p>
-<h3 id="2-数值的整数次方"><a href="#2-数值的整数次方" class="headerlink" title="2. 数值的整数次方"></a>2. 数值的整数次方</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220513123509840.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220513123110737.png"></p>
+<h3 id="2-数值的整数次方"><a href="#2-数值的整数次方" class="headerlink" title="2. 数值的整数次方"></a>2. 数值的整数次方</h3><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220513123509840.png"></p>
 <p><strong>解题思路:</strong></p>
 <p>除了n个x<strong>相乘</strong>, 还可以用<strong>快速幂法</strong>可将时间复杂度降低至 O(NlogN) ，以下从 「分治法」 和 「二进制」 两个角度解析快速幂法。</p>
 <p>1.分治法</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220513123721987.png"></p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1599885604-YzlkAN-Picture2.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220513123721987.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1599885604-YzlkAN-Picture2.png"></p>
 <blockquote>
 <p>  转化为位运算：<br>  向下整除 n // 2 等价于 右移一位 n &gt;&gt; 1；<br>  取余数 n % 2 等价于 判断二进制最右位 n &amp; 1；</p>
 </blockquote>
 <p>2.二进制</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220513123843252.png"></p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1599885604-yDzVYK-Picture1.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220513123843252.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1599885604-yDzVYK-Picture1.png"></p>
 <p><strong>实现:</strong></p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
@@ -556,7 +556,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220513125324781.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220513125324781.png"></p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     <span class="token keyword">double</span> <span class="token function">myPow</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">,</span> <span class="token keyword">long</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -577,13 +577,13 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220513124509093.png"></p>
-<h3 id="3-二叉搜索树的后序遍历序列"><a href="#3-二叉搜索树的后序遍历序列" class="headerlink" title="3.  二叉搜索树的后序遍历序列"></a>3.  二叉搜索树的后序遍历序列</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220513125719563.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220513124509093.png"></p>
+<h3 id="3-二叉搜索树的后序遍历序列"><a href="#3-二叉搜索树的后序遍历序列" class="headerlink" title="3.  二叉搜索树的后序遍历序列"></a>3.  二叉搜索树的后序遍历序列</h3><p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220513125719563.png"></p>
 <p>解题思路：<br>后序遍历定义： <code>[ 左子树 | 右子树 | 根节点 ]</code> ，即遍历顺序为 “左、右、根” 。</p>
 <p>二叉搜索树定义： 左子树中所有节点的值 &lt; 根节点的值；右子树中所有节点的值 &gt; 根节点的值；其左、右子树也分别为二叉搜索树。</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1599753507-JrFBjm-Picture1.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/1599753507-JrFBjm-Picture1.png"></p>
 <p>1.递归</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220513131353240.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220513131353240.png"></p>
 <p><strong>实现</strong>:</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
@@ -602,30 +602,30 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220513131847608.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220513131847608.png"></p>
 <p>2.辅助栈</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220513132029095.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220513132029095.png"></p>
 <p><strong>实现</strong>:</p>
-<pre><code>class Solution {
-public:
-    bool verifyPostorder(vector&lt;int&gt;&amp; postorder) {
-        stack&lt;int&gt; stk;
-        int root = INT_MAX;
-        for (int i = postorder.size() - 1; i &gt;= 0; i--)
-        {
-            if (postorder[i] &gt; root) return false;
-            while(!stk.empty() &amp;&amp; stk.top() &gt; postorder[i])
-            {
-                root = stk.top();
-                stk.pop();
-            }
-            stk.push(postorder[i]);
-        }
-        return true;
-    }
-};
-</code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220513132328576.png"></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">verifyPostorder</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> postorder<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> stk<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> root <span class="token operator">=</span> INT_MAX<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> postorder<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>postorder<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> root<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>stk<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> stk<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> postorder<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                root <span class="token operator">=</span> stk<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                stk<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            stk<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>postorder<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/roranrui/img_bed/img/image-20220513132328576.png"></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
