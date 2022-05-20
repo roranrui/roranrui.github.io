@@ -4,17 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第二十六天_字符串(中等), 若然无亦的Blog">
-    <meta name="description" content="第二十六天_字符串(中等)
+    <meta name="keywords" content="第二十二天_位运算(中等), 若然无亦的Blog">
+    <meta name="description" content="第二十二天_位运算(中等)
 刷题日程指引: 行百里者半九十。坚持一个月刷完，一起加油！
 
-一. 知识学习二. 题目练习表示数值的字符串
-解题思路:
-暴力模拟遍历过程
-实现:
-class Solution {
-public:
-    //  ">
+一. 知识学习二. 题目练习1. 数组中数字出现的次数 I
+解题思路
+题目要求时间复杂度 O(N)，空间复杂度 O(1)，因此首先排除 暴力法 和 哈">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -37,7 +33,7 @@ public:
     </style>
 
 
-    <title>第二十六天_字符串(中等) | 若然无亦的Blog</title>
+    <title>第二十二天_位运算(中等) | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -299,12 +295,12 @@ public:
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1237228.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/29.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第二十六天_字符串(中等)</h1>
+                    <h1 class="description center-align post-title">第二十二天_位运算(中等)</h1>
                 </div>
             </div>
         </div>
@@ -449,21 +445,21 @@ public:
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-18
+                    2022-05-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-18
+                    2022-05-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    388
+                    575
                 </div>
                 
 
@@ -485,90 +481,62 @@ public:
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="第二十六天-字符串-中等"><a href="#第二十六天-字符串-中等" class="headerlink" title="第二十六天_字符串(中等)"></a>第二十六天_字符串(中等)</h1><blockquote>
+                <h1 id="第二十二天-位运算-中等"><a href="#第二十二天-位运算-中等" class="headerlink" title="第二十二天_位运算(中等)"></a>第二十二天_位运算(中等)</h1><blockquote>
 <p>刷题日程指引: <a target="_blank" rel="noopener" href="https://leetcode-cn.com/leetbook/read/illustration-of-algorithm/px2ds5/">行百里者半九十。坚持一个月刷完，一起加油！</a></p>
 </blockquote>
-<h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="表示数值的字符串"><a href="#表示数值的字符串" class="headerlink" title="表示数值的字符串"></a>表示数值的字符串</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220518082848376.png"></p>
-<p><strong>解题思路</strong>:</p>
-<p>暴力模拟遍历过程</p>
-<p>实现:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token comment" spellcheck="true">//     ① 只有 e 前后需要有数字</span>
-    <span class="token comment" spellcheck="true">//     ② 小数点需要增加一个 flag 控制，因为它可能出现在任何地方</span>
-    <span class="token comment" spellcheck="true">//     ③ 其他情况用 if 和 while 读取即可</span>
-    <span class="token keyword">bool</span> <span class="token function">isNumber</span><span class="token punctuation">(</span>string s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">bool</span> dot_flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 记录小数点</span>
-
-        <span class="token comment" spellcheck="true">// ********** 前缀空格和符号 ********** //</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">' '</span><span class="token punctuation">)</span> index<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'+'</span> <span class="token operator">||</span> s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'-'</span><span class="token punctuation">)</span> index<span class="token operator">++</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">// ********** 整数和小数 ********** //</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'.'</span><span class="token punctuation">)</span> 
-        <span class="token punctuation">{</span>
-            dot_flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> 
-            index<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">></span> <span class="token string">'9'</span> <span class="token operator">||</span> s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 小数点后没有数字, 错误</span>
-
-     
-        <span class="token keyword">while</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token string">'0'</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token string">'9'</span><span class="token punctuation">)</span> index<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'.'</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>dot_flag<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 之前读到小数</span>
-            <span class="token keyword">else</span>
-            <span class="token punctuation">{</span>
-                index<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token keyword">while</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token string">'0'</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token string">'9'</span><span class="token punctuation">)</span> index<span class="token operator">++</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-         <span class="token comment" spellcheck="true">// ********** E 及其整数尾缀 ********** //</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'e'</span> <span class="token operator">||</span> s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'E'</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            index<span class="token operator">++</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'+'</span> <span class="token operator">||</span> s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'-'</span><span class="token punctuation">)</span> index<span class="token operator">++</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 读 符号</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">></span> <span class="token string">'9'</span> <span class="token operator">||</span> s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// ① E 后面需要有数字</span>
-            <span class="token keyword">while</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token string">'9'</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token string">'0'</span><span class="token punctuation">)</span> index<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-         <span class="token comment" spellcheck="true">// ********** 后缀空格 ********** //</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">' '</span><span class="token punctuation">)</span> index<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'\0'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// End</span>
-        <span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220518085307952.png"></p>
-<h3 id="把字符串转换成整数"><a href="#把字符串转换成整数" class="headerlink" title="把字符串转换成整数"></a>把字符串转换成整数</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220518085553528.png"></p>
-<p><strong>解题思路</strong>：</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220518085705591.png"></p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1600793383-jCgsGU-Picture1.png"></p>
+<h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="1-数组中数字出现的次数-I"><a href="#1-数组中数字出现的次数-I" class="headerlink" title="1. 数组中数字出现的次数 I"></a>1. 数组中数字出现的次数 I</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220515133802999.png"></p>
+<p><strong>解题思路</strong></p>
+<p>题目要求时间复杂度 O(N)，空间复杂度 O(1)，因此首先排除 <strong>暴力法</strong> 和 <strong>哈希表统计法</strong> 。</p>
+<blockquote>
+<p>  异或运算有个重要的性质，两个相同数字异或为 0 ，即对于任意整数 a 有a ^ a=0 。因此，若将 nums中所有数字执行异或运算，留下的结果则为 出现一次的数字 x</p>
+</blockquote>
+<p><strong>本题难点：</strong> 数组 nums有 <strong>两个</strong> 只出现一次的数字，因此无法通过异或直接得到这两个数字。</p>
+<p>设两个只出现一次的数字为x,y,由于x ≠ y,则x和y二进制至少有一位不同(即分别为0和1) ,根据此位<br>可以将nums拆分为分别包含x和y的两个子数组。<br>易知两子数组都满足「除-一个数字之外，其他数字都出现了两次」。因此，仿照以上简化问题的思路,分别对两<br>子数组遍历执行异或操作，即可得到两个只出现一次的数字x, y。.</p>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1614836837-oygHyk-Picture2.png"></p>
 <p><strong>实现:</strong></p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">strToInt</span><span class="token punctuation">(</span>string str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> bndry <span class="token operator">=</span> INT_MAX <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> sign <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> length <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>length <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">' '</span><span class="token punctuation">)</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">++</span>i <span class="token operator">==</span> length<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'-'</span><span class="token punctuation">)</span> sign <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'-'</span> <span class="token operator">||</span> str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'+'</span><span class="token punctuation">)</span> i<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> i<span class="token punctuation">;</span> j <span class="token operator">&lt;</span> length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">singleNumbers</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> m <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> num <span class="token operator">:</span> nums<span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>str<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token string">'0'</span> <span class="token operator">||</span> str<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> <span class="token string">'9'</span><span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>res <span class="token operator">></span> bndry <span class="token operator">||</span> res <span class="token operator">==</span> bndry <span class="token operator">&amp;&amp;</span> str<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> <span class="token string">'7'</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> sign <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">?</span> INT_MAX <span class="token operator">:</span> INT_MIN<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            res <span class="token operator">=</span> res <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token punctuation">(</span>str<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            n <span class="token operator">^</span><span class="token operator">=</span> num<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> sign <span class="token operator">*</span> res<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">&amp;</span> m<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> m <span class="token operator">&lt;&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> num <span class="token operator">:</span> nums<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>num <span class="token operator">&amp;</span> m<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> x <span class="token operator">^</span><span class="token operator">=</span> num<span class="token punctuation">;</span>
+            <span class="token keyword">else</span> y <span class="token operator">^</span><span class="token operator">=</span> num<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token punctuation">{</span>x<span class="token punctuation">,</span> y<span class="token punctuation">}</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220518091720279.png"></p>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220515140939165.png"></p>
+<h3 id="2-数组中数字出现的次数-II"><a href="#2-数组中数字出现的次数-II" class="headerlink" title="2. 数组中数字出现的次数 II"></a>2. 数组中数字出现的次数 II</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220515140931286.png" alt="image-20220515140931286"></p>
+<p><strong>解题思路</strong>：</p>
+<p>如下图所示，考虑数字的二进制形式，对于出现三次的数字，各 二进制位 出现的次数都是 3 的倍数。<br>因此，统计所有数字的各二进制位中 1 的出现次数，并对 3 求余，结果则为只出现一次的数字。</p>
+<p><strong>暂时只想到遍历统计</strong></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">singleNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">int</span> counts<span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">// C++ 初始化数组需要写明初始值 0</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> num <span class="token operator">:</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">32</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                counts<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> num <span class="token operator">&amp;</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 更新第 i 位 1 的个数之和</span>
+                num <span class="token operator">>>=</span> <span class="token number">1</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// 第 i 位 --> 第 i 位</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">int</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> m <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">31</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            res <span class="token operator">&lt;&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            res <span class="token operator">|</span><span class="token operator">=</span> counts<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">%</span> m<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// 恢复第 i 位</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220515142732000.png"></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
@@ -595,7 +563,7 @@ public:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/posts/fbce72/">https://roranrui.cn/posts/fbce72/</a>
+                    <a href="https://roranrui.cn/posts/f66ba6ca/">https://roranrui.cn/posts/f66ba6ca/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -816,13 +784,12 @@ public:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/bde265a9/">
+                <a href="/posts/97c4b9c8/">
                     <div class="card-image">
                         
+                        <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1234713.jpg" class="responsive-img" alt="第二十三天_数学(简单)">
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="第二十七天_栈与队列（困难）">
-                        
-                        <span class="card-title">第二十七天_栈与队列（困难）</span>
+                        <span class="card-title">第二十三天_数学(简单)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -833,7 +800,7 @@ public:
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-16
                         </span>
                         <span class="publish-author">
                             
@@ -869,13 +836,13 @@ public:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/8eb60d28/">
+                <a href="/posts/320b7ec0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/29.jpg" class="responsive-img" alt="第二十五天_模拟（中等）">
+                        <img src="/medias/featureimages/42.jpg" class="responsive-img" alt="爬虫学习（二）">
                         
-                        <span class="card-title">第二十五天_模拟（中等）</span>
+                        <span class="card-title">爬虫学习（二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -886,14 +853,14 @@ public:
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    刷题笔记
+                            <a href="/categories/%E7%88%AC%E8%99%AB%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    爬虫笔记
                                 </a>
                             
                             
@@ -903,12 +870,12 @@ public:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">爬虫</span>
                     </a>
                     
                 </div>
