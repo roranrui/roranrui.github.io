@@ -4,13 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第二十二天_位运算(中等), 若然无亦的Blog">
-    <meta name="description" content="第二十二天_位运算(中等)
+    <meta name="keywords" content="第二十七天_栈与队列（困难）, 若然无亦的Blog">
+    <meta name="description" content="第二十七天_栈与队列（困难）
 刷题日程指引: 行百里者半九十。坚持一个月刷完，一起加油！
 
-一. 知识学习二. 题目练习1. 数组中数字出现的次数 I
-解题思路
-题目要求时间复杂度 O(N)，空间复杂度 O(1)，因此首先排除 暴力法 和 哈">
+一. 知识学习二. 题目练习滑动窗口的最大值
+解题思路:
+窗口对应的数据结构为 双端队列 ，本题使用 单调队列 即可解决以上问题。遍历数组时，每轮保">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -33,19 +33,19 @@
     </style>
 
 
-    <title>第二十二天_位运算(中等) | 若然无亦的Blog</title>
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
+    <title>第二十七天_栈与队列（困难） | 若然无亦的Blog</title>
+    <link rel="icon" type="image/png" href="/Diana.png">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-    <script src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/jquery/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/css/loading.css">
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/loading.css">
 
 
 <meta name="generator" content="Hexo 6.1.0">
@@ -62,7 +62,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/Diana.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/Diana.png" class="logo-img" alt="LOGO">
                     
             
                     <span class="logo-span">若然无亦的Blog</span>
@@ -176,7 +176,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/Diana.png" class="logo-img circle responsive-img">
+        <img src="/medias/Diana.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">若然无亦的Blog</div>
         <div class="logo-desc">
@@ -295,12 +295,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/29.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第二十二天_位运算(中等)</h1>
+                    <h1 class="description center-align post-title">第二十七天_栈与队列（困难）</h1>
                 </div>
             </div>
         </div>
@@ -313,7 +313,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -414,29 +414,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C++</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
-                                刷题笔记
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -445,21 +428,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-15
+                    2022-05-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-15
+                    2022-05-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    575
+                    413
                 </div>
                 
 
@@ -481,62 +464,73 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="第二十二天-位运算-中等"><a href="#第二十二天-位运算-中等" class="headerlink" title="第二十二天_位运算(中等)"></a>第二十二天_位运算(中等)</h1><blockquote>
+                <h1 id="第二十七天-栈与队列（困难）"><a href="#第二十七天-栈与队列（困难）" class="headerlink" title="第二十七天_栈与队列（困难）"></a>第二十七天_栈与队列（困难）</h1><blockquote>
 <p>刷题日程指引: <a target="_blank" rel="noopener" href="https://leetcode-cn.com/leetbook/read/illustration-of-algorithm/px2ds5/">行百里者半九十。坚持一个月刷完，一起加油！</a></p>
 </blockquote>
-<h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="1-数组中数字出现的次数-I"><a href="#1-数组中数字出现的次数-I" class="headerlink" title="1. 数组中数字出现的次数 I"></a>1. 数组中数字出现的次数 I</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220515133802999.png"></p>
-<p><strong>解题思路</strong></p>
-<p>题目要求时间复杂度 O(N)，空间复杂度 O(1)，因此首先排除 <strong>暴力法</strong> 和 <strong>哈希表统计法</strong> 。</p>
-<blockquote>
-<p>  异或运算有个重要的性质，两个相同数字异或为 0 ，即对于任意整数 a 有a ^ a=0 。因此，若将 nums中所有数字执行异或运算，留下的结果则为 出现一次的数字 x</p>
-</blockquote>
-<p><strong>本题难点：</strong> 数组 nums有 <strong>两个</strong> 只出现一次的数字，因此无法通过异或直接得到这两个数字。</p>
-<p>设两个只出现一次的数字为x,y,由于x ≠ y,则x和y二进制至少有一位不同(即分别为0和1) ,根据此位<br>可以将nums拆分为分别包含x和y的两个子数组。<br>易知两子数组都满足「除-一个数字之外，其他数字都出现了两次」。因此，仿照以上简化问题的思路,分别对两<br>子数组遍历执行异或操作，即可得到两个只出现一次的数字x, y。.</p>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1614836837-oygHyk-Picture2.png"></p>
+<h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="滑动窗口的最大值"><a href="#滑动窗口的最大值" class="headerlink" title="滑动窗口的最大值"></a>滑动窗口的最大值</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220519121819333.png"></p>
+<p><strong>解题思路:</strong></p>
+<p><strong>窗口对应的数据结构为 双端队列 ，本题使用 单调队列 即可解决以上问题。遍历数组时，每轮保证单调队列 deque ：</strong></p>
+<ul>
+<li>deque 内 仅包含窗口内的元素 ⇒ 每轮窗口滑动移除了元素 nums[i - 1] ，需将 deque内的对应元素一起删除。</li>
+<li>deque内的元素 非严格递减 ⇒ 每轮窗口滑动添加了元素 nums[j + 1] ，需将 deque 内所有 &lt; nums[j + 1]的元素删除。</li>
+</ul>
 <p><strong>实现:</strong></p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">singleNumbers</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> m <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> num <span class="token operator">:</span> nums<span class="token punctuation">)</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">maxSlidingWindow</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> res<span class="token punctuation">;</span>
+        deque<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> d<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">-</span> k<span class="token punctuation">,</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">,</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
-            n <span class="token operator">^</span><span class="token operator">=</span> num<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">&amp;</span> m<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> m <span class="token operator">&lt;&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> num <span class="token operator">:</span> nums<span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>num <span class="token operator">&amp;</span> m<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> x <span class="token operator">^</span><span class="token operator">=</span> num<span class="token punctuation">;</span>
-            <span class="token keyword">else</span> y <span class="token operator">^</span><span class="token operator">=</span> num<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token punctuation">{</span>x<span class="token punctuation">,</span> y<span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220515140939165.png"></p>
-<h3 id="2-数组中数字出现的次数-II"><a href="#2-数组中数字出现的次数-II" class="headerlink" title="2. 数组中数字出现的次数 II"></a>2. 数组中数字出现的次数 II</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220515140931286.png" alt="image-20220515140931286"></p>
-<p><strong>解题思路</strong>：</p>
-<p>如下图所示，考虑数字的二进制形式，对于出现三次的数字，各 二进制位 出现的次数都是 3 的倍数。<br>因此，统计所有数字的各二进制位中 1 的出现次数，并对 3 求余，结果则为只出现一次的数字。</p>
-<p><strong>暂时只想到遍历统计</strong></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">singleNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       <span class="token keyword">int</span> counts<span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">// C++ 初始化数组需要写明初始值 0</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> num <span class="token operator">:</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">32</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                counts<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> num <span class="token operator">&amp;</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 更新第 i 位 1 的个数之和</span>
-                num <span class="token operator">>>=</span> <span class="token number">1</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// 第 i 位 --> 第 i 位</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">int</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> m <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">31</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            res <span class="token operator">&lt;&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-            res <span class="token operator">|</span><span class="token operator">=</span> counts<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">%</span> m<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// 恢复第 i 位</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> d<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> d<span class="token punctuation">.</span><span class="token function">pop_front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 形成窗口时开始遍历 </span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>d<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> d<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> d<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 寻找最大值</span>
+            d<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span> res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
         <span class="token keyword">return</span> res<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220515142732000.png"></p>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="队列的最大值"><a href="#队列的最大值" class="headerlink" title="队列的最大值"></a>队列的最大值</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220519123759612.png"></p>
+<p><strong>解题思路:</strong></p>
+<p><strong>额外构建一个递减列表保存所有递减的元素, 并实时更新, 这样队列最大元素就始终对应递减列表的首元素</strong></p>
+<p><strong>实现</strong></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">MaxQueue</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">MaxQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">int</span> <span class="token function">max_value</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> deq<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">:</span> deq<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">void</span> <span class="token function">push_back</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>deq<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> deq<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> value<span class="token punctuation">)</span> deq<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// xun'zha</span>
+        deq<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">int</span> <span class="token function">pop_front</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>que<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> val <span class="token operator">=</span> que<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>val <span class="token operator">==</span> deq<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> deq<span class="token punctuation">.</span><span class="token function">pop_front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        que<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> val<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> que<span class="token punctuation">;</span>
+    deque<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> deq<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * Your MaxQueue object will be instantiated and called as such:
+ * MaxQueue* obj = new MaxQueue();
+ * int param_1 = obj->max_value();
+ * obj->push_back(value);
+ * int param_3 = obj->pop_front();
+ */</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
@@ -563,7 +557,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/posts/f66ba6ca/">https://roranrui.cn/posts/f66ba6ca/</a>
+                    <a href="https://roranrui.cn/posts/bde265a9/">https://roranrui.cn/posts/bde265a9/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -600,25 +594,17 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C++</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
 <div id="article-share">
 
     
     <div class="social-share" data-sites="qq,qzone,wechat,weibo,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/share/js/social-share.min.js"></script>
+    <script src="/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -736,10 +722,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -780,16 +766,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/97c4b9c8/">
+                <a href="/posts/bde265a9/">
                     <div class="card-image">
                         
-                        <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1234713.jpg" class="responsive-img" alt="第二十三天_数学(简单)">
                         
-                        <span class="card-title">第二十三天_数学(简单)</span>
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="第二十七天_栈与队列（困难）">
+                        
+                        <span class="card-title">第二十七天_栈与队列（困难）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -799,9 +787,46 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-16
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            若然无亦
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/fbce72/">
+                    <div class="card-image">
+                        
+                        <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/1237228.png" class="responsive-img" alt="第二十六天_字符串(中等)">
+                        
+                        <span class="card-title">第二十六天_字符串(中等)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -823,59 +848,6 @@
                     
                     <a href="/tags/%E7%AE%97%E6%B3%95/">
                         <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/320b7ec0/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/42.jpg" class="responsive-img" alt="爬虫学习（二）">
-                        
-                        <span class="card-title">爬虫学习（二）</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%88%AC%E8%99%AB%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    爬虫笔记
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%88%AC%E8%99%AB/">
-                        <span class="chip bg-color">爬虫</span>
                     </a>
                     
                 </div>
@@ -928,21 +900,21 @@
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
 
@@ -989,7 +961,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/tocbot/tocbot.min.js"></script>
+<script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1096,7 +1068,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
             <br>
             
-                <span id="icp"><img src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/icp.png"
+                <span id="icp"><img src="/medias/icp.png"
                                     style="vertical-align: text-bottom;"/>
                 <a href="https://beian.miit.gov.cn" target="_blank">滇ICP备2022002945号-1</a>
             </span>
@@ -1290,12 +1262,12 @@ $(function () {
 </div>
 
 
-    <script src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/materialize/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/aos/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/js/matery.js"></script>
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
 
     
     
@@ -1312,7 +1284,7 @@ $(function () {
 
      
         <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/others/TencentCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
         <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
     
 
@@ -1335,10 +1307,10 @@ $(function () {
 </script>
 
     
-    <script src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/others/clicklove.js" async="async"></script>
+    <script src="/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1352,11 +1324,11 @@ $(function () {
     
 
     
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     
-    <script src="https://cdn.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
         
 
