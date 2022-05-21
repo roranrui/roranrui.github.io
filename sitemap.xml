@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://roranrui.cn/posts/f66ba6ca/</loc>
+    <loc>https://roranrui.cn/posts/7e36e975/</loc>
     
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -12,6 +12,15 @@
   
   <url>
     <loc>https://roranrui.cn/posts/a08f3948/</loc>
+    
+    <lastmod>2022-05-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://roranrui.cn/posts/f66ba6ca/</loc>
     
     <lastmod>2022-05-20</lastmod>
     
@@ -715,7 +724,7 @@
 
   <url>
     <loc>https://roranrui.cn/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
