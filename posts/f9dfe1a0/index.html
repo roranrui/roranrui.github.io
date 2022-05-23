@@ -8,9 +8,11 @@
     <meta name="description" content="第三十天_分治算法(困难)
 刷题日程指引: 行百里者半九十。坚持一个月刷完，一起加油！
 
-一. 知识学习二. 题目练习打印从 1 到最大的 n 位数class Solution {
+一. 知识学习二. 题目练习打印从 1 到最大的 n 位数
+解题思路: 
+class Solution {
 public:
-    vector&amp;lt;int&gt; pr">
+    vector&amp;lt">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -459,7 +461,7 @@ public:
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    279
+                    283
                 </div>
                 
 
@@ -484,7 +486,9 @@ public:
                 <h1 id="第三十天-分治算法-困难"><a href="#第三十天-分治算法-困难" class="headerlink" title="第三十天_分治算法(困难)"></a>第三十天_分治算法(困难)</h1><blockquote>
 <p>刷题日程指引: <a target="_blank" rel="noopener" href="https://leetcode-cn.com/leetbook/read/illustration-of-algorithm/px2ds5/">行百里者半九十。坚持一个月刷完，一起加油！</a></p>
 </blockquote>
-<h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="打印从-1-到最大的-n-位数"><a href="#打印从-1-到最大的-n-位数" class="headerlink" title="打印从 1 到最大的 n 位数"></a>打印从 1 到最大的 n 位数</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<h2 id="一-知识学习"><a href="#一-知识学习" class="headerlink" title="一. 知识学习"></a>一. 知识学习</h2><h2 id="二-题目练习"><a href="#二-题目练习" class="headerlink" title="二. 题目练习"></a>二. 题目练习</h2><h3 id="打印从-1-到最大的-n-位数"><a href="#打印从-1-到最大的-n-位数" class="headerlink" title="打印从 1 到最大的 n 位数"></a>打印从 1 到最大的 n 位数</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220523124238026.png"></p>
+<p>解题思路: </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">printNumbers</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">long</span> m <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -497,6 +501,7 @@ public:
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/7702/image-20220523124258526.png"></p>
 <h3 id="数组中的逆序对"><a href="#数组中的逆序对" class="headerlink" title="数组中的逆序对"></a>数组中的逆序对</h3><p><strong>解题思路:</strong> 考虑在归并排序的合并阶段统计「逆序对」数量，完成归并排序时，也随之完成所有逆序对的统计。</p>
 <p>实现:</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
