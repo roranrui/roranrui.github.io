@@ -4,10 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Shell入门, 若然无亦的Blog">
-    <meta name="description" content="Shell基础一、关于shell1、什么是shell什么是shell？
-Shell（外壳） 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。
-Shell 是指一种应用程序，">
+    <meta name="keywords" content="数组, 若然无亦的Blog">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,7 +28,7 @@ Shell 是指一种应用程序，">
     </style>
 
 
-    <title>Shell入门 | 若然无亦的Blog</title>
+    <title>数组 | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://gcore.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://gcore.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -292,12 +290,12 @@ Shell 是指一种应用程序，">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://gcore.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/42.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gcore.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Shell入门</h1>
+                    <h1 class="description center-align post-title">数组</h1>
                 </div>
             </div>
         </div>
@@ -413,12 +411,12 @@ Shell 是指一种应用程序，">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
                             </a>
                         
-                            <a href="/tags/shell/">
-                                <span class="chip bg-color">shell</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -429,8 +427,8 @@ Shell 是指一种应用程序，">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Shell%E8%84%9A%E6%9C%AC/" class="post-category">
-                                Shell脚本
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                数据结构与算法
                             </a>
                         
                     </div>
@@ -442,7 +440,7 @@ Shell 是指一种应用程序，">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-26
+                    2022-05-25
                 </div>
                 
 
@@ -456,7 +454,7 @@ Shell 是指一种应用程序，">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.9k
+                    0
                 </div>
                 
 
@@ -478,427 +476,7 @@ Shell 是指一种应用程序，">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Shell基础"><a href="#Shell基础" class="headerlink" title="Shell基础"></a>Shell基础</h1><h1 id="一、关于shell"><a href="#一、关于shell" class="headerlink" title="一、关于shell"></a>一、关于shell</h1><h2 id="1、什么是shell"><a href="#1、什么是shell" class="headerlink" title="1、什么是shell"></a>1、什么是shell</h2><p><strong>什么是shell？</strong></p>
-<p>Shell（外壳） 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。<strong>Shell</strong> <strong>既是一种命令语言</strong>，<strong>又是一种程序设计语言</strong>。</p>
-<p>Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。</p>
-<p><strong>什么是脚本？</strong></p>
-<p>脚本简单地说就是一条条的文字命令，这些文字命令是可以看到的（如可以用记事本打开查看、编辑）。</p>
-<p>常见的脚本： <strong>JavaScript（JS，前端）</strong>，VBScript， <strong>ASP，JSP，PHP（后端）</strong>，SQL（数据库操作语言），Perl，<strong>Shell</strong>，python，Ruby，JavaFX，Lua等。</p>
-<p><strong>为什么要学习和使用shell？</strong></p>
-<p>Shell属于内置的脚本</p>
-<p>程序开发的效率非常高，依赖于功能强大的命令可以迅速地完成开发任务（批处理）</p>
-<p>语法简单，代码写起来比较轻松，简单易学</p>
-<p><strong>常见的shell种类？</strong></p>
-<p>在linux中有很多类型的shell，不同的shell具备不同的功能，shell还决定了脚本中函数的语法，Linux中默认的shell是**/bin/bash（重点）**，流行的shell有ash、bash、ksh、csh、zsh等，不同的shell都有自己的特点以及用途。</p>
-<p>csh</p>
-<p>C shell 使用的是“类C”语法,csh是具有C语言风格的一种shell，其内部命令有52个，较为庞大。目前使用的并不多，已经被/bin/tcsh所取代。</p>
-<p>ksh</p>
-<p>Korn shell 的语法与 Bourne shell 相同，同时具备了 C shell 的易用特点。许多安装脚本都使用 ksh ，ksh有42条内部命令，与bash相比有一定的限制性。</p>
-<p>tcsh</p>
-<p>tcsh是csh的增强版，与 C shell 完全兼容。</p>
-<p>sh </p>
-<p>是一个快捷方式，已经被/bin/bash所取代。</p>
-<p>nologin</p>
-<p>指用户不能登录</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image1.png" alt="img"></p>
-<p>zsh</p>
-<p>目前Linux里最庞大的一种shell：zsh。它有84个内部命令，使用起来也比较复杂。一般情况下，不会使用该shell。</p>
-<p><strong>bash</strong></p>
-<p><strong>大多数Linux系统默认使用的shell</strong>，bash shell 是 Bourne shell 的一个免费版本，它是最早的 Unix shell，bash还有一个特点，可以通过help命令来查看帮助。包含的功能几乎可以涵盖shell所具有的功能，所以一般的shell脚本都会指定它为执行路径。</p>
-<h2 id="2、shell入门"><a href="#2、shell入门" class="headerlink" title="2、shell入门"></a>2、shell入门</h2><p>编写规范：</p>
-<p>代码规范：</p>
-<p>​    #!/bin/bash            [指定告知系统当前这个脚本要使用的shell解释器]</p>
-<p>​    Shell相关指令</p>
-<p>文件命名规范：</p>
-<p>​    文件名.sh              .sh是linux下bash shell 的默认后缀</p>
-<p>使用流程：</p>
-<p>①创建.sh文件          touch/vim</p>
-<p>②编写shell代码</p>
-<p>③执行shell脚本        脚本必须得有执行权限</p>
-<p>案例1：创建test.sh，实现第一个shell脚本程序，输出hello world.</p>
-<p>输出命令：#echo 123</p>
-<p>注意：输出的内容如果包含字母和符号（不包含变量），则需要用引号包括起来。如果是纯数字可以包也可以不包。</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image2.png" alt="img"></p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image4.jpg" alt="img"></p>
-<p>注意，这里在运行时一定要写成 ./test.sh，而不是 test.sh，运行其它二进制的程序也一样，直接写 test.sh，Linux 系统会去 PATH（环境变量） 里寻找有没有叫 test.sh 的，而只有 /bin, /sbin, /usr/bin，/usr/sbin 等在 PATH 里，你的当前目录通常不在 PATH 里，所以写成 test.sh 是会找不到命令的，要用 ./test.sh 告诉系统说，就在当前目录找。</p>
-<p>案例2：使用root用户帐号创建并执行test2.sh，实现创建一个shelltest用户，并在其家目录中新建文件try.html。</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image5.png" alt="img"></p>
-<p>脚本执行的另外一个方式：/bin/bash 脚本的路径（了解）</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image6.png" alt="img"></p>
-<p>Shell脚本分为简单的写法（简单命令的堆积）和复杂写法（程序的设计）</p>
-<h1 id="二、shell进阶（重点）"><a href="#二、shell进阶（重点）" class="headerlink" title="二、shell进阶（重点）"></a>二、shell进阶（重点）</h1><h2 id="1、变量（重点）"><a href="#1、变量（重点）" class="headerlink" title="1、变量（重点）"></a>1、变量（重点）</h2><h3 id="1-1、变量的含义"><a href="#1-1、变量的含义" class="headerlink" title="1.1、变量的含义"></a>1.1、变量的含义</h3><p>a. 什么是量</p>
-<p>量就是数据.</p>
-<p>b. 什么是变量</p>
-<p>数据可以发生改变就是变量.</p>
-<p><strong>在一个脚本周期内,其值可以发生改变的量就是变量.</strong></p>
-<p>c. 什么叫做一个脚本周期</p>
-<p>一个脚本周期我们可以简单的理解为当前的shell文件</p>
-<p>变量是shell中不可或缺的一部分，也是<strong>最基础、最重要</strong>的组成部分。</p>
-<h3 id="1-2、变量的定义与使用（重点）"><a href="#1-2、变量的定义与使用（重点）" class="headerlink" title="1.2、变量的定义与使用（重点）"></a>1.2、变量的定义与使用（重点）</h3><p>变量，先定义后使用。</p>
-<p><strong>定义形如：class_name=”yunwe “</strong></p>
-<p><strong>使用形如：echo $class_name</strong></p>
-<p>变量就是由2部分组成,一个是变量名（左边），另外一部分是变量的值（右边）</p>
-<p>变量名和变量值是什么关系??</p>
-<p>变量名和变量值是<strong>使用和被使用</strong>关系; 我们的变量名来使用变量值;</p>
-<p>在使用变量的时候一定需要在变量名前面添加一个$符号，该要求在其他语言中也存在的（例如php）。</p>
-<p>变量名的规范</p>
-<p>注意，变量名后面的等号左右不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则：</p>
-<p>命名只能使用英文字母，数字和下划线，首个字符不能以数字开头。</p>
-<p>中间不能有空格，可以使用下划线“_”。</p>
-<p>不能使用标点符号。</p>
-<p>不能使用bash里的关键字（可用help命令查看保留关键字）。</p>
-<pre><code>问题：以下哪个shell变量名是合法的？
-A. var       B.?var       C. user*name       D.echo
-</code></pre>
-<p>案例1：使用变量改写入门脚本中的第1个shell脚本。</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image7.png" alt="img"></p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image8.png" alt="img"></p>
-<p><strong>关于单双引号的问题：</strong></p>
-<p><strong>双引号能够识别变量，双引号能够实现转义（类似于“*”）</strong></p>
-<p><strong>单引号是不能识别变量，只会原样输出，单引号是不能转义的</strong></p>
-<p>案例2：定义一个变量，输出当前时间，要求格式为“年-月-日 时:分:秒”。</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image9.png" alt="img"></p>
-<p><strong>注意：反引号（esc键下方的那个键），当在脚本中需要执行一些指令并且将执行的结果赋给变量的时候需要使用“反引号”。</strong></p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image10.png" alt="img"></p>
-<h3 id="1-3、只读变量（了解）"><a href="#1-3、只读变量（了解）" class="headerlink" title="1.3、只读变量（了解）"></a>1.3、只读变量（了解）</h3><p>语法：readonly 变量名</p>
-<p>案例：定义变量a并且其值为10，随后设置其为只读变量，再去尝试重新赋值</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image11.png" alt="img"></p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image12.png" alt="img"></p>
-<h3 id="1-4、接收用户输入（重点）"><a href="#1-4、接收用户输入（重点）" class="headerlink" title="1.4、接收用户输入（重点）"></a>1.4、接收用户输入（重点）</h3><p><strong>语法：read -p</strong> <strong>提示信息</strong>  <strong>变量名</strong></p>
-<p>案例：编写一个脚本test6.sh，要求执行之后提示用户输入文件的名称（路径），然后自动为用户创建该文件</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image14.jpg" alt="img"></p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image16.jpg" alt="img"></p>
-<h3 id="1-5、删除变量（了解）"><a href="#1-5、删除变量（了解）" class="headerlink" title="1.5、删除变量（了解）"></a>1.5、删除变量（了解）</h3><p>语法：unset 变量名</p>
-<p>案例：定义变量b=20，再输出b的值，随后删除b，最后再输出下b</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image17.png" alt="img"></p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image18.png" alt="img"></p>
-<h2 id="2、条件判断语句"><a href="#2、条件判断语句" class="headerlink" title="2、条件判断语句"></a>2、条件判断语句</h2><p>老婆给当程序员的老公打电话：<strong>下班顺路买一斤包子带回来，如果看到卖西瓜的，买一个</strong>。当晚，程序员老公手捧一个包子进了家门…老婆怒道：你怎么就买了一个包子？！老公答曰：因为看到了卖西瓜的。</p>
-<p>把程序员老婆的话当作一段需求分析一下吧。买一斤包子是一个确定无疑的需求项，无论后面是什么情况什么条件，前面这一斤包子是肯定要买的。看到卖西瓜的是一个条件判断，后面“买一个”是一个模糊不清的需求项，买一个什么呢？需求里没说啊。客户把这个当作开发人员默认了解的内容了。可是作为一个成熟合格的程序员，该老婆的丈夫应该马上跟进确认需求“买一个什么？”，要不然程序可怎么写呢？所以笑话里该程序员是不合格的，起码是不积极不负责的。在没有明确需求的情况下，他只能按照自己的理解来完成工作了。那比较可能的结果就有如下几种：</p>
-<p>1 看到卖西瓜的，买一个西瓜</p>
-<p>​    <strong>如果</strong> <strong>看到卖西瓜的</strong></p>
-<p>​         <strong>那么</strong></p>
-<p>​         <strong>买一个西瓜</strong></p>
-<p>​    <strong>否则</strong></p>
-<p>​        <strong>买一斤包子</strong></p>
-<p>2 看到卖西瓜的，买一个包子</p>
-<p>​    <strong>如果</strong> <strong>看到卖西瓜的</strong></p>
-<p>​         <strong>那么</strong></p>
-<p>​         <strong>买一个包子</strong></p>
-<p>3 看到卖西瓜的，买一个卖西瓜的</p>
-<p>4 看到卖西瓜的，买一个老婆一直想买的东西</p>
-<p>5 看到卖西瓜的，随便买一个东西</p>
-<p><strong>上述1和2下面的条件汉字描述称之为“伪代码”，也是属于条件表达式的语法。</strong></p>
-<p>语法1（一个条件）：</p>
-<p><strong>if condition</strong></p>
-<p><strong>then</strong></p>
-<p>  <strong>command1</strong> </p>
-<p>  <strong>command2</strong></p>
-<p>  <strong>…</strong></p>
-<p><strong>fi</strong></p>
-<p>单行写法（一般在命令行中执行的时候）：if [ condition ]; then command; fi</p>
-<p>语法2（两个条件）：</p>
-<p><strong>if condition</strong></p>
-<p><strong>then</strong></p>
-<p>  <strong>command1</strong> </p>
-<p>  <strong>command2</strong></p>
-<p>  <strong>…</strong></p>
-<p><strong>else</strong></p>
-<p>  <strong>command</strong></p>
-<p><strong>fi</strong></p>
-<p>语法3（多个条件）：</p>
-<p><strong>if condition1</strong></p>
-<p><strong>then</strong></p>
-<p>  <strong>command1</strong></p>
-<p><strong>elif condition2</strong> </p>
-<p><strong>then</strong></p>
-<p>  <strong>command2</strong></p>
-<p><strong>else</strong></p>
-<p>  <strong>commandN</strong></p>
-<p><strong>fi</strong></p>
-<h2 id="3、运算符"><a href="#3、运算符" class="headerlink" title="3、运算符"></a>3、运算符</h2><p>在shell中，运算符和其他编程脚本语言一样，常见的有算数运算符、关系运算符、</p>
-<p>逻辑运算符、字符串运算符、<strong>文件测试运算符</strong>等</p>
-<h3 id="3-1、算数运算符"><a href="#3-1、算数运算符" class="headerlink" title="3.1、算数运算符"></a>3.1、算数运算符</h3><p>下表列出了常用的算术运算符，假定变量 a 为 10，变量 b 为 20：</p>
-<table>
-<thead>
-<tr>
-<th><strong>运算符</strong></th>
-<th><strong>说明</strong></th>
-<th><strong>举例</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>+</td>
-<td>加法</td>
-<td><code>expr  $a + $b</code> 结果为 30。</td>
-</tr>
-<tr>
-<td>-</td>
-<td>减法</td>
-<td><code>expr  $a - $b</code> 结果为 -10。</td>
-</tr>
-<tr>
-<td>*</td>
-<td>乘法</td>
-<td><code>expr  $a \* $b</code> 结果为  200。</td>
-</tr>
-<tr>
-<td>/</td>
-<td>除法</td>
-<td><code>expr  $b / $a</code> 结果为 2。</td>
-</tr>
-<tr>
-<td>%</td>
-<td>取余</td>
-<td><code>expr  $b % $a</code> 结果为 0。</td>
-</tr>
-<tr>
-<td>=</td>
-<td>赋值</td>
-<td>a=$b 将把变量 b 的值赋给 a。</td>
-</tr>
-<tr>
-<td>==</td>
-<td>相等。用于比较两个数字，相同则返回 true（真）。</td>
-<td>[ $a  == $b ] 返回 false（假）。</td>
-</tr>
-<tr>
-<td>!=</td>
-<td>不相等。用于比较两个数字，不相同则返回 true。</td>
-<td>[ $a  != $b ] 返回 true。</td>
-</tr>
-</tbody></table>
-<p><strong>注意：</strong>条件表达式要放在方括号之间，并且要有空格，例如: <strong>[$a==$b]</strong> 是错误的，必须写成 **[ $a == $b ]**。</p>
-<p>原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如 awk 和 expr，expr 最常用。</p>
-<p>expr 是一款表达式计算工具，使用它能完成表达式的求值操作。</p>
-<p>例如，两个数相加(注意使用的是反引号 ` 而不是单引号 ‘)：</p>
-<p>#!/bin/bash</p>
-<p>val=<code>expr 2 + 2</code></p>
-<p>echo “两数之和为 : $val”</p>
-<p>两点注意：</p>
-<p>表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2 + 2，这与我们熟悉的大多数编程语言不一样。</p>
-<p>完整的表达式要被 <code> </code> 包含，注意这个字符不是常用的单引号，在 Esc 键下边。</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image19.png" alt="img"></p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image20.png" alt="img"></p>
-<h3 id="3-2、关系运算符"><a href="#3-2、关系运算符" class="headerlink" title="3.2、关系运算符"></a>3.2、关系运算符</h3><p><strong>关系运算符只支持数字，不支持字符串，除非字符串的值是数字</strong>。</p>
-<p>下表列出了常用的关系运算符，假定变量 a 为 10，变量 b 为 20：</p>
-<table>
-<thead>
-<tr>
-<th><strong>运算符</strong></th>
-<th><strong>说明</strong></th>
-<th><strong>举例</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-eq</td>
-<td>检测<strong>两个数是否相等</strong>，相等返回 true。</td>
-<td>[ $a  -eq $b ] 返回 false。</td>
-</tr>
-<tr>
-<td>-ne</td>
-<td>检测<strong>两个数是否相等</strong>，不相等返回 true。</td>
-<td>[ $a  -ne $b ] 返回 true。</td>
-</tr>
-<tr>
-<td>-gt</td>
-<td>检测左边的数<strong>是否大于</strong>右边的，如果是，则返回 true。</td>
-<td>[ $a  -gt $b ] 返回 false。</td>
-</tr>
-<tr>
-<td>-lt</td>
-<td>检测左边的数<strong>是否小于</strong>右边的，如果是，则返回 true。</td>
-<td>[ $a  -lt $b ] 返回 true。</td>
-</tr>
-<tr>
-<td>-ge</td>
-<td>检测左边的数<strong>是否大于等于</strong>右边的，如果是，则返回 true。</td>
-<td>[ $a  -ge $b ] 返回 false。</td>
-</tr>
-<tr>
-<td>-le</td>
-<td>检测左边的数<strong>是否小于等于</strong>右边的，如果是，则返回 true。</td>
-<td>[ $a  -le $b ] 返回 true。</td>
-</tr>
-</tbody></table>
-<p>-eq：equal</p>
-<p>-ne：not equal</p>
-<p>-gt：great than</p>
-<p>-lt：less than</p>
-<p>-ge：great than or equal</p>
-<p>-le：less than or equal</p>
-<p>案例：使用a=10，b=20来实现本案例</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image21.png" alt="img"></p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image22.png" alt="img"></p>
-<p><strong>课堂作业：</strong></p>
-<p>写一个脚本，判断当前输入的用户是否存在。如果存在则提示“用户存在”否则提示“用户不存在”。</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image24.jpg" alt="img"></p>
-<h3 id="3-3、逻辑运算符"><a href="#3-3、逻辑运算符" class="headerlink" title="3.3、逻辑运算符"></a>3.3、逻辑运算符</h3><p>下表列出了常用的布尔运算符，假定变量 a 为 10，变量 b 为 20：</p>
-<table>
-<thead>
-<tr>
-<th><strong>运算符</strong></th>
-<th><strong>说明</strong></th>
-<th><strong>举例</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>!</td>
-<td>非运算，表达式为 true 则返回 false，否则返回 true。</td>
-<td>[ !  false ] 返回 true。</td>
-</tr>
-<tr>
-<td>-o</td>
-<td>或（或者）运算，<strong>有一个表达式为</strong> <strong>true</strong> <strong>则返回</strong> <strong>true</strong>。</td>
-<td>[ $a  -lt 20 -o $b -gt 100 ] 返回 true。</td>
-</tr>
-<tr>
-<td>-a</td>
-<td>与（并且）运算，<strong>两个表达式都为</strong> <strong>true</strong> 才返回 true。</td>
-<td>[ $a  -lt 20 -a $b -gt 100 ] 返回 false。</td>
-</tr>
-</tbody></table>
-<p><strong>或运算：一个为真即为真，全部为假才是假</strong></p>
-<p><strong>与运算：一个为假即为假，全部为真才是真</strong></p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image25.png" alt="img"></p>
-<h3 id="3-4、字符串运算符"><a href="#3-4、字符串运算符" class="headerlink" title="3.4、字符串运算符"></a>3.4、字符串运算符</h3><p>下表列出了常用的字符串运算符，假定变量 a 为 “abc”，变量 b 为 “efg”：</p>
-<table>
-<thead>
-<tr>
-<th><strong>运算符</strong></th>
-<th><strong>说明</strong></th>
-<th><strong>举例</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>=</td>
-<td>检测两个字符串是否相等，相等返回 true。</td>
-<td>[ $a =  $b ] 返回 false。</td>
-</tr>
-<tr>
-<td>!=</td>
-<td>检测两个字符串是否相等，不相等返回 true。</td>
-<td>[ $a  != $b ] 返回 true。</td>
-</tr>
-<tr>
-<td>-z</td>
-<td>检测字符串长度是否为0，为0返回 true。</td>
-<td>[ -z  $a ] 返回 false。</td>
-</tr>
-<tr>
-<td>-n</td>
-<td>检测字符串长度是否为0，不为0返回 true。</td>
-<td>[ -n  $a ] 返回 true。</td>
-</tr>
-<tr>
-<td>str</td>
-<td>检测字符串是否为空，不为空返回 true。</td>
-<td>[ $a ]  返回 true。</td>
-</tr>
-</tbody></table>
-<p>案例：将上述的语法验证下</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image26.png" alt="img"></p>
-<h3 id="3-5、文件测试运算符（重点）"><a href="#3-5、文件测试运算符（重点）" class="headerlink" title="3.5、文件测试运算符（重点）"></a>3.5、文件测试运算符（重点）</h3><p>文件测试运算符用于检测 Unix/Linux 文件的各种属性。</p>
-<p>属性检测描述如下：</p>
-<table>
-<thead>
-<tr>
-<th><strong>操作符</strong></th>
-<th><strong>说明</strong></th>
-<th><strong>举例</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-b  file</td>
-<td>检测文件是否是块设备文件，如果是，则返回 true。</td>
-<td>[ -b  $file ] 返回 false。</td>
-</tr>
-<tr>
-<td>-c  file</td>
-<td>检测文件是否是字符设备文件，如果是，则返回 true。</td>
-<td>[ -c  $file ] 返回 false。</td>
-</tr>
-<tr>
-<td>-d  file</td>
-<td><strong>检测文件是否是目录，如果是，则返回</strong> <strong>true。</strong></td>
-<td>[ -d  $file ] 返回 false。</td>
-</tr>
-<tr>
-<td>-f  file</td>
-<td><strong>检测文件是否是普通文件（既不是目录，也不是设备文件），如果是，则返回</strong> <strong>true。</strong></td>
-<td>[ -f  $file ] 返回 true。</td>
-</tr>
-<tr>
-<td>-g  file</td>
-<td>检测文件是否设置了 SGID 位，如果是，则返回 true。</td>
-<td>[ -g  $file ] 返回 false。</td>
-</tr>
-<tr>
-<td>-k  file</td>
-<td>检测文件是否设置了粘着位(Sticky Bit)，如果是，则返回 true。</td>
-<td>[ -k  $file ] 返回 false。</td>
-</tr>
-<tr>
-<td>-p  file</td>
-<td>检测文件是否是有名管道，如果是，则返回 true。</td>
-<td>[ -p  $file ] 返回 false。</td>
-</tr>
-<tr>
-<td>-u  file</td>
-<td>检测文件是否设置了 SUID 位，如果是，则返回 true。</td>
-<td>[ -u  $file ] 返回 false。</td>
-</tr>
-<tr>
-<td>-r  file</td>
-<td><strong>检测文件是否可读，如果是，则返回</strong> <strong>true。</strong></td>
-<td>[ -r  $file ] 返回 true。</td>
-</tr>
-<tr>
-<td>-w  file</td>
-<td><strong>检测文件是否可写，如果是，则返回</strong> <strong>true。</strong></td>
-<td>[ -w  $file ] 返回 true。</td>
-</tr>
-<tr>
-<td>-x  file</td>
-<td><strong>检测文件是否可执行，如果是，则返回</strong> <strong>true。</strong></td>
-<td>[ -x  $file ] 返回 true。</td>
-</tr>
-<tr>
-<td>-s  file</td>
-<td><strong>检测文件是否为空（文件大小是否大于0），不为空返回</strong> <strong>true</strong>。</td>
-<td>[ -s  $file ] 返回 true。</td>
-</tr>
-<tr>
-<td>-e  file</td>
-<td><strong>检测文件（包括目录）是否存在，如果是，则返回</strong> <strong>true。</strong></td>
-<td>[ -e  $file ] 返回 true。</td>
-</tr>
-</tbody></table>
-<p>案例：测试上述标绿色的效果</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image27.png" alt="img"></p>
-<p>注意：权限几个判断，如果只有一个部分符合，则认为是有权限的。</p>
-<h2 id="4、shell脚本附带选项（重点）"><a href="#4、shell脚本附带选项（重点）" class="headerlink" title="4、shell脚本附带选项（重点）"></a>4、shell脚本附带选项（重点）</h2><p>问题描述：在linux shell中如何处理tail -10 access.log这样的命令行选项？</p>
-<p>步骤：</p>
-<p>​    调用tail指令</p>
-<p>​    <strong>系统把后续选项传递给tail</strong></p>
-<p>​    Tail先去打开指定的文件</p>
-<p>​    取出最后10行</p>
-<p>问题：自己写的shell是否也可以像内置命令一样传递一些选项呢？</p>
-<p>答：可以的，传递方式与上述的描述是一样的，关键是怎么接收。例如：</p>
-<p>传递：</p>
-<p>#./test.sh a b c</p>
-<p>接收：</p>
-<p>在脚本中可以用“$1”来表示a，“$2”来表示b，以此类推。</p>
-<p><strong>接收可以用“$”加上选项对应的序号即可。</strong></p>
-<p>测试：编写test14.sh，传递a，b，c，输出其值</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image28.png" alt="img"></p>
-<p>其实$1、$2是变量。</p>
-<p>练习：创建自定义<strong>指令“user”</strong>，可以直接执行，要求该指令具备以下语法和功能：</p>
-<p>​    a. #user -add 用户名           【添加用户】</p>
-<p>​    b. #user -del 用户名            【删除用户及其家目录】</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image29.png" alt="img"></p>
-<p>同时题目中要求是指令，所以可以再去添加个别名：</p>
-<p><img src="https://fastly.jsdelivr.net/gh/roranrui/img_bed/img/blip_image30.png" alt="img"></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+                <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
             <hr/>
@@ -924,7 +502,7 @@ A. var       B.?var       C. user*name       D.echo
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/posts/9049990f/">https://roranrui.cn/posts/9049990f/</a>
+                    <a href="https://roranrui.cn/posts/340249a9/">https://roranrui.cn/posts/340249a9/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -962,12 +540,12 @@ A. var       B.?var       C. user*name       D.echo
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
                                 </a>
                             
-                                <a href="/tags/shell/">
-                                    <span class="chip bg-color">shell</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -1145,13 +723,13 @@ A. var       B.?var       C. user*name       D.echo
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/14efd5bc/">
+                <a href="/posts/6a5d9715/">
                     <div class="card-image">
                         
                         
-                        <img src="https://gcore.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="设计模式概谈">
+                        <img src="https://gcore.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/51.jpg" class="responsive-img" alt="图解数据结构与算法-刷题笔记">
                         
-                        <span class="card-title">设计模式概谈</span>
+                        <span class="card-title">图解数据结构与算法-刷题笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1162,14 +740,51 @@ A. var       B.?var       C. user*name       D.echo
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-25
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            若然无亦
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/b179862c/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://gcore.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/40.jpg" class="responsive-img" alt="第三十一天_数学(困难)">
+                        
+                        <span class="card-title">第三十一天_数学(困难)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
-                                    设计模式
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    刷题笔记
                                 </a>
                             
                             
@@ -1183,56 +798,8 @@ A. var       B.?var       C. user*name       D.echo
                         <span class="chip bg-color">C++</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/948850ed/">
-                    <div class="card-image">
-                        
-                        <img src="https://gcore.jsdelivr.net/gh/roranrui/img_bed/img/1230354.jpg" class="responsive-img" alt="七.Linux网络基础">
-                        
-                        <span class="card-title">七.Linux网络基础</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    操作系统学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
