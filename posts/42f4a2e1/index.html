@@ -4,14 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="数组, 若然无亦的Blog">
-    <meta name="description" content="数组旋转矩阵
-解题思路:
-两次翻转轻松搞定。先对矩阵做沿主对角线的翻转（其实就是矩阵的转置），原地完成；接着再对操作后的矩阵进行根据列序号倒排。
-实现:
-class Solution {
-public:
-    void rotate(ve">
+    <meta name="keywords" content="QT 学习笔记(二), 若然无亦的Blog">
+    <meta name="description" content="QT的基础部分, button创建, 信号和槽">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -34,7 +28,7 @@ public:
     </style>
 
 
-    <title>数组 | 若然无亦的Blog</title>
+    <title>QT 学习笔记(二) | 若然无亦的Blog</title>
     <link rel="icon" type="image/png" href="https://gcore.jsdelivr.net/gh/roranrui/roranrui.github.io/Diana.png">
 
     <link rel="stylesheet" type="text/css" href="https://gcore.jsdelivr.net/gh/roranrui/roranrui.github.io/libs/awesome/css/all.min.css">
@@ -296,12 +290,12 @@ public:
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://gcore.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gcore.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/42.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数组</h1>
+                    <h1 class="description center-align post-title">QT 学习笔记(二)</h1>
                 </div>
             </div>
         </div>
@@ -467,8 +461,8 @@ public:
                                 <span class="chip bg-color">C++</span>
                             </a>
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/QT/">
+                                <span class="chip bg-color">QT</span>
                             </a>
                         
                     </div>
@@ -479,8 +473,8 @@ public:
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                数据结构与算法
+                            <a href="/categories/QT%E5%BC%80%E5%8F%91/" class="post-category">
+                                QT开发
                             </a>
                         
                     </div>
@@ -492,7 +486,7 @@ public:
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-25
+                    2022-05-28
                 </div>
                 
 
@@ -506,7 +500,7 @@ public:
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    728
+                    1.1k
                 </div>
                 
 
@@ -528,161 +522,192 @@ public:
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="旋转矩阵"><a href="#旋转矩阵" class="headerlink" title="旋转矩阵"></a>旋转矩阵</h2><p><img src="https://gcore.jsdelivr.net/gh/roranrui/img_bed/img/1653491207900-0318c20b-e4e1-492c-89ea-c80c87b34c50.png" alt="img"></p>
-<p><strong>解题思路</strong>:</p>
-<p>两次翻转轻松搞定。<br>先对矩阵做<strong>沿主对角线的翻转</strong>（其实就是矩阵的转置），原地完成；接着再对操作后的矩阵进行<strong>根据列序号倒排</strong>。</p>
-<p>实现:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">void</span> <span class="token function">rotate</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> matrix<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> n <span class="token operator">=</span> matrix<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token function">swap</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> matrix<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
+                <h1 id="QT-学习笔记-二"><a href="#QT-学习笔记-二" class="headerlink" title="QT 学习笔记(二)"></a>QT 学习笔记(二)</h1><h2 id="一-在QT-Widget中创建一个按钮"><a href="#一-在QT-Widget中创建一个按钮" class="headerlink" title="一. 在QT Widget中创建一个按钮"></a>一. 在QT Widget中创建一个按钮</h2><p>包含头文件: <code>#include &lt;QPushButton&gt;</code></p>
+<p>详情看代码</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"widget.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;QPushButton></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"ui_widget.h"</span></span>
 
-        <span class="token comment" spellcheck="true">// 沿矩阵中心按列旋转</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token function">swap</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>n <span class="token operator">-</span> j <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-<h2 id="零矩阵"><a href="#零矩阵" class="headerlink" title="零矩阵"></a>零矩阵</h2><p><img src="https://cdn.nlark.com/yuque/0/2022/png/28457545/1653491584137-46ca76e0-3f94-4e21-8b62-0d87211dd2f1.png" alt="img"></p>
-<p><strong>解题思路:</strong></p>
-<p>使用标记数组</p>
-<p>我们可以用两个标记数组分别记录每一行和每一列是否有零出现。</p>
-<p>具体地，我们首先遍历该数组一次，如果某个元素为 00，那么就将该元素所在的行和列所对应标记数组的位置置为 true。最后我们再次遍历该数组，用标记数组更新原数组即可。</p>
-<p>实现:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">void</span> <span class="token function">setZeroes</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> matrix<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> rows <span class="token operator">=</span> matrix<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> cols <span class="token operator">=</span> matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">row</span><span class="token punctuation">(</span>rows<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">col</span><span class="token punctuation">(</span>cols<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 创建两个标记数组</span>
-        <span class="token comment" spellcheck="true">// 第一次遍历, 标记为0的位置</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> rows<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> cols<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> row<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> col<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token comment" spellcheck="true">// 第二次遍历, 处理数组</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> rows<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> cols<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>row<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">||</span> col<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
+Widget<span class="token operator">::</span><span class="token function">Widget</span><span class="token punctuation">(</span>QWidget <span class="token operator">*</span>parent<span class="token punctuation">)</span>
+    <span class="token operator">:</span> <span class="token function">QWidget</span><span class="token punctuation">(</span>parent<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 初始化列表</span>
+    <span class="token punctuation">,</span> <span class="token function">ui</span><span class="token punctuation">(</span><span class="token keyword">new</span> Ui<span class="token operator">::</span>Widget<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ui<span class="token operator">-</span><span class="token operator">></span><span class="token function">setupUi</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/// 按钮</span>
+    QPushButton <span class="token operator">*</span>button <span class="token operator">=</span> <span class="token keyword">new</span> QPushButton<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/// button->show();  show()以顶层方式弹出, 想在Widget窗口显示, 就需要依赖Widget窗口</span>
+    <span class="token comment" spellcheck="true">/// 设置父亲</span>
+    button<span class="token operator">-</span><span class="token operator">></span><span class="token function">setParent</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/// 设置文字</span>
+    button<span class="token operator">-</span><span class="token operator">></span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">"加入"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/// 创建按钮第二种方式</span>
+    QPushButton <span class="token operator">*</span>button2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">QPushButton</span><span class="token punctuation">(</span><span class="token string">"第二按钮"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/// 重置窗口大小</span>
+    <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">resize</span><span class="token punctuation">(</span><span class="token number">600</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/// 移动按钮</span>
+    button2<span class="token operator">-</span><span class="token operator">></span><span class="token function">move</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/// 重置按钮大小</span>
+    button2<span class="token operator">-</span><span class="token operator">></span><span class="token function">resize</span><span class="token punctuation">(</span><span class="token number">150</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/// 重置窗口标题</span>
+    <span class="token function">setWindowTitle</span><span class="token punctuation">(</span><span class="token string">"QTFirst_Window"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/// 设置固定窗口大小</span>
+    <span class="token function">setFixedSize</span><span class="token punctuation">(</span><span class="token number">600</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-<h2 id="对角线遍历"><a href="#对角线遍历" class="headerlink" title="对角线遍历"></a>对角线遍历</h2><p><img src="https://gcore.jsdelivr.net/gh/roranrui/img_bed/img/1653567265911-f43d7e9f-1b06-40d3-b1d0-c187e81bfa85.png" alt="img"></p>
-<p>解题思路:</p>
-<ol>
-<li>同一对角线上的横列坐标之和是相等的</li>
-<li>对角线序号偶数是倒序，奇数是正序</li>
-</ol>
-<p>实现:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+Widget<span class="token operator">::</span><span class="token operator">~</span><span class="token function">Widget</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">delete</span> ui<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="二-对象模型"><a href="#二-对象模型" class="headerlink" title="二. 对象模型"></a>二. 对象模型</h2><blockquote>
+<p>  QObject是以对象树的形式组织起来的</p>
+</blockquote>
+<p>当你创建一个QObject对象时，会看到QObject的构造函数接收一个QObject指针作为参数，这个参数就是 parent，也就是父对象指针。</p>
+<p>这相当于，<strong>在创建QObject对象时，可以提供一个其父对象，我们创建的这个QObject对象会自动添加到其父对象的children()列表。</strong></p>
+<p>n <strong>当父对象析构的时候，这个列表中的所有对象也会被析构。（注意，这里的父对象并不是继承意义上的父类！）</strong></p>
+<p>这种机制在 GUI 程序设计中相当有用。例如，一个按钮有一个QShortcut（快捷键）对象作为其子对象。当我们删除按钮的时候，这个快捷键理应被删除。这是合理的</p>
+<p><strong>说人话:</strong> </p>
+<ul>
+<li>所有new出来的对象不用管释放, children表中的对象会在窗口关闭后自动释放</li>
+<li>在创建一个自己的类时, 一定要加上<code>QOBJECT</code>, 将这个类添加进children表中</li>
+</ul>
+<p>代码说明:</p>
+<p><code>mybutton.h mybutton.cpp</code></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/// mybutton.h</span>
+<span class="token macro property">#<span class="token directive keyword">ifndef</span> MYBUTTON_H</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> MYBUTTON_H</span>
+
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;QWidget></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;QPushButton></span></span>
+
+<span class="token keyword">class</span> <span class="token class-name">Mybutton</span> <span class="token operator">:</span> <span class="token keyword">public</span> QPushButton
+<span class="token punctuation">{</span>
+    Q_OBJECT
 <span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">findDiagonalOrder</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> mat<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> res<span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>mat<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> mat<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-        <span class="token keyword">int</span> rows <span class="token operator">=</span> mat<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> cols <span class="token operator">=</span> mat<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> rows <span class="token operator">+</span> cols <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 对角线为偶数</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> rows <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j <span class="token operator">>=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> i <span class="token operator">-</span> cols <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span>
-                <span class="token punctuation">{</span>
-                    res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>mat<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>i <span class="token operator">-</span> j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-            <span class="token keyword">else</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> i <span class="token operator">-</span> cols <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> <span class="token function">min</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> rows <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-                <span class="token punctuation">{</span>
-                    res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>mat<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>i <span class="token operator">-</span> j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="token keyword">explicit</span> <span class="token function">Mybutton</span><span class="token punctuation">(</span>QWidget <span class="token operator">*</span>parent <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">~</span><span class="token function">Mybutton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+signals<span class="token operator">:</span>
+
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token macro property">#<span class="token directive keyword">endif</span> </span><span class="token comment" spellcheck="true">// MYBUTTON_H</span>
+
+
+<span class="token comment" spellcheck="true">/// mybutton.cpp</span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"mybutton.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;QDebug></span></span>
+
+Mybutton<span class="token operator">::</span><span class="token function">Mybutton</span><span class="token punctuation">(</span>QWidget <span class="token operator">*</span>parent<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">QPushButton</span><span class="token punctuation">(</span>parent<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+
+Mybutton<span class="token operator">::</span><span class="token operator">~</span><span class="token function">Mybutton</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">qDebug</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"Mybutton析构"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>wigdet.cpp</code></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"widget.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;QPushButton></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"mybutton.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"ui_widget.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;QDebug></span></span>
+
+Widget<span class="token operator">::</span><span class="token function">Widget</span><span class="token punctuation">(</span>QWidget <span class="token operator">*</span>parent<span class="token punctuation">)</span>
+    <span class="token operator">:</span> <span class="token function">QWidget</span><span class="token punctuation">(</span>parent<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 初始化列表</span>
+    <span class="token punctuation">,</span> <span class="token function">ui</span><span class="token punctuation">(</span><span class="token keyword">new</span> Ui<span class="token operator">::</span>Widget<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ui<span class="token operator">-</span><span class="token operator">></span><span class="token function">setupUi</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/// 重置窗口标题</span>
+    <span class="token function">setWindowTitle</span><span class="token punctuation">(</span><span class="token string">"QTFirst_Window"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/// 设置固定窗口大小</span>
+    <span class="token function">setFixedSize</span><span class="token punctuation">(</span><span class="token number">600</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Mybutton <span class="token operator">*</span>mybtn <span class="token operator">=</span> <span class="token keyword">new</span> Mybutton<span class="token punctuation">;</span>
+    mybtn<span class="token operator">-</span><span class="token operator">></span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">"我的按钮"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    mybtn<span class="token operator">-</span><span class="token operator">></span><span class="token function">move</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    mybtn<span class="token operator">-</span><span class="token operator">></span><span class="token function">setParent</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Widget<span class="token operator">::</span><span class="token operator">~</span><span class="token function">Widget</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">delete</span> ui<span class="token punctuation">;</span>
+    <span class="token function">qDebug</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"Wigdet的析构"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-<h2 id="数组拆分"><a href="#数组拆分" class="headerlink" title="数组拆分"></a>数组拆分</h2><p><img src="https://cdn.nlark.com/yuque/0/2022/png/28457545/1653537232547-286731b6-8044-452d-9020-08f85c5a6a13.png" alt="img"></p>
-<p><strong>解题思路:</strong></p>
-<p>排序后, 每两步, 就是最优的局部最小值</p>
-<p><strong>实现:</strong></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">arrayPairSum</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token function">quickSort</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            res <span class="token operator">+</span><span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token keyword">private</span><span class="token operator">:</span>
-    <span class="token keyword">void</span> <span class="token function">quickSort</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> begin<span class="token punctuation">,</span> <span class="token keyword">int</span> end<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>begin <span class="token operator">&lt;</span> end<span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> l <span class="token operator">=</span> begin<span class="token punctuation">,</span> r <span class="token operator">=</span> end<span class="token punctuation">,</span> refer <span class="token operator">=</span> nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r<span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">while</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> refer <span class="token operator">&amp;&amp;</span> r <span class="token operator">></span>l<span class="token punctuation">)</span> l<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r<span class="token punctuation">)</span> nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                <span class="token keyword">while</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">>=</span> refer <span class="token operator">&amp;&amp;</span> r <span class="token operator">></span> l<span class="token punctuation">)</span> r<span class="token operator">--</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r<span class="token punctuation">)</span> nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            
-            nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">=</span> refer<span class="token punctuation">;</span>
-            <span class="token function">quickSort</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> begin<span class="token punctuation">,</span> l <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token function">quickSort</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> l <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> end<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-<h2 id="杨辉三角"><a href="#杨辉三角" class="headerlink" title="杨辉三角"></a>杨辉三角</h2><p><img src="https://gcore.jsdelivr.net/gh/roranrui/img_bed/img/1653724448859-957a56b5-09aa-429d-b145-40c0d3d9bf70.png" alt="img"></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/gif/28457545/1653724462523-49a1c3c1-4896-4eb1-91d7-5923e57ad6b7.gif" alt="img"></p>
-<p>杨辉三角性质: </p>
-<p><img src="https://gcore.jsdelivr.net/gh/roranrui/img_bed/img/1653724537999-2adc5e31-5c2a-4baa-a746-c302c4a1aa9d.png" alt="img"></p>
+<p>在wigdet中设置parent后, 析构顺序如下:</p>
+<p><img src="https://gcore.jsdelivr.net/gh/roranrui/img_bed/img/image-20220528213930191.png"></p>
+<h2 id="三-QT中的坐标系"><a href="#三-QT中的坐标系" class="headerlink" title="三. QT中的坐标系"></a>三. QT中的坐标系</h2><p><img src="https://gcore.jsdelivr.net/gh/roranrui/img_bed/img/23134ygre.png" alt="img"></p>
+<h2 id="四-信号和槽机制"><a href="#四-信号和槽机制" class="headerlink" title="四. 信号和槽机制"></a>四. 信号和槽机制</h2><blockquote>
+<p>信号槽是 Qt 框架引以为豪的机制之一。所谓信号槽，实际就是观察者模式。<strong>当某个事件发生之后</strong>，比如，按钮检测到自己被点击了一下，<strong>它就会发出一个信号（signal）</strong>。这种发出是没有目的的，类似广播。<strong>如果有对象对这个信号感兴趣，它就会使用连接（connect）函数</strong>，意思是，<strong>将想要处理的信号和自己的一个函数（称为槽（slot））绑定来处理这个信号</strong>。也就是说，<strong>当信号发出时，被连接的槽函数会自动被回调</strong>。这就类似观察者模式：当发生了感兴趣的事件，某一个操作就会被自动触发。</p>
+</blockquote>
+<h3 id="系统自带的的信号和槽"><a href="#系统自带的的信号和槽" class="headerlink" title="系统自带的的信号和槽"></a>系统自带的的信号和槽</h3><p>信号和槽的使用方式:</p>
+<p><code>connect(sender, signal, receiver, slot)</code></p>
+<p>参数解释：</p>
+<ul>
+<li>sender：发出信号的对象</li>
+<li>signal：发送对象发出的信号, 传入地址</li>
+<li>receiver：接收信号的对象, 传入地址</li>
+<li>slot：接收对象在接收到信号之后所需要调用的函数（槽函数）</li>
+</ul>
+<p><img src="C:/Users/13993/AppData/Local/Temp/msohtmlclip1/01/sadas.png" alt="系统自带的信号">!</p>
+<p><img src="https://gcore.jsdelivr.net/gh/roranrui/img_bed/img/image-20220528220214453.png" alt="QWidget的槽函数"></p>
+<h3 id="自定义信号和槽"><a href="#自定义信号和槽" class="headerlink" title="自定义信号和槽"></a>自定义信号和槽</h3><ul>
+<li><p>自定义信号</p>
+<ul>
+<li>写到 signals下</li>
+<li>返回 void</li>
+<li>需要声明，不需要实现</li>
+<li>可以有参数 ，可以重载</li>
+</ul>
+</li>
+<li><p>自定义槽函数</p>
+<ul>
+<li>返回void</li>
+<li>需要声明 ，也需要实现</li>
+<li><strong>可以有参数 ，可以重载</strong></li>
+<li>写到 public slot下 或者public 或者全局函数</li>
+</ul>
+</li>
+<li><p>触发自定义信号 <code>emit</code></p>
+</li>
+</ul>
+<blockquote>
+<p>  下课后，老师触发饿了信号，学生响应信号，请客吃饭</p>
+</blockquote>
 <p>实现:</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">generate</span><span class="token punctuation">(</span><span class="token keyword">int</span> numRows<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">res</span><span class="token punctuation">(</span>numRows<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> numRows<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            res<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 初始化每一列的数量</span>
-            res<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> res<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 初始化杨辉三角的外围</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                res<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> res<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+</span> res<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>widget.cpp</code></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"widget.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"ui_widget.h"</span></span>
+
+Widget<span class="token operator">::</span><span class="token function">Widget</span><span class="token punctuation">(</span>QWidget <span class="token operator">*</span>parent<span class="token punctuation">)</span>
+    <span class="token operator">:</span> <span class="token function">QWidget</span><span class="token punctuation">(</span>parent<span class="token punctuation">)</span>
+    <span class="token punctuation">,</span> <span class="token function">ui</span><span class="token punctuation">(</span><span class="token keyword">new</span> Ui<span class="token operator">::</span>Widget<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ui<span class="token operator">-</span><span class="token operator">></span><span class="token function">setupUi</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    zt <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Teacher</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    st <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/// 连接</span>
+    <span class="token function">connect</span><span class="token punctuation">(</span>zt<span class="token punctuation">,</span> <span class="token operator">&amp;</span>Teacher<span class="token operator">::</span>hungry<span class="token punctuation">,</span> st<span class="token punctuation">,</span> <span class="token operator">&amp;</span>Student<span class="token operator">::</span>treat<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">///下课</span>
+    <span class="token function">classIsOver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> Widget<span class="token operator">::</span><span class="token function">classIsOver</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 触发自定义信号 emit</span>
+    emit zt<span class="token operator">-</span><span class="token operator">></span><span class="token function">hungry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+
+Widget<span class="token operator">::</span><span class="token operator">~</span><span class="token function">Widget</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">delete</span> ui<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
@@ -709,7 +734,7 @@ public:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roranrui.cn/posts/340249a9/">https://roranrui.cn/posts/340249a9/</a>
+                    <a href="https://roranrui.cn/posts/42f4a2e1/">https://roranrui.cn/posts/42f4a2e1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -751,8 +776,8 @@ public:
                                     <span class="chip bg-color">C++</span>
                                 </a>
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/QT/">
+                                    <span class="chip bg-color">QT</span>
                                 </a>
                             
                         </div>
@@ -926,36 +951,54 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/6a5d9715/">
+                <a href="/posts/42f4a2e1/">
                     <div class="card-image">
                         
                         
-                        <img src="https://gcore.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/51.jpg" class="responsive-img" alt="图解数据结构与算法-刷题笔记">
+                        <img src="https://gcore.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/42.jpg" class="responsive-img" alt="QT 学习笔记(二)">
                         
-                        <span class="card-title">图解数据结构与算法-刷题笔记</span>
+                        <span class="card-title">QT 学习笔记(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            QT的基础部分, button创建, 信号和槽
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-28
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            若然无亦
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/QT%E5%BC%80%E5%8F%91/" class="post-category">
+                                    QT开发
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/QT/">
+                        <span class="chip bg-color">QT</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -967,31 +1010,31 @@ public:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/320b7ec0/">
+                <a href="/posts/740b95e0/">
                     <div class="card-image">
                         
                         
-                        <img src="https://gcore.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/42.jpg" class="responsive-img" alt="爬虫学习（二）">
+                        <img src="https://gcore.jsdelivr.net/gh/roranrui/roranrui.github.io/medias/featureimages/51.jpg" class="responsive-img" alt="QT学习笔记(一)">
                         
-                        <span class="card-title">爬虫学习（二）</span>
+                        <span class="card-title">QT学习笔记(一)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            QT的简介, 安装, 一些使用机制的简要记录
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%88%AC%E8%99%AB%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    爬虫笔记
+                            <a href="/categories/QT%E5%BC%80%E5%8F%91/" class="post-category">
+                                    QT开发
                                 </a>
                             
                             
@@ -1001,12 +1044,12 @@ public:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/%E7%88%AC%E8%99%AB/">
-                        <span class="chip bg-color">爬虫</span>
+                    <a href="/tags/QT/">
+                        <span class="chip bg-color">QT</span>
                     </a>
                     
                 </div>
